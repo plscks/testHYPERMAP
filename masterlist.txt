@@ -1,0 +1,999 @@
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 20)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 20)
+
+#33CCFF
+Smithy, a Smithy
+(11, 20)
+
+#3333FF
+River Gihon, a River
+(12, 20)
+
+#3333FF
+River Gihon, a River
+(13, 20)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 21)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 21)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(11, 21)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(12, 21)
+
+#BB8800
+Wooden Bridge, a Wooden Bridge
+(13, 21)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 22)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(10, 22)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(11, 22)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(12, 22)
+
+#3333FF
+River Gihon, a River
+(13, 22)
+
+#000000
+Twisted Space, a Twisted Space
+(9, 21)
+
+#000000
+Twisted Space, a Twisted Space
+(10, 21)
+
+#000000
+Twisted Space, a Twisted Space
+(11, 21)
+
+#55FF33
+Lush Orchard, a Lush Orchard
+(12, 21)
+
+#55FF33
+Lush Orchard, a Lush Orchard
+(13, 21)
+
+#000000
+Twisted Space, a Twisted Space
+(9, 24)
+
+#000000
+Twisted Space, a Twisted Space
+(10, 24)
+
+#000000
+Twisted Space, a Twisted Space
+(11, 24)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 24)
+
+#FFCC00
+Cottage, a Cottage
+(13, 24)
+
+#006633
+Forest, a Forest
+(9, 31)
+
+#006633
+Forest, a Forest
+(10, 31)
+
+#000000
+Twisted Space, a Twisted Space
+(11, 31)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 31)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 31)
+
+#00BB00
+Grassland, a Grassland
+(9, 32)
+
+#006633
+Forest, a Forest
+(10, 32)
+
+#000000
+Twisted Space, a Twisted Space
+(11, 32)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 32)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 32)
+
+#00BB00
+Grassland, a Grassland
+(9, 33)
+
+#00BB00
+Grassland, a Grassland
+(10, 33)
+
+#006633
+Forest, a Forest
+(11, 33)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 33)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 33)
+
+#B3B3B3
+Engram Harvester, a Robotic Observer
+(9, 32)
+
+#00BB00
+Grassland, a Grassland
+(10, 32)
+
+#00BB00
+Grassland, a Grassland
+(11, 32)
+
+#00BB00
+Grassland, a Grassland
+(12, 32)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 32)
+
+#00BB00
+Grassland, a Grassland
+(9, 35)
+
+#00BB00
+Grassland, a Grassland
+(10, 35)
+
+#3333FF
+River, a River
+(11, 35)
+
+#3333FF
+River, a River
+(12, 35)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 35)
+
+#000000
+Twisted Space, a Twisted Space
+(11, 8)
+
+#228855
+Maple Forest, an Idyllic Forest
+(12, 8)
+
+#228855
+Maple Forest, an Idyllic Forest
+(13, 8)
+
+#FFCC00
+Cottage, a Cottage
+(14, 8)
+
+#228855
+Maple Forest, an Idyllic Forest
+(15, 8)
+
+#228855
+Maple Forest, an Idyllic Forest
+(11, 9)
+
+#228855
+Maple Forest, an Idyllic Forest
+(12, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(13, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(14, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(15, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(11, 10)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(12, 10)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(13, 10)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(14, 10)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(15, 10)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(11, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(12, 9)
+
+#0099CC
+Amphitheater, an Amphitheater
+(13, 9)
+
+#0099CC
+Amphitheater, an Amphitheater
+(14, 9)
+
+#0099CC
+Amphitheater, an Amphitheater
+(15, 9)
+
+#3333FF
+River Gihon, a River
+(11, 12)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(12, 12)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(13, 12)
+
+#0099CC
+Amphitheater, an Amphitheater
+(14, 12)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(15, 12)
+
+#3333FF
+River, a River
+(11, 35)
+
+#3333FF
+River, a River
+(12, 35)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 35)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 35)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 35)
+
+#3333FF
+River, a River
+(11, 36)
+
+#00CC33
+Orchard, an Orchard
+(12, 36)
+
+#006633
+Forest, a Forest
+(13, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 36)
+
+#00CC33
+Orchard, an Orchard
+(11, 37)
+
+#006633
+Forest, a Forest
+(12, 37)
+
+#006633
+Forest, a Forest
+(13, 37)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 37)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 37)
+
+#7A7A7A
+Schism, a Statue
+(11, 36)
+
+#006633
+Forest, a Forest
+(12, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 36)
+
+#006633
+Forest, a Forest
+(11, 39)
+
+#006633
+Forest, a Forest
+(12, 39)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 39)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 39)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 39)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 5)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 5)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 5)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 5)
+
+#000000
+Twisted Space, a Twisted Space
+(16, 5)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(13, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(14, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(16, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(12, 7)
+
+#228855
+Maple Forest, an Idyllic Forest
+(13, 7)
+
+#228855
+Maple Forest, an Idyllic Forest
+(14, 7)
+
+#000000
+Twisted Space, a Twisted Space
+(15, 7)
+
+#000000
+Twisted Space, a Twisted Space
+(16, 7)
+
+#228855
+Maple Forest, an Idyllic Forest
+(12, 6)
+
+#228855
+Maple Forest, an Idyllic Forest
+(13, 6)
+
+#FFCC00
+Cottage, a Cottage
+(14, 6)
+
+#228855
+Maple Forest, an Idyllic Forest
+(15, 6)
+
+#000000
+Twisted Space, a Twisted Space
+(16, 6)
+
+#228855
+Maple Forest, an Idyllic Forest
+(12, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(13, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(14, 9)
+
+#99ff99
+Hallowed Ground, a Hallowed Ground
+(15, 9)
+
+#000000
+Twisted Space, a Twisted Space
+(16, 9)
+
+#000000
+Twisted Space, a Twisted Space
+(1, 30)
+
+#000000
+Twisted Space, a Twisted Space
+(2, 30)
+
+#000000
+Twisted Space, a Twisted Space
+(3, 30)
+
+#5151FF
+Lake, a Lake
+(4, 30)
+
+#5151FF
+Lake, a Lake
+(5, 30)
+
+#5151FF
+Lake, a Lake
+(1, 31)
+
+#5151FF
+Lake, a Lake
+(2, 31)
+
+#5151FF
+Lake, a Lake
+(3, 31)
+
+#5151FF
+Lake, a Lake
+(4, 31)
+
+#5151FF
+Lake, a Lake
+(5, 31)
+
+#00BB00
+Grassland, a Grassland
+(1, 32)
+
+#7A7A7A
+Anticipation, a Statue
+(2, 32)
+
+#5151FF
+Lake, a Lake
+(3, 32)
+
+#5151FF
+Lake, a Lake
+(4, 32)
+
+#5151FF
+Lake, a Lake
+(5, 32)
+
+#5151FF
+Lake, a Lake
+(1, 31)
+
+#5151FF
+Lake, a Lake
+(2, 31)
+
+#5151FF
+Lake, a Lake
+(3, 31)
+
+#333399
+Resolution, a Freighter
+(4, 31)
+
+#5151FF
+Lake, a Lake
+(5, 31)
+
+#5151FF
+Lake, a Lake
+(1, 34)
+
+#FF9933
+Beach, a Beach
+(2, 34)
+
+#FF9933
+Beach, a Beach
+(3, 34)
+
+#5151FF
+Lake, a Lake
+(4, 34)
+
+#3333FF
+River, a River
+(5, 34)
+
+#00CC33
+Orchard, an Orchard
+(1, 35)
+
+#CC9933
+Mu Alpha, a Chateau
+(2, 35)
+
+#3366FF
+Robotics Bay, a Robotics Bay
+(3, 35)
+
+#990066
+Department of Thaumaturgy, an University
+(4, 35)
+
+#FF9933
+Beach, a Beach
+(5, 35)
+
+#CC9933
+Epsilon Omicron Gamma, a Mansion
+(1, 36)
+
+#990066
+Department of Archaeology, an University
+(2, 36)
+
+#00EEEE
+Halls of the Scholar, a Vault of Enlightenment
+(3, 36)
+
+#3300CC
+Cosmic Orrery, an Observatory
+(4, 36)
+
+#00BB00
+Grassland, a Grassland
+(5, 36)
+
+#00CC33
+Orchard, an Orchard
+(1, 37)
+
+#990066
+Department of Planar Mathematics, an University
+(2, 37)
+
+#00CC33
+Central Campus, a Park
+(3, 37)
+
+#CC9933
+Iota Mu Alpha, a Mansion
+(4, 37)
+
+#00BB00
+Grassland, a Grassland
+(5, 37)
+
+#00CC33
+Orchard, an Orchard
+(1, 36)
+
+#CC9933
+Tau Sigma Omicron, a Mansion
+(2, 36)
+
+#336600
+Gendarmerie, a Magi Armory
+(3, 36)
+
+#00BB00
+Grassland, a Grassland
+(4, 36)
+
+#00BB00
+Grassland, a Grassland
+(5, 36)
+
+#000000
+Twisted Space, a Twisted Space
+(1, 39)
+
+#66FF99
+Field, a Field
+(2, 39)
+
+#66FF99
+Field, a Field
+(3, 39)
+
+#66FF99
+Field, a Field
+(4, 39)
+
+#7A7A7A
+Hibernation, a Statue
+(5, 39)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 13)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 13)
+
+#000000
+Twisted Space, a Twisted Space
+(8, 13)
+
+#66FF00
+Lush Field, a Lush Field
+(9, 13)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 13)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 14)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 14)
+
+#66FF00
+Lush Field, a Lush Field
+(8, 14)
+
+#66FF00
+Lush Field, a Lush Field
+(9, 14)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 14)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 15)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 15)
+
+#66FF00
+Lush Field, a Lush Field
+(8, 15)
+
+#66FF00
+Lush Field, a Lush Field
+(9, 15)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 15)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 14)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 14)
+
+#66FF00
+Lush Field, a Lush Field
+(8, 14)
+
+#66FF00
+Lush Field, a Lush Field
+(9, 14)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 14)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 17)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 17)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(8, 17)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(9, 17)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 17)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 18)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(7, 18)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(8, 18)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(9, 18)
+
+#6666FF
+Travelers Respite, an Inn
+(10, 18)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 19)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(7, 19)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(8, 19)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(9, 19)
+
+#FFCC00
+Cottage, a Cottage
+(10, 19)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 20)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 20)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(8, 20)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 20)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 20)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 19)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 19)
+
+#b0b800
+Sylvan Watchtower, a Fletcher Camp
+(8, 19)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 19)
+
+#33FF66
+Idyllic Grassland, an Idyllic Grassland
+(10, 19)
+
+#000000
+Twisted Space, a Twisted Space
+(6, 22)
+
+#000000
+Twisted Space, a Twisted Space
+(7, 22)
+
+#000000
+Twisted Space, a Twisted Space
+(8, 22)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(9, 22)
+
+#228855
+Redwood Forest, an Idyllic Forest
+(10, 22)
+
+#3333FF
+River, a River
+(6, 35)
+
+#3333FF
+River, a River
+(7, 35)
+
+#00BB00
+Grassland, a Grassland
+(8, 35)
+
+#00BB00
+Grassland, a Grassland
+(9, 35)
+
+#00BB00
+Grassland, a Grassland
+(10, 35)
+
+#00BB00
+Grassland, a Grassland
+(6, 36)
+
+#3333FF
+River, a River
+(7, 36)
+
+#3333FF
+River, a River
+(8, 36)
+
+#CCCCCC
+Bridge, a Bridge
+(9, 36)
+
+#3333FF
+River, a River
+(10, 36)
+
+#00BB00
+Grassland, a Grassland
+(6, 37)
+
+#3333FF
+River, a River
+(7, 37)
+
+#00BB00
+Grassland, a Grassland
+(8, 37)
+
+#00BB00
+Grassland, a Grassland
+(9, 37)
+
+#00BB00
+Grassland, a Grassland
+(10, 37)
+
+#00BB00
+Grassland, a Grassland
+(6, 36)
+
+#3333FF
+River, a River
+(7, 36)
+
+#3333FF
+River, a River
+(8, 36)
+
+#00BB00
+Grassland, a Grassland
+(9, 36)
+
+#00BB00
+Grassland, a Grassland
+(10, 36)
+
+#00BB00
+Grassland, a Grassland
+(6, 39)
+
+#00BB00
+Grassland, a Grassland
+(7, 39)
+
+#CCCCCC
+Bridge, a Bridge
+(8, 39)
+
+#00BB00
+Grassland, a Grassland
+(9, 39)
+
+#00BB00
+Grassland, a Grassland
+(10, 39)

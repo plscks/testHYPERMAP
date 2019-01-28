@@ -1,0 +1,116 @@
+<div class=tile_description><B><U>St. Clare's Cathedral (25, 26 Laurentia, a <a href="wiki/index.php/Church">Church</a>, District: Wolverton)</U><
+x = 25
+y = 26
+
+
+<tr><td colspan=5 align=center><b>MAP</b></td></tr>
+<tr><td colspan=5><div id="Map"><table width="300"align=center border=1 cellpadding=0 cellspacing=1><tr>
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x1 = x - 2 (23)
+y1 = y - 2 (24)
+
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59"> <table align=center background="images/g/inf/border-c.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">              </td></tr></table> </td></tr></table> </td>
+x2 = x - 1 (24)
+y2 = y - 2 (24)
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x3 = x (25)
+y3 = y - 2 (24)
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweroff.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x4 = x + 1 (26)
+y4 = y - 2 (24)
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td></tr>
+<tr>
+x5 = x + 2 (27)
+y5 = y - 2 (24)
+
+<td height="59" width="59" bgcolor=#9933FF  background="/images/g/tiles/Office_Building.gif" align=center valign=center title="Downing Tower, an Office Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x6 = x - 2 (23)
+y6 = y - 1 (25)
+
+<td height="59" width="59" bgcolor=#FFFF99  background="/images/g/tiles/Church.gif" align=center valign=center title="St. Clare's Cathedral, a Church"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="1"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x7 = x - 1
+y7 = y - 1
+
+<td height="59" width="59" bgcolor=#FFCC66  background="/images/g/tiles/House.gif" align=center valign=center title="House, a House"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="2"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x8 = x
+y8 = y - 1
+
+<td height="59" width="59" bgcolor=#9933FF  background="/images/g/tiles/Office_Building.gif" align=center valign=center title="Tilson Research, an Office Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="3"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x9 = x + 1
+y9 = y - 1
+
+<td height="59" width="59" bgcolor=#FFCC66  background="/images/g/tiles/House.gif" align=center valign=center title="House, a House"> <table align=center background="/images/g/inf/poweroff.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td></tr>
+<tr>
+x10 = x + 2
+y10 = y - 1
+
+<td height="59" width="59" bgcolor=#FFFF99  background="/images/g/tiles/Church.gif" align=center valign=center title="St. Clare's Cathedral, a Church"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x11 = x - 2
+y11 = y
+
+<td height="59" width="59" bgcolor=#FFFF99  background="/images/g/tiles/Church.gif" align=center valign=center title="St. Clare's Cathedral, a Church"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="4"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x12 = x - 1
+y12 = y
+
+//CENTER POSITION
+
+<td height="59" width="59" bgcolor=#FFFF99  background="/images/g/tiles/Church.gif" align=center valign=center title="St. Clare's Cathedral, a Church"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">        <table align=center background="/images/g/pop/YouAreHere.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">    </td></tr></table>        </td></tr></table> </td>
+x13 = x
+y13 = y
+
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="6"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x14 = x + 1
+y14 = y
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweroff.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td></tr>
+<tr>
+x15 = x + 2
+y15 = y
+
+<td height="59" width="59" bgcolor=#660033  background="/images/g/tiles/Museum.gif" align=center valign=center title="Wolverton Science Museum, a Museum"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x16 = x - 2
+y16 = y - 1
+
+<td height="59" width="59" bgcolor=#FFCC66  background="/images/g/tiles/House.gif" align=center valign=center title="House, a House"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">         <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="7"><input type="submit" class="Move" value="Move"></form>         </td></tr></table> </td>
+x17 = x - 1
+y17 = y - 1
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">          <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="8"><input type="submit" class="Move" value="Move"></form>          </td>
+x18 = x
+y18 = y - 1
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">          <form align=center name="move" action="modules.php?name=Game&op=move" method="POST"><input type="hidden" name="direction" value="9"><input type="submit" class="Move" value="Move"></form>          </td>
+x19 = x + 1
+y19 = y - 1
+
+<td height="59" width="59" bgcolor=#FFFF99  background="/images/g/tiles/Shrine.gif" align=center valign=center title="Seicho-ji, a Shrine"> <table align=center background="/images/g/inf/poweroff.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td></tr>
+<tr>
+x20 = x + 2
+y20 = y - 1
+
+<td height="59" width="59" bgcolor=#FFCC99  background="/images/g/tiles/Apartment_Building.gif" align=center valign=center title="Apartment Building, an Apartment Building"> <table align=center background="/images/g/inf/poweron.gif" border=0 cellpadding=0 cellspacing=0><tr><td align="center" height="59" width="59">                </td></tr></table> </td>
+x21 = x - 2
+y21 = y + 2
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">                  </td>
+x22 = x - 1
+y22 = y + 2
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">                  </td>
+x23 = x
+y23 = y + 2
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">                  </td>
+x24 = x + 1
+y24 = y + 2
+
+<td height="59" width="59" bgcolor=#00CC33  background="/images/g/tiles/Park.gif" align=center valign=center title="Bean Memorial Park, a Park">                  </td></tr>
+</table></div></td></tr>
+x25 = x + 2
+y25 = y + 2
