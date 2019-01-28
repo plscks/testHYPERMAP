@@ -858,12 +858,13 @@ function initializePortals() {
 createPortal( [encodeLocation(11,29,0),1,encodeLocation(12,34,1)] , ["Portal"], [5]);
 createPortal( [encodeLocation(1,13,0),1,encodeLocation(1,13,1)] , ["Portal"], [5]);
 createPortal( [encodeLocation(39,39,0),1,encodeLocation(2,37,2)] , ["Portal"], [10]);
-createPortal( [encodeLocation(24,26,0),1,encodeLocation(4,4,1)] , ["Portal"], [10]);	// church portal to 4,4
+createPortal( [encodeLocation(24,26,0),1,encodeLocation(12,18,1)] , ["Portal"], [10]);	// updated
 createPortal( [encodeLocation(11,29,0),1,encodeLocation(12,34,1)] , ["Portal"], [5]);
+createPortal( [encodeLocation(22,38,0),1,encodeLocation(3,32,1)] , ["Portal"], [5]);    // pdated
 createPortal( [encodeLocation(18,18,0),1,encodeLocation(11,13,2)] , ["Portal"], [5]);
 createPortal( [encodeLocation(38,31,0),1,encodeLocation(28,31,2)] , ["Portal"], [5]);
-createPortal( [encodeLocation(39,14,0),1,encodeLocation(11,13,1)] , ["Portal"], [5]);
-createPortal( [encodeLocation(22,1,0),1,encodeLocation(28,31,1)] , ["Portal"], [5]);
+createPortal( [encodeLocation(39,14,0),1,encodeLocation(4,4,1)] , ["Portal"], [5]);    // updated
+createPortal( [encodeLocation(22,1,0),1,encodeLocation(24,8,1)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(8,34,0),1,encodeLocation(24,27,2)] , ["Portal"], [10]);
 createPortal( [encodeLocation(15,10,0),2,encodeLocation(25,7,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]);
 
