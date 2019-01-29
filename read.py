@@ -51,6 +51,9 @@ for opt, arg in opts:
         outputfile = arg
 print ('Input file is "', inputfile)
 
+# regex to snag plane
+# r'(?<=\d{1,2}\, \d{1,2} ).*(?=, a)'
+
 with open (inputfile, 'rt') as in_file:
     contents = in_file.read() # Read the entire file into a variable named contents.
     xy = ['x', 'y']
