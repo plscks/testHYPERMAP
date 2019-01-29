@@ -870,7 +870,7 @@ createPortal( [encodeLocation(4,4,1),1,encodeLocation(39,14,0)] , ["Portal"], [5
 createPortal( [encodeLocation(22,1,0),1,encodeLocation(24,8,1)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(24,8,1),1,encodeLocation(22,1,0)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(23,39,1),1,encodeLocation(11,29,0)] , ["Portal"], [5]);    // updated
-createPortal( [encodeLocation(11,29,1),1,encodeLocation(23,39,0)] , ["Portal"], [5]);    // updated
+createPortal( [encodeLocation(11,29,0),1,encodeLocation(23,39,1)] , ["Portal"], [5]);    // updated
     
 createPortal( [encodeLocation(8,34,0),1,encodeLocation(24,27,2)] , ["Portal"], [10]);
 createPortal( [encodeLocation(15,10,0),2,encodeLocation(25,7,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]);
