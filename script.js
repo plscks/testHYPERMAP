@@ -859,12 +859,16 @@ createPortal( [encodeLocation(11,29,0),1,encodeLocation(12,34,1)] , ["Portal"], 
 createPortal( [encodeLocation(1,13,0),1,encodeLocation(1,13,1)] , ["Portal"], [5]);
 createPortal( [encodeLocation(39,39,0),1,encodeLocation(2,37,2)] , ["Portal"], [10]);
 createPortal( [encodeLocation(24,26,0),1,encodeLocation(12,18,1)] , ["Portal"], [10]);	// updated
+createPortal( [encodeLocation(12,18,1),1,encodeLocation(24,26,0)] , ["Portal"], [10]);	// updated
 createPortal( [encodeLocation(11,29,0),1,encodeLocation(12,34,1)] , ["Portal"], [5]);
-createPortal( [encodeLocation(22,38,0),1,encodeLocation(3,32,1)] , ["Portal"], [5]);    // pdated
+createPortal( [encodeLocation(22,38,0),1,encodeLocation(3,32,1)] , ["Portal"], [5]);    // Updated
+createPortal( [encodeLocation(3,32,1),1,encodeLocation(22,38,0)] , ["Portal"], [5]);    // Updated
 createPortal( [encodeLocation(18,18,0),1,encodeLocation(11,13,2)] , ["Portal"], [5]);
 createPortal( [encodeLocation(38,31,0),1,encodeLocation(28,31,2)] , ["Portal"], [5]);
 createPortal( [encodeLocation(39,14,0),1,encodeLocation(4,4,1)] , ["Portal"], [5]);    // updated
+createPortal( [encodeLocation(4,4,1),1,encodeLocation(39,14,0)] , ["Portal"], [5]);    // updated    
 createPortal( [encodeLocation(22,1,0),1,encodeLocation(24,8,1)] , ["Portal"], [5]);    // updated
+createPortal( [encodeLocation(24,8,1),1,encodeLocation(22,1,0)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(8,34,0),1,encodeLocation(24,27,2)] , ["Portal"], [10]);
 createPortal( [encodeLocation(15,10,0),2,encodeLocation(25,7,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]);
 
@@ -913,19 +917,34 @@ createPortal( [encodeLocation(34,36,0),7,encodeLocation(26,3,0),encodeLocation(1
 
 
 // ELYSIUM
-createPortal( [encodeLocation(4,4,1),1,encodeLocation(24,26,0)] , ["Portal"], [10]);
-createPortal( [encodeLocation(1,13,1),1,encodeLocation(1,13,0)] , ["Portal"], [5]);
-
-createPortal( [encodeLocation(7,6,1),3,encodeLocation(25,7,1),encodeLocation(11,13,1),      encodeLocation(7,6,2)] , ["Ferry","Ferry","Ferry"], [0,0,5]);
-createPortal( [encodeLocation(11,13,1),4,encodeLocation(7,6,1),encodeLocation(13,25,1),      encodeLocation(11,13,2), encodeLocation(39,14,0)] , ["Ferry","Ferry","Ferry","Gate"], [0,0,5,5]);
-createPortal( [encodeLocation(13,25,1),3,encodeLocation(11,13,1),encodeLocation(12,34,1),      encodeLocation(13,25,2)] , ["Ferry","Ferry","Ferry"], [0,0,5]);
-createPortal( [encodeLocation(12,34,1),4,encodeLocation(13,25,1),encodeLocation(21,38,1),      encodeLocation(12,34,2), encodeLocation(11,29,0)] , ["Ferry","Ferry","Ferry", "Portal"], [0,0,5,5]);  
-createPortal( [encodeLocation(21,38,1),3,encodeLocation(12,34,1),encodeLocation(28,31,1),      encodeLocation(21,38,2)] , ["Ferry","Ferry","Ferry"], [0,0,5]);
-createPortal( [encodeLocation(28,31,1),4,encodeLocation(21,38,1),encodeLocation(27,17,1),      encodeLocation(28,32,2), encodeLocation(22,1,0)] , ["Ferry","Ferry","Ferry","Ferry"], [0,0,5,5]);  
-createPortal( [encodeLocation(27,17,1),3,encodeLocation(28,31,1),encodeLocation(25,7,1),      encodeLocation(27,17,2)] , ["Ferry","Ferry","Ferry"], [0,0,5]);
-createPortal( [encodeLocation(25,7,1),4,encodeLocation(27,17,1),encodeLocation(7,6,1),      encodeLocation(25,7,2),  encodeLocation(17,18,3)] , ["Ferry","Ferry","Ferry", "Portal"], [0,0,5,5]);  
-
-
+createPortal( [encodeLocation(7,2,1),1,encodeLocation(7,40,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(7,40,1),1,encodeLocation(7,2,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(9,5,1),1,encodeLocation(21,3,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,3,1),1,encodeLocation(9,5,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(2,7,1),1,encodeLocation(29,2,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,2,1),1,encodeLocation(2,7,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(8,8,1),1,encodeLocation(9,13,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(9,13,1),1,encodeLocation(8,8,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(11,22,1),1,encodeLocation(10,31,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(10,31,1),1,encodeLocation(11,22,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(15,25,1),1,encodeLocation(23,33,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(23,33,1),1,encodeLocation(15,25,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(18,17,1),1,encodeLocation(21,17,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,17,1),1,encodeLocation(18,17,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(16,11,1),1,encodeLocation(21,10,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,10,1),1,encodeLocation(16,11,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(26,1,1),1,encodeLocation(29,40,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,40,1),1,encodeLocation(26,1,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(28,11,1),1,encodeLocation(26,15,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(26,15,1),1,encodeLocation(28,11,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(16,15,1),1,encodeLocation(28,11,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(26,21,1),1,encodeLocation(28,24,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(28,24,1),1,encodeLocation(26,21,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(30,30,1),1,encodeLocation(1,32,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(1,32,1),1,encodeLocation(30,30,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,36,1),1,encodeLocation(13,36,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(13,36,1),1,encodeLocation(21,36,1)] , ["Tunnel"], [0]);
+    
 // STYGIA
 createPortal( [encodeLocation(2,37,2),1,encodeLocation(39,39,0)] , ["Portal"], [10]);
 createPortal( [encodeLocation(24,27,2),1,encodeLocation(8,34,0)] , ["Portal"], [10]);
