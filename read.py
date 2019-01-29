@@ -29,6 +29,11 @@
 # Sorry this is a huge mess of cobbled together nightmare pudding. - plscks
 #
 # p.s. - I'm really sorry about the 25 elifs down there, I'll fix that maybe one day if I can???
+#
+# TODO
+########
+# place equations for coordinates in a dictionary and use the dictionary to pull coordinates
+#
 import os
 import re
 import sys, getopt
@@ -49,25 +54,33 @@ for opt, arg in opts:
         inputfile = arg
     elif opt in ("-o", "--ofile"):
         outputfile = arg
-print ('Input file is "', inputfile)
-
-# regex to snag plane
-# r'(?<=\d{1,2}\, \d{1,2} ).*(?=, a)'
 
 with open (inputfile, 'rt') as in_file:
     contents = in_file.read() # Read the entire file into a variable named contents.
     xy = ['x', 'y']
     center = {}
-    
+
+    try:
+        planeRaw = re.search(r'(?<=\d ).*(?=, a <a)', contents)
+        plane = planeRaw.group(0)
+    except AttributeError:
+        planeRaw = re.search(r'(?<=\d ).*(?=, an <a)', contents)
+        plane = planeRaw.group(0)
+        
+    if plane == 'Laurentia':
+        planeNum = 0
+    elif plane == 'Elysium':
+        planeNum = 1
+    elif plane == 'Stygia':
+        planeNum = 2
+        
     coordBig = re.search(r'\d{1,2}\, \d{1,2}(?= \w)', contents)
     coord = coordBig.group(0)
-    print(coord)
+    print('(' + coord + ' ' + plane + ')\n')
     coorddecomma = coord.replace(',', '')
     coordlist = coorddecomma.split()
     coordlist = list(map(int, coordlist))
-    center = dict(zip(xy, coordlist))
-    print('Center point: (' + str(center['x']) + ', ' + str(center['y']) + ')')
-    
+    center = dict(zip(xy, coordlist))    
 
     print('--------------------------------------------------')
     info1 = re.search(r'(<td height).*?(<\/td>)', contents)
@@ -194,30 +207,27 @@ with open (inputfile, 'rt') as in_file:
         elif (idx+1) == 20:
             x20 = center['x'] + 2
             y20 = center['y'] + 1
-            print('(' + str(x20) + ', ' + str(y20) + ')')
-            print('')
+            print('(' + str(x20) + ', ' + str(y20) + ')\n')
         elif (idx+1) == 21:
             x21 = center['x'] - 2
             y21 = center['y'] + 2
-            print('(' + str(x21) + ', ' + str(y21) + ')')
-            print('')
+            print('(' + str(x21) + ', ' + str(y21) + ')\n')
         elif (idx+1) == 22:
             x22 = center['x'] - 1
             y22 = center['y'] + 2
-            print('(' + str(x22) + ', ' + str(y22) + ')')
-            print('')
+            print('(' + str(x22) + ', ' + str(y22) + ')\n')
         elif (idx+1) == 23:
             x23 = center['x']
             y23 = center['y'] + 2
-            print('(' + str(x23) + ', ' + str(y23) + ')')
-            print('')
+            print('(' + str(x23) + ', ' + str(y23) + ')\n')
         elif (idx+1) == 24:
             x24 = center['x'] + 1
             y24 = center['y'] + 2
-            print('(' + str(x24) + ', ' + str(y24) + ')')
-            print('')
+            print('(' + str(x24) + ', ' + str(y24) + ')\n')
         elif (idx+1) == 25:
             x25 = center['x'] + 2
             y25 = center['y'] + 2
-            print('(' + str(x25) + ', ' + str(y25) + ')')
-            print('')
+            print('(' + str(x25) + ', ' + str(y25) + ')\n')
+
+    print('---------------------------------------------\n')
+    print('Center point: (' + coord + ' ' + plane + ')\n')
