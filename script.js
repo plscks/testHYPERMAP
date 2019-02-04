@@ -863,8 +863,10 @@ createPortal( [encodeLocation(12,18,1),1,encodeLocation(24,26,0)] , ["Portal"], 
 createPortal( [encodeLocation(11,29,0),1,encodeLocation(12,34,1)] , ["Portal"], [5]);
 createPortal( [encodeLocation(22,38,0),1,encodeLocation(3,32,1)] , ["Portal"], [5]);    // Updated
 createPortal( [encodeLocation(3,32,1),1,encodeLocation(22,38,0)] , ["Portal"], [5]);    // Updated
-createPortal( [encodeLocation(18,18,0),1,encodeLocation(11,13,2)] , ["Portal"], [5]);
-createPortal( [encodeLocation(38,31,0),1,encodeLocation(28,31,2)] , ["Portal"], [5]);
+createPortal( [encodeLocation(18,18,0),1,encodeLocation(26,5,2)] , ["Portal"], [5]);  // updated
+createPortal( [encodeLocation(26,5,2),1,encodeLocation(18,18,0)] , ["Portal"], [5]);  // updated
+createPortal( [encodeLocation(38,31,0),1,encodeLocation(26,39,2)] , ["Portal"], [5]);  // updated
+createPortal( [encodeLocation(26,39,2),1,encodeLocation(38,31,0)] , ["Portal"], [5]);  // updated
 createPortal( [encodeLocation(39,14,0),1,encodeLocation(4,4,1)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(4,4,1),1,encodeLocation(39,14,0)] , ["Portal"], [5]);    // updated    
 createPortal( [encodeLocation(22,1,0),1,encodeLocation(24,8,1)] , ["Portal"], [5]);    // updated
@@ -873,7 +875,8 @@ createPortal( [encodeLocation(23,39,1),1,encodeLocation(11,29,0)] , ["Portal"], 
 createPortal( [encodeLocation(11,29,0),1,encodeLocation(23,39,1)] , ["Portal"], [5]);    // updated
     
 createPortal( [encodeLocation(8,34,0),1,encodeLocation(24,27,2)] , ["Portal"], [10]);
-createPortal( [encodeLocation(15,10,0),2,encodeLocation(25,7,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]);
+createPortal( [encodeLocation(15,10,0),2,encodeLocation(3,4,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]); // updated
+createPortal( [encodeLocation(3,4,2),1,encodeLocation(15,10,0)] , ["Portal"], [5]);  // updated
 
 createPortal( [encodeLocation(20,19,3),1,encodeLocation(20,19,0)] , ["Olympic Tower Garden (20 AP)"],[0]);	
 
