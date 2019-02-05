@@ -954,32 +954,32 @@ createPortal( [encodeLocation(3,4,2),1,encodeLocation(15,10,0)] , ["Portal"], [1
 createPortal( [encodeLocation(26,5,2),1,encodeLocation(18,18,0)] , ["Portal"], [5]);  // updated
 createPortal( [encodeLocation(26,39,2),1,encodeLocation(38,31,0)] , ["Portal"], [5]);  // updated
 
-createPortal( [encodeLocation(3,1,1),1,encodeLocation(3,40,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(3,40,1),1,encodeLocation(3,1,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(1,6,1),1,encodeLocation(30,5,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(30,5,1),1,encodeLocation(1,6,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(8,6,1),1,encodeLocation(11,7,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(11,7,1),1,encodeLocation(8,6,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(20,7,1),1,encodeLocation(24,7,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(24,7,1),1,encodeLocation(20,7,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(24,1,1),1,encodeLocation(23,40,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(23,40,1),1,encodeLocation(24,1,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(30,16,1),1,encodeLocation(8,16,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(8,16,1),1,encodeLocation(30,16,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(29,19,1),1,encodeLocation(29,23,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(29,23,1),1,encodeLocation(29,19,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(20,22,1),1,encodeLocation(21,15,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(21,15,1),1,encodeLocation(20,22,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(8,16,1),1,encodeLocation(30,16,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(30,16,1),1,encodeLocation(8,16,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(12,22,1),1,encodeLocation(9,29,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(9,29,1),1,encodeLocation(12,22,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(1,30,1),1,encodeLocation(30,29,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(30,29,1),1,encodeLocation(1,30,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(13,35,1),1,encodeLocation(17,35,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(17,35,1),1,encodeLocation(13,35,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(17,3,1),1,encodeLocation(16,40,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(16,40,1),1,encodeLocation(17,3,1)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(3,1,2),1,encodeLocation(3,40,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(3,40,2),1,encodeLocation(3,1,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(1,6,2),1,encodeLocation(30,5,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(30,5,2),1,encodeLocation(1,6,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(8,6,2),1,encodeLocation(11,7,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(11,7,2),1,encodeLocation(8,6,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(20,7,2),1,encodeLocation(24,7,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(24,7,2),1,encodeLocation(20,7,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(24,1,2),1,encodeLocation(23,40,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(23,40,2),1,encodeLocation(24,1,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(30,16,2),1,encodeLocation(8,16,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(8,16,2),1,encodeLocation(30,16,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,19,2),1,encodeLocation(29,23,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,23,2),1,encodeLocation(29,19,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(20,22,2),1,encodeLocation(21,15,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,15,2),1,encodeLocation(20,22,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(8,16,2),1,encodeLocation(30,16,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(30,16,2),1,encodeLocation(8,16,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(12,22,2),1,encodeLocation(9,29,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(9,29,2),1,encodeLocation(12,22,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(1,30,2),1,encodeLocation(30,29,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(30,29,2),1,encodeLocation(1,30,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(13,35,2),1,encodeLocation(17,35,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(17,35,2),1,encodeLocation(13,35,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(17,3,2),1,encodeLocation(16,40,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(16,40,2),1,encodeLocation(17,3,2)] , ["Tunnel"], [0]);
     
 }
 
