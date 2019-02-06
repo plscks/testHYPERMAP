@@ -980,6 +980,10 @@ createPortal( [encodeLocation(13,35,2),1,encodeLocation(17,35,2)] , ["Tunnel"], 
 createPortal( [encodeLocation(17,35,2),1,encodeLocation(13,35,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(17,3,2),1,encodeLocation(16,40,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(16,40,2),1,encodeLocation(17,3,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(20,33,2),1,encodeLocation(21,30,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(21,30,2),1,encodeLocation(20,33,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(26,36,2),1,encodeLocation(28,32,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], [0]);
     
 }
 
