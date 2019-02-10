@@ -1,1 +1,1 @@
-nexusclash.com HYPERMAP updates by me, scary stuff. I did not code this, just snagged it and updated, poorly
+https://www.nexusclash.com/hypermap/ HYPERMAP last updated Nov 04 2015 by Thalanor a.k.a. Esrahil. New updates are by me. I did not code this, just snagged it and updated it with information pulled from source by a program that I have written and with map assets that I made with the help of the communuity created google sheets maps.
