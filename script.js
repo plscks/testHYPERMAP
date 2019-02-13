@@ -5,6 +5,10 @@ document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
+//
+// Testing Dev branch
+//
+
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
