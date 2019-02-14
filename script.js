@@ -994,7 +994,7 @@ createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], 
 function initializeGuilds() {
 registerGuild(25,3,1, "Accord of the Sun-touched", "Namm");
 registerGuild(20,19,0, "Adamant Kinship", "Laurentia");
-registerGuild(4,11,2, "Darksoul Cabal", "Ahg-za-haru");
+// registerGuild(4,11,2, "Darksoul Cabal", "Ahg-za-haru");
 registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai");
 registerGuild(26,36,1, "Knot of Keepers", "Alonai");
 registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas");
