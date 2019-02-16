@@ -537,14 +537,8 @@ function toggleDistricts() {
 	showDistricts = !showDistricts;
 		if(showDistricts) {
 			if (Z == 0) document.getElementById("districts0").style.display = "block";
-			else if (Z == 1) document.getElementById("districts1").style.display = "block";
-			else if (Z == 2) document.getElementById("districts2").style.display = "block";
-			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
 			document.getElementById("districts0").style.display = "none";
-			document.getElementById("districts1").style.display = "none";
-			document.getElementById("districts2").style.display = "none";
-			document.getElementById("districts3").style.display = "none";
 		}
 	if (showDistricts) document.getElementById("districtsButton").innerHTML = "Districts: ON";
 	else document.getElementById("districtsButton").innerHTML = "Districts: OFF";
@@ -734,7 +728,7 @@ function getGuildString(x,y,z) {
 	var index = encodeLocation(x,y,z);
 	var result = "";
 	if ((guilds[index][0] != "x") && (showGuilds == true)) {
-		result += "<br><br><font color='#00FF00'><b>" + guilds[index][0] + "</b></font><br><font color='#cccccc' size='1'>Aligned with <b>" + guilds[index][1] + "</b></font>";
+		result += "<br><br><font color='#00FF00'><b>" + guilds[index][0] + "</b></font><br><font color='#cccccc' size='1'>Aligned with <b>" + guilds[index][1] + "</b></font><br><font color='#cccccc' size='1'>Join <b>" + guilds[index][2] + "</b></font>";
 	}
 	return result;
 }
@@ -849,9 +843,10 @@ document.getElementById("badges" + z + "").innerHTML += "<div class='badgeMarker
 }
 
 
-function registerGuild(x,y,z,name, power) {
+function registerGuild(x,y,z,name, power, inout) {
 guilds[encodeLocation(x,y,z)][0] = "" + name;
 guilds[encodeLocation(x,y,z)][1] = "" + power;
+guilds[encodeLocation(x,y,z)][2] = "" + inout;
 
 document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_guilds.gif'></div>";
 }
@@ -994,15 +989,15 @@ createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], 
 function initializeGuilds() {
 registerGuild(25,3,1, "Accord of the Sun-touched", "Namm");
 registerGuild(20,19,0, "Adamant Kinship", "Laurentia");
-registerGuild(4,11,2, "Darksoul Cabal", "Ahg-za-haru");
+registerGuild(8,39,2, "Darksoul Cabal", "Ahg-za-haru", "Inside");
 registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai");
 registerGuild(26,36,1, "Knot of Keepers", "Alonai");
 registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas");
 registerGuild(12,18,0, "Opal Syndicate", "Goros");
 registerGuild(9,28,0, "Order of the Blue Rose", "Baraas");
 registerGuild(23,3,3, "Sect of Maevel", "Hashaa");
-registerGuild(20,28,2, "Sires of Retribution", "Tholaghru");
-registerGuild(16,9,2, "Obsidian Cartel", "Tlacolotl");
+registerGuild(20,28,2, "Sires of Retribution", "Tholaghru", "Outside");
+registerGuild(16,9,2, "Obsidian Cartel", "Tlacolotl", "Outside");
 }
 
 function initializeBadges() {
