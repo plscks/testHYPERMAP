@@ -814,7 +814,7 @@ function decodeLocation(val) {
 }
 
 function getLocationString(x,y,z) {
-	return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>(" + TileNames[encodeLocation(x,y,z)] + ")</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+	return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
 }
 
 function createPortal(locationArray,methodsArray,costArray) { // Expects two array with the following arguments: first array is [portalLocation,numberOfTargets,target1,target2,...], second array is ["Portal, "Portal", "Ferry"] etc
