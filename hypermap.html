@@ -7,14 +7,15 @@
 
 <link rel="STYLESHEET" type="text/css" href="style.css" /> 
 <style></style>
-<!-- Plane: 0: Valhalla, 1: Elysium, 2: Stygia -->
+<!-- Plane: 0: Valhalla, 1: Elysium, 2: Stygia, 3: Sewers, 4: Warrens -->
 </head>
 <body>
 <div class="topbar">
 <div class="maplink" style="border-color:#FFFF00; background-color:#333300" onclick="showPlane(0)"> Laurentia </div> 
 <div class="maplink" style="border-color:#CCCCCC; background-color:#333333" onclick="showPlane(3)"> Sewers </div> 
 <div class="maplink" style="border-color:#00FFFF; background-color:#003333" onclick="showPlane(1)"> Elysium </div> 
-<div class="maplink" style="border-color:#FF0000; background-color:#330000" onclick="showPlane(2)"> Stygia </div> 
+<div class="maplink" style="border-color:#FF0000; background-color:#330000" onclick="showPlane(2)"> Stygia </div>
+<div class="maplink" style="border-color:#00FF00; background-color:#003300" onclick="showPlane(4)"> Wyrm's Lair </div>
 <div class="maplink" id="districtsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDistricts()"> Districts: OFF </div> 
 <div class="maplink" id="descriptionsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDescriptions()"> Descriptions: ON </div> 
 <div class="maplink" id="badgeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleBadges()"> Badges: OFF </div> 
@@ -33,11 +34,13 @@
 <div id="elysium"><img src="elysium.png" height="1008" width="768" /></div>
 <div id="stygia"><img src="stygia.png" height="1008" width="768" /></div>
 <div id="sewers"><img src="sewers.png" height="1008" width="1008" /></div>
+<div id="wyrm's lair"><img src="warrens.png" height="336" width="336" /></div>
 
 <div id="badges0" height="1008" width="1008"> </div>
 <div id="badges1" height="1008" width="1008"> </div>
 <div id="badges2" height="1008" width="1008"> </div>
 <div id="badges3" height="1008" width="1008"> </div>
+
 <div id="guilds0" height="1008" width="1008"> </div>
 <div id="guilds1" height="1008" width="1008"> </div>
 <div id="guilds2" height="1008" width="1008"> </div>
@@ -58,7 +61,7 @@
 <div id="tooltip"></div>
 
 
-</div><div id="sidebar">Test Dev branch??<br><br>Last updated: Feb 10 2019 (b3.5) <br>Updated and edited by plscks. <br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
+</div><div id="sidebar">Test Dev branch??<br><br>Last updated: Feb 16 2019 (b3.5)<br>Added previosly accessible miniplane of Wyrm's Lair. This plane was only accessible with a lucky bend to Elysium or Stygia. As of 01/27/2019 access to this plane has potentially been removed.<br>Updated and edited by plscks.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
 <div id="sidebarMarkerlist">&nbsp;</div><br>
 <div id="sidebarDestinationTypelist">
 <form>
