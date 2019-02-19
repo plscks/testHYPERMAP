@@ -6523,6 +6523,12 @@ registerTileNames(1,30,2,"Frozen Wastes");
 registerTileNames(1,31,2,"Frozen Wastes");
 registerTileNames(13,32,2,"Twisted Space");
 registerTileNames(14,32,2,"Twisted Space");
+
+registerTileNames(12,19,2,"Frozen Wastes");
+registerTileNames(13,19,2,"Route 666");
+registerTileNames(11,20,2,"Frozen Wastes");
+registerTileNames(11,21,2,"Frozen Wastes");
+registerTileNames(10,20,2,"Egg Field");
 }
 
 
@@ -11609,6 +11615,12 @@ registerTileTypes(1,30,2,"a Frozen Wastes");
 registerTileTypes(1,31,2,"a Frozen Wastes");
 registerTileTypes(13,32,2,"a Twisted Space");
 registerTileTypes(14,32,2,"a Twisted Space");
+
+registerTileTypes(12,19,2,"a Frozen Wastes");
+registerTileTypes(13,19,2,"a Frozen Highway");
+registerTileTypes(11,20,2,"a Frozen Wastes");
+registerTileTypes(11,21,2,"a Frozen Wastes");
+registerTileTypes(10,20,2,"an Egg Field");
 }
 
 function checkParameters() {
