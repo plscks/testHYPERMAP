@@ -596,7 +596,8 @@ var valid = true;
 	else if ((x > 30) && (z >= 1) && (z <= 2)) valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "Solid Earth") valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "") valid = false;
-	else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
+        else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
+        else if (TileNames[encodeLocation(x,y,z)] == "Twisted Space") valid = false;
 	return valid;
 }
 
