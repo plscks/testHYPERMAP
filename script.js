@@ -536,9 +536,15 @@ function toggleBadges() {
 function toggleDistricts() {
 	showDistricts = !showDistricts;
 		if(showDistricts) {
-			if (Z == 0) document.getElementById("districts0").style.display = "block";
+		        if (Z == 0) document.getElementById("districts0").style.display = "block";
+                        else if (Z == 1) document.getElementById("districts1").style.display = "block";
+			else if (Z == 2) document.getElementById("districts2").style.display = "block";
+			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
-			document.getElementById("districts0").style.display = "none";
+		        document.getElementById("districts0").style.display = "none";
+                        document.getElementById("districts1").style.display = "none";
+			document.getElementById("districts2").style.display = "none";
+			document.getElementById("districts3").style.display = "none";
 		}
 	if (showDistricts) document.getElementById("districtsButton").innerHTML = "Districts: ON";
 	else document.getElementById("districtsButton").innerHTML = "Districts: OFF";
