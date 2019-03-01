@@ -959,6 +959,8 @@ createPortal( [encodeLocation(3,4,2),1,encodeLocation(15,10,0)] , ["Portal"], [1
 createPortal( [encodeLocation(26,5,2),1,encodeLocation(18,18,0)] , ["Portal"], [5]);  // updated
 createPortal( [encodeLocation(26,39,2),1,encodeLocation(38,31,0)] , ["Portal"], [5]);  // updated
 
+createPortal( [encodeLocation(1,33,2),1,encodeLocation(29,39,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,39,2),1,encodeLocation(1,33,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(3,1,2),1,encodeLocation(3,40,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(3,40,2),1,encodeLocation(3,1,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(1,6,2),1,encodeLocation(30,5,2)] , ["Tunnel"], [0]);
