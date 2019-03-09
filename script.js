@@ -1032,25 +1032,25 @@ registerBadge("Outside", 38,18,0, "Broken Promises", "You have seen the last hom
 registerBadge("Outside", 25,34,0, "Enthroned", "You have seen how one of the founding figures of  Laurentia wished to be remembered.");
 
 
-registerBadge("Outside", 22,11,1, "Well of Truth", "You have found the remains of the artifact Azazel created before the fall, rumored to destroy lies and piece falsehoods ");
-registerBadge("Outside", 15,21,1, "Fall of the Watcher", "You have gazed upon the pit where the fallen angelic lord Azazel was banished by Namm the Vigilant.");
+registerBadge("Outside", 22,11,1, "Well of Truth", "You have found the remains of the artifact Azazel created before the fall, rumored to destroy lies and piece falsehoods.");
+registerBadge("Outside", 15,21,1, "Fall of the Watcher", "You have discovered the imperfect seals that protect this sacred place from the intrusion of the Pit of Azazel.");
 registerBadge("Inside", 3,36,1, "Halls of the Scholar", "You have stood in the halls where Azazel the Wise dedicated his life to the pursuit of knowledge and truth.");
-registerBadge("Outside", 29,34,1, "Idle Hands", "You have found the grove where Alonai, unaware of the strife, stood by as her companions turned to war.");
+registerBadge("Outside", 29,34,1, "Idle Hands", "You have found the roots from which this forest was grown as a living haven from a world at war.");
 registerBadge("Inside", 14,19,1, "The Rise of Kafa-El", "You have walked in the halls where the Seraph Kafa-El was commanded by Namm to enforce his law.");
 registerBadge("Outside", 4,4,1, "At All Costs", "You have stood in the place where the first crusade against evil began.");
-registerBadge("Outside", 26,17,1, "Remorse", "You have stood in the place of the first redeemed demon, as judged by Namm and Baraas in unity.");
-registerBadge("Outside", 25,39,1, "Baraas Ascends", "You have stood where the leader of many was ascended by the Elder Powers to help settle their great dispute.");
-registerBadge("Outside", 28,3,1, "Halls of Wrath", "You have stood where the first Nexus Champion saw Namm's true face and left to forge his own path, free from both the Holy and Dark Powers.");
+registerBadge("Outside", 26,17,1, "Remorse", "You have visited the monastery in which the first masks were forged to cover the scars and sins of the Redeemed.");
+registerBadge("Outside", 25,39,1, "Baraas Ascends", "You have found one of the eternal runestones upon which is inscribed the agreement that unites the Word.");
+registerBadge("Outside", 28,3,1, "Halls of Wrath", "You have found where a great demonic invasion was halted, at the cost of many lives and a single stolen scroll.");
 
-registerBadge("Outside", 25,3,2, "And I Must Scream", "You have stood between the bloodstains left by the first Doom Howler, a pariah so determined to defy Namm that he would risk his very soul to escape.");
+registerBadge("Outside", 25,3,2, "And I Must Scream", "You have discovered a shattered phylactery of the uberlich Haldos, whose trapped essence lured other remaining fragments of his being to this desolate place.");
 registerBadge("Outside", 15,21,2, "Broken Alliance", "You have seen the fruits of Tlacolotl's labor.");
-registerBadge("Inside", 3,38,2, "In The Name Of Science", "You have stood where the mad Dr. Cleaver is rumored to have conducted all manner of vile experiments on the residents of this unforgiving place.");
-registerBadge("Outside", 16,9,2, "Stolen Victory", "You have beheld the citadel from which Tlacolotl organized his first Nexal victory, and claimed status as an Elder Power.");
-registerBadge("Outside", 4,4,2, "The Earth Shudders", "You have discovered the only shard which survived Tholgharu's initial rampage, the point at which he turned back.");
-registerBadge("Inside", 17,39,2, "Into The Dark", "You have stood in the place where the first fallen Seraph shed the sacred clockwork that rejected her in favor of demonic machinery.");
-registerBadge("Outside", 30,24,2, "Birthing Pool", "You have discovered the mutagenic sludge from which the first Wyrm Master climbed out of.");
-registerBadge("Inside", 22,24,2, "The Voice", "You have found the room where Azg-za-haru drove his first follower completely mad.");
-registerBadge("Inside", 14,7,2, "Fragmented Return", "You have stood where Talbot the Destroyer first set foot within the Nexus. ");
+registerBadge("Inside", 3,38,2, "In The Name Of Science", "You have found the laboratory where the secret of creating Soul Ice was discovered, at a cost that only began with thousands of innocent lives.");
+registerBadge("Outside", 16,9,2, "Stolen Victory", "You have beheld the foundation upon which the city of Pandaemonium was built in a single hour from the stolen life force of a dying world.");
+registerBadge("Outside", 4,4,2, "The Earth Shudders", "You have viewed the devastation wrought by the terrible battle which first tore this plane asunder.");
+registerBadge("Inside", 17,39,2, "Into the Dark", "You have witnessed the devilish machinery that twists the sacred clockwork of Elysium into the unholy weapons of the Fallen.");
+registerBadge("Outside", 30,24,2, "Birthing Pool", "You have discovered the mutagenic sludge from which Wyrm Master aspects are hatched.");
+registerBadge("Inside", 22,24,2, "The Voice", "You have found the place where the madness of Ahg-za-haru and the mutant gifts of Tholaghru combined to transform an unsuspecting soul into the first Wrackwyrm.");
+registerBadge("Outside", 14,7,2, "Fragmented Return", "You have stood where Talbot the Destroyer first set foot within the Nexus.");
 
 registerBadge("Sewer Badge", 33,28,3, "Institute of Arts", "You have explored the one place in Laurentia that was not easily whitewashed.");
 /*
