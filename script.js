@@ -995,15 +995,15 @@ createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], 
 }
 
 function initializeGuilds() {
-registerGuild(25,3,1, "Accord of the Sun-touched", "Namm");
-registerGuild(20,19,0, "Adamant Kinship", "Laurentia");
+registerGuild(25,3,1, "Accord of the Sun-touched", "Namm", "Outside");
+registerGuild(20,19,0, "Adamant Kinship", "Laurentia", "Outside");
 registerGuild(8,39,2, "Darksoul Cabal", "Ahg-za-haru", "Inside");
-registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai");
-registerGuild(26,36,1, "Knot of Keepers", "Alonai");
-registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas");
-registerGuild(12,18,0, "Opal Syndicate", "Goros");
-registerGuild(9,28,0, "Order of the Blue Rose", "Baraas");
-registerGuild(23,3,3, "Sect of Maevel", "Hashaa");
+registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai", "Inside");
+registerGuild(26,36,1, "Knot of Keepers", "Alonai", "Outside");
+registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas", "Outside");
+registerGuild(12,18,0, "Opal Syndicate", "Goros", "Outside");
+registerGuild(9,28,0, "Order of the Blue Rose", "Baraas", "Inside");
+registerGuild(23,3,3, "Sect of Maevel", "Hashaa", "Inside");
 registerGuild(20,28,2, "Sires of Retribution", "Tholaghru", "Outside");
 registerGuild(16,9,2, "Obsidian Cartel", "Tlacolotl", "Outside");
 }
