@@ -64,6 +64,7 @@ TileTypes[i] = "x";
 var TileDescriptions = new Array(10000);
 for (var i = 0; i < TileDescriptions.length; ++i) {
 TileDescriptions[i] = new Array(2);
+TileDescriptions[i][0] = "x";
 }
 
 var badges = new Array(10000);
@@ -87,7 +88,7 @@ markers[i] = false;
 initializePortals();
 initializeTileNames();
 initializeTileTypes();
-
+initializeTileDescriptions();
 
 
 
@@ -741,8 +742,8 @@ function getGuildString(x,y,z) {
 }
 
 function getDescriptionString(x,y,z) {
-	return "";
-/*
+/*	return "";*/
+
 	var index = encodeLocation(x,y,z);
 	var result = "";
 	if ((TileDescriptions[index][0] != "x") && (showDescriptions == true)) {
@@ -751,7 +752,7 @@ function getDescriptionString(x,y,z) {
 	if ((TileDescriptions[index][1] != "x") && (showDescriptions == true)) {
 		result += "<br><br><font color='#FFFFFF'><b>Inside</b></font><br><font color='#CCCCCC' size='1'>" + TileDescriptions[index][1] + "</font>";
 	}
-	return result;  */
+	return result;
 }
 
 
@@ -835,7 +836,7 @@ function registerTileTypes(x,y,z,tiletype) {
 	TileTypes[encodeLocation(x,y,z)] = "" + tiletype;
 }
 
-function registerTileDescription(x,y,z,outside,inside) {
+function registerTileDescriptions(x,y,z,outside,inside) {
 	TileDescriptions[encodeLocation(x,y,z)][0] = "" + outside;
 	TileDescriptions[encodeLocation(x,y,z)][1] = "" + inside;
 }
@@ -858,6 +859,9 @@ guilds[encodeLocation(x,y,z)][2] = "" + inout;
 document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_guilds.gif'></div>";
 }
 
+function initializeTileDescriptions(){
+    registerTileDescriptions(29,32,1,"You are standing outside of Great Elder Birch. This is an enormous hollow tree that stands many times taller than the rest of the forest. A stream flows from its roots and feeds the river. A hollow near the base of the tree allows entrance. The sun gleams brightly in a cloudless, deep cerulean sky.", "You are standing inside of Great Elder Birch. The lower levels of the tree appear dead and dried, and a veritable forest of exotic and colorful plants and animals have grown upon it. Only the higher branches continue to grow and bear leaves. Pools and waterfalls exist inside the tree, which contain fish you have never seen elsewhere. Not only does the sun stream through the windows, but the whole area seems to be suffused with a light of its own.")
+}
 
 function initializePortals() {
     // LAURENTIA AND SEWER PORTALS
