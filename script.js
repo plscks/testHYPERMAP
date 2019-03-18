@@ -12,7 +12,7 @@ document.onkeypress = getKeyPress;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
-var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false;
+var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = false; var setMarkers = false; var touchMode = false; var suppressTT = false;
 
 var waterCostModifier = 2.0;
 var portalMPCostModifier = 0.01;
@@ -745,13 +745,15 @@ function getDescriptionString(x,y,z) {
 /*	return "";*/
 
 	var index = encodeLocation(x,y,z);
-	var result = "";
+        var result = "";
+        
 	if ((TileDescriptions[index][0] != "x") && (showDescriptions == true)) {
 		result += "<br><br><font color='#FFFFFF'><b>Outside</b></font><br><font color='#CCCCCC' size='1'>" + TileDescriptions[index][0] + "</font>";
 	}
 	if ((TileDescriptions[index][1] != "x") && (showDescriptions == true)) {
 		result += "<br><br><font color='#FFFFFF'><b>Inside</b></font><br><font color='#CCCCCC' size='1'>" + TileDescriptions[index][1] + "</font>";
 	}
+        
 	return result;
 }
 
