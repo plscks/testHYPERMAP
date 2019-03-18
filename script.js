@@ -65,6 +65,7 @@ var TileDescriptions = new Array(10000);
 for (var i = 0; i < TileDescriptions.length; ++i) {
 TileDescriptions[i] = new Array(2);
 TileDescriptions[i][0] = "x";
+TileDescriptions[i][1] = "x";
 }
 
 var badges = new Array(10000);
@@ -841,6 +842,9 @@ function registerTileTypes(x,y,z,tiletype) {
 function registerTileDescriptions(x,y,z,outside,inside) {
 	TileDescriptions[encodeLocation(x,y,z)][0] = "" + outside;
 	TileDescriptions[encodeLocation(x,y,z)][1] = "" + inside;
+        if (TileDescriptions[encodeLocation(x,y,z)][1] === "undefined"){
+	    TileDescriptions[encodeLocation(x,y,z)][1] = "x"
+	}
 }
 
 
@@ -862,7 +866,43 @@ document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker
 }
 
 function initializeTileDescriptions(){
-    registerTileDescriptions(29,32,1,"You are standing outside of Great Elder Birch. This is an enormous hollow tree that stands many times taller than the rest of the forest. A stream flows from its roots and feeds the river. A hollow near the base of the tree allows entrance. The sun gleams brightly in a cloudless, deep cerulean sky.", "You are standing inside of Great Elder Birch. The lower levels of the tree appear dead and dried, and a veritable forest of exotic and colorful plants and animals have grown upon it. Only the higher branches continue to grow and bear leaves. Pools and waterfalls exist inside the tree, which contain fish you have never seen elsewhere. Not only does the sun stream through the windows, but the whole area seems to be suffused with a light of its own.")
+    registerTileDescriptions(29,32,1,"You are standing outside of Great Elder Birch. This is an enormous hollow tree that stands many times taller than the rest of the forest. A stream flows from its roots and feeds the river. A hollow near the base of the tree allows entrance. The sun gleams brightly in a cloudless, deep cerulean sky.", "You are standing inside of Great Elder Birch. The lower levels of the tree appear dead and dried, and a veritable forest of exotic and colorful plants and animals have grown upon it. Only the higher branches continue to grow and bear leaves. Pools and waterfalls exist inside the tree, which contain fish you have never seen elsewhere. Not only does the sun stream through the windows, but the whole area seems to be suffused with a light of its own.");
+    registerTileDescriptions(8,30,1,"You are standing outside of Orchard. This is a lush orchard filled with fruits and flowering plants that seem to flourish regardless of weather. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(7,30,1,"You are standing outside of Orchard. This is a lush orchard filled with fruits and flowering plants that seem to flourish regardless of weather. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(6,30,1,"You are standing outside of Endurance. This is a grand statue of shining white marble. It shows a winged angelic figure standing in vigil, holding a quill and scroll as if they were a shield and sword. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(5,30,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(4,30,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(10,31,1,"You are standing outside of Forest. This area is dominated by the trunks of tall evergreen trees. The undergrowth is damp and thick with moss and ferns. The sun gleams brightly in a cloudless, deep cerulean sky.<br><br>Space appears to warp here, creating a passage through the void to a distant part of this land.");
+    registerTileDescriptions(9,31,1,"You are standing outside of Forest. This area is dominated by the trunks of tall evergreen trees. The undergrowth is damp and thick with moss and ferns. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(8,31,1,"You are standing outside of Orchard. This is a lush orchard filled with fruits and flowering plants that seem to flourish regardless of weather. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(7,31,1,"You are standing outside of Field. This area is obviously intended for growing large quantities of crops and vegetables. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(6,31,1,"You are standing outside of Field. This area is obviously intended for growing large quantities of crops and vegetables. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(5,31,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(4,31,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(3,31,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(2,31,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(1,31,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(10,32,1,"You are standing outside of Forest. This area is dominated by the trunks of tall evergreen trees. The undergrowth is damp and thick with moss and ferns. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(9,32,1,"You are standing outside of Grassland. This is a rolling field of green grass that blows gently in the wind. Birdsong can be heard in the distance, and occasionally a small robotic servitor scurries through the grass in search of something. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(8,32,1,"You are standing outside of Machinehaus. This is a short, squat, perfectly angular building. There are no seams or windows visible anywhere. There is a single doorway set perfectly in the center of one side. The sun gleams brightly in a cloudless, deep cerulean sky. The door is open. It is somewhat damaged, but serviceable.", "You are standing inside of Machinehaus. This building is filled with an almost unimaginable number of machines, small and large. Their purpose is unknown. Not only does the sun stream through the windows, but the whole area seems to be suffused with a light of its own. The door is open. It is somewhat damaged, but serviceable.");
+    registerTileDescriptions(7,32,1,"You are standing outside of Field. This area is obviously intended for growing large quantities of crops and vegetables. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(6,32,1,"You are standing outside of Field. This area is obviously intended for growing large quantities of crops and vegetables. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(5,32,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(4,32,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(3,32,1,"You are standing outside of Lake. The tranquil lake water is all around you. The sun gleams brightly in a cloudless, deep cerulean sky.<br><br>You see the shining towers of a distant city in the distance, far from shore.");
+    registerTileDescriptions(2,32,1,"You are standing outside of Anticipation. This is a grand statue of shining white marble. It shows a winged angelic figure carving himself free of the marble block from which the statue is formed. The sun gleams brightly in a cloudless, deep cerulean sky.");
+    registerTileDescriptions(1,32,1,"You are standing outside of Grassland. This is a rolling field of green grass that blows gently in the wind. Birdsong can be heard in the distance, and occasionally a small robotic servitor scurries through the grass in search of something. The sun gleams brightly in a cloudless, deep cerulean sky.<br><br>Space appears to warp here, creating a passage through the void to a distant part of this land.");
+    registerTileDescriptions(11,33,1,"");
+    registerTileDescriptions(10,33,1,"");
+    registerTileDescriptions(9,33,1,"");
+    registerTileDescriptions(8,33,1,"");
+    registerTileDescriptions(7,33,1,"");
+    registerTileDescriptions(6,33,1,"");
+    registerTileDescriptions(5,33,1,"");
+    registerTileDescriptions(4,33,1,"");
+    registerTileDescriptions(3,33,1,"");
+    registerTileDescriptions(2,33,1,"");
+    registerTileDescriptions(1,33,1,"");
 }
 
 function initializePortals() {
