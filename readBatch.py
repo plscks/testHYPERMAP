@@ -23,7 +23,7 @@
 # 3) connect to a character
 # 4) click the map button while outside to ensure the map info is loaded
 # 5) save the source code (input.html) (in chrome-like right click and click 'Save-as' make sure 'webpage, HTML only' is data type)
-# 6) run 'python ncmap.py -i input.html'
+# 6) run 'python readBatch.py'
 # 7) do what you'd like with the data
 #
 # Sorry this is a huge mess of cobbled together nightmare pudding. - plscks
