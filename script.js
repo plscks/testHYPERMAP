@@ -33,52 +33,58 @@ var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
 var pathDestinationX = 0; pathDestinationY = 0; pathDestinationZ = 0;
 var pathDestinationType = "House"; //for finding the closest building. x means use above XYZ destination coords instead
 
-var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>"];
-var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers"];
+var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>","<font color='#00FF00'>Wyrm's Lair</font>"];
+var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers", "Wyrm's Lair"];
 
-var portals = new Array(10000);
+var portals = new Array(20000);
 for (var i = 0; i < portals.length; ++i) {
 portals[i] = new Array(6); // entry 0 is amount of outgoing portals, entries 1-5 can be locations
 }
 
-var portalTravelMethods = new Array(10000);
+var portalTravelMethods = new Array(20000);
 for (var i = 0; i < portalTravelMethods.length; ++i) {
 portalTravelMethods[i] = new Array(5); // like portals array, except strings (for portal, ferry etc), and the first entry is missing
 }
 
-var portalMPCosts = new Array(10000);
+var portalOneWay = new Array(20000);
+for (var i = 0; i < portalOneWay.length; ++i) {
+    portalOneWay[i] = new Array(5); // like portals array, except strings (for portal, ferry etc), and the first entry is missing
+    portalOneWay[0] = "";
+}
+
+var portalMPCosts = new Array(20000);
 for (var i = 0; i < portalMPCosts.length; ++i) {
 portalMPCosts[i] = new Array(5); // costs in MP
 }
 
-var TileNames = new Array(10000);
+var TileNames = new Array(20000);
 for (var i = 0; i < TileNames.length; ++i) {
 TileNames[i] = "x";
 }
 
-var TileTypes = new Array(10000);
+var TileTypes = new Array(20000);
 for (var i = 0; i < TileTypes.length; ++i) {
 TileTypes[i] = "x";
 }
 
-var TileDescriptions = new Array(10000);
+var TileDescriptions = new Array(20000);
 for (var i = 0; i < TileDescriptions.length; ++i) {
 TileDescriptions[i] = new Array(2);
 }
 
-var badges = new Array(10000);
+var badges = new Array(20000);
 for (var i = 0; i < badges.length; ++i) {
 badges[i] = new Array(3);
 badges[i][0] = "x";
 }
 
-var guilds = new Array(10000);
+var guilds = new Array(20000);
 for (var i = 0; i < guilds.length; ++i) {
 guilds[i] = new Array(2);
 guilds[i][0] = "x";
 }
 
-var markers = new Array(10000);
+var markers = new Array(20000);
 for (var i = 0; i < markers.length; ++i) {
 markers[i] = false;
 }
@@ -470,7 +476,8 @@ function showPlane(planeIndex) {
 	document.getElementById("valhalla").style.display = "none";
 	document.getElementById("elysium").style.display = "none";
 	document.getElementById("stygia").style.display = "none";
-	document.getElementById("sewers").style.display = "none";
+        document.getElementById("sewers").style.display = "none";
+        document.getElementById("wyrm's lair").style.display = "none";
 	
 	document.getElementById("you").style.left = -200;
 	document.getElementById("you").style.top = -200;
@@ -478,7 +485,8 @@ function showPlane(planeIndex) {
 	if (Z == 0) document.getElementById("valhalla").style.display = "block";
 	else if (Z == 1) document.getElementById("elysium").style.display = "block";
 	else if (Z == 2) document.getElementById("stygia").style.display = "block";
-	else if (Z == 3) document.getElementById("sewers").style.display = "block";
+        else if (Z == 3) document.getElementById("sewers").style.display = "block";
+        else if (Z == 4) document.getElementById("wyrm's lair").style.display = "block";
 }
 
 
@@ -521,13 +529,15 @@ function toggleBadges() {
 			if (Z == 0) document.getElementById("badges0").style.display = "block";
 			else if (Z == 1) document.getElementById("badges1").style.display = "block";
 			else if (Z == 2) document.getElementById("badges2").style.display = "block";
-			else if (Z == 3) document.getElementById("badges3").style.display = "block";
+		        else if (Z == 3) document.getElementById("badges3").style.display = "block";
+		        else if (Z == 4) document.getElementById("badges4").style.display = "block";
 		} else {
 			document.getElementById("overlay2").style.display = "none";
 			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "none";
-			document.getElementById("badges3").style.display = "none";
+		        document.getElementById("badges3").style.display = "none";
+		        document.getElementById("badges4").style.display = "none";
 		}
 	if (showBadges) document.getElementById("badgeButton").innerHTML = "Badges: ON";
 	else document.getElementById("badgeButton").innerHTML = "Badges: OFF";
@@ -536,9 +546,15 @@ function toggleBadges() {
 function toggleDistricts() {
 	showDistricts = !showDistricts;
 		if(showDistricts) {
-			if (Z == 0) document.getElementById("districts0").style.display = "block";
+		        if (Z == 0) document.getElementById("districts0").style.display = "block";
+                        else if (Z == 1) document.getElementById("districts1").style.display = "block";
+			else if (Z == 2) document.getElementById("districts2").style.display = "block";
+			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
-			document.getElementById("districts0").style.display = "none";
+		        document.getElementById("districts0").style.display = "none";
+                        document.getElementById("districts1").style.display = "none";
+			document.getElementById("districts2").style.display = "none";
+			document.getElementById("districts3").style.display = "none";
 		}
 	if (showDistricts) document.getElementById("districtsButton").innerHTML = "Districts: ON";
 	else document.getElementById("districtsButton").innerHTML = "Districts: OFF";
@@ -556,13 +572,15 @@ function toggleGuilds() {
 			if (Z == 0) document.getElementById("guilds0").style.display = "block";
 			else if (Z == 1) document.getElementById("guilds1").style.display = "block";
 			else if (Z == 2) document.getElementById("guilds2").style.display = "block";
-			else if (Z == 3) document.getElementById("guilds3").style.display = "block";
+		        else if (Z == 3) document.getElementById("guilds3").style.display = "block";
+		        else if (Z == 4) document.getElementById("guilds4").style.display = "block";
 		} else {
 			document.getElementById("overlay3").style.display = "none";
 			document.getElementById("guilds0").style.display = "none";
 			document.getElementById("guilds1").style.display = "none";
 			document.getElementById("guilds2").style.display = "none";
-			document.getElementById("guilds3").style.display = "none";
+		        document.getElementById("guilds3").style.display = "none";
+		        document.getElementById("guilds4").style.display = "none";
 		}
 	if (showGuilds) document.getElementById("guildsButton").innerHTML = "Guilds: ON";
 	else document.getElementById("guildsButton").innerHTML = "Guilds: OFF";
@@ -593,7 +611,9 @@ function validLocation(x,y,z) {
 var valid = true;
 	if ((y <= 0) || (y > 40) || (x < 1)) valid = false;
 	else if ((x > 40) && ((z == 0) || (z == 3))) valid = false;
-	else if ((x > 30) && (z >= 1) && (z <= 2)) valid = false;
+        else if ((x > 30) && (z >= 1) && (z <= 2)) valid = false;
+        else if ((x > 12) && (z == 4)) valid = false;
+        else if ((y > 12) && (z == 4)) valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "Solid Earth") valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "") valid = false;
         else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
@@ -710,7 +730,8 @@ function updateTooltip() {
 		if (portalTargetZ == 0) document.getElementById("previewmap").style.background = "url(mini-valhalla.png)";
 		else if (portalTargetZ == 1) document.getElementById("previewmap").style.background = "url(mini-elysium.png)";
 		else if (portalTargetZ == 2) document.getElementById("previewmap").style.background = "url(mini-stygia.png)";
-		else if (portalTargetZ == 3) document.getElementById("previewmap").style.background = "url(mini-sewers.png)";
+	        else if (portalTargetZ == 3) document.getElementById("previewmap").style.background = "url(mini-sewers.png)";
+	        else if (portalTargetZ == 4) document.getElementById("previewmap").style.background = "url(mini-warrens.png)";
 		
 		document.getElementById("previewmap").style.backgroundPosition = "" + -((portalTargetX-5)*12+50) + "px " + -((portalTargetY-5)*12+50) + "px";
 	}
@@ -752,7 +773,14 @@ function getDescriptionString(x,y,z) {
 function portalsString() {
 	var result = "";
 	portalsArray = portals[encodeLocation(X,Y,Z)];
-	methodsArray = portalTravelMethods[encodeLocation(X,Y,Z)];
+        methodsArray = portalTravelMethods[encodeLocation(X,Y,Z)];
+        onewayArray = portalOneWay[encodeLocation(X,Y,Z)];
+
+        if (onewayArray == "oneway") {
+            isOneWay = " One way portal"
+	} else {
+	    isoneWay = ""
+	}
 	
 	document.getElementById("overlay").style.display = "none";
 	document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.66)";
@@ -780,7 +808,7 @@ function portalsString() {
 		portalTargetZ = decodedTarget[2];
 		pointer = blackpointer;
 	}
-	result += "<br>" + pointer + "&nbsp;" + methodsArray[i] + " to " + getLocationString(decodedTarget[0],decodedTarget[1],decodedTarget[2]) + "</font>";
+	result += "<br>" + pointer + "&nbsp;" + methodsArray[i] + " to " + getLocationString(decodedTarget[0],decodedTarget[1],decodedTarget[2]) + isOneWay + "</font>";
 	}
 	
 	
@@ -790,9 +818,9 @@ function portalsString() {
 
 function encodeLocation(x,y,z) { 
 	var val = x + y*50 + z*2500;
-	if ((x < 1) || (y < 1) || (y > 40)) val = 10000-1;
-	else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40))) val = 10000-1;
-	else if (TileNames[val] == "Solid Earth") val = 10000-1;
+	if ((x < 1) || (y < 1) || (y > 40)) val = 20000-1;
+    else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 12))) val = 20000-1;
+	else if (TileNames[val] == "Solid Earth") val = 20000-1;
 	return val;
 }
 
@@ -806,16 +834,17 @@ function decodeLocation(val) {
 }
 
 function getLocationString(x,y,z) {
-	return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+        return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
 }
 
-function createPortal(locationArray,methodsArray,costArray) { // Expects two array with the following arguments: first array is [portalLocation,numberOfTargets,target1,target2,...], second array is ["Portal, "Portal", "Ferry"] etc
+    function createPortal(locationArray,methodsArray,costArray,onewayArray) { // Expects two array with the following arguments: first array is [portalLocation,numberOfTargets,target1,target2,...], second array is ["Portal, "Portal", "Ferry"] etc
 	var amountTargets = locationArray[1];
 	portals[locationArray[0]][0] = locationArray[1];
 	for(var i = 0; i < amountTargets; ++i) {
 	portals[locationArray[0]][i+1] = locationArray[i+2];
 	portalTravelMethods[locationArray[0]][i] = methodsArray[i];
-	portalMPCosts[locationArray[0]][i] = costArray[i];
+	portalMPCosts[locationArray[0][i]] = costArray[i];
+	portalOneWay[locationArray[0]][i] = onewayArray[i];
 	}
 	
 	
@@ -854,6 +883,14 @@ document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker
 
 
 function initializePortals() {
+    // Warrens
+    createPortal( [encodeLocation(1,1,4),1,encodeLocation(4,4,2)] , ["Tunnel"], [10], ["oneway"]);
+createPortal( [encodeLocation(21,23,2),1,encodeLocation(9,6,4)] , ["Tunnel"], [10]);
+createPortal( [encodeLocation(9,6,4),1,encodeLocation(21,23,2)] , ["Tunnel"], [10]);
+createPortal( [encodeLocation(9,10,4),1,encodeLocation(10,36,1)] , ["Tunnel"], [10]);
+createPortal( [encodeLocation(10,36,1),2,encodeLocation(36,39,0)] , ["Tunnel"], [10]);
+    createPortal( [encodeLocation(10,36,1),2,encodeLocation(12,13,3),encodeLocation(36,39,0)] , ["Tunnel"], [10], ["oneway"]);
+createPortal( [encodeLocation(5,2,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
     // LAURENTIA AND SEWER PORTALS
 createPortal( [encodeLocation(8,34,0),1,encodeLocation(13,20,2)] , ["Portal"], [10]);  // updated
 createPortal( [encodeLocation(15,10,0),1,encodeLocation(3,4,2)] , ["Portal"], [10]);  // updated
@@ -953,6 +990,8 @@ createPortal( [encodeLocation(3,4,2),1,encodeLocation(15,10,0)] , ["Portal"], [1
 createPortal( [encodeLocation(26,5,2),1,encodeLocation(18,18,0)] , ["Portal"], [5]);  // updated
 createPortal( [encodeLocation(26,39,2),1,encodeLocation(38,31,0)] , ["Portal"], [5]);  // updated
 
+createPortal( [encodeLocation(1,33,2),1,encodeLocation(29,39,2)] , ["Tunnel"], [0]);
+createPortal( [encodeLocation(29,39,2),1,encodeLocation(1,33,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(3,1,2),1,encodeLocation(3,40,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(3,40,2),1,encodeLocation(3,1,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(1,6,2),1,encodeLocation(30,5,2)] , ["Tunnel"], [0]);
@@ -987,15 +1026,15 @@ createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], 
 }
 
 function initializeGuilds() {
-registerGuild(25,3,1, "Accord of the Sun-touched", "Namm");
-registerGuild(20,19,0, "Adamant Kinship", "Laurentia");
+registerGuild(25,3,1, "Accord of the Sun-touched", "Namm", "Outside");
+registerGuild(20,19,0, "Adamant Kinship", "Laurentia", "Outside");
 registerGuild(8,39,2, "Darksoul Cabal", "Ahg-za-haru", "Inside");
-registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai");
-registerGuild(26,36,1, "Knot of Keepers", "Alonai");
-registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas");
-registerGuild(12,18,0, "Opal Syndicate", "Goros");
-registerGuild(9,28,0, "Order of the Blue Rose", "Baraas");
-registerGuild(23,3,3, "Sect of Maevel", "Hashaa");
+registerGuild(37,26,0, "Fraternity of Wondercraft", "Marquai", "Inside");
+registerGuild(26,36,1, "Knot of Keepers", "Alonai", "Outside");
+registerGuild(14,12,1, "Monks of the Unbound Mind", "Baraas", "Outside");
+registerGuild(12,18,0, "Opal Syndicate", "Goros", "Outside");
+registerGuild(9,28,0, "Order of the Blue Rose", "Baraas", "Inside");
+registerGuild(23,3,3, "Sect of Maevel", "Hashaa", "Inside");
 registerGuild(20,28,2, "Sires of Retribution", "Tholaghru", "Outside");
 registerGuild(16,9,2, "Obsidian Cartel", "Tlacolotl", "Outside");
 }
@@ -1024,25 +1063,25 @@ registerBadge("Outside", 38,18,0, "Broken Promises", "You have seen the last hom
 registerBadge("Outside", 25,34,0, "Enthroned", "You have seen how one of the founding figures of  Laurentia wished to be remembered.");
 
 
-registerBadge("Outside", 22,11,1, "Well of Truth", "You have found the remains of the artifact Azazel created before the fall, rumored to destroy lies and piece falsehoods ");
-registerBadge("Outside", 15,21,1, "Fall of the Watcher", "You have gazed upon the pit where the fallen angelic lord Azazel was banished by Namm the Vigilant.");
+registerBadge("Outside", 22,11,1, "Well of Truth", "You have found the remains of the artifact Azazel created before the fall, rumored to destroy lies and piece falsehoods.");
+registerBadge("Outside", 15,21,1, "Fall of the Watcher", "You have discovered the imperfect seals that protect this sacred place from the intrusion of the Pit of Azazel.");
 registerBadge("Inside", 3,36,1, "Halls of the Scholar", "You have stood in the halls where Azazel the Wise dedicated his life to the pursuit of knowledge and truth.");
-registerBadge("Outside", 29,34,1, "Idle Hands", "You have found the grove where Alonai, unaware of the strife, stood by as her companions turned to war.");
+registerBadge("Outside", 29,34,1, "Idle Hands", "You have found the roots from which this forest was grown as a living haven from a world at war.");
 registerBadge("Inside", 14,19,1, "The Rise of Kafa-El", "You have walked in the halls where the Seraph Kafa-El was commanded by Namm to enforce his law.");
 registerBadge("Outside", 4,4,1, "At All Costs", "You have stood in the place where the first crusade against evil began.");
-registerBadge("Outside", 26,17,1, "Remorse", "You have stood in the place of the first redeemed demon, as judged by Namm and Baraas in unity.");
-registerBadge("Outside", 25,39,1, "Baraas Ascends", "You have stood where the leader of many was ascended by the Elder Powers to help settle their great dispute.");
-registerBadge("Outside", 28,3,1, "Halls of Wrath", "You have stood where the first Nexus Champion saw Namm's true face and left to forge his own path, free from both the Holy and Dark Powers.");
+registerBadge("Outside", 26,17,1, "Remorse", "You have visited the monastery in which the first masks were forged to cover the scars and sins of the Redeemed.");
+registerBadge("Outside", 25,39,1, "Baraas Ascends", "You have found one of the eternal runestones upon which is inscribed the agreement that unites the Word.");
+registerBadge("Outside", 28,3,1, "Halls of Wrath", "You have found where a great demonic invasion was halted, at the cost of many lives and a single stolen scroll.");
 
-registerBadge("Outside", 25,3,2, "And I Must Scream", "You have stood between the bloodstains left by the first Doom Howler, a pariah so determined to defy Namm that he would risk his very soul to escape.");
+registerBadge("Outside", 25,3,2, "And I Must Scream", "You have discovered a shattered phylactery of the uberlich Haldos, whose trapped essence lured other remaining fragments of his being to this desolate place.");
 registerBadge("Outside", 15,21,2, "Broken Alliance", "You have seen the fruits of Tlacolotl's labor.");
-registerBadge("Inside", 3,38,2, "In The Name Of Science", "You have stood where the mad Dr. Cleaver is rumored to have conducted all manner of vile experiments on the residents of this unforgiving place.");
-registerBadge("Outside", 16,9,2, "Stolen Victory", "You have beheld the citadel from which Tlacolotl organized his first Nexal victory, and claimed status as an Elder Power.");
-registerBadge("Outside", 4,4,2, "The Earth Shudders", "You have discovered the only shard which survived Tholgharu's initial rampage, the point at which he turned back.");
-registerBadge("Inside", 17,39,2, "Into The Dark", "You have stood in the place where the first fallen Seraph shed the sacred clockwork that rejected her in favor of demonic machinery.");
-registerBadge("Outside", 30,24,2, "Birthing Pool", "You have discovered the mutagenic sludge from which the first Wyrm Master climbed out of.");
-registerBadge("Inside", 22,24,2, "The Voice", "You have found the room where Azg-za-haru drove his first follower completely mad.");
-registerBadge("Inside", 14,7,2, "Fragmented Return", "You have stood where Talbot the Destroyer first set foot within the Nexus. ");
+registerBadge("Inside", 3,38,2, "In The Name Of Science", "You have found the laboratory where the secret of creating Soul Ice was discovered, at a cost that only began with thousands of innocent lives.");
+registerBadge("Outside", 16,9,2, "Stolen Victory", "You have beheld the foundation upon which the city of Pandaemonium was built in a single hour from the stolen life force of a dying world.");
+registerBadge("Outside", 4,4,2, "The Earth Shudders", "You have viewed the devastation wrought by the terrible battle which first tore this plane asunder.");
+registerBadge("Inside", 17,39,2, "Into the Dark", "You have witnessed the devilish machinery that twists the sacred clockwork of Elysium into the unholy weapons of the Fallen.");
+registerBadge("Outside", 30,24,2, "Birthing Pool", "You have discovered the mutagenic sludge from which Wyrm Master aspects are hatched.");
+registerBadge("Inside", 22,24,2, "The Voice", "You have found the place where the madness of Ahg-za-haru and the mutant gifts of Tholaghru combined to transform an unsuspecting soul into the first Wrackwyrm.");
+registerBadge("Outside", 14,7,2, "Fragmented Return", "You have stood where Talbot the Destroyer first set foot within the Nexus.");
 
 registerBadge("Sewer Badge", 33,28,3, "Institute of Arts", "You have explored the one place in Laurentia that was not easily whitewashed.");
 /*
@@ -6523,12 +6562,157 @@ registerTileNames(1,30,2,"Frozen Wastes");
 registerTileNames(1,31,2,"Frozen Wastes");
 registerTileNames(13,32,2,"Twisted Space");
 registerTileNames(14,32,2,"Twisted Space");
-
 registerTileNames(12,19,2,"Frozen Wastes");
 registerTileNames(13,19,2,"Route 666");
 registerTileNames(11,20,2,"Frozen Wastes");
 registerTileNames(11,21,2,"Frozen Wastes");
 registerTileNames(10,20,2,"Egg Field");
+
+    // Warrens Tile Names
+registerTileNames(1,1,4,"The Great Wyrm's Lair");
+registerTileNames(1,2,4,"x");
+registerTileNames(1,3,4,"x");
+registerTileNames(1,4,4,"x");
+registerTileNames(1,5,4,"x");
+registerTileNames(1,6,4,"x");
+registerTileNames(1,7,4,"x");
+registerTileNames(1,8,4,"x");
+registerTileNames(1,9,4,"x");
+registerTileNames(1,10,4,"Fiery Cess");
+registerTileNames(1,11,4,"x");
+registerTileNames(1,12,4,"x");
+registerTileNames(2,1,4,"x");
+registerTileNames(2,2,4,"x");
+registerTileNames(2,3,4,"x");
+registerTileNames(2,4,4,"x");
+registerTileNames(2,5,4,"x");
+registerTileNames(2,6,4,"x");
+registerTileNames(2,7,4,"x");
+registerTileNames(2,8,4,"x");
+registerTileNames(2,9,4,"x");
+registerTileNames(2,10,4,"x");
+registerTileNames(2,11,4,"x");
+registerTileNames(2,12,4,"x");
+registerTileNames(3,1,4,"x");
+registerTileNames(3,2,4,"x");
+registerTileNames(3,3,4,"x");
+registerTileNames(3,4,4,"x");
+registerTileNames(3,5,4,"x");
+registerTileNames(3,6,4,"x");
+registerTileNames(3,7,4,"x");
+registerTileNames(3,8,4,"x");
+registerTileNames(3,9,4,"x");
+registerTileNames(3,10,4,"x");
+registerTileNames(3,11,4,"x");
+registerTileNames(3,12,4,"x");
+registerTileNames(4,1,4,"x");
+registerTileNames(4,2,4,"x");
+registerTileNames(4,3,4,"x");
+registerTileNames(4,4,4,"x");
+registerTileNames(4,5,4,"x");
+registerTileNames(4,6,4,"x");
+registerTileNames(4,7,4,"x");
+registerTileNames(4,8,4,"x");
+registerTileNames(4,9,4,"x");
+registerTileNames(4,10,4,"x");
+registerTileNames(4,11,4,"x");
+registerTileNames(4,12,4,"x");
+registerTileNames(5,1,4,"x");
+registerTileNames(5,2,4,"Cavern");
+registerTileNames(5,3,4,"x");
+registerTileNames(5,4,4,"x");
+registerTileNames(5,5,4,"x");
+registerTileNames(5,6,4,"x");
+registerTileNames(5,7,4,"x");
+registerTileNames(5,8,4,"x");
+registerTileNames(5,9,4,"x");
+registerTileNames(5,10,4,"x");
+registerTileNames(5,11,4,"x");
+registerTileNames(5,12,4,"x");
+registerTileNames(6,1,4,"x");
+registerTileNames(6,2,4,"Cavern");
+registerTileNames(6,3,4,"x");
+registerTileNames(6,4,4,"x");
+registerTileNames(6,5,4,"x");
+registerTileNames(6,6,4,"x");
+registerTileNames(6,7,4,"x");
+registerTileNames(6,8,4,"x");
+registerTileNames(6,9,4,"x");
+registerTileNames(6,10,4,"x");
+registerTileNames(6,11,4,"x");
+registerTileNames(6,12,4,"x");
+registerTileNames(7,1,4,"Soul Mines");
+registerTileNames(7,2,4,"Cavern");
+registerTileNames(7,3,4,"x");
+registerTileNames(7,4,4,"x");
+registerTileNames(7,5,4,"x");
+registerTileNames(7,6,4,"Cavern");
+registerTileNames(7,7,4,"Cavern");
+registerTileNames(7,8,4,"Cavern");
+registerTileNames(7,9,4,"Cavern");
+registerTileNames(7,10,4,"x");
+registerTileNames(7,11,4,"x");
+registerTileNames(7,12,4,"x");
+registerTileNames(8,1,4,"x");
+registerTileNames(8,2,4,"Cavern");
+registerTileNames(8,3,4,"Cavern");
+registerTileNames(8,4,4,"Cavern");
+registerTileNames(8,5,4,"Cavern");
+registerTileNames(8,6,4,"Cavern");
+registerTileNames(8,7,4,"x");
+registerTileNames(8,8,4,"x");
+registerTileNames(8,9,4,"Cavern");
+registerTileNames(8,10,4,"x");
+registerTileNames(8,11,4,"x");
+registerTileNames(8,12,4,"x");
+registerTileNames(9,1,4,"x");
+registerTileNames(9,2,4,"x");
+registerTileNames(9,3,4,"Soul Mines");
+registerTileNames(9,4,4,"x");
+registerTileNames(9,5,4,"x");
+registerTileNames(9,6,4,"Cavern");
+registerTileNames(9,7,4,"x");
+registerTileNames(9,8,4,"Cavern");
+registerTileNames(9,9,4,"Cavern");
+registerTileNames(9,10,4,"Soul Mines");
+registerTileNames(9,11,4,"x");
+registerTileNames(9,12,4,"x");
+registerTileNames(10,1,4,"x");
+registerTileNames(10,2,4,"x");
+registerTileNames(10,3,4,"x");
+registerTileNames(10,4,4,"x");
+registerTileNames(10,5,4,"x");
+registerTileNames(10,6,4,"x");
+registerTileNames(10,7,4,"x");
+registerTileNames(10,8,4,"x");
+registerTileNames(10,9,4,"Soul Mines");
+registerTileNames(10,10,4,"x");
+registerTileNames(10,11,4,"x");
+registerTileNames(10,12,4,"x");
+registerTileNames(11,1,4,"x");
+registerTileNames(11,2,4,"x");
+registerTileNames(11,3,4,"x");
+registerTileNames(11,4,4,"x");
+registerTileNames(11,5,4,"x");
+registerTileNames(11,6,4,"x");
+registerTileNames(11,7,4,"x");
+registerTileNames(11,8,4,"x");
+registerTileNames(11,9,4,"x");
+registerTileNames(11,10,4,"x");
+registerTileNames(11,11,4,"x");
+registerTileNames(11,12,4,"x");
+registerTileNames(12,1,4,"x");
+registerTileNames(12,2,4,"x");
+registerTileNames(12,3,4,"x");
+registerTileNames(12,4,4,"x");
+registerTileNames(12,5,4,"x");
+registerTileNames(12,6,4,"x");
+registerTileNames(12,7,4,"x");
+registerTileNames(12,8,4,"x");
+registerTileNames(12,9,4,"x");
+registerTileNames(12,10,4,"x");
+registerTileNames(12,11,4,"x");
+registerTileNames(12,12,4,"x");
 }
 
 
@@ -11615,12 +11799,157 @@ registerTileTypes(1,30,2,"a Frozen Wastes");
 registerTileTypes(1,31,2,"a Frozen Wastes");
 registerTileTypes(13,32,2,"a Twisted Space");
 registerTileTypes(14,32,2,"a Twisted Space");
-
 registerTileTypes(12,19,2,"a Frozen Wastes");
 registerTileTypes(13,19,2,"a Frozen Highway");
 registerTileTypes(11,20,2,"a Frozen Wastes");
 registerTileTypes(11,21,2,"a Frozen Wastes");
 registerTileTypes(10,20,2,"an Egg Field");
+
+    // Warrens Tile Types
+registerTileTypes(1,1,4,"a Shiva Furnace");
+registerTileTypes(1,2,4,"x");
+registerTileTypes(1,3,4,"x");
+registerTileTypes(1,4,4,"x");
+registerTileTypes(1,5,4,"x");
+registerTileTypes(1,6,4,"x");
+registerTileTypes(1,7,4,"x");
+registerTileTypes(1,8,4,"x");
+registerTileTypes(1,9,4,"x");
+registerTileTypes(1,10,4,"a Lavaflow");
+registerTileTypes(1,11,4,"x");
+registerTileTypes(1,12,4,"x");
+registerTileTypes(2,1,4,"x");
+registerTileTypes(2,2,4,"x");
+registerTileTypes(2,3,4,"x");
+registerTileTypes(2,4,4,"x");
+registerTileTypes(2,5,4,"x");
+registerTileTypes(2,6,4,"x");
+registerTileTypes(2,7,4,"x");
+registerTileTypes(2,8,4,"x");
+registerTileTypes(2,9,4,"x");
+registerTileTypes(2,10,4,"x");
+registerTileTypes(2,11,4,"x");
+registerTileTypes(2,12,4,"x");
+registerTileTypes(3,1,4,"x");
+registerTileTypes(3,2,4,"x");
+registerTileTypes(3,3,4,"x");
+registerTileTypes(3,4,4,"x");
+registerTileTypes(3,5,4,"x");
+registerTileTypes(3,6,4,"x");
+registerTileTypes(3,7,4,"x");
+registerTileTypes(3,8,4,"x");
+registerTileTypes(3,9,4,"x");
+registerTileTypes(3,10,4,"x");
+registerTileTypes(3,11,4,"x");
+registerTileTypes(3,12,4,"x");
+registerTileTypes(4,1,4,"x");
+registerTileTypes(4,2,4,"x");
+registerTileTypes(4,3,4,"x");
+registerTileTypes(4,4,4,"x");
+registerTileTypes(4,5,4,"x");
+registerTileTypes(4,6,4,"x");
+registerTileTypes(4,7,4,"x");
+registerTileTypes(4,8,4,"x");
+registerTileTypes(4,9,4,"x");
+registerTileTypes(4,10,4,"x");
+registerTileTypes(4,11,4,"x");
+registerTileTypes(4,12,4,"x");
+registerTileTypes(5,1,4,"x");
+registerTileTypes(5,2,4,"a Cavern");
+registerTileTypes(5,3,4,"x");
+registerTileTypes(5,4,4,"x");
+registerTileTypes(5,5,4,"x");
+registerTileTypes(5,6,4,"x");
+registerTileTypes(5,7,4,"x");
+registerTileTypes(5,8,4,"x");
+registerTileTypes(5,9,4,"x");
+registerTileTypes(5,10,4,"x");
+registerTileTypes(5,11,4,"x");
+registerTileTypes(5,12,4,"x");
+registerTileTypes(6,1,4,"x");
+registerTileTypes(6,2,4,"a Cavern");
+registerTileTypes(6,3,4,"x");
+registerTileTypes(6,4,4,"x");
+registerTileTypes(6,5,4,"x");
+registerTileTypes(6,6,4,"x");
+registerTileTypes(6,7,4,"x");
+registerTileTypes(6,8,4,"x");
+registerTileTypes(6,9,4,"x");
+registerTileTypes(6,10,4,"x");
+registerTileTypes(6,11,4,"x");
+registerTileTypes(6,12,4,"x");
+registerTileTypes(7,1,4,"a Soul Mines");
+registerTileTypes(7,2,4,"a Cavern");
+registerTileTypes(7,3,4,"x");
+registerTileTypes(7,4,4,"x");
+registerTileTypes(7,5,4,"x");
+registerTileTypes(7,6,4,"a Cavern");
+registerTileTypes(7,7,4,"a Cavern");
+registerTileTypes(7,8,4,"a Cavern");
+registerTileTypes(7,9,4,"a Cavern");
+registerTileTypes(7,10,4,"x");
+registerTileTypes(7,11,4,"x");
+registerTileTypes(7,12,4,"x");
+registerTileTypes(8,1,4,"x");
+registerTileTypes(8,2,4,"a Cavern");
+registerTileTypes(8,3,4,"a Cavern");
+registerTileTypes(8,4,4,"a Cavern");
+registerTileTypes(8,5,4,"a Cavern");
+registerTileTypes(8,6,4,"a Cavern");
+registerTileTypes(8,7,4,"x");
+registerTileTypes(8,8,4,"x");
+registerTileTypes(8,9,4,"a Cavern");
+registerTileTypes(8,10,4,"x");
+registerTileTypes(8,11,4,"x");
+registerTileTypes(8,12,4,"x");
+registerTileTypes(9,1,4,"x");
+registerTileTypes(9,2,4,"x");
+registerTileTypes(9,3,4,"a Soul Mines");
+registerTileTypes(9,4,4,"x");
+registerTileTypes(9,5,4,"x");
+registerTileTypes(9,6,4,"a Cavern");
+registerTileTypes(9,7,4,"x");
+registerTileTypes(9,8,4,"a Cavern");
+registerTileTypes(9,9,4,"a Cavern");
+registerTileTypes(9,10,4,"a Soul Mines");
+registerTileTypes(9,11,4,"x");
+registerTileTypes(9,12,4,"x");
+registerTileTypes(10,1,4,"x");
+registerTileTypes(10,2,4,"x");
+registerTileTypes(10,3,4,"x");
+registerTileTypes(10,4,4,"x");
+registerTileTypes(10,5,4,"x");
+registerTileTypes(10,6,4,"x");
+registerTileTypes(10,7,4,"x");
+registerTileTypes(10,8,4,"x");
+registerTileTypes(10,9,4,"a Soul Mines");
+registerTileTypes(10,10,4,"x");
+registerTileTypes(10,11,4,"x");
+registerTileTypes(10,12,4,"x");
+registerTileTypes(11,1,4,"x");
+registerTileTypes(11,2,4,"x");
+registerTileTypes(11,3,4,"x");
+registerTileTypes(11,4,4,"x");
+registerTileTypes(11,5,4,"x");
+registerTileTypes(11,6,4,"x");
+registerTileTypes(11,7,4,"x");
+registerTileTypes(11,8,4,"x");
+registerTileTypes(11,9,4,"x");
+registerTileTypes(11,10,4,"x");
+registerTileTypes(11,11,4,"TEST x TEST");
+registerTileTypes(11,12,4,"x");
+registerTileTypes(12,1,4,"x");
+registerTileTypes(12,2,4,"x");
+registerTileTypes(12,3,4,"x");
+registerTileTypes(12,4,4,"x");
+registerTileTypes(12,5,4,"x");
+registerTileTypes(12,6,4,"x");
+registerTileTypes(12,7,4,"x");
+registerTileTypes(12,8,4,"x");
+registerTileTypes(12,9,4,"x");
+registerTileTypes(12,10,4,"x");
+registerTileTypes(12,11,4,"x");
+registerTileTypes(12,12,4,"x");
 }
 
 function checkParameters() {
@@ -11642,11 +11971,13 @@ if (location.search) {
 	if (startParam[2] == "Elysium") startZ = 1;
 	else if (startParam[2] == "Stygia") startZ = 2;
 	else if (startParam[2] == "Sewers") startZ = 3;
+	else if (startParam[2] == "Wyrm's Lair") startZ = 4;
 	
 	var destZ = 0;
 	if (destParam[2] == "Elysium") destZ = 1;
 	else if (destParam[2] == "Stygia") destZ = 2;
 	else if (destParam[2] == "Sewers") destZ = 3;
+	else if (destParam[2] == "Wyrm's Lair") destZ = 4;
 	
 	
 	toggleMarker(startParam[0],startParam[1],startZ);
