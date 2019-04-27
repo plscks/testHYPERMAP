@@ -148,6 +148,11 @@ a:hover
 	unselectable: on;
 	display: none;
 }
+#terraNullius{
+	cursor: crosshair;
+	unselectable: on;
+	display: none;
+}
 #badges0{
 	cursor: crosshair;
 	display: none;
