@@ -726,6 +726,7 @@ function updateTooltip() {
 		else if (portalTargetZ == 2) document.getElementById("previewmap").style.background = "url(mini-stygia.png)";
 	        else if (portalTargetZ == 3) document.getElementById("previewmap").style.background = "url(mini-sewers.png)";
 	        else if (portalTargetZ == 4) document.getElementById("previewmap").style.background = "url(mini-warrens.png)";
+	        else if (portalTargetZ == 5) document.getElementById("previewmap").style.background = "url(mini-terraNullius.png)";
 		
 		document.getElementById("previewmap").style.backgroundPosition = "" + -((portalTargetX-5)*12+50) + "px " + -((portalTargetY-5)*12+50) + "px";
 	}
@@ -6788,7 +6789,7 @@ registerTileNames(12,12,4,"Andrea Vendetta");
     registerTileNames(6,9,5,"Lost Barrows");
     registerTileNames(6,10,5,"Vivax");
     registerTileNames(6,11,5,"Desert");
-    registerTileNames(6,12,5,"Desert");
+    registerTileNames(6,12,5,"Void");
     registerTileNames(6,13,5,"Void");
     registerTileNames(7,1,5,"Void");
     registerTileNames(7,2,5,"Void");
