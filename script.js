@@ -822,7 +822,51 @@ function decodeLocation(val) {
 }
 
 function getLocationString(x,y,z) {
+    if (z == 4 && x == 7 && y == 1) {
+        return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 5 && y == 5) {
+        return "[24,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 6 && y == 5) {
+        return "[25,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 6 && y == 4) {
+        return "[25,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 6 && y == 3) {
+        return "[25,38] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 7 && y == 4) {
+        return "[26,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 8 && y == 4) {
+        return "[27,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 9 && y == 11) {
+        return "[13,10] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 8 && y == 9) {
+        return "[30,27] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 8 && y == 8) {
+        return "[30,26] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 8 && y == 7) {
+        return "[30,25] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 8 && y == 6) {
+        return "[30,24] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 11 && y == 12) {
+        return "[8,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 12 && y == 12) {
+        return "[9,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else {
         return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
 }
 
 function createPortal(locationArray,methodsArray,costArray) { // Expects two array with the following arguments: first array is [portalLocation,numberOfTargets,target1,target2,...], second array is ["Portal, "Portal", "Ferry"] etc
@@ -1465,7 +1509,7 @@ var Dijkstras = (function () {
 
 
 
-
+ 
 
 
 
@@ -12105,7 +12149,7 @@ registerTileTypes(12,8,4,"a Cavern");
 registerTileTypes(12,9,4,"a Cavern");
 registerTileTypes(12,10,4,"a Soul Mines");
 registerTileTypes(12,11,4,"x");
-registerTileTypes(12,12,4,"a Colonial Ship Deck");
+registerTileTypes(12,12,4,"Inside a Colonial Ship Deck");
 
 
     // Terra Nullius
