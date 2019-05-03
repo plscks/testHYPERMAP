@@ -16,7 +16,7 @@ div.content
 	-o-user-select: none;
 	unselectable: on;
 	display: inline-block;
-	min-height: 1500px;
+	min-height: 500px;
 }
 div.topbar
 {
@@ -143,6 +143,16 @@ a:hover
 	unselectable: on;
 	display: none;
 }
+#warrens{
+	cursor: crosshair;
+	unselectable: on;
+	display: none;
+}
+#terraNullius{
+	cursor: crosshair;
+	unselectable: on;
+	display: none;
+}
 #badges0{
 	cursor: crosshair;
 	display: none;
@@ -168,6 +178,14 @@ a:hover
 	z-index:8;
 }
 #badges3{
+	cursor: crosshair;
+	display: none;
+	position:absolute;
+	left: 0;
+	top: 35;
+	z-index:8;
+}
+#badges4{
 	cursor: crosshair;
 	display: none;
 	position:absolute;
@@ -207,6 +225,14 @@ a:hover
 	top: 35;
 	z-index:8;
 }
+guilds4{
+	cursor: crosshair;
+	display: none;
+	position:absolute;
+	left: 0;
+	top: 35;
+	z-index:8;
+}
 #districts0{
 	display: none;
 	position:absolute;
@@ -229,6 +255,13 @@ a:hover
 	z-index:4;
 }
 #districts3{
+	display: none;
+	position:absolute;
+	left: 0;
+	top: 35;
+	z-index:4;
+}
+districts4{
 	display: none;
 	position:absolute;
 	left: 0;
@@ -348,6 +381,24 @@ background-repeat: no-repeat;
 	display: none;
 }
 #overlay3
+{
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
+	user-select: none;
+	-o-user-select: none;
+	unselectable: on;
+	position: absolute;
+	left: 0px;
+	top: 35px;
+	width: 1008px;
+	height: 1008px;
+	z-index: 7;
+	background-color: #000000;
+	opacity: 0.5;
+	display: none;
+}
+#overlay4
 {
 	-moz-user-select: none; 
 	-webkit-user-select: none; 
