@@ -864,6 +864,33 @@ function getLocationString(x,y,z) {
     else if (z == 4 && x == 12 && y == 12) {
         return "[9,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
     }
+    else if (z == 4 && x == 1 && y == 5) {
+        return "[28,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 1 && y == 4) {
+        return "[28,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 1 && y == 3) {
+        return "[28,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 2 && y == 3) {
+        return "[29,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 3 && y == 5) {
+        return "[30,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 3 && y == 4) {
+        return "[30,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 3 && y == 3) {
+        return "[30,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 3 && y == 2) {
+        return "[30,16] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
+    else if (z == 4 && x == 3 && y == 1) {
+        return "[30,15] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+    }
     else {
         return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
     }
