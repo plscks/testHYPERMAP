@@ -5,10 +5,6 @@ document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
-//
-// Testing Dev branch
-//
-
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
@@ -171,7 +167,7 @@ function setDestination(x,y,z) {
 
 function setDestinationType(type) {
 	if (type == "not_set") return;
-	type = type.replace(/\s+/, "").toLowerCase();
+	type = type.toLowerCase();
 	pathDestinationX = 0;
 	pathDestinationY = 0;
 	pathDestinationZ = 0;
@@ -225,7 +221,7 @@ function cycleMPValue() {
 
 function customDestination() {
 	 var destText = document.forms["customDestinationForm"]["dest"].value;
-	 destText = destText.replace(/\s+/, "").toLowerCase();
+	 destText = destText.toLowerCase();
 	 setDestinationType(destText);
 }
 
@@ -240,9 +236,12 @@ function clearMarkers() {
 
 function pathCostModifier(index) {
 	var modifier = 1.0;
-	if (TileTypes[index] == "sea") modifier = waterCostModifier;
-	else if (TileTypes[index] == "river") modifier = waterCostModifier;
-	else if (TileTypes[index] == "searingriver") modifier = waterCostModifier;
+	if (TileTypes[index] == "sea" || TileTypes[index] == "a sea") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a lake") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a peaceful sea") modifier = waterCostModifier;
+        else if (TileTypes[index] == "river" || TileTypes[index] == "a river") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a searing river") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a lava") modifier = waterCostModifier;
 	else if (TileTypes[index] == "mountain") modifier = 2.0;
 	
 	if (flightEnabled) modifier = 0.5;
@@ -913,7 +912,7 @@ function registerTileNames(x,y,z,name) {
 }
 
 function registerTileTypes(x,y,z,tiletype) {
-	TileTypes[encodeLocation(x,y,z)] = "" + tiletype;
+	TileTypes[encodeLocation(x,y,z)] = "" + tiletype.toLowerCase();;
 }
 
 function registerTileDescription(x,y,z,outside,inside) {
