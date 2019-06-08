@@ -22,7 +22,7 @@ var touchmodeFixLocation = false;
 var guildsInitialized = false;
 var badgesInitialized = false;
 
-var X = 0; var Y = 0; var Z = 0; var portalToggle = 0; 
+var X = 0; var Y = 0; var Z = 0; var portalToggle = 0;
 var portalTargetX = 0; portalTargetY = 0; portalTargetZ = 0; portalTargetW = 0;
 
 var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
@@ -135,7 +135,7 @@ if (setMarkers) toggleMarkerMode();
 		}
 	}
 	document.getElementById("sidebarDestinationTypelist").style.display = "inline-block";
-	
+
 }
 
 
@@ -147,21 +147,21 @@ for(var i = 0; i < 20000; i++) {
 			document.getElementById("markerButtonDestination" + i).style.display = "none";
 			document.getElementById("markerButtonStart" + i).style.display = "inline-block";
 			document.getElementById("markerButtonStart" + i).style.display = "inline-block";
-		
+
 		}
 	}
 }
 
 function setDestination(x,y,z) {
-	
+
 	pathDestinationX = x;
 	pathDestinationY = y;
 	pathDestinationZ = z;
 	pathDestinationType = "not_set";
         var index = encodeLocation(x,y,z);
 	clearAllMarkers();
-	
-	
+
+
 	calculatePath();
 }
 
@@ -173,14 +173,14 @@ function setDestinationType(type) {
 	pathDestinationZ = 0;
 	pathDestinationType = type;
 	clearAllMarkers();
-	
+
 	calculatePath();
 }
 
 function cycleTravelMethod() {
 	travelMethodToggle += 1;
 	if (travelMethodToggle > 1) travelMethodToggle = 0;
-	
+
 	if (travelMethodToggle == 0) {
 		waterCostModifier = 2.0;
 		flightEnabled = false;
@@ -200,7 +200,7 @@ function cycleTravelMethod() {
 function cycleMPValue() {
 	mpValueToggle += 1;
 	if (mpValueToggle > 4) mpValueToggle = 0;
-	
+
 	if (mpValueToggle == 0) {
 		portalMPCostModifier = 0.001;
 		document.getElementById("buttonMPValue").innerHTML = "MP Cost: IGNORE MP COSTS";
@@ -243,9 +243,9 @@ function pathCostModifier(index) {
         else if (TileTypes[index] == "a searing river") modifier = waterCostModifier;
         else if (TileTypes[index] == "a lava") modifier = waterCostModifier;
 	else if (TileTypes[index] == "mountain") modifier = 2.0;
-	
+
 	if (flightEnabled) modifier = 0.5;
-    
+
 	return modifier;
 }
 
@@ -253,9 +253,9 @@ function getSuccessorArray(index) {
 
 	var arr = decodeLocation(index);
 	var baseNeighbourNumber = 8;
-	
+
 	if (!validLocation(arr[0],arr[1],arr[2])) return [];
-	
+
 	portalsArray = portals[encodeLocation(arr[0],arr[1],arr[2])];
 	portalsMPCostArray = portalMPCosts[encodeLocation(arr[0],arr[1],arr[2])];
 	var numberOfPortals = 0;
@@ -263,74 +263,74 @@ function getSuccessorArray(index) {
 	numberOfPortals = portalsArray[0];
 	}
 	var result = new Array(baseNeighbourNumber + numberOfPortals);
-    
+
 	for(var i = 0; i < baseNeighbourNumber + numberOfPortals; i++) result[i] = new Array(2);
-	
+
 	var encoded;
-	
+
 	encoded = encodeLocation(arr[0]+1,arr[1],arr[2]);
 	result[0][0] = "" + encoded;
 	result[0][1] = 999*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0]-1,arr[1],arr[2]);
 	result[1][0] = "" + encoded;
 	result[1][1] = 999*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0],arr[1]+1,arr[2]);
 	result[2][0] = "" + encoded;
 	result[2][1] = 999*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0],arr[1]-1,arr[2]);
 	result[3][0] = "" + encoded;
 	result[3][1] = 999*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0]+1,arr[1]+1,arr[2]);
 	result[4][0] = "" + encoded;
 	result[4][1] = 1000*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0]+1,arr[1]-1,arr[2]);
 	result[5][0] = "" + encoded;
 	result[5][1] = 1000*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0]-1,arr[1]+1,arr[2]);
 	result[6][0] = "" + encoded;
 	result[6][1] = 1000*pathCostModifier(encoded);
-	
+
 	encoded = encodeLocation(arr[0]-1,arr[1]-1,arr[2]);
 	result[7][0] = "" + encoded;
 	result[7][1] = 1000*pathCostModifier(encoded);
-	
+
 	for(var i = baseNeighbourNumber; i < baseNeighbourNumber+numberOfPortals; i++) {
 	result[i][0] = "" + portalsArray[i+1-baseNeighbourNumber];
-	result[i][1] = 1001 + portalsMPCostArray[i-baseNeighbourNumber]*1000*portalMPCostModifier;	
-	
-	
+	result[i][1] = 1001 + portalsMPCostArray[i-baseNeighbourNumber]*1000*portalMPCostModifier;
+
+
 	}
-	
+
 	resultCleaned = new Array(0);
 	for(var i = 0; i < baseNeighbourNumber+numberOfPortals; i++) {
 		if (result[i][0] < 20000-1) {
 		resultCleaned.push(result[i]);
 		}
 	}
-	
-	
+
+
 	return resultCleaned;
 }
 
 function calculatePath() {
 
 	var d = new Dijkstras();
-        
+
 	var map = new Array(20000);
 	for(var i = 0; i < 20000; i++) {
 		map[i] = new Array(2);
 		map[i][0] = "" + i;
 		map[i][1] = getSuccessorArray(i);
 	}
-	
+
 	d.setGraph(map);
-    
+
 var tempPath = d.getPath("" + encodeLocation(pathStartX,pathStartY,pathStartZ), "" + encodeLocation(pathDestinationX,pathDestinationY,pathDestinationZ));
 var path = [encodeLocation(pathStartX,pathStartY,pathStartZ)];
 for(var i = 0; i < tempPath.length; i++) {
@@ -350,7 +350,7 @@ for(var i = 0; i < path.length; i++) {
 	var arr = decodeLocation(path[i]);
 	toggleMarker(arr[0],arr[1],arr[2]);
 	var prevArr = decodeLocation(path[i-1]);
-	
+
 	if (arr[2] != currentPlane) {
 		if (walkCount > 0) pathString += getWalkString(currentX,currentY,prevArr[0],prevArr[1]) + getPastableLocationString(prevArr[0],prevArr[1],prevArr[2]) + ". \n";
 		walkCount = 0;
@@ -369,7 +369,7 @@ for(var i = 0; i < path.length; i++) {
 		walkCount++;
 	}
 	/*
-	
+
 	pathString += "(" + arr[0] + "," + arr[1] + ") " + planeName; */
 }
 
@@ -383,7 +383,7 @@ if(tempPath.length > 0)
 window.prompt("Copy path to clipboard with Ctrl+C, then press Enter", pathString);
 else
 alert("Destination could not be found");
-	
+
 
 }
 
@@ -440,7 +440,7 @@ function showhideMarkersPlanechange() {
 for(var i = 0; i < 20000; i++) {
 		if (markers[i]) {
 			var arr = decodeLocation(i);
-			
+
 			if (arr[2] != Z) {
 				document.getElementById("markerpoint" + i).style.top = "-100";
 			} else {
@@ -452,13 +452,13 @@ for(var i = 0; i < 20000; i++) {
 }
 
 function showPlane(planeIndex) {
-	
 
-	
+
+
 	Z = planeIndex;
-	
+
 	showhideMarkersPlanechange();
-	
+
 	if (showBadges) toggleBadges();
 	if (showGuilds) toggleGuilds();
 	if (showDistricts) toggleDistricts();
@@ -469,10 +469,10 @@ function showPlane(planeIndex) {
         document.getElementById("sewers").style.display = "none";
         document.getElementById("warrens").style.display = "none";
         document.getElementById("terraNullius").style.display = "none";
-	
+
 	document.getElementById("you").style.left = -200;
 	document.getElementById("you").style.top = -200;
-	
+
 	if (Z == 0) document.getElementById("valhalla").style.display = "block";
 	else if (Z == 1) document.getElementById("elysium").style.display = "block";
 	else if (Z == 2) document.getElementById("stygia").style.display = "block";
@@ -521,15 +521,13 @@ function toggleBadges() {
 			if (Z == 0) document.getElementById("badges0").style.display = "block";
 			else if (Z == 1) document.getElementById("badges1").style.display = "block";
 			else if (Z == 2) document.getElementById("badges2").style.display = "block";
-		        else if (Z == 3) document.getElementById("badges3").style.display = "block";
-		        else if (Z == 4) document.getElementById("badges4").style.display = "block";
+		  else if (Z == 3) document.getElementById("badges3").style.display = "block";
 		} else {
 			document.getElementById("overlay2").style.display = "none";
 			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "none";
-		        document.getElementById("badges3").style.display = "none";
-		        document.getElementById("badges4").style.display = "none";
+		  document.getElementById("badges3").style.display = "none";
 		}
 	if (showBadges) document.getElementById("badgeButton").innerHTML = "Badges: ON";
 	else document.getElementById("badgeButton").innerHTML = "Badges: OFF";
@@ -538,13 +536,13 @@ function toggleBadges() {
 function toggleDistricts() {
 	showDistricts = !showDistricts;
 		if(showDistricts) {
-		        if (Z == 0) document.getElementById("districts0").style.display = "block";
-                        else if (Z == 1) document.getElementById("districts1").style.display = "block";
+		  if (Z == 0) document.getElementById("districts0").style.display = "block";
+			else if (Z == 1) document.getElementById("districts1").style.display = "block";
 			else if (Z == 2) document.getElementById("districts2").style.display = "block";
 			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
-		        document.getElementById("districts0").style.display = "none";
-                        document.getElementById("districts1").style.display = "none";
+		  document.getElementById("districts0").style.display = "none";
+      document.getElementById("districts1").style.display = "none";
 			document.getElementById("districts2").style.display = "none";
 			document.getElementById("districts3").style.display = "none";
 		}
@@ -562,17 +560,15 @@ function toggleGuilds() {
 		if(showGuilds) {
 			document.getElementById("overlay3").style.display = "block";
 			if (Z == 0) document.getElementById("guilds0").style.display = "block";
-			else if (Z == 1) document.getElementById("guilds1").style.display = "block";
-			else if (Z == 2) document.getElementById("guilds2").style.display = "block";
-		        else if (Z == 3) document.getElementById("guilds3").style.display = "block";
-		        else if (Z == 4) document.getElementById("guilds4").style.display = "block";
-		} else {
-			document.getElementById("overlay3").style.display = "none";
-			document.getElementById("guilds0").style.display = "none";
-			document.getElementById("guilds1").style.display = "none";
-			document.getElementById("guilds2").style.display = "none";
-		        document.getElementById("guilds3").style.display = "none";
-		        document.getElementById("guilds4").style.display = "none";
+			  else if (Z == 1) document.getElementById("guilds1").style.display = "block";
+			  else if (Z == 2) document.getElementById("guilds2").style.display = "block";
+		    else if (Z == 3) document.getElementById("guilds3").style.display = "block";
+		  } else {
+			  document.getElementById("overlay3").style.display = "none";
+			  document.getElementById("guilds0").style.display = "none";
+			  document.getElementById("guilds1").style.display = "none";
+			  document.getElementById("guilds2").style.display = "none";
+		    document.getElementById("guilds3").style.display = "none";
 		}
 	if (showGuilds) document.getElementById("guildsButton").innerHTML = "Guilds: ON";
 	else document.getElementById("guildsButton").innerHTML = "Guilds: OFF";
@@ -619,7 +615,7 @@ function enterPortal() {
 touchmodeFixLocation = false;
 if (portalTargetZ > -1) {
 			if (portalTargetZ != Z) {
-				
+
 				showPlane(portalTargetZ);
 				portalTargetZ = -1;
 			}
@@ -635,13 +631,13 @@ function isPortal() {
 }
 
 function cyclePortals() {
-	portalToggle++;	
+	portalToggle++;
 	updateTooltip();
 }
 
 function cancelPortalTouch() {
 	touchmodeFixLocation = false;
-	
+
 }
 
 function getMouseClick(e) {
@@ -662,19 +658,19 @@ if (setMarkers) {
 		if (!touchmodeFixLocation) {
 			updateTooltip();
 			touchmodeFixLocation = true;
-		} 
+		}
 	}
 }
-	
+
 }
 
 function getMousePosition(e)
 {
 	if (touchmodeFixLocation) return;
-	
+
 	document.getElementById("signal").style.left = -50;
 	document.getElementById("signal").style.top = -50;
-	
+
 	var _x;
 	var _y;
 	var tooltipContent = "";
@@ -682,20 +678,20 @@ function getMousePosition(e)
 	_y = e.pageY;
 	X = parseInt((_x-0) / 24);
 	Y = parseInt((_y-35) / 24);
-	
-	
+
+
 	//if ((X > 30) && (touchMode)) document.getElementById("tooltip").style.left = _x - 20 - document.getElementById("tooltip").offsetWidth;
 	document.getElementById("tooltip").style.left = _x + 20;
 	document.getElementById("tooltip").style.top = _y - 30;
 	if (!xyzValid() || (e.clientY < 35)) document.getElementById("tooltip").style.top = -500;
-	
-	
+
+
 	if (Y > 0) {
 	document.getElementById("pointer").style.left = X*24-24;
 	document.getElementById("pointer").style.top = Y*24+35-24;
 	}
 	updateTooltip();
-	
+
 }
 
 function getTouchmodeTooltipControls() {
@@ -704,21 +700,21 @@ function getTouchmodeTooltipControls() {
 	if (portals[encodeLocation(X,Y,Z)][0] > 0) buttonString += "<div id='tooltipControlsButtonEnter' onClick='enterPortal()'>Enter</div><div id='tooltipControlsButtonCancel' onClick='cancelPortalTouch()'>Cancel</div>";
 	if (touchMode) return "<br><div id='tooltipControls'>" + buttonString + "</div>";
 	else return "";
-	
-	
+
+
 }
 
 function updateTooltip() {
 	var tooltipContent = "<div id='tooltiptext'>";
 	tooltipContent += getLocationString(X,Y,Z) + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
-	
-	
+
+
 	if (portalTargetZ > -1) {
 		tooltipContent += "<div id='previewmap'><img src='preview_overlay.png' style='z-index:5'/></div>";
 	}
-	
+
 	document.getElementById("tooltip").innerHTML = tooltipContent;
-	
+
 	if (portalTargetZ > -1) {
 		if (portalTargetZ == 0) document.getElementById("previewmap").style.background = "url(mini-valhalla.png)";
 		else if (portalTargetZ == 1) document.getElementById("previewmap").style.background = "url(mini-elysium.png)";
@@ -726,7 +722,7 @@ function updateTooltip() {
 	        else if (portalTargetZ == 3) document.getElementById("previewmap").style.background = "url(mini-sewers.png)";
 	        else if (portalTargetZ == 4) document.getElementById("previewmap").style.background = "url(mini-warrens.png)";
 	        else if (portalTargetZ == 5) document.getElementById("previewmap").style.background = "url(mini-terraNullius.png)";
-		
+
 		document.getElementById("previewmap").style.backgroundPosition = "" + -((portalTargetX-5)*12+50) + "px " + -((portalTargetY-5)*12+50) + "px";
 	}
 }
@@ -768,10 +764,10 @@ function portalsString() {
 	var result = "";
 	portalsArray = portals[encodeLocation(X,Y,Z)];
         methodsArray = portalTravelMethods[encodeLocation(X,Y,Z)];
-        
+
         document.getElementById("overlay").style.display = "none";
 	document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.66)";
-	
+
 	if (isPortal()) {
 		result += "<br>";//<br><font size=1 color=#00FF00>Shift-click to cycle through destinations. Click to enter.</font><br>";
 	} else {
@@ -779,7 +775,7 @@ function portalsString() {
 		portalTargetY = 0;
 		portalTargetZ = -1;
 	}
-	
+
 	for(var i = 0; i < portalsArray[0]; ++i) {
 	decodedTarget = decodeLocation(portalsArray[i+1]);
 	var pointer = whitepointer;
@@ -789,7 +785,7 @@ function portalsString() {
 			document.getElementById("signal").style.top = decodedTarget[1]*24-12+35;
 			document.getElementById("overlay").style.display = "block";
 			document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.6)";
-		} 
+		}
 		portalTargetX = decodedTarget[0];
 		portalTargetY = decodedTarget[1];
 		portalTargetZ = decodedTarget[2];
@@ -797,13 +793,13 @@ function portalsString() {
 	}
 	result += "<br>" + pointer + "&nbsp;" + methodsArray[i] + " to " + getLocationString(decodedTarget[0],decodedTarget[1],decodedTarget[2]) + "</font>";
 	}
-	
-	
+
+
 	return result;
 }
 
 
-function encodeLocation(x,y,z) { 
+function encodeLocation(x,y,z) {
 	var val = x + y*50 + z*2500;
 	if ((x < 1) || (y < 1) || (y > 40)) val = 20000-1;
         else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 12)) || ((z == 5) && (x > 12))) val = 20000-1;
@@ -811,7 +807,7 @@ function encodeLocation(x,y,z) {
 	return val;
 }
 
-function decodeLocation(val) { 
+function decodeLocation(val) {
 	result = new Array(3);
 //	result[3] = Math.floor(val/10000); // 0 = outside, 1 = inside, 2 = air
 	result[2] = Math.floor(val/2500);
@@ -902,9 +898,9 @@ function createPortal(locationArray,methodsArray,costArray) { // Expects two arr
 	portals[locationArray[0]][i+1] = locationArray[i+2];
 	portalTravelMethods[locationArray[0]][i] = methodsArray[i];
 	portalMPCosts[locationArray[0]][i] = costArray[i];
-        } 
-	
-	
+        }
+
+
 }
 
 function registerTileNames(x,y,z,name) {
@@ -974,9 +970,9 @@ createPortal( [encodeLocation(11,29,0),1,encodeLocation(23,39,1)] , ["Portal"], 
 createPortal( [encodeLocation(15,10,0),2,encodeLocation(3,4,2),encodeLocation(15,10,3)] , ["Portal", "Sewer Entrance"], [10,0]); // updated
 
 
-createPortal( [encodeLocation(20,19,3),1,encodeLocation(20,19,0)] , ["Olympic Tower Garden (20 AP)"],[0]);	
+createPortal( [encodeLocation(20,19,3),1,encodeLocation(20,19,0)] , ["Olympic Tower Garden (20 AP)"],[0]);
 
-createPortal( [encodeLocation(34,13,0),1,encodeLocation(34,13,3)] , ["Sewer Entrance"],[0]);	
+createPortal( [encodeLocation(34,13,0),1,encodeLocation(34,13,3)] , ["Sewer Entrance"],[0]);
 createPortal( [encodeLocation(34,13,3),1,encodeLocation(34,13,0)] , ["Sewer Exit"],[0]);
 
 createPortal( [encodeLocation(15,10,3),1,encodeLocation(15,10,0)] , ["Sewer Exit"],[0]);
@@ -1006,7 +1002,7 @@ createPortal( [encodeLocation(14,6,0),1,encodeLocation(14,6,3)] , ["Subterran Ra
 createPortal( [encodeLocation(14,6,3),1,encodeLocation(14,6,0)] , ["Subterran Railway Exit"],[0]);
 
 createPortal( [encodeLocation(31,20,3),1,encodeLocation(12,34,2)] , ["Portal"], [5]);
-createPortal( [encodeLocation(17,18,3),1,encodeLocation(25,7,1)] , ["Portal"], [5]);	
+createPortal( [encodeLocation(17,18,3),1,encodeLocation(25,7,1)] , ["Portal"], [5]);
 
 createPortal( [encodeLocation(19,17,0),7,encodeLocation(26,3,0),encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
 createPortal( [encodeLocation(26,3,0),7,encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(19,17,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
@@ -1024,13 +1020,13 @@ createPortal( [encodeLocation(3,32,1),1,encodeLocation(22,38,0)] , ["Portal"], [
 createPortal( [encodeLocation(4,4,1),1,encodeLocation(39,14,0)] , ["Portal"], [5]);  // updated
 createPortal( [encodeLocation(24,8,1),1,encodeLocation(22,1,0)] , ["Portal"], [5]);    // updated
 createPortal( [encodeLocation(23,39,1),1,encodeLocation(11,29,0)] , ["Portal"], [5]);    // updated
-    
+
 createPortal( [encodeLocation(7,2,1),1,encodeLocation(7,40,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(7,40,1),1,encodeLocation(7,2,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(9,5,1),1,encodeLocation(21,3,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(21,3,1),1,encodeLocation(9,5,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(21,3,1),1,encodeLocation(9,5,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(2,7,1),1,encodeLocation(29,2,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(29,2,1),1,encodeLocation(2,7,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(29,2,1),1,encodeLocation(2,7,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(8,8,1),1,encodeLocation(9,13,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(9,13,1),1,encodeLocation(8,8,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(11,22,1),1,encodeLocation(10,31,1)] , ["Tunnel"], [0]);
@@ -1040,7 +1036,7 @@ createPortal( [encodeLocation(23,33,1),1,encodeLocation(15,25,1)] , ["Tunnel"], 
 createPortal( [encodeLocation(18,17,1),1,encodeLocation(21,17,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(21,17,1),1,encodeLocation(18,17,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(16,11,1),1,encodeLocation(21,10,1)] , ["Tunnel"], [0]);
-createPortal( [encodeLocation(21,10,1),1,encodeLocation(16,11,1)] , ["Tunnel"], [0]);    
+createPortal( [encodeLocation(21,10,1),1,encodeLocation(16,11,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(26,1,1),1,encodeLocation(29,40,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(29,40,1),1,encodeLocation(26,1,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(28,11,1),1,encodeLocation(26,15,1)] , ["Tunnel"], [0]);
@@ -1051,7 +1047,7 @@ createPortal( [encodeLocation(30,30,1),1,encodeLocation(1,32,1)] , ["Tunnel"], [
 createPortal( [encodeLocation(1,32,1),1,encodeLocation(30,30,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(21,36,1),1,encodeLocation(13,36,1)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(13,36,1),1,encodeLocation(21,36,1)] , ["Tunnel"], [0]);
-    
+
 // STYGIA
 createPortal( [encodeLocation(13,20,2),1,encodeLocation(8,34,0)] , ["Portal"], [10]);  // updated
 createPortal( [encodeLocation(24,29,2),1,encodeLocation(39,39,0)] , ["Portal"], [10]);  // updated
@@ -1092,7 +1088,7 @@ createPortal( [encodeLocation(21,30,2),1,encodeLocation(20,33,2)] , ["Tunnel"], 
 createPortal( [encodeLocation(26,36,2),1,encodeLocation(28,32,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(28,32,2),1,encodeLocation(26,36,2)] , ["Tunnel"], [0]);
 createPortal( [encodeLocation(21,23,2),1,encodeLocation(12,6,4)] , ["Tunnel"], [10]);
-    
+
 }
 
 function initializeGuilds() {
@@ -1158,7 +1154,7 @@ registerBadge("Sewer Badge", 33,28,3, "Institute of Arts", "You have explored th
 var badgeForm = "<form><select onChange="setDestinationType(this.options[this.selectedIndex].value)">";
 badgeForm += "<option value="not_set">&#9654;Laurentia Badges";
 for(var i = 0; i < 2000; i++) {
-	if(badges[i]) badgeForm += "<option value=' + 
+	if(badges[i]) badgeForm += "<option value=' +
 }
 
 badgeForm += "  </select></form>";
@@ -1170,7 +1166,7 @@ function markAllBadges() {
 	if (!showBadges) toggleBadges();
 	checkBadges(inputString);
 	showhideMarkersPlanechange();
-	
+
 }
 
 function checkBadges(input) {
@@ -1288,7 +1284,7 @@ var Dijkstras = (function () {
         if (typeof this.graph[target] === 'undefined') {
             throw "target " + target + " doesn't exist";
         }
-        
+
         // Already at target
         if (source === target) {
             return [];
@@ -1301,12 +1297,12 @@ var Dijkstras = (function () {
 
         // Loop all nodes
         var u = null
-		
+
 		var iteration = 0;
-        while (u = this.queue.shift()) {	
+        while (u = this.queue.shift()) {
 		iteration++;
-	
-		
+
+
             // Reached taget!
             if ((u === target) || (TileTypes[parseInt(u)] == pathDestinationType)) {
                 var path = [];
@@ -1316,16 +1312,16 @@ var Dijkstras = (function () {
                 }
                 return path;
             }
-			
-			
+
+
 
             // all remaining vertices are inaccessible from source
             if (this.queue.getDistance(u) == Infinity) {
                 return [];
             }
-			
-			
-            
+
+
+
             var uDistance = this.queue.getDistance(u)
             for (var neighbour in this.graph[u]) {
                 var nDistance = this.queue.getDistance(neighbour),
@@ -1336,16 +1332,16 @@ var Dijkstras = (function () {
                     this.previous[neighbour] = u;
                 }
             }
-			
-			
+
+
         }
-        
+
         return [];
-        
+
     }
 
 
-    
+
     // Fibonacci Heap (min first)
     var MinHeap = (function() {
         var MinHeap = function () {
@@ -1353,24 +1349,24 @@ var Dijkstras = (function () {
             this.roots = [];
             this.nodes = [];
         }
-        
+
         MinHeap.prototype.shift = function()
         {
             var minNode = this.min;
-			
+
 
             // Current min is null or no more after it
             if (minNode == null || this.roots.length < 1) {
-			
+
                 this.min = null;
                 return minNode
             }
-			
+
 
             // Remove it
             this.remove(minNode);
-			
-			
+
+
 
             // Consolidate
             if (this.roots.length > 50000) {
@@ -1390,7 +1386,7 @@ var Dijkstras = (function () {
                     this.min = node;
                 }
             }
-			
+
 
             return minNode;
         }
@@ -1535,7 +1531,7 @@ var Dijkstras = (function () {
 
 
 
- 
+
 
 
 
@@ -12346,33 +12342,33 @@ if (location.search) {
         if (!nv[0]) continue;
         params[nv[0]] = nv[1] || true;
     }
-	
+
 	if (params.start && params.dest) {
-	
+
 	startParam = params.start.split(",");
 	destParam = params.dest.split(",");
-	
+
 	var startZ = 0;
 	if (startParam[2] == "Elysium") startZ = 1;
 	else if (startParam[2] == "Stygia") startZ = 2;
 	else if (startParam[2] == "Sewers") startZ = 3;
 	else if (startParam[2] == "Wyrm's Lair") startZ = 4;
         else if (startParam[2] == "Terra Nullius") startZ = 5;
-	
+
 	var destZ = 0;
 	if (destParam[2] == "Elysium") destZ = 1;
 	else if (destParam[2] == "Stygia") destZ = 2;
 	else if (destParam[2] == "Sewers") destZ = 3;
 	else if (destParam[2] == "Wyrm's Lair") destZ = 4;
         else if (destParam[2] == "Terra Nullius") destZ = 5;
-		
+
 	toggleMarker(startParam[0],startParam[1],startZ);
 	toggleMarker(destParam[0],destParam[1],destZ);
 	showPlane(destZ);
-	
+
 	//setStart(startParam[0],startParam[1],startZ);
 	//setDestination(destParam[0],destParam[1],destZ);
-	
+
 	}
 }
 }
