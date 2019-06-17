@@ -260,7 +260,7 @@ var RangeDef = 0, CCDodge = 0;
 var ImSoak = 0, SlSoak = 0, PiSoak = 0, FiSoak = 0, CoSoak = 0, ElSoak = 0, AcSoak = 0, DeSoak = 0, HoSoak = 0, UnSoak = 0, ArSoak = 0;
 var ImRes = 0, SlRes = 0, PiRes = 0, FiRes = 0, CoRes = 0, ElRes = 0, AcRes = 0, DeRes = 0, HoRes = 0, UnRes = 0, ArRes = 0;
 var Hide = 0, Search = 0, HP = 50, MP = 20, Carry = 50, AP = 50, MaxMorality = 40, MinMorality = -40;
- 
+
 //Description of all skills for information box
 desc["mortal_eng"] = "<h3>Engineering</h3>\n<i>You are good with tools.</i>\n<p>This skill allows the character to build and repair doors. The character is also able to restore or cut power in locations and fix or sabotage neighborhood power plants. <i>UNKNOWN:Instead of searching for Toolkits, one may craft them for 15 AP, where they are found.</i></p>\n<b>CP Cost</b>: 10";
 desc["mortal_struct"] = "<h3>Structural Engineering</h3>\n<i>You are better at building stronghold fortifications to protect yourself and your faction mates.</i><p>This skill allows the character to erect 'Fortifications' at double the usual rate after all other bonuses are applied.  The character can also see the strength of fortifications in the tile they are in. Stronghold fortifications provide 1 to 10 bonus soak against all damage types to all characters of the faction in their stronghold based upon the fortifications health; fortifications can be attacked and damaged during raids.</p>\n<b>CP Cost</b>: 20";
@@ -364,8 +364,8 @@ desc["defiler_desc"] = "<h3>Desecration</h3>\n<i>You can defile corpses in the n
 desc["defiler_alch"] = "<h3>Alchemy</h3>\n<i>You are able to research potion recipes and craft potions.</i>\n<p>Alchemy allows the character to perform experiments on components to learn their own personal potion recipes, but only while in certain locations. Experiments cost 3AP and 5MP to perform, and can cause a variety of positive and negative status effects if they fail. Brewing a potion costs 5AP and 5MP and results in 6 potions being produced.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_alch_trans"] = "<h3>Alchemical Transmutation</h3>\n<i>You are able to alchemically convert one alchemical component to another.</i>\n<p>Alchemical Transmutation allows alchemical components to be converted to other components of equal or lesser rarity, but only while in certain locations. Coversions cost 3AP and 5MP to perform. Soul Ice, Blood Ice and Angel Tears can be coverted into other components, but can not be created in this way.</p>\n<b>CP Cost</b>: 40";
 desc["defiler_dark"] = "<h3>Dark Heart</h3>\n<i>You are capable of sucking the magical energies out of other beings.</i>\n<p>This ability allows you to make a Touch Attack on an opponent. If successful, you will drain up to 11 MP from them, one of which will go to pay for Dark Heart. These MP will then be added to your own personal stock. You cannot go over your maximum MP with this attack. You cannot drain more MP from the target than they have remaining. You must have at least 1MP to use the skill.</p>\n<b>CP Cost</b>: 20";
-desc["defiler_life_vamp"] = "<h3>Life Vampire</h3>\n<i>You are able to draw out the life-force of your enemies and store it away for later consumption.</i>\n<p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Blood Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover lost HP.</p>\n<b>CP Cost</b>: 20";
-desc["defiler_soul"] = "<h3>Soul Vampire</h3>\n<i>You are able to draw out the magical energies of your enemies and store it away for later consumption.</i>\n<p><p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Soul Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover spent MP.</p>\n<b>CP Cost</b>: 20";
+desc["defiler_life_vamp"] = "<h3>Life Vampire</h3>\n<i>You are able to draw out the life-force of your enemies and store it away for later consumption.</i>\n<p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Blood Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover lost HP.<br><br>Charged attacks that do between 5 and 9 damage have a partial chance to generate a Blood Ice, which begins at a 50% success chance for attacks that deal 5 damage and increases by 10% per damage point.</p>\n<b>CP Cost</b>: 20";
+desc["defiler_soul"] = "<h3>Soul Vampire</h3>\n<i>You are able to draw out the magical energies of your enemies and store it away for later consumption.</i>\n<p><p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Soul Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover spent MP.<br><br>Charged attacks that do between 5 and 9 damage have a partial chance to generate a Soul Ice, which begins at a 50% success chance for attacks that deal 5 damage and increases by 10% per damage point.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_pois"] = "<h3>Poison</h3>\n<i>You are capable of inflicting a powerful poison on your foes.</i>\n<p>This is a charged Attack that for the cost of 2AP and 5MP will deal half damage and cause your target to be poisoned if a successful hit is made. Your victim will take damage whenever they act. The poison persists - even after death for non mortals - until the victim receives medical attention (performing an action, being attacked, or the AP tick occurring) or has died three times.  Characters of levels 1 through 9 will suffer 1 Hit Point damage per action, characters of level 10 through 19 will suffer 3 HP damage per action, while characters of levels 20 and higher will suffer 6 HP damage per action.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_battle"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
@@ -379,8 +379,8 @@ desc["divine_herald_dtd"] = "<h3>Dust to Dust</h3>\n<i>Your association with the
 desc["divine_herald_death"] = "<h3>Harbinger of Death</h3>\n<i>You are the herald of the punishment that those who walk in evil shall face.</i>\n<p>The character may activate \"Harbinger of Death\" for 10 minutes at a cost of 1AP and 10MP. If the \"Harbinger of Judgement\" status is active it is removed. While under this status effect the Divine Herald's' melee and archery attacks deal death damage, and the Divine Herald is immune to Death Damage. In addition the Divine Herald gains 5MP (which can cause him to exceed his MP total) and 1AP each time he kills an evil character (or a neutral character if he possesses Hand of Zealotry).</p>\n<b>CP Cost</b>: 60";
 desc["divine_herald_es"] = "<h3>Enhanced Senses</h3>\n<i>You are always alert and are very difficult to surprise.</i>\n<p>This ability allows you to see any and all characters that are hidden in a location. This is an innate ability and is always active.</p>\n<b>CP Cost</b>: 30";
 desc["divine_herald_feet"] = "<h3>Feet of the Wind</h3>\n<i>The Lords of Justice have lifted you forever above the base earth.</i>\n<p>This skill makes the Divine Herald always count as flying for the purposes of movement and environmental hazards.</p>\n<b>CP Cost</b>: 30";
-desc["divine_herald_greatbow"] = "<h3>Oaken Greatbow</h3>\n<i>You have been granted a bow crafted by the powers of justice.</i>\n<p>This Divine Herald gains an innate bow attack, Oaken Greatbow. This deals 8 piercing damage and has an innate +10% to hit.</p>\n<b>CP Cost</b>: 30"; 
-desc["divine_herald_conquest"] = "<h3>Harbinger of Conquest</h3>\n<i>You are the herald of the triumph of good over evil.</i>\n<p>This skill adds a permanent +5% to hit with archery attacks. The character may activate \"Harbinger of Conquest\" for 15 minutes at a cost of 1AP and 10MP. While under this status effect the Divine Herald gains +1 damage to archery, and -1 soak against all damage. Each time the character hits an evil character, or a neutral character if he possesses Hand of Zealotry, the damage bonus increases by +1 and the soak penalty by -1, to a maximum of +5 damage/-5 soak. Missing an attack reduces the damage bonus by 1 to a minimum of zero. Changing targets reduces the damage bonus by 3 to a minimum of zero unless as a result of the previous target being killed by the Divine Herald's last attack. While under the status all archery and melee attacks deal holy damage and have a 33% chance of ignoring resistance or immunity.</p>\n</p>\"Harbinger of Conquest\" can not be active at the same time as the Paladin's abilities \"Shield of Faith\" or \"Defensive Stance\", activating \"Harbinger of War\" cancels those statuses, and activating those statuses cancels \"Harbinger of Conquest\".</p><b>CP Cost</b>: 60";  
+desc["divine_herald_greatbow"] = "<h3>Oaken Greatbow</h3>\n<i>You have been granted a bow crafted by the powers of justice.</i>\n<p>This Divine Herald gains an innate bow attack, Oaken Greatbow. This deals 8 piercing damage and has an innate +10% to hit.</p>\n<b>CP Cost</b>: 30";
+desc["divine_herald_conquest"] = "<h3>Harbinger of Conquest</h3>\n<i>You are the herald of the triumph of good over evil.</i>\n<p>This skill adds a permanent +5% to hit with archery attacks. The character may activate \"Harbinger of Conquest\" for 15 minutes at a cost of 1AP and 10MP. While under this status effect the Divine Herald gains +1 damage to archery, and -1 soak against all damage. Each time the character hits an evil character, or a neutral character if he possesses Hand of Zealotry, the damage bonus increases by +1 and the soak penalty by -1, to a maximum of +5 damage/-5 soak. Missing an attack reduces the damage bonus by 1 to a minimum of zero. Changing targets reduces the damage bonus by 3 to a minimum of zero unless as a result of the previous target being killed by the Divine Herald's last attack. While under the status all archery and melee attacks deal holy damage and have a 33% chance of ignoring resistance or immunity.</p>\n</p>\"Harbinger of Conquest\" can not be active at the same time as the Paladin's abilities \"Shield of Faith\" or \"Defensive Stance\", activating \"Harbinger of War\" cancels those statuses, and activating those statuses cancels \"Harbinger of Conquest\".</p><b>CP Cost</b>: 60";
 desc["divine_herald_fury"] = "<h3>Holy Fury</h3>\n<i>You are able to focus your Holy anger in such a way that allows you to remain in battle for longer periods of time.</i>\n<p>This is a click power that, when activated, immediately grants the Divine Herald a great many additional, temporary HP. However, the extra HP will disappear at the rate of 1 per minute. The power allows the Divine Herald to go above his or her normal maximum HP. The number of temporary HP granted is 20. Whenever the Divine Herald makes a melee attack while affected by \"Holy Fury\" they heals 3HP up to there maximum.</p>\n<b>CP Cost</b>: 30";
 desc["divine_herald_infinite"] = "<h3>Infinite Attack</h3>\n<i>You are able to deal a staggering amount of damage with each attack.</i>\n<p>This ability adds a permanent, innate damage bonus of +3 to all attacks. This ability stacks with Strong Attack and Elite Attack.</p>\n<b>CP Cost</b>: 30";
 desc["divine_herald_righteous"] = "<h3>Righteous Attack</h3>\n<i>You are able to deal an incredible amount of damage to evil foes.</i>\n<p>This ability adds a permanent, innate damage bonus of +3 to all single target attacks against targets with -20 or below morality. This ability stacks with Strong, Elite and Infinite Attack.</p>\n<b>CP Cost</b>: 60";
@@ -659,7 +659,7 @@ desc["voidwalker_es"] = "<h3>Enhanced Senses</h3>\n<i>You are always alert and a
 desc["voidwalker_invis"] = "<h3>Invisibility</h3>\n<i>You are capable of becoming invisible to the eyes of mere mortals.</i>\n<p>When active, this ability allows you to become completely unseen to anyone and everyone. For the cost of 1AP and 12MP the  Void Walker gains the \"Invisible\" status for one status tick, every AP tick the Void Walker spends 3MP to renew the ability, every not AP status tick the Void Walker automatically spends 1MP to renew his invisibility, or if he has less than the required MP he is still charged the full amount and the effect ends. Attacking makes the Void Walker visible.</p>\n<b>CP Cost</b>: 30";
 desc["voidwalker_great_invis"] = "<h3>Greater Invisibility</h3>\n<i>Your strength in invisibility has improved that you can remain as such indefinitely.</i>\n<p>This ability greatly reduces the number of MP required to maintain Invisibility. It reduces the initial cost to become invisible from 12 MP to 8 MP, reduces \"per-status-tick\" cost from 1MP to 0MP, and reduces AP tick renewal cost from 3 MP to 2 MP.</p>\n<b>CP Cost</b>: 60";
 
-desc["corruptor_manabiter"] = "<h3>Manabiter</h3>\n<i>You can consume the magic in items to empower yourself.</i>\n<p>At a cost of 1AP the Corruptor can consume a random enchantment from an item he owns, a potion or a spellgem. If used on an enchantment this grants the Corruptor an additional 25MP and if a potions was used in the creation of the enchantment they gain the effect of the potions for a number of status equal to that left on the enchantment. If used on a potion they gain 10MP and the effect for half the usual duration. If used on a spellgem them drain all the charges and gains MP equal to twice the amount of MP required to cast the spell stored in the spellgem times the number of charges consumed, if the gem is empty they gains twice the MP of the stored spell casting cost and the gem is destroyed. Each of these may take them above their maximum</p>\n<b>FREE SKILL</b>";
+desc["corruptor_manabiter"] = "<h3>Manabiter</h3>\n<i>You can consume the magic in items to empower yourself.</i>\n<p>At a cost of 1AP the Corruptor can consume a random enchantment from an item he owns, a potion or a spellgem. If used on an enchantment this grants the Corruptor an additional 25MP and if a potions was used in the creation of the enchantment they gain the effect of the potions for a number of status equal to that left on the enchantment. If used on a potion they gain 10MP and the effect for half the usual duration. If used on a spellgem them drain all the charges and gains MP equal to twice the amount of MP required to cast the spell stored in the spellgem times the number of charges consumed, if the gem is empty they gains twice the MP of the stored spell casting cost and the gem is destroyed. Each of these may take them above their maximum. In addition, the Corruptor may view which enchants an item contains by mouse-hovering over the name of the item in inventory.</p>\n<b>FREE SKILL</b>";
 desc["corruptor_draining"] = "<h3>Draining Field</h3>\n<i>You have honed your ability to consume magic to the point you have developed an almost palpable aura.</i>\n<p>Any time an enchanted weapon is used to attack the Corruptor, there is a 40% chance of the Corruptor spontaneously consuming an enchantment from the weapon (as per Manabite) to gain MP and/or additional effects. In addition there is a 40% chance any character attacking the Corruptor suffers the \"Drained\" status effect which applies a -1 soak and -1 damage penalty.</p>\n<b>CP Cost</b>: 60";
 desc["corruptor_cos_aff"] = "<h3>Cosmic Affinity</h3>\n<i>Your understanding of magic has brought you more in tune with the cosmos.</i>\n<p>This skill increases the character's maximum Magic Point total by 15 points.</p>\n<b>CP Cost</b>: 30";
 desc["corruptor_cos_mas"] = "<h3>Cosmic Mastery</h3>\n<i>Your understanding of magic is matched by few within the Nexus.</i>\n<p>This skill further increases the character's maximum Magic Point total by an additional 15 points.</p>\n<b>CP Cost</b>: 60";
@@ -713,7 +713,7 @@ desc["fallen_glee"] = "<h3>Sadistic Glee</h3>\n<i>You revel in the suffering and
 desc["fallen_hellfire"] = "<h3>Hellfire</h3>\n<i>You are capable of summoning small amounts of infernal matter from the pure Hell to strengthen your attack.</i>\n<p>This is a specialized attack in which your normal attack is charged with hellish might. It is a normal attack roll, and if successful will deal 8 additional unholy damage to your foes. This charged attack costs 1AP and 8MP to use.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_jets"] = "<h3>Infernal Jets</h3>\n<i>Your body has been fitted with engines that unleash jets of infernal flame.</i>\n<p>The further the fallen travels in a straight line the less the AP cost to continue moving in that direction.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_oath"] = "<h3>Oath of Steel</h3>\n<i>The powers of evil have rewarded you with skill in weapons for turning away from the light.</i>\n<p>This skill grants the Fallen an innate +1 damage and +5% to hit with all melee and firearm attacks.</p>\n<b>CP Cost</b>: 30";
-desc["fallen_bond"] = "<h3>Bond of the Mechanical</h3>\n<i>The powers of evil have shown you the effects of their influence on the weapons of war and taught you how to use it.</i>\n<p>This skill grants the Fallen an innate +2 damage and +10% to hit with firearm attacks. Additionally the Fallen may reload any firearm or melee weapon at a cost of 1AP and XHP, where X is the number of shots the item holds.</p>\n<b>CP Cost</b>: 30";
+desc["fallen_bond"] = "<h3>Bond of the Mechanical</h3>\n<i>The powers of evil have shown you the effects of their influence on the weapons of war and taught you how to use it.</i>\n<p>This skill grants the Fallen an innate +2 damage and +10% to hit with firearm and melee attacks. Additionally the Fallen may reload any firearm or melee weapon at a cost of 1AP and XHP, where X is the number of shots the item holds.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_plague"] = "<h3>Plague of Doubt</h3>\n<i>Having fallen from grace you can instil doubt in others about the righteousness of their path.</i>\n<p>This skill grants the Fallen an innate charged attack that costs 2AP and 6MP. On a successful hit it will inflict the \"Plagued with Doubt\" status effect if there morality is more than 10. While \"Plagued with Doubt\", the the victim cannot increase their morality score when making attacks, and all attacks made shift their morality downward by 1 point greater than normal (minimum of a 1-point downward shift).</p>\n<b>CP Cost</b>: 30";
 desc["fallen_sulk"] = "<h3>Shadowskulk</h3>\n<i>Fallen from the light you take strength from the shadows you lurk in.</i>\n<p>This skill grants the fallen an innate +10% chance to hide and deals +2 damage when attacking from hiding.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_dirk"] = "<h3>Shadow Dirk</h3>\n<i>You can wield the very shadows a weapon.</i>\n<p>This skill grants the fallen an innate attack the Shadow Dirk. It deals 7 unholy damage, has an innate +10% attack bonus and uses the fencing tree. Attacks on characters and pets made from hiding with the Shadow Dirk deal +7 damage even if the target is aware of the attacker.</p>\n<b>CP Cost</b>: 60";
@@ -767,7 +767,7 @@ desc["spell_blur"] = "<h3>Blur</h3>\n<i>Blur is a Buff Spell.</i>\n<p>Blur costs
 desc["spell_hand"] = "<h3>Seeking Hand</h3>\n<i>Seeking Hand is a Buff Spell.</i>\n<p>Seeking Hand costs 10 MP to cast, and the character gains the \"Seeking Hand\" status effect, for 20 status ticks. Multiple casting durations stack. Characters under the effect of Seeking Hand gain a +20% hit bonus with Hand-to-hand attacks.</p>\n<b>CP Cost</b>: 10";
 desc["spell_blade"] = "<h3>Guided Blade</h3>\n<i>Guided Blade is a Buff Spell.</i>\n<p>Guided Blade costs 10 MP to cast, and the character gains the \"Guided Blade\" status effect, for 15 status ticks. Multiple casting durations stack. Characters under the effect of Guided Blade gain a +20% hit bonus with Melee attacks</p>\n<b>CP Cost</b>: 10";
 desc["spell_vision"] = "<h3>Sharp Vision</h3>\n<i>Sharp Vision is a Buff Spell.</i>\n<p>Sharp Vision costs 10 MP to cast, and the character gains the \"Sharp Vision\" status effect, for 15 status ticks. Multiple casting durations stack. Characters under the effect of Sharp Vision gain a +15% hit bonus with Ranged attacks</p>\n<b>CP Cost</b>: 10";
-desc["spell_sinew"] = "<h3>Conjure Sinews</h3>\n<i>Conjure Sinews is a Buff Spell</i>\n<p>Conjure Sinews costs 10 MP to Cast and the character gains 10 status ticks of the \"Strength\" status effect. Multiple castings of this spell stack. This effect is identical to, and stacks with, the effects produced by a Potion of Strength.</p>\n<b>CP Cost</b>: 10";
+desc["spell_sinew"] = "<h3>Conjure Sinews</h3>\n<i>Conjure Sinews is a Buff Spell</i>\n<p>Conjure Sinews costs 10 MP to Cast and the character gains 30 status ticks of the \"Strength\" status effect. Multiple castings of this spell stack. This effect is identical to, and stacks with, the effects produced by a Potion of Strength. Grants +20 to inventory capacity</p>\n<b>CP Cost</b>: 10";
 desc["spell_reveal"] = "<h3>Reveal</h3>\n<i>This utility spell allows the caster to immediately see all individuals who are hidden within a location.</i>\n<p>This spell allows the character to see all hidden and shadowskulking characters in a location. Further, if any characters in the area are invisible (either through the Invisibility skill or Potion of Invisibility), their invisibility state will be dispelled. Requires 7 MP to cast.</p>\n<b>CP Cost</b>: 7";
 desc["spell_water"] = "<h3>Waterbreathing</h3>\n<i>When this utility spell is cast, you are able to swim through any water easily for the duration of the spell's effect</i>\n<p>User gains \"Waterbreathing\" for 30 minutes. Waterbreathing allows you to move through water tiles at a cost of 1AP per tile. Requires 5 MP to cast.</p>\n<b>CP Cost</b>: 4";
 desc["spell_wrap"] = "<h3>Shadow Wrap</h3>\n<i>When this spell is cast, caster vanishes from normal eyesight.</i>\n<p>This spell hides the caster in current location, if hiding is possible in current location. Characters with Enhanced Senses can still see the character.</p><p>Requires 5 MP to cast.</p>\n<b>CP Cost</b>: 20";
@@ -812,7 +812,7 @@ function changeTier2()
 	if (level.length >= 10)
 	{
 		var aboveten = true;
-		while (aboveten) 
+		while (aboveten)
 		{
 			delevel();
 			if (level.length < 10)
@@ -821,7 +821,7 @@ function changeTier2()
 				alert("You have been deleveled down to level 9 for changing Tier 2 class");
 			}
 		}
-			
+
 		//alert("Please delevel yourself down to level 9 before changing Tier 2 class");
 		//return;
 	}
@@ -889,7 +889,7 @@ function changeTier3()
 	{
 
 		var abovetwenty = true;
-		while (abovetwenty) 
+		while (abovetwenty)
 		{
 			delevel();
 			if (level.length < 20)
@@ -940,12 +940,12 @@ function checkSkill(id, which, CP)
 	{
 		if (document.getElementById(id).checked)
 		{
-			if (level.length < 10 && 
-				((id.substring(0,7) == "paladin") || 
-				(id.substring(0,8) == "shepherd") || 
-				(id.substring(0,8) == "myrmidon") || 
-				(id.substring(0,8) == "sorcerer") || 
-				(id.substring(0,6) == "pariah") || 
+			if (level.length < 10 &&
+				((id.substring(0,7) == "paladin") ||
+				(id.substring(0,8) == "shepherd") ||
+				(id.substring(0,8) == "myrmidon") ||
+				(id.substring(0,8) == "sorcerer") ||
+				(id.substring(0,6) == "pariah") ||
 				(id.substring(0,7) == "defiler"))
 				)
 			{
@@ -954,7 +954,7 @@ function checkSkill(id, which, CP)
 				return;
 			}
 			var debug = id.substring(0,14);
-			if ( level.length < 20 && 
+			if ( level.length < 20 &&
 				    ((id.substring(0,13) == "divine_herald") ||
 					(id.substring(0,13) == "holy_champion") ||
 					(id.substring(0,6) == "seraph") ||
@@ -982,7 +982,7 @@ function checkSkill(id, which, CP)
 				document.getElementById(id).checked = false;
 				return;
 			}
-			if ( T3_250CP < 250 && 
+			if ( T3_250CP < 250 &&
 				((id.substring(0,13) == "divine_herald") ||
 				(id.substring(0,13) == "holy_champion") ||
 				(id.substring(0,6) == "seraph") ||
@@ -1011,11 +1011,11 @@ function checkSkill(id, which, CP)
 				return;
 			}
 			if (T2_70CP < 70 &&
-				((id.substring(0,7) == "paladin") || 
-				(id.substring(0,8) == "shepherd") || 
-				(id.substring(0,8) == "myrmidon") || 
-				(id.substring(0,8) == "sorcerer") || 
-				(id.substring(0,6) == "pariah") || 
+				((id.substring(0,7) == "paladin") ||
+				(id.substring(0,8) == "shepherd") ||
+				(id.substring(0,8) == "myrmidon") ||
+				(id.substring(0,8) == "sorcerer") ||
+				(id.substring(0,6) == "pariah") ||
 				(id.substring(0,7) == "defiler"))
 				)
 			{
@@ -1042,13 +1042,13 @@ function checkSkill(id, which, CP)
 					alert("Angels may not learn Acid spells.");
 					document.getElementById(id).checked = false;
 					return;
-				}	
+				}
 				if (DemonicCaster == 1 && id.substring(0,8) == "spell_ec")
 				{
 					alert("Demons may not learn Electric spells.");
 					document.getElementById(id).checked = false;
 					return;
-				}				
+				}
 			}
 			if (T2SkillsBought < 100 && ((id.substring(0,6) == "fallen") || (id.substring(0,8) == "redeemed")))
 			{
@@ -1074,7 +1074,7 @@ function checkSkill(id, which, CP)
 					alert("Angels may not learn Acid spells.");
 					document.getElementById(id).checked = false;
 					return;
-				}	
+				}
 				if (DemonicCaster == 1 && id.substring(0,12) == "res_spell_ec")
 				{
 					alert("Demons may not learn Electric spells.");
@@ -1089,15 +1089,15 @@ function checkSkill(id, which, CP)
 				return;
 			}
 			if (id.substring(0,5) == "spell" ||
-				((id.substring(0,7) == "paladin") || 
-				(id.substring(0,8) == "shepherd") || 
-				(id.substring(0,8) == "myrmidon") || 
-				(id.substring(0,8) == "sorcerer") || 
-				(id.substring(0,6) == "pariah") || 
+				((id.substring(0,7) == "paladin") ||
+				(id.substring(0,8) == "shepherd") ||
+				(id.substring(0,8) == "myrmidon") ||
+				(id.substring(0,8) == "sorcerer") ||
+				(id.substring(0,6) == "pariah") ||
 				(id.substring(0,7) == "defiler"))
 				)
 			{
-				T2SkillsBought += CP; 				
+				T2SkillsBought += CP;
 			}
 			switch (id)
 			{
@@ -1117,7 +1117,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("mortal_evas").disabled = false;
 					CCDodge = CCDodge + 5;
 					break;
-				case "mortal_evas":					
+				case "mortal_evas":
 					CCDodge = CCDodge + 5;
 					RangeDef = RangeDef + 5;
 					break;
@@ -1125,7 +1125,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("mortal_adv_mart").disabled = false;
 					HthAcc = HthAcc + 15;
 					break;
-				case "mortal_adv_mart":					
+				case "mortal_adv_mart":
 					HthAcc = HthAcc + 15;
 					break;
 				case "mortal_hide":
@@ -1147,7 +1147,7 @@ function checkSkill(id, which, CP)
 					MelAcc = MelAcc + 15;
 					SwordAcc = SwordAcc + 15;
 					break;
-				case "mortal_exp_mel":					
+				case "mortal_exp_mel":
 					MelAcc = MelAcc + 10;
 					SwordAcc = SwordAcc + 10;
 					break;
@@ -1170,15 +1170,15 @@ function checkSkill(id, which, CP)
 					document.getElementById("mortal_adv_fire").disabled = false;
 					FireAcc = FireAcc + 20;
 					break;
-				case "mortal_adv_fire":					
+				case "mortal_adv_fire":
 					FireAcc = FireAcc + 10;
 					break;
 				case "mortal_throw":
 					document.getElementById("mortal_adv_throw").disabled = false;
-					ThrowAcc = ThrowAcc + 20;					
+					ThrowAcc = ThrowAcc + 20;
 					break;
 				case "mortal_adv_throw":
-					ThrowAcc = ThrowAcc + 10;					
+					ThrowAcc = ThrowAcc + 10;
 					break;
 				case "mortal_repair":
 					document.getElementById("mortal_bow").disabled = false;
@@ -1202,7 +1202,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "mortal_search":
 					Search = Search + 10;
-					break;					
+					break;
 				case "mortal_stren":
 					document.getElementById("mortal_stam").disabled = false;
 					HeavyAcc = HeavyAcc + 5;
@@ -1237,7 +1237,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "paladin_strong":
 					document.getElementById("paladin_elite").disabled = false;
-					HthDam = HthDam + 1; 
+					HthDam = HthDam + 1;
 					MelDam = MelDam + 1;
 					SwordDam = SwordDam + 1;
 					ArchDam = ArchDam + 1;
@@ -1246,7 +1246,7 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 1;
 					break;
 				case "paladin_elite":
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -1255,7 +1255,7 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 2;
 					break;
 				case "paladin_comb_mast":
-					HthAcc = HthAcc + 5; 
+					HthAcc = HthAcc + 5;
 					MelAcc = MelAcc + 5;
 					SwordAcc = SwordAcc + 5;
 					ArchAcc = ArchAcc + 5;
@@ -1263,7 +1263,7 @@ function checkSkill(id, which, CP)
 					ThrowAcc = ThrowAcc + 5;
 					SpellAcc = SpellAcc + 5;
 					break;
-				case "paladin_bolst":					
+				case "paladin_bolst":
 					document.getElementById("paladin_smite").disabled = false;
 					break;
 				case "shepherd_pray":
@@ -1279,10 +1279,10 @@ function checkSkill(id, which, CP)
 					break;
 				case "shepherd_spell_com":
 					document.getElementById("shepherd_battle_mag").disabled = false;
-					SpellAcc = SpellAcc + 20;					
+					SpellAcc = SpellAcc + 20;
 					break;
-				case "shepherd_battle_mag":					
-					SpellAcc = SpellAcc + 15;					
+				case "shepherd_battle_mag":
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "shepherd_spell":
 					document.getElementById("shepherd_sanct").disabled = false;
@@ -1299,7 +1299,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "myrmidon_strong":
 					document.getElementById("myrmidon_wep_break").disabled = false;
-					HthDam = HthDam + 1; 
+					HthDam = HthDam + 1;
 					MelDam = MelDam + 1;
 					SwordDam = SwordDam + 1;
 					ArchDam = ArchDam + 1;
@@ -1307,13 +1307,13 @@ function checkSkill(id, which, CP)
 					ThrowDam = ThrowDam + 1;
 					SpellGenDam = SpellGenDam + 1;
 					break;
-				case "myrmidon_sup_ref":					
+				case "myrmidon_sup_ref":
 					CCDodge = CCDodge + 5;
 					RangeDef = RangeDef + 5;
 					SpellAcc = SpellAcc + 5;
 					break;
 				case "myrmidon_com_mast":
-					HthAcc = HthAcc + 5; 
+					HthAcc = HthAcc + 5;
 					MelAcc = MelAcc + 5;
 					SwordAcc = SwordAcc + 5;
 					ArchAcc = ArchAcc + 5;
@@ -1330,14 +1330,14 @@ function checkSkill(id, which, CP)
 					document.getElementById("sorcerer_alch_trans").disabled = false;
 					break;
 				case "sorcerer_heal_self":
-					document.getElementById("sorcerer_mystic").disabled = false;		
+					document.getElementById("sorcerer_mystic").disabled = false;
 					break;
 				case "sorcerer_spell_com":
-					document.getElementById("sorcerer_battle_mag").disabled = false;		
-					SpellAcc = SpellAcc + 20;					
+					document.getElementById("sorcerer_battle_mag").disabled = false;
+					SpellAcc = SpellAcc + 20;
 					break;
-				case "sorcerer_battle_mag":					
-					SpellAcc = SpellAcc + 15;					
+				case "sorcerer_battle_mag":
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "pariah_ener":
 					document.getElementById("pariah_rend").disabled = false;
@@ -1350,8 +1350,8 @@ function checkSkill(id, which, CP)
 				case "pariah_claws":
 					document.getElementById("pariah_taste").disabled = false;
 					break;
-				case "pariah_strong":					
-					HthDam = HthDam + 1; 
+				case "pariah_strong":
+					HthDam = HthDam + 1;
 					MelDam = MelDam + 1;
 					SwordDam = SwordDam + 1;
 					ArchDam = ArchDam + 1;
@@ -1360,7 +1360,7 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 1;
 					break;
 				case "pariah_com_mas":
-					HthAcc = HthAcc + 5; 
+					HthAcc = HthAcc + 5;
 					MelAcc = MelAcc + 5;
 					SwordAcc = SwordAcc + 5;
 					ArchAcc = ArchAcc + 5;
@@ -1377,10 +1377,10 @@ function checkSkill(id, which, CP)
 					break;
 				case "defiler_spell_com":
 					document.getElementById("defiler_battle").disabled = false;
-					SpellAcc = SpellAcc + 20;					
+					SpellAcc = SpellAcc + 20;
 					break;
-				case "defiler_battle":					
-					SpellAcc = SpellAcc + 15;					
+				case "defiler_battle":
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "defiler_spell":
 					document.getElementById("defiler_taint").disabled = false;
@@ -1395,7 +1395,7 @@ function checkSkill(id, which, CP)
 					MelAcc = MelAcc + 5;
 					SwordAcc = SwordAcc + 5;
 					break;
-				case "divine_herald_dtd":	
+				case "divine_herald_dtd":
 					document.getElementById("divine_herald_death").disabled = false;
 					break;
 				case "divine_herald_greatbow":
@@ -1406,7 +1406,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "divine_herald_infinite":
 					document.getElementById("divine_herald_righteous").disabled = false;
-					HthDam = HthDam + 3; 
+					HthDam = HthDam + 3;
 					MelDam = MelDam + 3;
 					SwordDam = SwordDam + 3;
 					ArchDam = ArchDam + 3;
@@ -1436,11 +1436,11 @@ function checkSkill(id, which, CP)
 					document.getElementById("holy_champion_tornado").disabled = false;
 					if (WaterBought == 1) {
 						document.getElementById("holy_champion_mist").disabled = false;
-					}	
+					}
 					if (FireBought == 1) {
 						document.getElementById("holy_champion_lightning").disabled = false;
-					}			
-					AirBought = 1;	
+					}
+					AirBought = 1;
 					break;
 				case "holy_champion_tornado":
 					document.getElementById("holy_champion_wind").disabled = false;
@@ -1453,7 +1453,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("holy_champion_steel").disabled = false;
 					if (WaterBought == 1) {
 						document.getElementById("holy_champion_quicksand").disabled = false;
-					}	
+					}
 					if (FireBought == 1) {
 						document.getElementById("holy_champion_magma").disabled = false;
 					}
@@ -1471,7 +1471,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("holy_champion_inferno").disabled = false;
 					if (AirBought == 1) {
 						document.getElementById("holy_champion_lightning").disabled = false;
-					}	
+					}
 					if (EarthBought == 1) {
 						document.getElementById("holy_champion_magma").disabled = false;
 					}
@@ -1487,14 +1487,14 @@ function checkSkill(id, which, CP)
 					document.getElementById("holy_champion_river").disabled = false;
 					if (AirBought == 1) {
 						document.getElementById("holy_champion_mist").disabled = false;
-					}	
+					}
 					if (EarthBought == 1) {
 						document.getElementById("holy_champion_quicksand").disabled = false;
 					}
 					WaterBought = 1;
 					break;
 				case "holy_champion_river":
-					document.getElementById("holy_champion_sea").disabled = false;					
+					document.getElementById("holy_champion_sea").disabled = false;
 					break;
 				case "holy_champion_sea":
 					CoSoak = CoSoak + 1000;
@@ -1543,7 +1543,7 @@ function checkSkill(id, which, CP)
 					ArchAcc = ArchAcc + 5;
 					break;
 				case "seraph_infinite":
-					HthDam = HthDam + 3; 
+					HthDam = HthDam + 3;
 					MelDam = MelDam + 3;
 					SwordDam = SwordDam + 3;
 					ArchDam = ArchDam + 3;
@@ -1575,15 +1575,15 @@ function checkSkill(id, which, CP)
 					break;
 				case "seraph_defender_just":
 					FiSoak = FiSoak + 1;
-					CoSoak = CoSoak + 1;					
+					CoSoak = CoSoak + 1;
 					AcSoak = AcSoak + 1;
-					DeSoak = DeSoak + 1;					
-					UnSoak = UnSoak + 1;					
+					DeSoak = DeSoak + 1;
+					UnSoak = UnSoak + 1;
 					break;
-				case "seraph_defender_inn":					
+				case "seraph_defender_inn":
 					ElSoak = ElSoak + 1;
 					AcSoak = AcSoak + 1;
-					DeSoak = DeSoak + 1;					
+					DeSoak = DeSoak + 1;
 					UnSoak = UnSoak + 1;
 					ArSoak = ArSoak + 1;
 					break;
@@ -1643,7 +1643,7 @@ function checkSkill(id, which, CP)
 				case "archon_eye_judg":
 					document.getElementById("archon_dread").disabled = false;
 					break;
-				case "archon_dread":					
+				case "archon_dread":
 					document.getElementById("archon_forceful").disabled = false;
 					break;
 				case "archon_recall":
@@ -1668,7 +1668,7 @@ function checkSkill(id, which, CP)
 					Carry = Carry + 10;
 					AP = AP + 5;
 					break;
-				case "eternal_soldier_endurance":					
+				case "eternal_soldier_endurance":
 					Carry = Carry + 10;
 					AP = AP + 5;
 					HP = HP + 5;
@@ -1676,7 +1676,7 @@ function checkSkill(id, which, CP)
 				case "eternal_soldier_elite":
 					document.getElementById("eternal_soldier_infinite").disabled = false;
 					document.getElementById("eternal_soldier_fire").disabled = false;
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -1685,7 +1685,7 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 2;
 					break;
 				case "eternal_soldier_infinite":
-					HthDam = HthDam + 3; 
+					HthDam = HthDam + 3;
 					MelDam = MelDam + 3;
 					SwordDam = SwordDam + 3;
 					ArchDam = ArchDam + 3;
@@ -1694,7 +1694,7 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 3;
 					break;
 				case "eternal_soldier_air":
-					HthAcc = HthAcc + 10; 
+					HthAcc = HthAcc + 10;
 					MelAcc = MelAcc + 10;
 					SwordAcc = SwordAcc + 10;
 					ArchAcc = ArchAcc + 10;
@@ -1702,10 +1702,10 @@ function checkSkill(id, which, CP)
 					ThrowAcc = ThrowAcc + 10;
 					break;
 				case "eternal_soldier_antitoxin":
-					document.getElementById("eternal_soldier_vigor").disabled = false; 
+					document.getElementById("eternal_soldier_vigor").disabled = false;
 					break;
 				case "eternal_soldier_vigor":
-					HP = HP + 20; 
+					HP = HP + 20;
 					break;
 				case "eternal_soldier_earth":
 					ImSoak = ImSoak + 5;
@@ -1718,7 +1718,7 @@ function checkSkill(id, which, CP)
 					DeSoak = DeSoak + 3;
 					HoSoak = HoSoak + 4;
 					UnSoak = UnSoak + 4;
-					ArSoak = ArSoak + 4; 
+					ArSoak = ArSoak + 4;
 					HP = HP + 10;
 					break;
 				case "eternal_soldier_fasthands":
@@ -1730,28 +1730,28 @@ function checkSkill(id, which, CP)
 					document.getElementById("eternal_soldier_form").disabled = false;
 					break;
 				case "eternal_soldier_form":
-					HthAcc = HthAcc + 5;					
+					HthAcc = HthAcc + 5;
 					break;
-				case "eternal_soldier_water":				
+				case "eternal_soldier_water":
 					document.getElementById("eternal_soldier_flow").disabled = false;
 					document.getElementById("eternal_soldier_reflex").disabled = false;
 					CCDodge = CCDodge + 15;
 					RangeDef = RangeDef + 15;
 					break;
-				case "eternal_soldier_reflex":				
+				case "eternal_soldier_reflex":
 					CCDodge = CCDodge + 10;
 					RangeDef = RangeDef + 10;
 					break;
-				case "nexus_champion_luck":					
+				case "nexus_champion_luck":
 					document.getElementById("nexus_champion_gambler").disabled = false;
-					HthDam = HthDam + 1; 
+					HthDam = HthDam + 1;
 					MelDam = MelDam + 1;
 					SwordDam = SwordDam + 1;
 					ArchDam = ArchDam + 1;
 					FireDam = FireDam + 1;
 					ThrowDam = ThrowDam + 1;
 					SpellGenDam = SpellGenDam + 1;
-					HthAcc = HthAcc + 5; 
+					HthAcc = HthAcc + 5;
 					MelAcc = MelAcc + 5;
 					SwordAcc = SwordAcc + 5;
 					ArchAcc = ArchAcc + 5;
@@ -1773,10 +1773,10 @@ function checkSkill(id, which, CP)
 				case "nexus_champion_soul":
 					MP = MP + 5;
 					break;
-				case "nexus_champion_balance":					
+				case "nexus_champion_balance":
 					document.getElementById("nexus_champion_equilibrium").disabled = false;
 					break;
-				case "nexus_champion_origami":					
+				case "nexus_champion_origami":
 					document.getElementById("nexus_champion_bengal").disabled = false;
 					break;
 				case "nexus_champion_resistance":
@@ -1791,36 +1791,36 @@ function checkSkill(id, which, CP)
 					DeSoak = DeSoak + 5;
 					HoSoak = HoSoak + 4;
 					UnSoak = UnSoak + 4;
-					ArSoak = ArSoak + 4; 
+					ArSoak = ArSoak + 4;
 					break;
-				case "nexus_champion_strength":					
+				case "nexus_champion_strength":
 					document.getElementById("nexus_champion_inner_strength").disabled = false;
 					document.getElementById("nexus_champion_eagle").disabled = false;
 					HeavyAcc = HeavyAcc + 5;
 					ArchDam = ArchDam + 1;
 					ThrowDam = ThrowDam + 2;
 					Carry = Carry + 20;
-					break;					
+					break;
 				case "nexus_champion_eagle":
-					ArchAcc = ArchAcc + 10;					
+					ArchAcc = ArchAcc + 10;
 					ThrowAcc = ThrowAcc + 10;
 					break;
-				case "nexus_champion_inner_strength":										
+				case "nexus_champion_inner_strength":
 					MP = MP + 5;
 					break;
-				case "nexus_champion_wandering":					
+				case "nexus_champion_wandering":
 					document.getElementById("nexus_champion_leaguestep").disabled = false;
 					break;
 				case "revenant_dark":
 					document.getElementById("revenant_blood").disabled = false;
-					document.getElementById("revenant_day").disabled = false;					
+					document.getElementById("revenant_day").disabled = false;
 					break;
 				case "revenant_pred":
 					HthAcc = HthAcc + 10;
 					HthDam = HthDam + 1;
 					break;
 				case "revenant_elite":
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -1831,12 +1831,12 @@ function checkSkill(id, which, CP)
 				case "revenant_fangs":
 					document.getElementById("revenant_soul").disabled = false;
 					document.getElementById("revenant_mantle").disabled = false;
-					break;				
+					break;
 				case "revenant_shad_bat":
 					document.getElementById("revenant_anim_bat").disabled = false;
 					break;
 				case "revenant_shad_dust":
-					document.getElementById("revenant_anim_dust").disabled = false;										
+					document.getElementById("revenant_anim_dust").disabled = false;
 					document.getElementById("revenant_eye").disabled = false;
 					document.getElementById("revenant_umbral").disabled = false;
 					HP = HP - 10;
@@ -1845,7 +1845,7 @@ function checkSkill(id, which, CP)
 					PiRes = PiRes + 25;
 					break;
 				case "revenant_shad_wolf":
-					document.getElementById("revenant_anim_wolf").disabled = false;			
+					document.getElementById("revenant_anim_wolf").disabled = false;
 					document.getElementById("revenant_blood_wolf").disabled = false;
 					document.getElementById("revenant_heart_wolf").disabled = false;
 					break;
@@ -1858,43 +1858,43 @@ function checkSkill(id, which, CP)
 				case "conduit_code":
 					document.getElementById("conduit_resource").disabled = false;
 					document.getElementById("conduit_design").disabled = false;
-					break;				
+					break;
 				case "conduit_arc_trail":
 					document.getElementById("conduit_chan_trail").disabled = false;
-					break;	
+					break;
 				case "conduit_chan_trail":
 					document.getElementById("conduit_foc_trail").disabled = false;
-					break;	
+					break;
 				case "conduit_well":
 					document.getElementById("conduit_channel").disabled = false;
 					document.getElementById("conduit_recycle").disabled = false;
 					document.getElementById("conduit_sink").disabled = false;
-					break;		
+					break;
 				case "conduit_cos_aff":
 					MP = MP + 15;
 					break;
 				case "conduit_enchant":
-					document.getElementById("conduit_seal").disabled = false;				
-					break;	
+					document.getElementById("conduit_seal").disabled = false;
+					break;
 				case "conduit_en_flare":
 					document.getElementById("conduit_bu_flare").disabled = false;
 					document.getElementById("conduit_debilitation").disabled = false;
 					document.getElementById("conduit_sapping").disabled = false;
-					break;	
+					break;
 				case "conduit_target":
-					document.getElementById("conduit_weakness").disabled = false;				
-					break;		
+					document.getElementById("conduit_weakness").disabled = false;
+					break;
 				case "conduit_wisp":
 					document.getElementById("conduit_wrap").disabled = false;
 					document.getElementById("conduit_bond").disabled = false;
 					document.getElementById("conduit_portal").disabled = false;
-					break;	
+					break;
 				case "conduit_wrap":
 					ArSoak = ArSoak + 1000;
-					break;		
+					break;
 				case "conduit_portal":
-					document.getElementById("conduit_wormhole").disabled = false;				
-					break;						
+					document.getElementById("conduit_wormhole").disabled = false;
+					break;
 				case "lich_reanim":
 					document.getElementById("lich_phyl").disabled = false;
 					break;
@@ -1923,7 +1923,7 @@ function checkSkill(id, which, CP)
 				case "lich_wisp":
 					document.getElementById("lich_wight").disabled = false;
 					break;
-				case "lich_aspect":				
+				case "lich_aspect":
 					CCDodge = CCDodge + 10;
 					RangeDef = RangeDef + 10;
 					break;
@@ -1975,8 +1975,8 @@ function checkSkill(id, which, CP)
 				case "doomhowler_aether":
 					document.getElementById("doomhowler_acr_war").disabled = false;
 					document.getElementById("doomhowler_mart_spell").disabled = false;
-					Spellcraft = 1;	
-					DemonicCaster = 1;	
+					Spellcraft = 1;
+					DemonicCaster = 1;
 					MP = MP + 10;
 					SpellAcc = SpellAcc + 20;
 					break;
@@ -1984,7 +1984,7 @@ function checkSkill(id, which, CP)
 					SpellAcc = SpellAcc + 25;
 					break;
 				case "doomhowler_elite":
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -1994,13 +1994,13 @@ function checkSkill(id, which, CP)
 					break;
 				case "doomhowler_tendrils":
 					document.getElementById("doomhowler_soul").disabled = false;
-					HthDam = HthDam + 1; 
+					HthDam = HthDam + 1;
 					break;
-				case "doomhowler_soul":					
-					HthDam = HthDam + 2; 
+				case "doomhowler_soul":
+					HthDam = HthDam + 2;
 					break;
 				case "doomhowler_teeth":
-					document.getElementById("doomhowler_blight").disabled = false;	
+					document.getElementById("doomhowler_blight").disabled = false;
 					break;
 				case "doomhowler_armor":
 					document.getElementById("doomhowler_phasing").disabled = false;
@@ -2014,15 +2014,15 @@ function checkSkill(id, which, CP)
 					DeSoak = DeSoak + 8;
 					HoSoak = HoSoak + 4;
 					UnSoak = UnSoak + 6;
-					ArSoak = ArSoak + 3; 
+					ArSoak = ArSoak + 3;
 					break;
 				case "doomhowler_phasing":
 					CCDodge = CCDodge + 5;
 					RangeDef = RangeDef + 5;
 					break;
 				case "doomhowler_chain_grem":
-					document.getElementById("doomhowler_trick").disabled = false;					
-					break;	
+					document.getElementById("doomhowler_trick").disabled = false;
+					break;
 				case "infernal_behemoth_brute":
 					document.getElementById("infernal_behemoth_chit").disabled = false;
 					document.getElementById("infernal_behemoth_bulk").disabled = false;
@@ -2042,7 +2042,7 @@ function checkSkill(id, which, CP)
 					DeSoak = DeSoak + 5;
 					HoSoak = HoSoak + 4;
 					UnSoak = UnSoak + 6;
-					ArSoak = ArSoak + 6; 
+					ArSoak = ArSoak + 6;
 					break;
 				case "infernal_behemoth_bulk":
 					HP = HP + 35;
@@ -2054,7 +2054,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("infernal_behemoth_berserk").disabled = false;
 					break;
 				case "infernal_behemoth_elite":
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -2076,16 +2076,16 @@ function checkSkill(id, which, CP)
 					document.getElementById("infernal_behemoth_fury").disabled = false;
 					break;
 				case "voidwalker_corner":
- 					document.getElementById("voidwalker_ether").disabled = false;					
-					document.getElementById("voidwalker_world").disabled = false;	
-					break;	
+ 					document.getElementById("voidwalker_ether").disabled = false;
+					document.getElementById("voidwalker_world").disabled = false;
+					break;
 				case "voidwalker_world":
  					document.getElementById("voidwalker_stone").disabled = false;
 					break;
 				case "voidwalker_edge":
 					document.getElementById("voidwalker_cruelty").disabled = false;
 					document.getElementById("voidwalker_precision").disabled = false;
-					HthAcc = HthAcc + 10; 
+					HthAcc = HthAcc + 10;
 					MelAcc = MelAcc + 10;
 					SwordAcc = SwordAcc + 10;
 					ArchAcc = ArchAcc + 10;
@@ -2093,12 +2093,12 @@ function checkSkill(id, which, CP)
 					ThrowAcc = ThrowAcc + 10;
 					break;
 				case "voidwalker_cruelty":
-					HthDam = HthDam + 3; 
+					HthDam = HthDam + 3;
 					FireDam = FireDam + 3;
 					break;
 				case "voidwalker_elite":
 					document.getElementById("voidwalker_infinite").disabled = false;
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -2107,36 +2107,36 @@ function checkSkill(id, which, CP)
 					SpellGenDam = SpellGenDam + 2;
 					break;
 				case "voidwalker_infinite":
-					HthDam = HthDam + 3; 
+					HthDam = HthDam + 3;
 					MelDam = MelDam + 3;
 					SwordDam = SwordDam + 3;
 					ArchDam = ArchDam + 3;
 					FireDam = FireDam + 3;
 					ThrowDam = ThrowDam + 3;
 					SpellGenDam = SpellGenDam + 3;
-					break;				
+					break;
 				case "voidwalker_invis":
 					document.getElementById("voidwalker_great_invis").disabled = false;
 					break;
 				case "corruptor_manabiter":
 					document.getElementById("corruptor_draining").disabled = false;
 					break;
-				case "corruptor_cos_aff":	
-					document.getElementById("corruptor_cos_mas").disabled = false;					
-					MP = MP + 15;					
+				case "corruptor_cos_aff":
+					document.getElementById("corruptor_cos_mas").disabled = false;
+					MP = MP + 15;
 					break;
-				case "corruptor_cos_mas":					
-					MP = MP + 15;					
+				case "corruptor_cos_mas":
+					MP = MP + 15;
 					break;
 				case "corruptor_cut":
-					document.getElementById("corruptor_touch").disabled = false;				
+					document.getElementById("corruptor_touch").disabled = false;
 					break;
 				case "corruptor_nullity":
 					document.getElementById("corruptor_agony").disabled = false;
 					document.getElementById("corruptor_sapping").disabled = false;
 					SpellGenDam = SpellGenDam + 1;
 					break;
-				case "corruptor_sapping":					
+				case "corruptor_sapping":
 					SpellGenDam = SpellGenDam + 2;
 					break;
 				case "corruptor_leath_wings":
@@ -2163,16 +2163,16 @@ function checkSkill(id, which, CP)
 					document.getElementById("dark_oppressor_doom").disabled = false;
 					break;
 				case "dark_oppressor_enchant":
-					document.getElementById("dark_oppressor_seal").disabled = false;			
+					document.getElementById("dark_oppressor_seal").disabled = false;
 					break;
 				case "dark_oppressor_terrify_aspect":
-					document.getElementById("dark_oppressor_lord").disabled = false;	
+					document.getElementById("dark_oppressor_lord").disabled = false;
 					CCDodge = CCDodge + 10;
 					RangeDef = RangeDef + 10;
 					break;
 				case "dark_oppressor_lord":
-					document.getElementById("dark_oppressor_legion").disabled = false;			
-					break;	
+					document.getElementById("dark_oppressor_legion").disabled = false;
+					break;
 				case "wyrmmaster_acid_blood":
 					document.getElementById("wyrmmaster_spittle").disabled = false;
 					document.getElementById("wyrmmaster_wrackwyrm").disabled = false;
@@ -2201,7 +2201,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "fallen_hate":
 					document.getElementById("fallen_glee").disabled = false;
-					break;					
+					break;
 				case "fallen_oath":
 					document.getElementById("fallen_bond").disabled = false;
 					MelAcc = MelAcc + 5;
@@ -2232,7 +2232,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("redeemed_lamp").disabled = false;
 					break;
 				case "redeemed_elite":
-					HthDam = HthDam + 2; 
+					HthDam = HthDam + 2;
 					MelDam = MelDam + 2;
 					SwordDam = SwordDam + 2;
 					ArchDam = ArchDam + 2;
@@ -2257,7 +2257,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("redeemed_radiant_storms").disabled = false;
 					break;
 				case "redeemed_remembrance":
-					document.getElementById("redeemed_smite").disabled = false;					
+					document.getElementById("redeemed_smite").disabled = false;
 					break;
 				case "spell_ac_dart":
 					SpellAcKnown = SpellAcKnown + 1;
@@ -2373,12 +2373,12 @@ function checkSkill(id, which, CP)
 			levelcp.push(CP);
 			document.getElementById(id).disabled = true;
 			addLine(CP, which);
-			banked = document.getElementById("bankedcp").innerHTML - CP;			
+			banked = document.getElementById("bankedcp").innerHTML - CP;
 			T2_70CP = T2_70CP + CP;
 			T3_250CP = T3_250CP + CP;
 			CPSpent = CPSpent + CP;
 			updateCPTable();
-			updateStatsTable();			
+			updateStatsTable();
 		}
 		if (levelskill.length == 1)
 		{
@@ -2397,7 +2397,7 @@ function checkSkill(id, which, CP)
 	}
 }
 
-function updateCPTable() 
+function updateCPTable()
 {
 	var T2CPRemaining = (70 - T2_70CP) > 0 ? (70 - T2_70CP) : 0;
 	var T3CPRemaining = (250 - T3_250CP) > 0 ? (250 - T3_250CP) : 0;
@@ -2407,7 +2407,7 @@ function updateCPTable()
 	document.getElementById("tier3reqcp").innerHTML = T3CPRemaining;
 }
 
-function updateStatsTable() 
+function updateStatsTable()
 {
 	document.getElementById("hthacc").innerHTML = HthAcc + "%";
 	document.getElementById("melacc").innerHTML = MelAcc + "%";
@@ -2591,10 +2591,10 @@ function levelup()
 	document.getElementById("maxAP").innerHTML = AP;
 
 	if (level.length == 10) {
-		document.getElementById("lifetime_ach_bad3").disabled = false;	
+		document.getElementById("lifetime_ach_bad3").disabled = false;
 	}
 	if (level.length == 20) {
-		document.getElementById("lifetime_ach_bad4").disabled = false;		
+		document.getElementById("lifetime_ach_bad4").disabled = false;
 	}
 }
 
@@ -2616,15 +2616,15 @@ function delevel()
 		document.getElementById(lid).checked = false;
 		document.getElementById(lid).disabled = false;
 	}
-	if ((lid.substring(0,7) == "paladin") || 
-			(lid.substring(0,8) == "shepherd") || 
-			(lid.substring(0,8) == "myrmidon") || 
-			(lid.substring(0,8) == "sorcerer") || 
-			(lid.substring(0,6) == "pariah") || 
+	if ((lid.substring(0,7) == "paladin") ||
+			(lid.substring(0,8) == "shepherd") ||
+			(lid.substring(0,8) == "myrmidon") ||
+			(lid.substring(0,8) == "sorcerer") ||
+			(lid.substring(0,6) == "pariah") ||
 			(lid.substring(0,7) == "defiler") ||
 			(lid.substring(0,5) == "spell"))
 	{
-		T2SkillsBought = T2SkillsBought - lcp; 				
+		T2SkillsBought = T2SkillsBought - lcp;
 	}
 	switch (lid)
 	{
@@ -2644,7 +2644,7 @@ function delevel()
 			document.getElementById("mortal_evas").disabled = true;
 			CCDodge = CCDodge - 5;
 			break;
-		case "mortal_evas":					
+		case "mortal_evas":
 			CCDodge = CCDodge - 5;
 			RangeDef = RangeDef - 5;
 			break;
@@ -2652,7 +2652,7 @@ function delevel()
 			document.getElementById("mortal_adv_mart").disabled = true;
 			HthAcc = HthAcc - 15;
 			break;
-		case "mortal_adv_mart":					
+		case "mortal_adv_mart":
 			HthAcc = HthAcc - 15;
 			break;
 		case "mortal_hide":
@@ -2674,7 +2674,7 @@ function delevel()
 			MelAcc = MelAcc - 15;
 			SwordAcc = SwordAcc - 15;
 			break;
-		case "mortal_exp_mel":					
+		case "mortal_exp_mel":
 			MelAcc = MelAcc - 10;
 			SwordAcc = SwordAcc - 10;
 			break;
@@ -2697,15 +2697,15 @@ function delevel()
 			document.getElementById("mortal_adv_fire").disabled = true;
 			FireAcc = FireAcc - 20;
 			break;
-		case "mortal_adv_fire":					
+		case "mortal_adv_fire":
 			FireAcc = FireAcc - 10;
 			break;
 		case "mortal_throw":
 			document.getElementById("mortal_adv_throw").disabled = true;
-			ThrowAcc = ThrowAcc - 20;					
+			ThrowAcc = ThrowAcc - 20;
 			break;
 		case "mortal_adv_throw":
-			ThrowAcc = ThrowAcc - 10;					
+			ThrowAcc = ThrowAcc - 10;
 			break;
 		case "mortal_repair":
 			document.getElementById("mortal_bow").disabled = true;
@@ -2764,7 +2764,7 @@ function delevel()
 			break;
 		case "paladin_strong":
 			document.getElementById("paladin_elite").disabled = true;
-			HthDam = HthDam - 1; 
+			HthDam = HthDam - 1;
 			MelDam = MelDam - 1;
 			SwordDam = SwordDam - 1;
 			ArchDam = ArchDam - 1;
@@ -2773,7 +2773,7 @@ function delevel()
 			SpellGenDam = SpellGenDam - 1;
 			break;
 		case "paladin_elite":
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -2782,7 +2782,7 @@ function delevel()
 			SpellGenDam = SpellGenDam - 2;
 			break;
 		case "paladin_comb_mast":
-			HthAcc = HthAcc - 5; 
+			HthAcc = HthAcc - 5;
 			MelAcc = MelAcc - 5;
 			SwordAcc = SwordAcc - 5;
 			ArchAcc = ArchAcc - 5;
@@ -2791,7 +2791,7 @@ function delevel()
 			SpellAcc = SpellAcc - 5;
 			break;
 		case "paladin_bolst":
-			document.getElementById("paladin_smite").disabled = true;					
+			document.getElementById("paladin_smite").disabled = true;
 			break;
 		case "shepherd_pray":
 			document.getElementById("shepherd_devout").disabled = true;
@@ -2803,11 +2803,11 @@ function delevel()
 			document.getElementById("shepherd_holier").disabled = true;
 			break;
 		case "shepherd_spell_com":
-			document.getElementById("shepherd_battle_mag").disabled = true;					
-			SpellAcc = SpellAcc - 20;					
+			document.getElementById("shepherd_battle_mag").disabled = true;
+			SpellAcc = SpellAcc - 20;
 			break;
-		case "shepherd_battle_mag":					
-			SpellAcc = SpellAcc - 15;					
+		case "shepherd_battle_mag":
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "shepherd_spell":
 			document.getElementById("shepherd_sanct").disabled = true;
@@ -2824,7 +2824,7 @@ function delevel()
 			break;
 		case "myrmidon_strong":
 			document.getElementById("myrmidon_wep_break").disabled = true;
-			HthDam = HthDam - 1; 
+			HthDam = HthDam - 1;
 			MelDam = MelDam - 1;
 			SwordDam = SwordDam - 1;
 			ArchDam = ArchDam - 1;
@@ -2832,12 +2832,12 @@ function delevel()
 			ThrowDam = ThrowDam - 1;
 			SpellGenDam = SpellGenDam - 1;
 			break;
-		case "myrmidon_sup_ref":					
+		case "myrmidon_sup_ref":
 			CCDodge = CCDodge - 5;
 			RangeDef = RangeDef - 5;
 			break;
 		case "myrmidon_com_mast":
-			HthAcc = HthAcc - 5; 
+			HthAcc = HthAcc - 5;
 			MelAcc = MelAcc - 5;
 			SwordAcc = SwordAcc - 5;
 			ArchAcc = ArchAcc - 5;
@@ -2855,14 +2855,14 @@ function delevel()
 			document.getElementById("sorcerer_alch_trans").disabled = true;
 			break;
 		case "sorcerer_heal_self":
-			document.getElementById("sorcerer_mystic").disabled = true;		
+			document.getElementById("sorcerer_mystic").disabled = true;
 			break;
 		case "sorcerer_spell_com":
-			document.getElementById("sorcerer_battle_mag").disabled = true;		
-			SpellAcc = SpellAcc - 20;					
+			document.getElementById("sorcerer_battle_mag").disabled = true;
+			SpellAcc = SpellAcc - 20;
 			break;
-		case "sorcerer_battle_mag":					
-			SpellAcc = SpellAcc - 15;					
+		case "sorcerer_battle_mag":
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "pariah_ener":
 			document.getElementById("pariah_rend").disabled = true;
@@ -2875,8 +2875,8 @@ function delevel()
 		case "pariah_claws":
 			document.getElementById("pariah_taste").disabled = true;
 			break;
-		case "pariah_strong":					
-			HthDam = HthDam - 1; 
+		case "pariah_strong":
+			HthDam = HthDam - 1;
 			MelDam = MelDam - 1;
 			SwordDam = SwordDam - 1;
 			ArchDam = ArchDam - 1;
@@ -2885,7 +2885,7 @@ function delevel()
 			SpellGenDam = SpellGenDam - 1;
 			break;
 		case "pariah_com_mas":
-			HthAcc = HthAcc - 5; 
+			HthAcc = HthAcc - 5;
 			MelAcc = MelAcc - 5;
 			SwordAcc = SwordAcc - 5;
 			ArchAcc = ArchAcc - 5;
@@ -2902,10 +2902,10 @@ function delevel()
 			break;
 		case "defiler_spell_com":
 			document.getElementById("defiler_battle").disabled = true;
-			SpellAcc = SpellAcc - 20;					
+			SpellAcc = SpellAcc - 20;
 			break;
-		case "defiler_battle":					
-			SpellAcc = SpellAcc - 15;					
+		case "defiler_battle":
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "defiler_spell":
 			document.getElementById("defiler_taint").disabled = true;
@@ -2920,18 +2920,18 @@ function delevel()
 			MelAcc = MelAcc - 5;
 			SwordAcc = SwordAcc - 5;
 			break;
-		case "divine_herald_dtd":	
+		case "divine_herald_dtd":
 			document.getElementById("divine_herald_death").disabled = true;
 			break;
 		case "divine_herald_greatbow":
-			document.getElementById("divine_herald_conquest").disabled = true;			
+			document.getElementById("divine_herald_conquest").disabled = true;
 			break;
 		case "divine_herald_conquest":
 			ArchAcc = ArchAcc - 5;
 			break;
 		case "divine_herald_infinite":
 			document.getElementById("divine_herald_righteous").disabled = false;
-			HthDam = HthDam - 3; 
+			HthDam = HthDam - 3;
 			MelDam = MelDam - 3;
 			SwordDam = SwordDam - 3;
 			ArchDam = ArchDam - 3;
@@ -2961,11 +2961,11 @@ function delevel()
 			document.getElementById("holy_champion_tornado").disabled = true;
 			if (WaterBought == 1) {
 				document.getElementById("holy_champion_mist").disabled = true;
-			}	
+			}
 			if (FireBought == 1) {
 				document.getElementById("holy_champion_lightning").disabled = true;
-			}			
-			AirBought = 0;	
+			}
+			AirBought = 0;
 			break;
 		case "holy_champion_tornado":
 			document.getElementById("holy_champion_wind").disabled = true;
@@ -2978,7 +2978,7 @@ function delevel()
 			document.getElementById("holy_champion_steel").disabled = true;
 			if (WaterBought == 1) {
 				document.getElementById("holy_champion_quicksand").disabled = true;
-			}	
+			}
 			if (FireBought == 1) {
 				document.getElementById("holy_champion_magma").disabled = true;
 			}
@@ -2996,7 +2996,7 @@ function delevel()
 			document.getElementById("holy_champion_inferno").disabled = true;
 			if (AirBought == 1) {
 				document.getElementById("holy_champion_lightning").disabled = true;
-			}	
+			}
 			if (EarthBought == 1) {
 				document.getElementById("holy_champion_magma").disabled = true;
 			}
@@ -3012,14 +3012,14 @@ function delevel()
 			document.getElementById("holy_champion_river").disabled = true;
 			if (AirBought == 1) {
 				document.getElementById("holy_champion_mist").disabled = true;
-			}	
+			}
 			if (EarthBought == 1) {
 				document.getElementById("holy_champion_quicksand").disabled = true;
 			}
 			WaterBought = 0;
 			break;
 		case "holy_champion_river":
-			document.getElementById("holy_champion_sea").disabled = true;					
+			document.getElementById("holy_champion_sea").disabled = true;
 			break;
 		case "holy_champion_sea":
 			CoSoak = CoSoak - 1000;
@@ -3068,13 +3068,13 @@ function delevel()
 			ArchAcc = ArchAcc - 5;
 			break;
 		case "seraph_infinite":
-			HthDam = HthDam - 3; 
+			HthDam = HthDam - 3;
 			MelDam = MelDam - 3;
 			SwordDam = SwordDam - 3;
 			ArchDam = ArchDam - 3;
 			FireDam = FireDam - 3;
 			ThrowDam = ThrowDam - 3;
-			SpellGenDam = SpellGenDam - 3;				
+			SpellGenDam = SpellGenDam - 3;
 			break;
 		case "seraph_holy_fort":
 			HP = HP + 15;
@@ -3100,15 +3100,15 @@ function delevel()
 			break;
 		case "seraph_defender_just":
 			FiSoak = FiSoak - 1;
-			CoSoak = CoSoak - 1;					
+			CoSoak = CoSoak - 1;
 			AcSoak = AcSoak - 1;
-			DeSoak = DeSoak - 1;					
-			UnSoak = UnSoak - 1;					
+			DeSoak = DeSoak - 1;
+			UnSoak = UnSoak - 1;
 			break;
-		case "seraph_defender_inn":					
+		case "seraph_defender_inn":
 			ElSoak = ElSoak - 1;
 			AcSoak = AcSoak - 1;
-			DeSoak = DeSoak - 1;					
+			DeSoak = DeSoak - 1;
 			UnSoak = UnSoak - 1;
 			ArSoak = ArSoak - 1;
 			break;
@@ -3168,7 +3168,7 @@ function delevel()
 		case "archon_eye_judg":
 			document.getElementById("archon_dread").disabled = true;
 			break;
-		case "archon_dread":					
+		case "archon_dread":
 			document.getElementById("archon_forceful").disabled = true;
 			break;
 		case "archon_recall":
@@ -3193,7 +3193,7 @@ function delevel()
 			Carry = Carry - 10;
 			AP = AP - 5;
 			break;
-		case "eternal_soldier_endurance":					
+		case "eternal_soldier_endurance":
 			Carry = Carry - 10;
 			AP = AP - 5;
 			HP = HP - 5;
@@ -3201,7 +3201,7 @@ function delevel()
 		case "eternal_soldier_elite":
 			document.getElementById("eternal_soldier_infinite").disabled = true;
 			document.getElementById("eternal_soldier_fire").disabled = true;
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3210,7 +3210,7 @@ function delevel()
 			SpellGenDam = SpellGenDam - 2;
 			break;
 		case "eternal_soldier_infinite":
-			HthDam = HthDam - 3; 
+			HthDam = HthDam - 3;
 			MelDam = MelDam - 3;
 			SwordDam = SwordDam - 3;
 			ArchDam = ArchDam - 3;
@@ -3219,7 +3219,7 @@ function delevel()
 			SpellGenDam = SpellGenDam - 3;
 			break;
 		case "eternal_soldier_air":
-			HthAcc = HthAcc - 10; 
+			HthAcc = HthAcc - 10;
 			MelAcc = MelAcc - 10;
 			SwordAcc = SwordAcc - 10;
 			ArchAcc = ArchAcc - 10;
@@ -3227,10 +3227,10 @@ function delevel()
 			ThrowAcc = ThrowAcc - 10;
 			break;
 		case "eternal_soldier_antitoxin":
-			document.getElementById("eternal_soldier_vigor").disabled = true; 
+			document.getElementById("eternal_soldier_vigor").disabled = true;
 			break;
 		case "eternal_soldier_vigor":
-			HP = HP - 20; 
+			HP = HP - 20;
 			break;
 		case "eternal_soldier_earth":
 			ImSoak = ImSoak - 5;
@@ -3243,7 +3243,7 @@ function delevel()
 			DeSoak = DeSoak - 3;
 			HoSoak = HoSoak - 4;
 			UnSoak = UnSoak - 4;
-			ArSoak = ArSoak - 4; 
+			ArSoak = ArSoak - 4;
 			HP = HP - 10;
 			break;
 		case "eternal_soldier_fasthands":
@@ -3255,28 +3255,28 @@ function delevel()
 			document.getElementById("eternal_soldier_form").disabled = true;
 			break;
 		case "eternal_soldier_form":
-			HthAcc = HthAcc - 5;					
+			HthAcc = HthAcc - 5;
 			break;
-		case "eternal_soldier_water":				
+		case "eternal_soldier_water":
 			document.getElementById("eternal_soldier_flow").disabled = true;
 			document.getElementById("eternal_soldier_reflex").disabled = true;
 			CCDodge = CCDodge - 15;
 			RangeDef = RangeDef - 15;
 			break;
-		case "eternal_soldier_reflex":				
+		case "eternal_soldier_reflex":
 			CCDodge = CCDodge - 10;
 			RangeDef = RangeDef - 10;
-			break;	
-		case "nexus_champion_luck":					
+			break;
+		case "nexus_champion_luck":
 			document.getElementById("nexus_champion_gambler").disabled = true;
-			HthDam = HthDam - 1; 
+			HthDam = HthDam - 1;
 			MelDam = MelDam - 1;
 			SwordDam = SwordDam - 1;
 			ArchDam = ArchDam - 1;
 			FireDam = FireDam - 1;
 			ThrowDam = ThrowDam - 1;
 			SpellGenDam = SpellGenDam - 1;
-			HthAcc = HthAcc - 5; 
+			HthAcc = HthAcc - 5;
 			MelAcc = MelAcc - 5;
 			SwordAcc = SwordAcc - 5;
 			ArchAcc = ArchAcc - 5;
@@ -3298,10 +3298,10 @@ function delevel()
 		case "nexus_champion_soul":
 			MP = MP - 5;
 			break;
-		case "nexus_champion_balance":					
+		case "nexus_champion_balance":
 			document.getElementById("nexus_champion_equilibrium").disabled = true;
 			break;
-		case "nexus_champion_origami":					
+		case "nexus_champion_origami":
 			document.getElementById("nexus_champion_bengal").disabled = true;
 			break;
 		case "nexus_champion_resistance":
@@ -3316,9 +3316,9 @@ function delevel()
 			DeSoak = DeSoak - 5;
 			HoSoak = HoSoak - 4;
 			UnSoak = UnSoak - 4;
-			ArSoak = ArSoak - 4; 
+			ArSoak = ArSoak - 4;
 			break;
-		case "nexus_champion_strength":					
+		case "nexus_champion_strength":
 			document.getElementById("nexus_champion_inner_strength").disabled = true;
 			document.getElementById("nexus_champion_eagle").disabled = true;
 			HeavyAcc = HeavyAcc - 5;
@@ -3327,24 +3327,24 @@ function delevel()
 			Carry = Carry - 20;
 			break;
 		case "nexus_champion_eagle":
-			ArchAcc = ArchAcc - 10;					
+			ArchAcc = ArchAcc - 10;
 			ThrowAcc = ThrowAcc - 10;
 			break;
-		case "nexus_champion_inner_strength":									
+		case "nexus_champion_inner_strength":
 			MP = MP - 5;
-		case "nexus_champion_wandering":					
+		case "nexus_champion_wandering":
 			document.getElementById("nexus_champion_leaguestep").disabled = true;
 			break;
 		case "revenant_dark":
 			document.getElementById("revenant_blood").disabled = true;
-			document.getElementById("revenant_day").disabled = true;					
+			document.getElementById("revenant_day").disabled = true;
 			break;
 		case "revenant_pred":
 			HthAcc = HthAcc - 10;
 			HthDam = HthDam - 1;
 			break;
 		case "revenant_elite":
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3360,7 +3360,7 @@ function delevel()
 			document.getElementById("revenant_anim_bat").disabled = true;
 			break;
 		case "revenant_shad_dust":
-			document.getElementById("revenant_anim_dust").disabled = true;										
+			document.getElementById("revenant_anim_dust").disabled = true;
 			document.getElementById("revenant_eye").disabled = true;
 			document.getElementById("revenant_umbral").disabled = true;
 			HP = HP + 10;
@@ -3369,56 +3369,56 @@ function delevel()
 			PiRes = PiRes - 25;
 			break;
 		case "revenant_shad_wolf":
-			document.getElementById("revenant_anim_wolf").disabled = true;					
+			document.getElementById("revenant_anim_wolf").disabled = true;
 			document.getElementById("revenant_blood_wolf").disabled = true;
 			document.getElementById("revenant_heart_wolf").disabled = true;
-			break;			
+			break;
 		case "revenant_blood_wolf":
 			HeavyAcc = HeavyAcc - 5;
 			break;
 		case "revenant_heart_wolf":
 			HeavyAcc = HeavyAcc - 5;
-			break;		
+			break;
 		case "conduit_code":
 			document.getElementById("conduit_resource").disabled = true;
 			document.getElementById("conduit_design").disabled = true;
-			break;				
+			break;
 		case "conduit_arc_trail":
 			document.getElementById("conduit_chan_trail").disabled = true;
-			break;	
+			break;
 		case "conduit_chan_trail":
 			document.getElementById("conduit_foc_trail").disabled = true;
-			break;	
+			break;
 		case "conduit_well":
 			document.getElementById("conduit_channel").disabled = true;
 			document.getElementById("conduit_recycle").disabled = true;
 			document.getElementById("conduit_sink").disabled = true;
-			break;		
+			break;
 		case "conduit_cos_aff":
 			MP = MP - 15;
 			break;
 		case "conduit_enchant":
-			document.getElementById("conduit_seal").disabled = true;				
-			break;	
+			document.getElementById("conduit_seal").disabled = true;
+			break;
 		case "conduit_en_flare":
 			document.getElementById("conduit_bu_flare").disabled = true;
 			document.getElementById("conduit_debilitation").disabled = true;
 			document.getElementById("conduit_sapping").disabled = true;
-			break;	
+			break;
 		case "conduit_target":
-			document.getElementById("conduit_weakness").disabled = true;				
-			break;		
+			document.getElementById("conduit_weakness").disabled = true;
+			break;
 		case "conduit_wisp":
 			document.getElementById("conduit_wrap").disabled = true;
 			document.getElementById("conduit_bond").disabled = true;
 			document.getElementById("conduit_portal").disabled = true;
-			break;	
+			break;
 		case "conduit_wrap":
 			ArSoak = ArSoak - 1000;
-			break;	
+			break;
 		case "conduit_portal":
-			document.getElementById("conduit_wormhole").disabled = true;				
-			break;						
+			document.getElementById("conduit_wormhole").disabled = true;
+			break;
 		case "lich_reanim":
 			document.getElementById("lich_phyl").disabled = true;
 			break;
@@ -3447,7 +3447,7 @@ function delevel()
 		case "lich_wisp":
 			document.getElementById("lich_wight").disabled = true;
 			break;
-		case "lich_aspect":				
+		case "lich_aspect":
 			CCDodge = CCDodge - 10;
 			RangeDef = RangeDef - 10;
 			break;
@@ -3499,8 +3499,8 @@ function delevel()
 		case "doomhowler_aether":
 			document.getElementById("doomhowler_acr_war").disabled = true;
 			document.getElementById("doomhowler_mart_spell").disabled = true;
-			Spellcraft = 0;	
-			DemonicCaster = 0;	
+			Spellcraft = 0;
+			DemonicCaster = 0;
 			MP = MP - 10;
 			SpellAcc = SpellAcc - 20;
 			break;
@@ -3508,7 +3508,7 @@ function delevel()
 			SpellAcc = SpellAcc - 25;
 			break;
 		case "doomhowler_elite":
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3518,13 +3518,13 @@ function delevel()
 			break;
 		case "doomhowler_tendrils":
 			document.getElementById("doomhowler_soul").disabled = true;
-			HthDam = HthDam - 1; 
+			HthDam = HthDam - 1;
 			break;
-		case "doomhowler_soul":					
-			HthDam = HthDam - 2; 
+		case "doomhowler_soul":
+			HthDam = HthDam - 2;
 			break;
 		case "doomhowler_teeth":
-			document.getElementById("doomhowler_blight").disabled = true;		
+			document.getElementById("doomhowler_blight").disabled = true;
 			break;
 		case "doomhowler_armor":
 			document.getElementById("doomhowler_phasing").disabled = true;
@@ -3538,15 +3538,15 @@ function delevel()
 			DeSoak = DeSoak - 8;
 			HoSoak = HoSoak - 4;
 			UnSoak = UnSoak - 6;
-			ArSoak = ArSoak - 3; 
+			ArSoak = ArSoak - 3;
 			break;
 		case "doomhowler_phasing":
 			CCDodge = CCDodge - 5;
 			RangeDef = RangeDef - 5;
 			break;
 		case "doomhowler_chain_grem":
-			document.getElementById("doomhowler_trick").disabled = true;					
-			break;	
+			document.getElementById("doomhowler_trick").disabled = true;
+			break;
 		case "infernal_behemoth_brute":
 			document.getElementById("infernal_behemoth_chit").disabled = true;
 			document.getElementById("infernal_behemoth_bulk").disabled = true;
@@ -3566,7 +3566,7 @@ function delevel()
 			DeSoak = DeSoak - 5;
 			HoSoak = HoSoak - 4;
 			UnSoak = UnSoak - 6;
-			ArSoak = ArSoak - 6; 
+			ArSoak = ArSoak - 6;
 			break;
 		case "infernal_behemoth_bulk":
 			HP = HP - 35;
@@ -3578,7 +3578,7 @@ function delevel()
 			document.getElementById("infernal_behemoth_berserk").disabled = true;
 			break;
 		case "infernal_behemoth_elite":
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3600,16 +3600,16 @@ function delevel()
 			document.getElementById("infernal_behemoth_fury").disabled = true;
 			break;
 		case "voidwalker_corner":
-			document.getElementById("voidwalker_ether").disabled = true;					
-			document.getElementById("voidwalker_world").disabled = true;	
-			break;	
+			document.getElementById("voidwalker_ether").disabled = true;
+			document.getElementById("voidwalker_world").disabled = true;
+			break;
 		case "voidwalker_world":
 			document.getElementById("voidwalker_stone").disabled = true;
 			break;
 		case "voidwalker_edge":
 			document.getElementById("voidwalker_cruelty").disabled = true;
 			document.getElementById("voidwalker_precision").disabled = true;
-			HthAcc = HthAcc - 10; 
+			HthAcc = HthAcc - 10;
 			MelAcc = MelAcc - 10;
 			SwordAcc = SwordAcc - 10;
 			ArchAcc = ArchAcc - 10;
@@ -3617,12 +3617,12 @@ function delevel()
 			ThrowAcc = ThrowAcc - 10;
 			break;
 		case "voidwalker_cruelty":
-			HthDam = HthDam - 3; 
+			HthDam = HthDam - 3;
 			FireDam = FireDam - 3;
 			break;
 		case "voidwalker_elite":
 			document.getElementById("voidwalker_infinite").disabled = true;
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3631,14 +3631,14 @@ function delevel()
 			SpellGenDam = SpellGenDam - 2;
 			break;
 		case "voidwalker_infinite":
-			HthDam = HthDam - 3; 
+			HthDam = HthDam - 3;
 			MelDam = MelDam - 3;
 			SwordDam = SwordDam - 3;
 			ArchDam = ArchDam - 3;
 			FireDam = FireDam - 3;
 			ThrowDam = ThrowDam - 3;
 			SpellGenDam = SpellGenDam - 3;
-			break;				
+			break;
 		case "voidwalker_invis":
 			document.getElementById("voidwalker_great_invis").disabled = true;
 			break;
@@ -3646,21 +3646,21 @@ function delevel()
 			document.getElementById("corruptor_draining").disabled = true;
 			break;
 		case "corruptor_cos_aff":
-			document.getElementById("corruptor_cos_mas").disabled = true;				
-			MP = MP - 15;					
+			document.getElementById("corruptor_cos_mas").disabled = true;
+			MP = MP - 15;
 			break;
-		case "corruptor_cos_mas":					
-			MP = MP - 15;					
+		case "corruptor_cos_mas":
+			MP = MP - 15;
 			break;
 		case "corruptor_cut":
-			document.getElementById("corruptor_touch").disabled = true;				
+			document.getElementById("corruptor_touch").disabled = true;
 			break;
 		case "corruptor_nullity":
 			document.getElementById("corruptor_agony").disabled = true;
 			document.getElementById("corruptor_sapping").disabled = true;
 			SpellGenDam = SpellGenDam - 1;
 			break;
-		case "corruptor_sapping":					
+		case "corruptor_sapping":
 			SpellGenDam = SpellGenDam - 2;
 			break;
 		case "corruptor_leath_wings":
@@ -3687,16 +3687,16 @@ function delevel()
 			document.getElementById("dark_oppressor_doom").disabled = true;
 			break;
 		case "dark_oppressor_enchant":
-			document.getElementById("dark_oppressor_seal").disabled = true;			
+			document.getElementById("dark_oppressor_seal").disabled = true;
 			break;
 		case "dark_oppressor_terrify_aspect":
-			document.getElementById("dark_oppressor_lord").disabled = true;	
+			document.getElementById("dark_oppressor_lord").disabled = true;
 			CCDodge = CCDodge - 10;
-			RangeDef = RangeDef - 10;				
+			RangeDef = RangeDef - 10;
 			break;
 		case "dark_oppressor_lord":
-			document.getElementById("dark_oppressor_legion").disabled = true;			
-			break;	
+			document.getElementById("dark_oppressor_legion").disabled = true;
+			break;
 		case "wyrmmaster_acid_blood":
 			document.getElementById("wyrmmaster_spittle").disabled = true;
 			document.getElementById("wyrmmaster_wrackwyrm").disabled = true;
@@ -3725,7 +3725,7 @@ function delevel()
 			break;
 		case "fallen_hate":
 			document.getElementById("fallen_glee").disabled = true;
-			break;					
+			break;
 		case "fallen_hellfire":
 			break;
 		case "fallen_oath":
@@ -3758,7 +3758,7 @@ function delevel()
 			document.getElementById("redeemed_lamp").disabled = true;
 			break;
 		case "redeemed_elite":
-			HthDam = HthDam - 2; 
+			HthDam = HthDam - 2;
 			MelDam = MelDam - 2;
 			SwordDam = SwordDam - 2;
 			ArchDam = ArchDam - 2;
@@ -3783,7 +3783,7 @@ function delevel()
 			document.getElementById("redeemed_radiant_storms").disabled = true;
 			break;
 		case "redeemed_remembrance":
-			document.getElementById("redeemed_smite").disabled = true;					
+			document.getElementById("redeemed_smite").disabled = true;
 			break;
 		case "spell_ac_dart":
 			SpellAcKnown = SpellAcKnown - 1;
@@ -3911,7 +3911,7 @@ function delevel()
 			option1.appendChild(document.createTextNode(llv));
 			document.getElementById("maeval_slaying_bad").appendChild(option1);
 			break;
-	}	
+	}
 	var temp = 0; var last = 0;
 	if (levelskill.length == 0)
 	{
@@ -3924,11 +3924,11 @@ function delevel()
 		document.getElementById("lifetime_ach_bad2").disabled = true;
 		document.getElementById("maeval_slaying_bad").disabled = true;
 	}
-	
+
 	if (level[level.length - 1] >= levelskill.length)
 	{
 		level.pop();
-	}	
+	}
 	for (i=0; i<levelskill.length; i++)
 	{
 		 temp -= levelcp[i];
@@ -3949,7 +3949,7 @@ function delevel()
 	{
 		level.push(0);
 		temp = 10;
-	}	
+	}
 	banked = temp;
 	document.getElementById("currentlevel").innerHTML = level.length;
 	updateCPTable();
@@ -3968,7 +3968,7 @@ function delevel()
 		MP = MP - 1;
 		if (MagicalReservesBought == 1) {
 			MP = MP - 1;
-		}			
+		}
 		document.getElementById("maxHP").innerHTML = HP;
 		document.getElementById("maxMP").innerHTML = MP;
 		document.getElementById("maxAP").innerHTML = AP;
@@ -4020,7 +4020,7 @@ function achieveBadge(CP, lifetime)
 {
 	if (CP == 10)
 	{
-		if (lifetime) 
+		if (lifetime)
 		{
 			if (document.getElementById("lifetime_ach_bad1").value != "")
 			{
@@ -4038,7 +4038,7 @@ function achieveBadge(CP, lifetime)
 				removeOptionFromList(document.getElementById("breath_ach_bad1"), badge);
 			}
 		}
-		else 
+		else
 		{
 			if (document.getElementById("breath_ach_bad1").value != "")
 			{
@@ -4060,7 +4060,7 @@ function achieveBadge(CP, lifetime)
 	}
 	if (CP == 15)
 	{
-		if (lifetime) 
+		if (lifetime)
 		{
 			if (document.getElementById("lifetime_ach_bad2").value != "")
 			{
@@ -4073,7 +4073,7 @@ function achieveBadge(CP, lifetime)
 				document.getElementById("lifetime_ach_bad2").removeChild(document.getElementById("lifetime_ach_bad2").options[document.getElementById("lifetime_ach_bad2").selectedIndex]);
 			}
 		}
-		else 
+		else
 		{
 			if (document.getElementById("breath_ach_bad2").value != "")
 			{
@@ -4116,7 +4116,7 @@ function achieveBadge(CP, lifetime)
 				banked = 1 * document.getElementById("bankedcp").innerHTML + 15;
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-15, document.getElementById("maeval_slaying_bad").value + " Accomplished");
-			}			
+			}
 			document.getElementById("maeval_slaying_bad").removeChild(document.getElementById("maeval_slaying_bad").options[document.getElementById("maeval_slaying_bad").selectedIndex]);
 		}
 }*/
@@ -4211,7 +4211,7 @@ function addLine(CP, text)
 	<ul>
 		<li onmouseover="describe('mortal_tap');"><input onchange="checkSkill('mortal_tap','Tap Leyline', 20);" id="mortal_tap" disabled="disabled" type="checkbox">	Tap Leyline</li>
 		<ul>
-			<li onmouseover="describe('mortal_blood');"><input onchange="checkSkill('mortal_blood','Psychic Bloodhound', 10);" id="mortal_blood" disabled="disabled" type="checkbox"> Psychic Bloodhound</li>			
+			<li onmouseover="describe('mortal_blood');"><input onchange="checkSkill('mortal_blood','Psychic Bloodhound', 10);" id="mortal_blood" disabled="disabled" type="checkbox"> Psychic Bloodhound</li>
 		</ul>
 	</ul>
 	<li onmouseover="describe('mortal_sense_mo');"><input onchange="checkSkill('mortal_sense_mo','Sense Morality', 10);" id="mortal_sense_mo" type="checkbox"> Sense Morality</li>
@@ -4235,7 +4235,7 @@ function addLine(CP, text)
 </select>
 <div id="paladin">
 <ul>
-	<li onmouseover="describe('paladin_shield');"><input onchange="checkSkill('paladin_shield','Shield of Faith', 0);" id="paladin_shield" type="checkbox"> FREE SKILL: Shield of Faith</li>	
+	<li onmouseover="describe('paladin_shield');"><input onchange="checkSkill('paladin_shield','Shield of Faith', 0);" id="paladin_shield" type="checkbox"> FREE SKILL: Shield of Faith</li>
 	<ul>
 		<li onmouseover="describe('paladin_def');"><input onchange="checkSkill('paladin_def','Defensive Stance',40);" id="paladin_def" disabled="disabled" type="checkbox"> Defensive Stance</li>
 		<li onmouseover="describe('paladin_div');"><input onchange="checkSkill('paladin_div','Divine Armor', 40);" id="paladin_div" disabled="disabled" type="checkbox"> Divine Armor</li>
@@ -4246,7 +4246,7 @@ function addLine(CP, text)
 	</ul>
 	<li onmouseover="describe('paladin_strong');"><input onchange="checkSkill('paladin_strong','Strong Attack',20);" id="paladin_strong" type="checkbox"> Strong Attack</li>
 	<ul>
-		<li onmouseover="describe('paladin_elite');"><input onchange="checkSkill('paladin_elite','Elite Attack',40);" id="paladin_elite" disabled="disabled" type="checkbox"> Elite Attack</li>		
+		<li onmouseover="describe('paladin_elite');"><input onchange="checkSkill('paladin_elite','Elite Attack',40);" id="paladin_elite" disabled="disabled" type="checkbox"> Elite Attack</li>
 	</ul>
 	<li onmouseover="describe('paladin_comb_mast');"><input onchange="checkSkill('paladin_comb_mast','Combat Mastery',20);" id="paladin_comb_mast" type="checkbox"> Combat Mastery</li>
 	<li onmouseover="describe('paladin_bolst');"><input onchange="checkSkill('paladin_bolst','Bolster Attack',20);" id="paladin_bolst" type="checkbox"> Bolster Attack</li>
@@ -4294,11 +4294,11 @@ function addLine(CP, text)
 		<li onmouseover="describe('myrmidon_es');"><input onchange="checkSkill('myrmidon_es','Enhanced Senses',40);" id="myrmidon_es" disabled="disabled" type="checkbox"> Enhanced Senses</li>
 	</ul>
 	<li onmouseover="describe('myrmidon_strong');"><input onchange="checkSkill('myrmidon_strong','Strong Attack',20);" id="myrmidon_strong" type="checkbox"> Strong Attack</li>
-	<ul>		
+	<ul>
 		<li onmouseover="describe('myrmidon_wep_break');"><input onchange="checkSkill('myrmidon_wep_break','Weapon Breaker',40);" id="myrmidon_wep_break" disabled="disabled" type="checkbox"> Weapon Breaker</li>
 	</ul>
 	<li onmouseover="describe('myrmidon_sup_ref');"><input onchange="checkSkill('myrmidon_sup_ref','Super Reflexes',20);" id="myrmidon_sup_ref" type="checkbox"> Super Reflexes</li>
-	<li onmouseover="describe('myrmidon_com_mast');"><input onchange="checkSkill('myrmidon_com_mast','Combat Mastery',20);" id="myrmidon_com_mast" type="checkbox"> Combat Mastery</li>	
+	<li onmouseover="describe('myrmidon_com_mast');"><input onchange="checkSkill('myrmidon_com_mast','Combat Mastery',20);" id="myrmidon_com_mast" type="checkbox"> Combat Mastery</li>
 </ul>
 </div>
 <div id="sorcerer">
@@ -4321,14 +4321,14 @@ function addLine(CP, text)
 	<li onmouseover="describe('sorcerer_spell_com');"><input onchange="checkSkill('sorcerer_spell_com','Spell Combat',20);" id="sorcerer_spell_com" type="checkbox"> Spell Combat</li>
 	<ul>
 		<li onmouseover="describe('sorcerer_battle_mag');"><input onchange="checkSkill('sorcerer_battle_mag','Battle Magic',40);" id="sorcerer_battle_mag" disabled="disabled" type="checkbox">	Battle Magic</li>
-	</ul>	
+	</ul>
 </ul>
 </div>
 <div id="pariah">
 <ul>
 	<li onmouseover="describe('pariah_ener');"><input onchange="checkSkill('pariah_ener','Enervate',0);" id="pariah_ener" type="checkbox"> FREE SKILL: Enervate</li>
 	<ul>
-		<li onmouseover="describe('pariah_dest_blow');"><input onchange="checkSkill('pariah_dest_blow','Destructive Blow',40);" id="pariah_dest_blow" disabled="disabled" type="checkbox"> Destructive Blow</li>		
+		<li onmouseover="describe('pariah_dest_blow');"><input onchange="checkSkill('pariah_dest_blow','Destructive Blow',40);" id="pariah_dest_blow" disabled="disabled" type="checkbox"> Destructive Blow</li>
 		<li onmouseover="describe('pariah_exp_murd');"><input onchange="checkSkill('pariah_exp_murd','Explosive Murder',40);" id="pariah_exp_murd" disabled="disabled" type="checkbox"> Explosive Murder</li>
 		<li onmouseover="describe('pariah_hell');"><input onchange="checkSkill('pariah_hell','Hellfire',40);" id="pariah_hell" disabled="disabled" type="checkbox"> Hellfire</li>
 		<li onmouseover="describe('pariah_rend');"><input onchange="checkSkill('pariah_rend','Rend Flesh',40);" id="pariah_rend" disabled="disabled" type="checkbox"> Rend Flesh</li>
@@ -4336,7 +4336,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('pariah_claws');"><input onchange="checkSkill('pariah_claws','Blood Claws',20);" id="pariah_claws" type="checkbox"> Blood Claws</li>
 	<ul>
 		<li onmouseover="describe('pariah_taste');"><input onchange="checkSkill('pariah_taste','Blood Taste',40);" id="pariah_taste" disabled="disabled" type="checkbox"> Blood Taste</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('pariah_strong');"><input onchange="checkSkill('pariah_strong','Strong Attack',20);" id="pariah_strong" type="checkbox"> Strong Attack</li>
 	<li onmouseover="describe('pariah_com_mas');"><input onchange="checkSkill('pariah_com_mas','Combat Mastery',20);" id="pariah_com_mas" type="checkbox"> Combat Mastery</li>
 </ul>
@@ -4364,7 +4364,7 @@ function addLine(CP, text)
 </div>
 </div>
 <div id="tier3"><select id="tier3type" style="width: 100%;" onchange="changeTier3();">
-	<option selected="selected" value=""></option>	
+	<option selected="selected" value=""></option>
 	<option value="divine_herald">Divine Herald</option>
 	<option value="holy_champion">Holy Champion</option>
 	<option value="seraph">Seraph</option>
@@ -4380,12 +4380,12 @@ function addLine(CP, text)
 	<li onmouseover="describe('divine_herald_dtd');"><input onchange="checkSkill('divine_herald_dtd','Dust to Dust',30);" id="divine_herald_dtd" type="checkbox"> Dust to Dust</li>
 	<ul>
 		<li onmouseover="describe('divine_herald_death');"><input onchange="checkSkill('divine_herald_death','Harbinger of Death',60);" id="divine_herald_death" disabled="disabled" type="checkbox"> Harbinger of Death</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('divine_herald_es');"><input onchange="checkSkill('divine_herald_es','Enhanced Senses',30);" id="divine_herald_es" type="checkbox"> Enhanced Senses</li>
 	<li onmouseover="describe('divine_herald_feet');"><input onchange="checkSkill('divine_herald_feet','Feet of the Wind',30);" id="divine_herald_feet" type="checkbox"> Feet of the Wind</li>
 	<li onmouseover="describe('divine_herald_greatbow');"><input onchange="checkSkill('divine_herald_greatbow','Oaken Greatbow',30);" id="divine_herald_greatbow" type="checkbox"> Oaken Greatbow</li>
 	<ul>
-		<li onmouseover="describe('divine_herald_conquest');"><input onchange="checkSkill('divine_herald_conquest','Harbinger of Conquest',60);" id="divine_herald_conquest" disabled="disabled" type="checkbox"> Harbinger of Conquest</li>		
+		<li onmouseover="describe('divine_herald_conquest');"><input onchange="checkSkill('divine_herald_conquest','Harbinger of Conquest',60);" id="divine_herald_conquest" disabled="disabled" type="checkbox"> Harbinger of Conquest</li>
 	</ul>
 	<li onmouseover="describe('divine_herald_fury');"><input onchange="checkSkill('divine_herald_fury','Holy Fury',30);" id="divine_herald_fury" type="checkbox"> Holy Fury</li>
 	<li onmouseover="describe('divine_herald_infinite');"><input onchange="checkSkill('divine_herald_infinite','Infinite Attack',30);" id="divine_herald_infinite" type="checkbox"> Infinite Attack</li>
@@ -4395,8 +4395,8 @@ function addLine(CP, text)
 	<li onmouseover="describe('divine_herald_stead');"><input onchange="checkSkill('divine_herald_stead','Steadfast Resolve',30);" id="divine_herald_stead" type="checkbox"> Steadfast Resolve</li>
 	<ul>
 		<li onmouseover="describe('divine_herald_judgement');"><input onchange="checkSkill('divine_herald_judgement','Harbinger of Judgement',60);" id="divine_herald_judgement" disabled="disabled" type="checkbox"> Harbinger of Judgement</li>
-	</ul>	
-	</ul>	
+	</ul>
+	</ul>
 </ul>
 </div>
 <div id="holy_champion">
@@ -4450,23 +4450,23 @@ function addLine(CP, text)
 		<li onmouseover="describe('holy_champion_lightning');"><input onchange="checkSkill('holy_champion_lightning','Cloak of Lightning',60);" id="holy_champion_lightning" disabled="disabled" type="checkbox"> Cloak of Lightning</li>
 		<li onmouseover="describe('holy_champion_magma');"><input onchange="checkSkill('holy_champion_magma','Cloak of Magma',60);" id="holy_champion_magma" disabled="disabled" type="checkbox"> Cloak of Magma</li>
 		<li onmouseover="describe('holy_champion_quicksand');"><input onchange="checkSkill('holy_champion_quicksand','Cloak of Quicksand',60);" id="holy_champion_quicksand" disabled="disabled" type="checkbox"> Cloak of Quicksand</li>
-	</ul>	
+	</ul>
 </ul>
 </div>
 <div id="seraph">
 <ul>
-	<li onmouseover="describe('seraph_arc');"><input onchange="checkSkill('seraph_arc','Arc Lightning',0);" id="seraph_arc"type="checkbox"> FREE SKILL: Arc Lightning</li>    
+	<li onmouseover="describe('seraph_arc');"><input onchange="checkSkill('seraph_arc','Arc Lightning',0);" id="seraph_arc"type="checkbox"> FREE SKILL: Arc Lightning</li>
 	<ul>
-		<li onmouseover="describe('seraph_cloud');"><input onchange="checkSkill('seraph_cloud','Clockwork Cloud',60);" id="seraph_cloud"  disabled="disabled" type="checkbox"> Clockwork Cloud</li>	
+		<li onmouseover="describe('seraph_cloud');"><input onchange="checkSkill('seraph_cloud','Clockwork Cloud',60);" id="seraph_cloud"  disabled="disabled" type="checkbox"> Clockwork Cloud</li>
 		<li onmouseover="describe('seraph_blade');"><input onchange="checkSkill('seraph_blade','Clockwork Blade',60);" id="seraph_blade" disabled="disabled" type="checkbox"> Clockwork Blade</li>
 		<li onmouseover="describe('seraph_clockwork_fort');"><input onchange="checkSkill('seraph_clockwork_fort','Clockwork Fortitude',60);" id="seraph_clockwork_fort" disabled="disabled" type="checkbox"> Clockwork Fortitude</li>
 		<li onmouseover="describe('seraph_spring');"><input onchange="checkSkill('seraph_spring','Spring of the Enhanced Capacitor',60);" id="seraph_spring" disabled="disabled" type="checkbox"> Spring of the Enhanced Capacitor</li>
 	</ul>
-	<li onmouseover="describe('seraph_es');"><input onchange="checkSkill('seraph_es','Enhanced Senses',30);" id="seraph_es" type="checkbox"> Enhanced Senses</li>			
-	<li onmouseover="describe('seraph_eye');"><input onchange="checkSkill('seraph_eye','Eye of Clockwork Precision',30);" id="seraph_eye" type="checkbox"> Eye of Clockwork Precision</li>	
+	<li onmouseover="describe('seraph_es');"><input onchange="checkSkill('seraph_es','Enhanced Senses',30);" id="seraph_es" type="checkbox"> Enhanced Senses</li>
+	<li onmouseover="describe('seraph_eye');"><input onchange="checkSkill('seraph_eye','Eye of Clockwork Precision',30);" id="seraph_eye" type="checkbox"> Eye of Clockwork Precision</li>
 	<ul>
-		<li onmouseover="describe('seraph_deadly_grace');"><input onchange="checkSkill('seraph_deadly_grace','Eye of Deadly Grace',60);" id="seraph_deadly_grace" disabled="disabled" type="checkbox"> Eye of Deadly Grace</li>	
-		<li onmouseover="describe('seraph_infinite');"><input onchange="checkSkill('seraph_infinite','Infinite Attack',60);" id="seraph_infinite" disabled="disabled" type="checkbox"> Infinite Attack</li>	
+		<li onmouseover="describe('seraph_deadly_grace');"><input onchange="checkSkill('seraph_deadly_grace','Eye of Deadly Grace',60);" id="seraph_deadly_grace" disabled="disabled" type="checkbox"> Eye of Deadly Grace</li>
+		<li onmouseover="describe('seraph_infinite');"><input onchange="checkSkill('seraph_infinite','Infinite Attack',60);" id="seraph_infinite" disabled="disabled" type="checkbox"> Infinite Attack</li>
 	</ul>
 	<li onmouseover="describe('seraph_holy_fort');"><input onchange="checkSkill('seraph_holy_fort','Holy Fortitude',30);" id="seraph_holy_fort" type="checkbox"> Holy Fortitude</li>
 	<li onmouseover="describe('seraph_smite');"><input onchange="checkSkill('seraph_smite','Greater Smite',30);" id="seraph_smite" type="checkbox"> Greater Smite</li>
@@ -4478,7 +4478,7 @@ function addLine(CP, text)
 		<li onmouseover="describe('seraph_defender_just');"><input onchange="checkSkill('seraph_defender_just','Defender of Justice',60);" id="seraph_defender_just" disabled="disabled" type="checkbox"> Defender of Justice</li>
 		<li onmouseover="describe('seraph_defender_inn');"><input onchange="checkSkill('seraph_defender_inn','Defender of the Innocent',60);" id="seraph_defender_inn" disabled="disabled" type="checkbox"> Defender of the Innocent</li>
 		<li onmouseover="describe('seraph_defender_tru');"><input onchange="checkSkill('seraph_defender_tru','Defender of Truth',60);" id="seraph_defender_tru" disabled="disabled" type="checkbox"> Defender of Truth</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('seraph_wings');"><input onchange="checkSkill('seraph_wings','Wings',30);" id="seraph_wings" type="checkbox"> Wings</li>
 	<ul>
 		<li onmouseover="describe('seraph_shards');"><input onchange="checkSkill('seraph_shards','Wing Shards',60);" id="seraph_shards" disabled="disabled" type="checkbox"> Wing Shards</li>
@@ -4512,7 +4512,7 @@ function addLine(CP, text)
 	<ul>
 		<li onmouseover="describe('advocate_holy_light');"><input onchange="checkSkill('advocate_holy_light','Word of Holy Light',60);" id="advocate_holy_light" disabled="disabled" type="checkbox"> Word of Holy Light</li>
 	</ul>
-	<li onmouseover="describe('advocate_heal_aura');"><input onchange="checkSkill('advocate_heal_aura','Healing Aura',30);" id="advocate_heal_aura" type="checkbox"> Healing Aura</li>	
+	<li onmouseover="describe('advocate_heal_aura');"><input onchange="checkSkill('advocate_heal_aura','Healing Aura',30);" id="advocate_heal_aura" type="checkbox"> Healing Aura</li>
 	<li onmouseover="describe('advocate_inviol');"><input onchange="checkSkill('advocate_inviol','Inviolate Form',30);" id="advocate_inviol" type="checkbox"> Inviolate Form</li>
 	<li onmouseover="describe('advocate_wings');"><input onchange="checkSkill('advocate_wings','Wings',30);" id="advocate_wings" type="checkbox"> Wings</li>
 	<ul>
@@ -4537,12 +4537,12 @@ function addLine(CP, text)
 		<li onmouseover="describe('archon_cos_mas');"><input onchange="checkSkill('archon_cos_mas','Cosmic Mastery',60);" id="archon_cos_mas" disabled="disabled" type="checkbox"> Cosmic Mastery</li>
 	</ul>
 	<li onmouseover="describe('archon_eye_judg');"><input onchange="checkSkill('archon_eye_judg','Eye of Judgement',30);" id="archon_eye_judg" type="checkbox"> Eye of Judgement</li>
-	<ul>	
+	<ul>
 		<li onmouseover="describe('archon_dread');"><input onchange="checkSkill('archon_dread','Dread Gaze',60);" id="archon_dread" disabled="disabled" type="checkbox"> Dread Gaze</li>
 		<ul>
 			<li onmouseover="describe('archon_forceful');"><input onchange="checkSkill('archon_forceful','Forceful Punishment',90);" id="archon_forceful" disabled="disabled" type="checkbox"> Forceful Punishment</li>
 		</ul>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('archon_wings');"><input onchange="checkSkill('archon_wings','Wings',30);" id="archon_wings" type="checkbox"> Wings</li>
 	<li onmouseover="describe('archon_recall');"><input onchange="checkSkill('archon_recall','Word of Recall',30);" id="archon_recall" type="checkbox"> Word of Recall</li>
 	<ul>
@@ -4565,14 +4565,14 @@ function addLine(CP, text)
 		<li onmouseover="describe('lightspeaker_endurance');"><input onchange="checkSkill('lightspeaker_endurance','Soldiers of Endurance',60);" id="lightspeaker_endurance" disabled="disabled" type="checkbox"> Soldiers of Endurance</li>
 		<li onmouseover="describe('lightspeaker_might');"><input onchange="checkSkill('lightspeaker_might','Soldiers of Might',60);" id="lightspeaker_might" disabled="disabled" type="checkbox"> Soldiers of Might</li>
 	</ul>
-	<li onMouseOver="describe('lightspeaker_crook');"><input type="checkbox" onchange="checkSkill('lightspeaker_crook','Keepers Crook',30);" id="lightspeaker_crook"/> Keepers Crook</li>	
+	<li onMouseOver="describe('lightspeaker_crook');"><input type="checkbox" onchange="checkSkill('lightspeaker_crook','Keepers Crook',30);" id="lightspeaker_crook"/> Keepers Crook</li>
 	<li onMouseOver="describe('lightspeaker_sprite');"><input type="checkbox" onchange="checkSkill('lightspeaker_sprite','Summon Aethersprite',30);" id="lightspeaker_sprite"/> Summon Aethersprite</li>
 	<ul>
 		<li onMouseOver="describe('lightspeaker_bond');"><input type="checkbox" onchange="checkSkill('lightspeaker_bond','Brother\'s Bond',60);" id="lightspeaker_bond" disabled="disabled" type="checkbox"/> Brother's Bond</li>
 		<li onMouseOver="describe('lightspeaker_heart');"><input type="checkbox" onchange="checkSkill('lightspeaker_heart','Heart Light',60);" id="lightspeaker_heart" disabled="disabled" type="checkbox"/> Heart Light</li>
-	</ul>	
-	<li onmouseover="describe('lightspeaker_sling');"><input onchange="checkSkill('lightspeaker_sling','Verdant Sling',30);" id="lightspeaker_sling" type="checkbox"> Verdant Sling</li>	
-	<li onmouseover="describe('lightspeaker_wings');"><input onchange="checkSkill('lightspeaker_wings','Wings',30);" id="lightspeaker_wings" type="checkbox"> Wings</li>		
+	</ul>
+	<li onmouseover="describe('lightspeaker_sling');"><input onchange="checkSkill('lightspeaker_sling','Verdant Sling',30);" id="lightspeaker_sling" type="checkbox"> Verdant Sling</li>
+	<li onmouseover="describe('lightspeaker_wings');"><input onchange="checkSkill('lightspeaker_wings','Wings',30);" id="lightspeaker_wings" type="checkbox"> Wings</li>
 </ul>
 </div>
 <div id="eternal_soldier">
@@ -4586,7 +4586,7 @@ function addLine(CP, text)
 		<li onmouseover="describe('eternal_soldier_infinite');"><input onchange="checkSkill('eternal_soldier_infinite','Infinite Attack',60);" id="eternal_soldier_infinite" disabled="disabled" type="checkbox"> Infinite Attack</li>
 		<li onmouseover="describe('eternal_soldier_fire');"><input onchange="checkSkill('eternal_soldier_fire','Way of Fire',60);" id="eternal_soldier_fire" disabled="disabled" type="checkbox"> Way of Fire</li>
 	</ul>
-	<li onmouseover="describe('eternal_soldier_air');"><input onchange="checkSkill('eternal_soldier_air','Way of Air',30);" id="eternal_soldier_air" type="checkbox"> Way of Air</li>	
+	<li onmouseover="describe('eternal_soldier_air');"><input onchange="checkSkill('eternal_soldier_air','Way of Air',30);" id="eternal_soldier_air" type="checkbox"> Way of Air</li>
 	<li onmouseover="describe('eternal_soldier_antitoxin');"><input onchange="checkSkill('eternal_soldier_antitoxin','Way of the Antitoxin',30);" id="eternal_soldier_antitoxin" type="checkbox"> Way of the Antitoxin</li>
 	<ul>
 		<li onmouseover="describe('eternal_soldier_vigor');"><input onchange="checkSkill('eternal_soldier_vigor','Master of Vigor',60);" id="eternal_soldier_vigor" disabled="disabled" type="checkbox"> Master of Vigor</li>
@@ -4602,13 +4602,13 @@ function addLine(CP, text)
 		<li onmouseover="describe('eternal_soldier_energy');"><input onchange="checkSkill('eternal_soldier_energy','Master of Hidden Energy',60);" id="eternal_soldier_energy" disabled="disabled" type="checkbox"> Master of Hidden Energy</li>
 		<li onmouseover="describe('eternal_soldier_form');"><input onchange="checkSkill('eternal_soldier_form','Master of the Martial Form',60);" id="eternal_soldier_form" disabled="disabled" type="checkbox"> Master of the Martial Form</li>
 	</ul>
-	<li onmouseover="describe('eternal_soldier_lightning');"><input onchange="checkSkill('eternal_soldier_lightning','Way of Lightning',30);" id="eternal_soldier_lightning" type="checkbox"> Way of Lightning</li>		
+	<li onmouseover="describe('eternal_soldier_lightning');"><input onchange="checkSkill('eternal_soldier_lightning','Way of Lightning',30);" id="eternal_soldier_lightning" type="checkbox"> Way of Lightning</li>
 	<li onmouseover="describe('eternal_soldier_water');"><input onchange="checkSkill('eternal_soldier_water','Way of Water',30);" id="eternal_soldier_water" type="checkbox"> Way of Water</li>
 	<ul>
 	<li onMouseOver="describe('eternal_soldier_flow');"><input type="checkbox" onchange="checkSkill('eternal_soldier_flow','Master of the Flow',60);" id="eternal_soldier_flow" disabled="disabled" type="checkbox"/> Master of the Flow</li>
 	<li onMouseOver="describe('eternal_soldier_reflex');"><input type="checkbox" onchange="checkSkill('eternal_soldier_reflex','Master of the Reflex',60);" id="eternal_soldier_reflex" disabled="disabled" type="checkbox"/> Master of Reflex</li>
-	</ul>		
-	<li onmouseover="describe('eternal_soldier_urgency');"><input onchange="checkSkill('eternal_soldier_urgency','Way of Urgency',30);" id="eternal_soldier_urgency" type="checkbox"> Way of Urgency</li> 	
+	</ul>
+	<li onmouseover="describe('eternal_soldier_urgency');"><input onchange="checkSkill('eternal_soldier_urgency','Way of Urgency',30);" id="eternal_soldier_urgency" type="checkbox"> Way of Urgency</li>
 </ul>
 </div>
 <div id="nexus_champion">
@@ -4625,7 +4625,7 @@ function addLine(CP, text)
 	</ul>
 	<li onmouseover="describe('nexus_champion_balance');"><input onchange="checkSkill('nexus_champion_balance','Tattoo of Balance',30);" id="nexus_champion_balance" type="checkbox"> Tattoo of Balance</li>
 	<ul>
-		<li onmouseover="describe('nexus_champion_equilibrium');"><input onchange="checkSkill('nexus_champion_equilibrium','Tattoo of Equilibrium',60);" id="nexus_champion_equilibrium" disabled="disabled" type="checkbox"> Tattoo of Equilibrium</li>		
+		<li onmouseover="describe('nexus_champion_equilibrium');"><input onchange="checkSkill('nexus_champion_equilibrium','Tattoo of Equilibrium',60);" id="nexus_champion_equilibrium" disabled="disabled" type="checkbox"> Tattoo of Equilibrium</li>
 	</ul>
 	<li onmouseover="describe('nexus_champion_opposition');"><input onchange="checkSkill('nexus_champion_opposition','Tattoo of Opposition',30);" id="nexus_champion_opposition" type="checkbox"> Tattoo of Opposition</li>
 	<li onMouseOver="describe('nexus_champion_origami');"><input type="checkbox" onchange="checkSkill('nexus_champion_origami','Tattoo of the Origami Tiger',30);" id="nexus_champion_origami"/> Tattoo of the Origami Tiger</li>
@@ -4652,14 +4652,14 @@ function addLine(CP, text)
 	<li onmouseover="describe('revenant_dark');"><input onchange="checkSkill('revenant_dark','Strength of Darkness',0);" id="revenant_dark" type="checkbox"> FREE SKILL: Strength of Darkness</li>
 	<ul>
 		<li onmouseover="describe('revenant_blood');"><input onchange="checkSkill('revenant_blood','Blood Frenzy',60);" id="revenant_blood" disabled="disabled" type="checkbox"> Blood Frenzy</li>
-	    <li onmouseover="describe('revenant_day');"><input onchange="checkSkill('revenant_day','Day Walker',60);" id="revenant_day" disabled="disabled" type="checkbox"> Day Walker</li>	
+	    <li onmouseover="describe('revenant_day');"><input onchange="checkSkill('revenant_day','Day Walker',60);" id="revenant_day" disabled="disabled" type="checkbox"> Day Walker</li>
 	</ul>
 	<li onmouseover="describe('revenant_elite');"><input onchange="checkSkill('revenant_elite','Elite Attack',30);" id="revenant_elite" type="checkbox"> Elite Attack</li>
 	<li onmouseover="describe('revenant_fangs');"><input onchange="checkSkill('revenant_fangs','Feeding Fangs',30);" id="revenant_fangs" type="checkbox"> Feeding Fangs</li>
 	<ul>
 		<li onmouseover="describe('revenant_mantle');"><input onchange="checkSkill('revenant_mantle','Mantle of Vrykolakas',60);" id="revenant_mantle" disabled="disabled" type="checkbox"> Mantle of Vrykolakas</li>
 		<li onmouseover="describe('revenant_soul');"><input onchange="checkSkill('revenant_soul','Soul Feeding',60);" id="revenant_soul" disabled="disabled" type="checkbox"> Soul Feeding</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('revenant_pred');"><input onchange="checkSkill('revenant_pred','Natural Predator',30);" id="revenant_pred" type="checkbox"> Natural Predator</li>
 	<li onmouseover="describe('revenant_shad_bat');"><input onchange="checkSkill('revenant_shad_bat','Shadow of the Bat',30);" id="revenant_shad_bat" type="checkbox"> Shadow of the Bat</li>
     <ul>
@@ -4676,7 +4676,7 @@ function addLine(CP, text)
 		<li onmouseover="describe('revenant_anim_wolf');"><input onchange="checkSkill('revenant_anim_wolf','Animus of the Wolf',60);" id="revenant_anim_wolf" disabled="disabled" type="checkbox"> Animus of the Wolf</li>
 		<li onmouseover="describe('revenant_blood_wolf');"><input onchange="checkSkill('revenant_blood_wolf','Blood of the Wolf',60);" id="revenant_blood_wolf" disabled="disabled" type="checkbox"> Blood of the Wolf</li>
 		<li onmouseover="describe('revenant_heart_wolf');"><input onchange="checkSkill('revenant_heart_wolf','Heart of the Wolf',60);" id="revenant_heart_wolf" disabled="disabled" type="checkbox"> Heart of the Wolf</li>
-	</ul>	
+	</ul>
 </ul>
 </div>
 <!--<div id="elementalist">
@@ -4697,16 +4697,16 @@ function addLine(CP, text)
 		<li onmouseover="describe('n10');"><input onchange="checkSkill('n10b','Lesser Summoning',60);" id="n10b" disabled="disabled" type="checkbox">Lesser Summoning</li>
 		<ul>
 			<li onmouseover="describe('n11');"><input onchange="checkSkill('n11b','Greater Summoning',90);" id="n11b" disabled="disabled" type="checkbox">Greater Summoning</li>
-		</ul>	
+		</ul>
 	</ul>
 	<li onmouseover="describe('n05');"><input onchange="checkSkill('n05','Fire Affinity',30);" id="n05" type="checkbox"> Fire Affinity</li>
 	<ul>
 		<li onmouseover="describe('n06');"><input onchange="checkSkill('n06','Fire Mastery',60);" id="n06" disabled="disabled" type="checkbox"> Fire Mastery</li>
-		<li onmouseover="describe('n09');"><input onchange="checkSkill('n09c','Minor Summoning',60);" id="n09c" disabled="disabled" type="checkbox">Minor Summoning</li>	
+		<li onmouseover="describe('n09');"><input onchange="checkSkill('n09c','Minor Summoning',60);" id="n09c" disabled="disabled" type="checkbox">Minor Summoning</li>
 		<li onmouseover="describe('n10');"><input onchange="checkSkill('n10c','Lesser Summoning',60);" id="n10c" disabled="disabled" type="checkbox">Lesser Summoning</li>
 		<ul>
 			<li onmouseover="describe('n11');"><input onchange="checkSkill('n11c','Greater Summoning',90);" id="n11c" disabled="disabled" type="checkbox">Greater Summoning</li>
-		</ul>	
+		</ul>
 	</ul>
 	<li onmouseover="describe('n07');"><input onchange="checkSkill('n07','Water Affinity',30);" id="n07" type="checkbox"> Water Affinity</li>
 	<ul>
@@ -4724,7 +4724,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('conduit_code');"><input onchange="checkSkill('conduit_code','Code of Efficiency',0);" id="conduit_code" type="checkbox"> FREE SKILL: Code of Efficiency</li>
 	<ul>
 		<li onmouseover="describe('conduit_design');"><input onchange="checkSkill('conduit_design','Rule of Design',60);" id="conduit_design" disabled="disabled" type="checkbox"> Rule of Design</li>
-		<li onmouseover="describe('conduit_resource');"><input onchange="checkSkill('conduit_resource','Rule of Resourcefulness',60);" id="conduit_resource" disabled="disabled" type="checkbox"> Rule of Resourcefulness</li>		
+		<li onmouseover="describe('conduit_resource');"><input onchange="checkSkill('conduit_resource','Rule of Resourcefulness',60);" id="conduit_resource" disabled="disabled" type="checkbox"> Rule of Resourcefulness</li>
 	</ul>
 	<li onmouseover="describe('conduit_arc_trail');"><input onchange="checkSkill('conduit_arc_trail','Arcane Trail',30);" id="conduit_arc_trail" type="checkbox"> Arcane Trail</li>
 	<ul>
@@ -4732,12 +4732,12 @@ function addLine(CP, text)
 		<ul>
 			<li onmouseover="describe('conduit_foc_trail');"><input onchange="checkSkill('conduit_foc_trail','Focused Trail',90);" id="conduit_foc_trail" disabled="disabled" type="checkbox"> Focused Trail</li>
 		</ul>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('conduit_well');"><input onchange="checkSkill('conduit_well','Arcane Well',30);" id="conduit_well" type="checkbox"> Arcane Well</li>
 	<ul>
 		<li onmouseover="describe('conduit_channel');"><input onchange="checkSkill('conduit_channel','Arcane Channel',60);" id="conduit_channel" disabled="disabled" type="checkbox"> Arcane Channel</li>
 		<li onmouseover="describe('conduit_recycle');"><input onchange="checkSkill('conduit_recycle','Arcane Recycling',60);" id="conduit_recycle" disabled="disabled" type="checkbox"> Arcane Recycling</li>
-		<li onmouseover="describe('conduit_sink');"><input onchange="checkSkill('conduit_sink','Arcane Sink',60);" id="conduit_sink" disabled="disabled" type="checkbox"> Arcane Sink</li>		
+		<li onmouseover="describe('conduit_sink');"><input onchange="checkSkill('conduit_sink','Arcane Sink',60);" id="conduit_sink" disabled="disabled" type="checkbox"> Arcane Sink</li>
 	</ul>
 	<li onmouseover="describe('conduit_brightbow');"><input onchange="checkSkill('conduit_brightbow','Brightbow',30);" id="conduit_brightbow" type="checkbox"> Brightbow</li>
 	<li onmouseover="describe('conduit_cos_aff');"><input onchange="checkSkill('conduit_cos_aff','Cosmic Affinity',30);" id="conduit_cos_aff" type="checkbox"> Cosmic Affinity</li>
@@ -4818,7 +4818,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('wizard_coss_aff');"><input onchange="checkSkill('wizard_coss_aff','Cosmic Affinity',30);" id="wizard_coss_aff" type="checkbox"> Cosmic Affinity</li>
 	<ul>
 		<li onmouseover="describe('wizard_cos_mas');"><input onchange="checkSkill('wizard_cos_mas','Cosmic Mastery',60);" id="wizard_cos_mas" disabled="disabled" type="checkbox"> Cosmic Mastery</li>
-		<li onmouseover="describe('wizard_cos_one');"><input onchange="checkSkill('wizard_cos_one','Cosmic Oneness',60);" id="wizard_cos_one" disabled="disabled" type="checkbox"> Cosmic Oneness</li>		
+		<li onmouseover="describe('wizard_cos_one');"><input onchange="checkSkill('wizard_cos_one','Cosmic Oneness',60);" id="wizard_cos_one" disabled="disabled" type="checkbox"> Cosmic Oneness</li>
 	</ul>
 	<li onmouseover="describe('wizard_fort');"><input onchange="checkSkill('wizard_fort','Fortify Spell',30);" id="wizard_fort" type="checkbox"> Fortify Spell</li>
 	<ul>
@@ -4841,7 +4841,7 @@ function addLine(CP, text)
 			<li onmouseover="describe('doomhowler_keen');"><input onchange="checkSkill('doomhowler_keen','Keening of the Damned',90);" id="doomhowler_keen" disabled="disabled" type="checkbox"> Keening of the Damned</li>
 		</ul>
 	</ul>
-	<li onmouseover="describe('doomhowler_aether');"><input onchange="checkSkill('doomhowler_aether','Aether Manipulation',30);" id="doomhowler_aether" type="checkbox"> Aether Manipulation</li> 
+	<li onmouseover="describe('doomhowler_aether');"><input onchange="checkSkill('doomhowler_aether','Aether Manipulation',30);" id="doomhowler_aether" type="checkbox"> Aether Manipulation</li>
 	<ul>
 		<li onmouseover="describe('doomhowler_acr_war');"><input onchange="checkSkill('doomhowler_acr_war','Arcane Warrior',60);" id="doomhowler_acr_war" disabled="disabled" type="checkbox"> Arcane Warrior</li>
 		<li onmouseover="describe('doomhowler_mart_spell');"><input onchange="checkSkill('doomhowler_mart_spell','Martial Spellcraft',60);" id="doomhowler_mart_spell" disabled="disabled" type="checkbox"> Martial Spellcraft</li>
@@ -4850,20 +4850,20 @@ function addLine(CP, text)
 	<li onmouseover="describe('doomhowler_tendrils');"><input onchange="checkSkill('doomhowler_tendrils','Ghost Tendrils',30);" id="doomhowler_tendrils" type="checkbox"> Ghost Tendrils</li>
 	<ul>
 		<li onmouseover="describe('doomhowler_soul');"><input onchange="checkSkill('doomhowler_soul','Soul Draining',60);" id="doomhowler_soul" disabled="disabled" type="checkbox"> Soul Draining</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('doomhowler_walk');"><input onchange="checkSkill('doomhowler_walk','Ghostwalk',30);" id="doomhowler_walk" type="checkbox"> Ghostwalk</li>
 	<li onmouseover="describe('doomhowler_teeth');"><input onchange="checkSkill('doomhowler_teeth','Gnashing of Teeth',30);" id="doomhowler_teeth" type="checkbox"> Gnashing of Teeth</li>
 	<ul>
-		<li onmouseover="describe('doomhowler_blight');"><input onchange="checkSkill('doomhowler_blight','Wail of the Dead',60);" id="doomhowler_blight" disabled="disabled" type="checkbox"> Doomblight</li>		
+		<li onmouseover="describe('doomhowler_blight');"><input onchange="checkSkill('doomhowler_blight','Wail of the Dead',60);" id="doomhowler_blight" disabled="disabled" type="checkbox"> Doomblight</li>
 	</ul>
 	<li onmouseover="describe('doomhowler_armor');"><input onchange="checkSkill('doomhowler_armor','Spectral Armor',30);" id="doomhowler_armor" type="checkbox"> Spectral Armor</li>
 	<ul>
-		<li onmouseover="describe('doomhowler_phasing');"><input onchange="checkSkill('doomhowler_phasing','Phasing',60);" id="doomhowler_phasing" disabled="disabled" type="checkbox"> Phasing</li>	
+		<li onmouseover="describe('doomhowler_phasing');"><input onchange="checkSkill('doomhowler_phasing','Phasing',60);" id="doomhowler_phasing" disabled="disabled" type="checkbox"> Phasing</li>
 	</ul>
 	<li onmouseover="describe('doomhowler_chain_grem');"><input onchange="checkSkill('doomhowler_chain_grem','Summon Chain Gremlin',30);" id="doomhowler_chain_grem" type="checkbox"> Summon Chain Gremlin</li>
 	<ul>
 		<li onmouseover="describe('doomhowler_trick');"><input onchange="checkSkill('doomhowler_trick','Ancient Trickery',60);" id="doomhowler_trick" disabled="disabled" type="checkbox"> Ancient Trickery</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('doomhowler_wytch');"><input onchange="checkSkill('doomhowler_wytch','Wytchfire',30);" id="doomhowler_wytch" type="checkbox"> Wytchfire</li>
 </ul>
 </div>
@@ -4877,18 +4877,18 @@ function addLine(CP, text)
 	<li onmouseover="describe('infernal_behemoth_bloodlust');"><input onchange="checkSkill('infernal_behemoth_bloodlust','Bloodlust',30);" id="infernal_behemoth_bloodlust" type="checkbox"> Bloodlust</li>
 	<ul>
 		<li onmouseover="describe('infernal_behemoth_adren');"><input onchange="checkSkill('infernal_behemoth_adren','Adrenal Healing',60);" id="infernal_behemoth_adren" disabled="disabled" type="checkbox"> Adrenal Healing</li>
-		<li onmouseover="describe('infernal_behemoth_berserk');"><input onchange="checkSkill('infernal_behemoth_berserk','Beserk Frenzy',60);" id="infernal_behemoth_berserk" disabled="disabled" type="checkbox"> Berserk Frenzy</li>		
+		<li onmouseover="describe('infernal_behemoth_berserk');"><input onchange="checkSkill('infernal_behemoth_berserk','Beserk Frenzy',60);" id="infernal_behemoth_berserk" disabled="disabled" type="checkbox"> Berserk Frenzy</li>
 	</ul>
-	<li onmouseover="describe('infernal_behemoth_elite');"><input onchange="checkSkill('infernal_behemoth_elite','Elite Attack',30);" id="infernal_behemoth_elite" type="checkbox"> Elite Attack</li>	
+	<li onmouseover="describe('infernal_behemoth_elite');"><input onchange="checkSkill('infernal_behemoth_elite','Elite Attack',30);" id="infernal_behemoth_elite" type="checkbox"> Elite Attack</li>
 	<li onmouseover="describe('infernal_behemoth_fire_imm');"><input onchange="checkSkill('infernal_behemoth_fire_imm','Fire Immunity',30);" id="infernal_behemoth_fire_imm" type="checkbox"> Fire Immunity</li>
 	<ul>
 		<li onmouseover="describe('infernal_behemoth_aura');"><input onchange="checkSkill('infernal_behemoth_aura','Burning Aura',60);" id="infernal_behemoth_aura" disabled="disabled" type="checkbox"> Burning Aura</li>
 	</ul>
 	<li onmouseover="describe('infernal_behemoth_infer_com');"><input onchange="checkSkill('infernal_behemoth_infer_com','Infernal Combat',30);" id="infernal_behemoth_infer_com" type="checkbox"> Infernal Combat</li>
-	<ul>		
+	<ul>
 		<li onmouseover="describe('infernal_behemoth_tailwhip');"><input onchange="checkSkill('infernal_behemoth_tailwhip','Tail Whip',60);" id="infernal_behemoth_tailwhip" disabled="disabled" type="checkbox"> Tail Whip</li>
 		<li onmouseover="describe('infernal_behemoth_whip_torm');"><input onchange="checkSkill('infernal_behemoth_whip_torm','Whip of Torment',60);" id="infernal_behemoth_whip_torm" disabled="disabled" type="checkbox"> Whip of Torment</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('infernal_behemoth_rage');"><input onchange="checkSkill('infernal_behemoth_rage','Rage Strike',30);" id="infernal_behemoth_rage" type="checkbox"> Rage Strike</li>
 	<ul>
 		<li onmouseover="describe('infernal_behemoth_fury');"><input onchange="checkSkill('infernal_behemoth_fury','Unfettered Fury',60);" id="infernal_behemoth_fury" disabled="disabled" type="checkbox"> Unfettered Fury</li>
@@ -4900,7 +4900,7 @@ function addLine(CP, text)
 <ul>
 	<li onmouseover="describe('voidwalker_corner');"><input onchange="checkSkill('voidwalker_corner','The Stepping of the Corner',0);" id="voidwalker_corner" type="checkbox"> FREE SKILL: The Stepping of the Corner</li>
 	<ul>
-		<li onmouseover="describe('voidwalker_ether');"><input onchange="checkSkill('voidwalker_ether','Ether Stepping',60);" id="voidwalker_ether" disabled="disabled" type="checkbox"> Ether Stepping</li>		
+		<li onmouseover="describe('voidwalker_ether');"><input onchange="checkSkill('voidwalker_ether','Ether Stepping',60);" id="voidwalker_ether" disabled="disabled" type="checkbox"> Ether Stepping</li>
 		<li onmouseover="describe('voidwalker_world');"><input onchange="checkSkill('voidwalker_world','The Stepping of the World Gate',60);" id="voidwalker_world" disabled="disabled" type="checkbox"> The Stepping of the World Gate</li>
 				<ul>
 			<li onMouseOver="describe('voidwalker_stone');"><input type="checkbox" onchange="checkSkill('voidwalker_stone','The Stepping of the Stone',90);" id="voidwalker_stone" disabled="disabled" type="checkbox"/> The Stepping of the Stone</li>
@@ -4918,7 +4918,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('voidwalker_es');"><input onchange="checkSkill('voidwalker_es','Enhanced Senses',30);" id="voidwalker_es" type="checkbox"> Enhanced Senses</li>
 	<li onmouseover="describe('voidwalker_invis');"><input onchange="checkSkill('voidwalker_invis','Invisibility',30);" id="voidwalker_invis" type="checkbox"> Invisibility</li>
 	<ul>
-		<li onmouseover="describe('voidwalker_great_invis');"><input onchange="checkSkill('voidwalker_great_invis','Greater Invisibility',60);" id="voidwalker_great_invis" disabled="disabled" type="checkbox"> Greater Invisibility</li>	
+		<li onmouseover="describe('voidwalker_great_invis');"><input onchange="checkSkill('voidwalker_great_invis','Greater Invisibility',60);" id="voidwalker_great_invis" disabled="disabled" type="checkbox"> Greater Invisibility</li>
 	</ul>
 </ul>
 </div>
@@ -4931,7 +4931,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('corruptor_cos_aff');"><input onchange="checkSkill('corruptor_cos_aff','Cosmic Affinity',30);" id="corruptor_cos_aff" type="checkbox"> Cosmic Affinity</li>
 	<ul>
 		<li onmouseover="describe('corruptor_cos_mas');"><input onchange="checkSkill('corruptor_cos_mas','Cosmic Mastery',60);" id="corruptor_cos_mas" disabled="disabled" type="checkbox"> Cosmic Mastery</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('corruptor_cut');"><input onchange="checkSkill('corruptor_cut','Cut the Silver Cord',30);" id="corruptor_cut" type="checkbox"> Cut the Silver Cord</li>
 	<ul>
 		<li onmouseover="describe('corruptor_touch');"><input onchange="checkSkill('corruptor_touch','Touch of Corrupted Loyalty',60);" id="corruptor_touch" disabled="disabled" type="checkbox"> Touch of Corrupted Loyalty</li>
@@ -4964,12 +4964,12 @@ function addLine(CP, text)
 	</ul>
 	<li onmouseover="describe('dark_oppressor_caustic');"><input onchange="checkSkill('dark_oppressor_caustic','Caustic Horns',30);" id="dark_oppressor_caustic" type="checkbox"> Caustic Horns</li>
 	<ul>
-		<li onmouseover="describe('dark_oppressor_corrosive');"><input onchange="checkSkill('dark_oppressor_corrosive','Corrosive Horns',60);" id="dark_oppressor_corrosive" disabled="disabled" type="checkbox"> Corrosive Horns</li>	
-	</ul>	
+		<li onmouseover="describe('dark_oppressor_corrosive');"><input onchange="checkSkill('dark_oppressor_corrosive','Corrosive Horns',60);" id="dark_oppressor_corrosive" disabled="disabled" type="checkbox"> Corrosive Horns</li>
+	</ul>
 	<li onmouseover="describe('dark_oppressor_cos_aff');"><input onchange="checkSkill('dark_oppressor_cos_aff','Cosmic Affinity',30);" id="dark_oppressor_cos_aff" type="checkbox"> Cosmic Affinity</li>
-	<li onmouseover="describe('dark_oppressor_crown');"><input onchange="checkSkill('dark_oppressor_crown','Crown of Pain',30);" id="dark_oppressor_crown" type="checkbox"> Crown of Pain</li>	
+	<li onmouseover="describe('dark_oppressor_crown');"><input onchange="checkSkill('dark_oppressor_crown','Crown of Pain',30);" id="dark_oppressor_crown" type="checkbox"> Crown of Pain</li>
 	<ul>
-		<li onmouseover="describe('dark_oppressor_doom');"><input onchange="checkSkill('dark_oppressor_doom','Doomsights',60);" id="dark_oppressor_doom" disabled="disabled" type="checkbox"> Doomsights</li>	
+		<li onmouseover="describe('dark_oppressor_doom');"><input onchange="checkSkill('dark_oppressor_doom','Doomsights',60);" id="dark_oppressor_doom" disabled="disabled" type="checkbox"> Doomsights</li>
 	</ul>
 	<li onmouseover="describe('dark_oppressor_enchant');"><input onchange="checkSkill('dark_oppressor_enchant','Enchant Item',30);" id="dark_oppressor_enchant" type="checkbox"> Enchant Item</li>
  	<ul>
@@ -4978,20 +4978,20 @@ function addLine(CP, text)
 	<li onmouseover="describe('dark_oppressor_leath_wings');"><input onchange="checkSkill('dark_oppressor_leath_wings','Leathern Wings',30);" id="dark_oppressor_leath_wings" type="checkbox"> Leathern Wings</li>
 	<li onmouseover="describe('dark_oppressor_terrify_aspect');"><input onchange="checkSkill('dark_oppressor_terrify_aspect','Terrifying Aspect',30);" id="dark_oppressor_terrify_aspect" type="checkbox"> Terrifying Aspect</li>
 	<ul>
-		<li onmouseover="describe('dark_oppressor_lord');"><input onchange="checkSkill('dark_oppressor_lord','Lord Over Domain',60);" id="dark_oppressor_lord" disabled="disabled" type="checkbox"> Lord Over Domain</li>	
+		<li onmouseover="describe('dark_oppressor_lord');"><input onchange="checkSkill('dark_oppressor_lord','Lord Over Domain',60);" id="dark_oppressor_lord" disabled="disabled" type="checkbox"> Lord Over Domain</li>
 		<ul>
-			<li onmouseover="describe('dark_oppressor_legion');"><input onchange="checkSkill('dark_oppressor_legion','Legion Master',90);" id="dark_oppressor_legion" disabled="disabled" type="checkbox"> Legion Master</li>	
-		</ul>	
-	</ul>	
+			<li onmouseover="describe('dark_oppressor_legion');"><input onchange="checkSkill('dark_oppressor_legion','Legion Master',90);" id="dark_oppressor_legion" disabled="disabled" type="checkbox"> Legion Master</li>
+		</ul>
+	</ul>
 </ul>
 </div>
 <div id="wyrm_master">
 <ul>
 <li onmouseover="describe('wyrmmaster_acid_blood');"><input onchange="checkSkill('wyrmmaster_acid_blood','Acid Blood',0);" id="wyrmmaster_acid_blood" type="checkbox"> FREE SKILL: Acid Blood</li>
-<ul> 
+<ul>
 	<li onmouseover="describe('wyrmmaster_spittle');"><input onchange="checkSkill('wyrmmaster_spittle','Acid Spittle',60);" id="wyrmmaster_spittle" disabled="disabled" type="checkbox"> Acid spittle</li>
 	<li onmouseover="describe('wyrmmaster_wrackwyrm');"><input onchange="checkSkill('wyrmmaster_wrackwyrm','Summon Wrackwyrm',60);" id="wyrmmaster_wrackwyrm" disabled="disabled" type="checkbox"> Summon Wrackwyrm</li>
-</ul> 
+</ul>
 <li onmouseover="describe('wyrmmaster_meta');"><input onchange="checkSkill('wyrmmaster_meta','Metamorphic Unguis',30);" id="wyrmmaster_meta" type="checkbox"> Metamorphic Unguis</li>
 <li onmouseover="describe('wyrmmaster_hellhound');"><input onchange="checkSkill('wyrmmaster_hellhound','Summon Hellhound',30);" id="wyrmmaster_hellhound" type="checkbox"> Summon Hellhound</li>
 <ul>
@@ -5000,7 +5000,7 @@ function addLine(CP, text)
 </ul>
 <li onmouseover="describe('wyrmmaster_tentacle');"><input onchange="checkSkill('wyrmmaster_tentacle','Summon Horrid Tentacle',30);" id="wyrmmaster_tentacle" type="checkbox"> Summon Horrid Tentacle</li>
 <ul>
-	<li onmouseover="describe('wyrmmaster_favour');"><input onchange="checkSkill('wyrmmaster_favour','Favour of G\'Nak',60);" id="wyrmmaster_favour" disabled="disabled" type="checkbox"> Favour of G'Nak</li>	
+	<li onmouseover="describe('wyrmmaster_favour');"><input onchange="checkSkill('wyrmmaster_favour','Favour of G\'Nak',60);" id="wyrmmaster_favour" disabled="disabled" type="checkbox"> Favour of G'Nak</li>
 </ul>
 <li onmouseover="describe('wyrmmaster_imp');"><input onchange="checkSkill('wyrmmaster_imp','Summon Imp',30);" id="wyrmmaster_imp" type="checkbox"> Summon Imp</li>
 <ul>
@@ -5008,7 +5008,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('wyrmmaster_mischief');"><input onchange="checkSkill('wyrmmaster_mischief','Impish Mischief',60);" id="wyrmmaster_mischief" disabled="disabled" type="checkbox"> Impish Mischief</li>
 </ul>
 <li onmouseover="describe('wyrmmaster_translucency');"><input onchange="checkSkill('wyrmmaster_translucency','Translucency',30);" id="wyrmmaster_translucency" type="checkbox"> Translucency</li>
-<li onmouseover="describe('wyrmmaster_leap');"><input onchange="checkSkill('wyrmmaster_leap','Twisted Leap',30);" id="wyrmmaster_leap" type="checkbox"> Twisted Leap</li> 
+<li onmouseover="describe('wyrmmaster_leap');"><input onchange="checkSkill('wyrmmaster_leap','Twisted Leap',30);" id="wyrmmaster_leap" type="checkbox"> Twisted Leap</li>
 </ul>
 </div>
 <div id="fallen">
@@ -5028,7 +5028,7 @@ function addLine(CP, text)
 	<ul>
 		<li onmouseover="describe('fallen_bond');"><input onchange="checkSkill('fallen_bond','Bond of the Mechanical',60);" id="fallen_bond" disabled="disabled" type="checkbox"> Bond of the Mechanical</li>
 	</ul>
-	<li onmouseover="describe('fallen_plague');"><input onchange="checkSkill('fallen_plague','Plague of Doubt',30);" id="fallen_plague" type="checkbox"> Plague of Doubt</li>	
+	<li onmouseover="describe('fallen_plague');"><input onchange="checkSkill('fallen_plague','Plague of Doubt',30);" id="fallen_plague" type="checkbox"> Plague of Doubt</li>
 	<li onmouseover="describe('fallen_sulk');"><input onchange="checkSkill('fallen_sulk','Shadowskulk',30);" id="fallen_sulk" type="checkbox"> Shadowskulk</li>
 	<ul>
 		<li onmouseover="describe('fallen_dirk');"><input onchange="checkSkill('fallen_dirk','Shadow Dirk',60);" id="fallen_dirk" disabled="disabled" type="checkbox"> Shadow Dirk</li>
@@ -5054,7 +5054,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('redeemed_holy_fort');"><input onchange="checkSkill('redeemed_holy_fort','Holy Fortitude',30);" id="redeemed_holy_fort" type="checkbox"> Holy Fortitude</li>
 	<ul>
 		<li onmouseover="describe('redeemed_son');"><input onchange="checkSkill('redeemed_son','Favoured Son of Earth',60);" id="redeemed_son" disabled="disabled" type="checkbox"> Favoured Son of Earth</li>
-	</ul>	
+	</ul>
 	<li onmouseover="describe('redeemed_veng');"><input onchange="checkSkill('redeemed_veng','Mask of Vengeance',30);" id="redeemed_veng" type="checkbox"> Mask of the Vengeance</li>
 	<ul>
 		<li onmouseover="describe('redeemed_crossbow');"><input onchange="checkSkill('redeemed_crossbow','Crossbow of Cold Resolve',60);" id="redeemed_crossbow" disabled="disabled" type="checkbox"> Crossbow of Cold Resolve</li>
@@ -5065,7 +5065,7 @@ function addLine(CP, text)
 		<li onmouseover="describe('redeemed_eye_storms');"><input onchange="checkSkill('redeemed_eye_storms','Eye of Storms',60);" id="redeemed_eye_storms" disabled="disabled" type="checkbox"> Eye of Storms</li>
 		<li onmouseover="describe('redeemed_radiant_storms');"><input onchange="checkSkill('redeemed_radiant_storms','Radiant Storm',60);" id="redeemed_radiant_storms" disabled="disabled" type="checkbox"> Radiant Storm</li>
 	</ul>
-	<li onmouseover="describe('redeemed_remembrance');"><input onchange="checkSkill('redeemed_remembrance','Remembrance of Demonhood',30);" id="redeemed_remembrance" type="checkbox"> Remembrance of Demonhood</li>	
+	<li onmouseover="describe('redeemed_remembrance');"><input onchange="checkSkill('redeemed_remembrance','Remembrance of Demonhood',30);" id="redeemed_remembrance" type="checkbox"> Remembrance of Demonhood</li>
 	<ul>
 		<li onmouseover="describe('redeemed_smite');"><input onchange="checkSkill('redeemed_smite','Wrathful Smite',60);" id="redeemed_smite" disabled="disabled" type="checkbox"> Wrathful Smite</li>
 	</ul>
@@ -5119,16 +5119,16 @@ function addLine(CP, text)
 </ul>
 <h5>Cold Spells</h5>
 <ul>
-	<li onmouseover="describe('spell_co_bite');"><input onchange="checkSkill('spell_co_bite','Frostbite',5);" id="spell_co_bite" type="checkbox">Frostbite</li>	
+	<li onmouseover="describe('spell_co_bite');"><input onchange="checkSkill('spell_co_bite','Frostbite',5);" id="spell_co_bite" type="checkbox">Frostbite</li>
 	<li onmouseover="describe('spell_co_dart');"><input onchange="checkSkill('spell_co_dart','Ice Dart',9);" id="spell_co_dart" type="checkbox">Ice Dart</li>
-	<li onmouseover="describe('spell_co_strike');"><input onchange="checkSkill('spell_co_strike','Ice Strike',10);" id="spell_co_strike" type="checkbox">Ice Strike</li>	
+	<li onmouseover="describe('spell_co_strike');"><input onchange="checkSkill('spell_co_strike','Ice Strike',10);" id="spell_co_strike" type="checkbox">Ice Strike</li>
 	<li onmouseover="describe('spell_co_charge');"><input onchange="checkSkill('spell_co_charge','Frost Charge',12);" id="spell_co_charge" type="checkbox">Frost Charge</li>
 </ul>
 <h5>Death Spells</h5>
 <ul>
 	<li onmouseover="describe('spell_de_dart');"><input onchange="checkSkill('spell_de_dart','Death Dart',10);" id="spell_de_dart" type="checkbox">Death Dart</li>
-	<li onmouseover="describe('spell_de_snuff');"><input onchange="checkSkill('spell_de_snuff','Lifesnuff',11);" id="spell_de_snuff" type="checkbox">Lifesnuff</li>	
-	<li onmouseover="describe('spell_de_ray');"><input onchange="checkSkill('spell_de_ray','Necrotic Ray',6);" id="spell_de_ray" type="checkbox">Necrotic Ray</li>	
+	<li onmouseover="describe('spell_de_snuff');"><input onchange="checkSkill('spell_de_snuff','Lifesnuff',11);" id="spell_de_snuff" type="checkbox">Lifesnuff</li>
+	<li onmouseover="describe('spell_de_ray');"><input onchange="checkSkill('spell_de_ray','Necrotic Ray',6);" id="spell_de_ray" type="checkbox">Necrotic Ray</li>
 	<li onmouseover="describe('spell_de_mantle');"><input onchange="checkSkill('spell_de_mantle','Death Mantle',13);" id="spell_de_mantle" type="checkbox">Death Mantle</li>
 </ul>
 <h5>Electric Spells</h5>
@@ -5149,7 +5149,7 @@ function addLine(CP, text)
 <ul>
     <li onmouseover="describe('spell_im_ram');"><input onchange="checkSkill('spell_im_ram','Battering Ram',8);" id="spell_im_ram" type="checkbox">Battering Ram</li>
 	<li onmouseover="describe('spell_im_rain');"><input onchange="checkSkill('spell_im_rain','Rain of Stones',3);" id="spell_im_rain" type="checkbox">Rain of Stones</li>
-    <li onmouseover="describe('spell_im_dart');"><input onchange="checkSkill('spell_im_dart','Stone Dart',7);" id="spell_im_dart" type="checkbox">Stone Dart</li>	
+    <li onmouseover="describe('spell_im_dart');"><input onchange="checkSkill('spell_im_dart','Stone Dart',7);" id="spell_im_dart" type="checkbox">Stone Dart</li>
 	<li onmouseover="describe('spell_im_fury');"><input onchange="checkSkill('spell_im_fury','Stonefury',10);" id="spell_im_fury" type="checkbox">Stonefury</li>
 </ul>
 <h5>Other Spells</h5>
@@ -5200,7 +5200,7 @@ function addLine(CP, text)
 <h5>Electric Spells</h5>
 <ul>
 	<li onmouseover="describe('res_spell_ec_bolt');"><input onchange="checkSkill('res_spell_ec_bolt','Thunderbolt',16);" id="res_spell_ec_bolt" type="checkbox">Thunderbolt</li>
-	<li onmouseover="describe('res_spell_ec_strike');"><input onchange="checkSkill('res_spell_ec_strike','Thunderstrike',17);" id="res_spell_ec_strike" type="checkbox">Thunderstrike</li>	
+	<li onmouseover="describe('res_spell_ec_strike');"><input onchange="checkSkill('res_spell_ec_strike','Thunderstrike',17);" id="res_spell_ec_strike" type="checkbox">Thunderstrike</li>
 </ul>
 <h5>Fire Spells</h5>
 <ul>
@@ -5244,17 +5244,17 @@ function addLine(CP, text)
 	  <tr><td class=tdstats>Swords</td><td class=tdstats id="swordacc">10%</td><td class=tdstats>Thrown Weapons</td><td class=tdstats id="throwacc">10%</td></tr>
       <tr><td class=tdstats>Spells</td><td class=tdstats id="spellacc">10%</td></tr>
 	  <tr><td class=tdstats>Heavy Weapons Modifier</td><td class=tdstats id="heavyacc">-20%</td></tr>
-	  
+
       <tr><td colspan=4 align=center><b>DAMAGE BONUS</b></td></tr>
-      <tr><td class=tdstats>Hand-to-Hand</td><td class=tdstats id="hthdam">+0</td><td class=tdstats>Archery</td><td class=tdstats id="archdam">+0</td></tr>	  
-      <tr><td class=tdstats>Melee</td><td class=tdstats id="meldam">+0</td><td class=tdstats>Firearms</td><td class=tdstats id="firedam">+0</td></tr>	  
+      <tr><td class=tdstats>Hand-to-Hand</td><td class=tdstats id="hthdam">+0</td><td class=tdstats>Archery</td><td class=tdstats id="archdam">+0</td></tr>
+      <tr><td class=tdstats>Melee</td><td class=tdstats id="meldam">+0</td><td class=tdstats>Firearms</td><td class=tdstats id="firedam">+0</td></tr>
       <tr><td class=tdstats>Swords</td><td class=tdstats id="sworddam">+0</td><td class=tdstats>Thrown Weapons</td><td class=tdstats id="throwdam">+0</td></tr>
 	  <tr><td class=tdstats>Death Typed Attacks</td><td class=tdstats id="deathdam">+0</td></tr>
       <tr><td class=tdstats>Spells General</td><td class=tdstats id="spellgendam">+0</td><td class=tdstats>Spells Cast From Gems</td><td class=tdstats id="spellgemdam">+0</td></tr>
 	  <tr><td class=tdstats>Spells Acid</td><td class=tdstats id="spellacdam">+0</td><td class=tdstats>Spells Cold</td><td class=tdstats id="spellcodam">+0</td></tr>
 	  <tr><td class=tdstats>Spells Death</td><td class=tdstats id="spelldedam">+0</td><td class=tdstats>Spells Electric</td><td class=tdstats id="spelleldam">+0</td></tr>
-	  <tr><td class=tdstats>Spells Fire</td><td class=tdstats id="spellfidam">+0</td><td class=tdstats>Spells Impact</td><td class=tdstats id="spellimdam">+0</td></tr>	  
-	  
+	  <tr><td class=tdstats>Spells Fire</td><td class=tdstats id="spellfidam">+0</td><td class=tdstats>Spells Impact</td><td class=tdstats id="spellimdam">+0</td></tr>
+
       <tr><td colspan=4 align=center><b>DEFENSE</b></td></tr>
 	  <tr><td class=tdstats>Close Combat Dodge</td><td class=tdstats id="ccdef">0%</td><td class=tdstats>Ranged Defense</td><td class=tdstats id="rangdef">0%</td></tr>
 
@@ -5269,8 +5269,8 @@ function addLine(CP, text)
 <h4>Other Stats</h4>
 <table class="tablestats" id="other_stats_table">
 	<tr><td class=tdstats>Max HP</td><td class=tdstats id="maxHP">50</td><td class=tdstats>Max MP</td><td class=tdstats id="maxMP">20</td></tr>
-	<tr><td class=tdstats>Max AP</td><td class=tdstats id="maxAP">50</td><td class=tdstats>Weight Limit</td><td class=tdstats id="carry">50</td></tr>	
-	<tr><td class=tdstats>Max Morality</td><td class=tdstats id="maxMorality">40</td><td class=tdstats>Min Morality</td><td class=tdstats id="minMorality">-40</td></tr>	
+	<tr><td class=tdstats>Max AP</td><td class=tdstats id="maxAP">50</td><td class=tdstats>Weight Limit</td><td class=tdstats id="carry">50</td></tr>
+	<tr><td class=tdstats>Max Morality</td><td class=tdstats id="maxMorality">40</td><td class=tdstats>Min Morality</td><td class=tdstats id="minMorality">-40</td></tr>
 	<tr><td class=tdstats>Hide Modifier</td><td class=tdstats id="hideCh">+0%</td><td class=tdstats>Search Modifier</td><td class=tdstats id="searchCh">+0%</td></tr>
 </table>
 </div>
