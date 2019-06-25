@@ -1001,9 +1001,6 @@ createPortal( [encodeLocation(29,39,3),1,encodeLocation(29,39,0)] , ["Sewer Exit
 createPortal( [encodeLocation(14,6,0),1,encodeLocation(14,6,3)] , ["Subterran Railway Entrance"],[0]);
 createPortal( [encodeLocation(14,6,3),1,encodeLocation(14,6,0)] , ["Subterran Railway Exit"],[0]);
 
-createPortal( [encodeLocation(31,20,3),1,encodeLocation(12,34,2)] , ["Portal"], [5]);
-createPortal( [encodeLocation(17,18,3),1,encodeLocation(25,7,1)] , ["Portal"], [5]);
-
 createPortal( [encodeLocation(19,17,0),7,encodeLocation(26,3,0),encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
 createPortal( [encodeLocation(26,3,0),7,encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(19,17,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
 createPortal( [encodeLocation(17,7,0),7,encodeLocation(26,3,0),encodeLocation(8,36,0),encodeLocation(19,17,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
