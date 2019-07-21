@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Nexus Clash profile lookup</title>
+</head>
+<link rel="STYLESHEET" type="text/css" href="profileLookup.css" />
+<body>
+  <div class="staticBar">
+    <h1 id="bar1">Enter character name to lookup</h1>
+    <div class="inputs" id="bar2">
+      <label id="inLabel">Character Name: </label>
+      <input id="inPut" type="text" name="charName" maxlength="128" value="">
+      <div id="inButton" style="border-color:#FFFFFF; background-color:#000000" onclick="lookup()"> Submit </div>
+    </div>
+  </div>
+  <div class="charInfo">
+    <div class="text" id="charInfo1">
+      <div class="nameFields">
+        <div class="left" id="nameLabel">Character Name:</div>
+        <div class="right" id="charName"></div>
+      </div>
+      <div class="levelFields">
+        <div class="left" id="levelLabel">Level:</div>
+        <div class="right" id="charLevel"></div>
+      </div>
+      <div class="classFields">
+        <div class="left" id="classLabel">Class:</div>
+        <div class="right" id="charClass"></div>
+      </div>
+      <div id="aliveStatus"></div>
+      <div class="factionFields">
+        <div id="charPosition"></div>
+        <div id="charFaction"></div>
+      </div>
+    </div>
+    <div id="charInfo2"></div>
+  </div>
+  <div class="charDescription">
+    <div id="physLabel">Physical Description:</div>
+    <div id="physDescription"></div>
+    <div id="personalLabel">Personal Description:</div>
+    <div id="personalDescription"></div>
+  </div>
+  <div class="charBadges">
+    <table class="charStats">
+      <tr>
+        <th id="statTitle">Statistics</th>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="alcLabel">Alcohol Consumed:</td>
+        <td class="badgeRight" id="charAlc">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="angelLabel">Angels Killed:</td>
+        <td class="badgeRight" id="charAngel">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="booksLabel">Books Read:</td>
+        <td class="badgeRight" id="charBooks">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="damDealLabel">Damage Dealt:</td>
+        <td class="badgeRight" id="charDamDeal">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="damTakeLabel">Damage Taken:</td>
+        <td class="badgeRight" id="charDamTake">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="deathsLabel">Deaths:</td>
+        <td class="badgeRight" id="charDeaths">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="demonsLabel">Demons Killed:</td>
+        <td class="badgeRight" id="charDemons">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="doorsDestLabel">Doors Destroyed:</td>
+        <td class="badgeRight" id="charDoorsDest">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="doorsRepLabel">Doors Repaired:</td>
+        <td class="badgeRight" id="charDoorsRep">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="foodLabel">Food Eaten:</td>
+        <td class="badgeRight" id="charFood">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="hpLabel">HP Healed:</td>
+        <td class="badgeRight" id="charHp">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="itCraftLabel">Items Crafted:</td>
+        <td class="badgeRight" id="charItCraft">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="itRepLabel">Items Repaired:</td>
+        <td class="badgeRight" id="charItRep">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="killsLabel">Kills:</td>
+        <td class="badgeRight" id="charKills">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="locksLabel">Locks Picked:</td>
+        <td class="badgeRight" id="charLocks">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="petsLabel">Pets Killed:</td>
+        <td class="badgeRight" id="charPets">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="pillsLabel">Pills Taken:</td>
+        <td class="badgeRight" id="charPills">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="powerRemLabel">Power Removed:</td>
+        <td class="badgeRight" id="charPowerRem">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="powerRestLabel">Power Restored:</td>
+        <td class="badgeRight" id="charPowerRest">-</td>
+      </tr>
+      <tr>
+        <td class="badgeLeft" id="targetsLabel">Targets Shot:</td>
+        <td class="badgeRight" id="charTargets">-</td>
+      </tr>
+    </table>
+    <div class="charExpBadges" id="exploreBadges">
+    </div>
+  </div>
+</body>
+<script type="text/javascript"></script>
+<script src="profileLookup.js"></script>
+</html>
