@@ -1,8 +1,17 @@
 // Oh bother, let's try this a little differently.
-// Nexus Clash profile Lookup v0.2
+// Nexus Clash profile Lookup v0.3
 // This utilizes the NC profile API to search characters by name
 // I am new at this, so, uhm, sorry probably.
 //written by plscks
+var input = document.getElementById("inPut");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("inButton").click();
+  }
+});
+
 function nameGrab() {
   // Gets the text the user has typed into the input field
   var charName = document.getElementById("inPut").value;
@@ -10,9 +19,44 @@ function nameGrab() {
   return charName
 }
 
+function resetFields() {
+  document.getElementById('charName').innerHTML = "";
+  document.getElementById('charLevel').innerHTML = "";
+  document.getElementById('charClass').innerHTML = "";
+  document.getElementById('aliveStatus').innerHTML = "";
+  document.getElementById('charPosition').innerHTML = "";
+  document.getElementById('charFaction').innerHTML = "";
+  document.getElementById('charInfo2').innerHTML = "";
+  document.getElementById('physDescription').innerHTML = "";
+  document.getElementById('personalDescription').innerHTML = "";
+  document.getElementById('charAlc').innerHTML = "-";
+  document.getElementById('charAngel').innerHTML = "-";
+  document.getElementById('charBooks').innerHTML = "-";
+  document.getElementById('charDamDeal').innerHTML = "-";
+  document.getElementById('charDamTake').innerHTML = "-";
+  document.getElementById('charDeaths').innerHTML = "-";
+  document.getElementById('charDemons').innerHTML = "-";
+  document.getElementById('charDoorsDest').innerHTML = "-";
+  document.getElementById('charDoorsRep').innerHTML = "-";
+  document.getElementById('charFood').innerHTML = "-";
+  document.getElementById('charHp').innerHTML = "-";
+  document.getElementById('charItCraft').innerHTML = "-";
+  document.getElementById('charItRep').innerHTML = "-";
+  document.getElementById('charKills').innerHTML = "-";
+  document.getElementById('charLocks').innerHTML = "-";
+  document.getElementById('charPets').innerHTML = "-";
+  document.getElementById('charPills').innerHTML = "-";
+  document.getElementById('charPowerRem').innerHTML = "-";
+  document.getElementById('charPowerRest').innerHTML = "-";
+  document.getElementById('charTargets').innerHTML = "-";
+  document.getElementById('exploreBadges').innerHTML = "";
+  return;
+}
+
 async function lookup() {
   // looks up name in the NC profile API, then stores json data
-  name = nameGrab();
+  resetFields();
+  name  = nameGrab();
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
   var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
 
@@ -57,80 +101,244 @@ async function lookup() {
 }
 
 async function badgeParse(badges, name) {
-  var alcoholBadges = ["Low Tolerance", "Frat Boy", "Alcoholic", "Sinatra", "Friend of Bill"];
-  var angelBadges = ["Perverter", "Ruiner", "Nightmare Whisperer", "Voice of Armageddon", "The End of Hope"];
-  var booksBadges = ["Reader", "Bookworm", "Librarian", "Bibliophile", "Teachers Pet"];
-  var damDealBadges = ["Crusher", "Smasher", "Bloodletter", "Assassin", "Surgeons Lament", "Widowmaker"];
-  var damTakeBadges = ["Punching Bag", "Bruised", "Crushed", "All Stitched Up", "Keeping Healers in Business", "Constantly in Traction"];
-  var deathsBadges = ["Buried", "Wormfood", "Aspect Hunter", "Lich Pet", "Coffinmakers Friend"];
-  var demonsBadges = ["Cleanser", "Demonslayer", "Hammer of Light", "Justicebringer", "Blade of the Word"];
-  var doorsDestBadges = ["Opportunity Knocks", "Big Bad Wolf", "Heres Johnny", "Landshark", "Homewrecker"];
-  var doorsRepBadges = ["Apprentice Carpenter", "Woodworker", "Journeyman Carpenter", "Architect", "Master Carpenter"];
-  var foodBadges = ["Taste Tester", "Gourmand", "Glutton", "Masticator", "Food Critic"];
-  var healBadges = ["Medic", "Doctor", "Surgeon", "Healer", "Bodyweaver", "Lifesaver"];
-  var itemsCraBadges = ["Sweat Shop Worker", "Journeyman Blacksmith", "Factory Foreman", "Artisan", "Artifex"];
-  var itemsRepBadges = ["Tinker", "Mender", "Fixer", "Handyman", "80s Action Hero"];
-  var killsBadges = ["Killer", "Warrior", "Disciple of Death", "Master of Death", "Gravemaker"];
-  var locksBadges = ["Thief", "Burglar", "Second-Story Man", "Locksmith", "Master of Tumblers"];
-  var petsBadges = ["Dogkiller", "Exterminator", "Pest Control", "Trophy Hunter", "Director of Animal Testing"];
-  var pillsBadges = ["I Have a Headache", "Pill-popper", "Living the High Life", "Monster Addict", "Slave to the Habit"];
-  var powRemBadges = ["Wiresnipper", "Fusebreaker", "Circuitbreaker", "Blackout", "Degenerate"];
-  var powResBadges = ["Apprentice Electrician", "Fusemaker", "Journeyman Electrician", "Circuitmaker", "Master Electrician"];
-  var targetsBadges = ["Barn Assassin", "Sharpshooter", "Deadeye", "Gunslinger", "Hickok"];
-  var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot", "Untouched Wilderness", "Well of Truth", "What Once Was Lost"];
+  var alcoholBadges = {
+    1: "Low Tolerance",
+    2: "Frat Boy",
+    3: "Alcoholic",
+    4: "Sinatra",
+    5: "Friend of Bill"
+  }
+  var alcoholMax = badgeMax(badges, alcoholBadges, 0);
 
-  alcoholBadges = alcoholBadges.filter(val => badges.includes(val));
-  angelBadges = angelBadges.filter(val => badges.includes(val));
-  booksBadges = booksBadges.filter(val => badges.includes(val));
-  damDealBadges = damDealBadges.filter(val => badges.includes(val));
-  damTakeBadges = damTakeBadges.filter(val => badges.includes(val));
-  deathsBadges = deathsBadges.filter(val => badges.includes(val));
-  demonsBadges = demonsBadges.filter(val => badges.includes(val));
-  doorsDestBadges = doorsDestBadges.filter(val => badges.includes(val));
-  doorsRepBadges = doorsRepBadges.filter(val => badges.includes(val));
-  foodBadges = foodBadges.filter(val => badges.includes(val));
-  healBadges = healBadges.filter(val => badges.includes(val));
-  itemsCraBadges = itemsCraBadges.filter(val => badges.includes(val));
-  itemsRepBadges = itemsRepBadges.filter(val => badges.includes(val));
-  killsBadges = killsBadges.filter(val => badges.includes(val));
-  locksBadges = locksBadges.filter(val => badges.includes(val));
-  petsBadges = petsBadges.filter(val => badges.includes(val));
-  pillsBadges = pillsBadges.filter(val => badges.includes(val));
-  powRemBadges = powRemBadges.filter(val => badges.includes(val));
-  powResBadges = powResBadges.filter(val => badges.includes(val));
-  targetsBadges = targetsBadges.filter(val => badges.includes(val));
+  var angelBadges = {
+    1: "Perverter",
+    2: "Ruiner",
+    3: "Nightmare Whisperer",
+    4: "Voice of Armageddon",
+    5: "The End of Hope"
+  }
+  var angelMax = badgeMax(badges, angelBadges, 0);
+
+  var booksBadges = {
+    1: "Reader",
+    2: "Bookworm",
+    3: "Librarian",
+    4: "Bibliophile",
+    5: "Teachers Pet"
+  }
+  var booksMax = badgeMax(badges, booksBadges, 0);
+
+  var damDealBadges = {
+    1: "Crusher",
+    2: "Smasher",
+    3: "Bloodletter",
+    4: "Assassin",
+    5: "Surgeons Lament",
+    6: "Widowmaker"
+  }
+  var damDealMax = badgeMax(badges, damDealBadges, 1);
+
+  var damTakeBadges = {
+    1: "Punching Bag",
+    2: "Bruised",
+    3: "Crushed",
+    4: "All Stitched Up",
+    5: "Keeping Healers in Business",
+    6: "Constantly in Traction"
+  }
+  var damTakeMax = badgeMax(badges, damTakeBadges, 1);
+
+  var deathsBadges = {
+    1: "Buried",
+    2: "Wormfood",
+    3: "Aspect Hunter",
+    4: "Lich Pet",
+    5: "Coffinmakers Friend"
+  }
+  var deathsMax = badgeMax(badges, deathsBadges, 0);
+
+  var demonsBadges = {
+    1: "Cleanser",
+    2: "Demonslayer",
+    3: "Hammer of Light",
+    4: "Justicebringer",
+    5: "Blade of the Word"
+  }
+  var demonsMax = badgeMax(badges, demonsBadges, 0);
+
+  var doorsDestBadges = {
+    1: "Opportunity Knocks",
+    2: "Big Bad Wolf",
+    3: "Heres Johnny",
+    4: "Landshark",
+    5: "Homewrecker"
+  }
+  var doorsDestMax = badgeMax(badges, doorsDestBadges, 0);
+
+  var doorsRepBadges = {
+    1: "Apprentice Carpenter",
+    2: "Woodworker",
+    3: "Journeyman Carpenter",
+    4: "Architect",
+    5: "Master Carpenter"
+  }
+  var doorsRepMax = badgeMax(badges, doorsRepBadges, 0);
+
+  var foodBadges = {
+    1: "Taste Tester",
+    2: "Gourmand",
+    3: "Glutton",
+    4: "Masticator",
+    5: "Food Critic"
+  }
+  var foodMax = badgeMax(badges, foodBadges, 0);
+
+  var healBadges = {
+    1: "Medic",
+    2: "Doctor",
+    3: "Surgeon",
+    4: "Healer",
+    5: "Bodyweaver",
+    6: "Lifesaver"
+  }
+  var healMax = badgeMax(badges, healBadges, 1);
+
+  var itemsCraBadges = {
+    1: "Sweat Shop Worker",
+    2: "Journeyman Blacksmith",
+    3: "Factory Foreman",
+    4: "Artisan",
+    5: "Artifex"
+  }
+  var itemsCraMax = badgeMax(badges, itemsCraBadges, 0);
+
+  var itemsRepBadges = {
+    1: "Tinker",
+    2: "Mender",
+    3: "Fixer",
+    4: "Handyman",
+    5: "80s Action Hero"
+  }
+  var itemsRepMax = badgeMax(badges, itemsRepBadges, 0);
+
+  var killsBadges = {
+    1: "Killer",
+    2: "Warrior",
+    3: "Disciple of Death",
+    4: "Master of Death",
+    5: "Gravemaker"
+  }
+  var killsMax = badgeMax(badges, killsBadges, 0);
+
+  var locksBadges = {
+    1: "Thief",
+    2: "Burglar",
+    3: "Second-Story Man",
+    4: "Locksmith",
+    5: "Master of Tumblers"
+  }
+  var locksMax = badgeMax(badges, locksBadges, 0);
+
+  var petsBadges = {
+    1: "Dogkiller",
+    2: "Exterminator",
+    3: "Pest Control",
+    4: "Trophy Hunter",
+    5: "Director of Animal Testing"
+  }
+  var petsMax = badgeMax(badges, petsBadges, 0);
+
+  var pillsBadges = {
+    1: "I Have a Headache",
+    2: "Pill-popper",
+    3: "Living the High Life",
+    4: "Monster Addict",
+    5: "Slave to the Habit"
+  }
+  var pillsMax = badgeMax(badges, pillsBadges, 0);
+
+  var powRemBadges = {
+    1: "Wiresnipper",
+    2: "Fusebreaker",
+    3: "Circuitbreaker",
+    4: "Blackout",
+    5: "Degenerate"
+  }
+  var powRemMax = badgeMax(badges, powRemBadges, 0);
+
+  var powResBadges = {
+    1: "Apprentice Electrician",
+    2: "Fusemaker",
+    3: "Journeyman Electrician",
+    4: "Circuitmaker",
+    5: "Master Electrician"
+  }
+  var powResMax = badgeMax(badges, powResBadges, 0);
+
+  var targetsBadges = {
+    1: "Barn Assassin",
+    2: "Sharpshooter",
+    3: "Deadeye",
+    4: "Gunslinger",
+    5: "Hickok"
+  }
+  var targetsMax = badgeMax(badges, targetsBadges, 0);
+
+  var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost"];
+
   exploreBadges = exploreBadges.filter(val => badges.includes(val));
 
   var badgeNumNorm = ["< 10", "10 - 49", "50 - 99", "100 - 499", "500 - 999", "≥ 1000"];
   var badgeNumDam = ["< 500", "500 - 999", "1000 - 4999", "5000 - 9999", "10000 - 49999", "50000 - 99999", "≥ 100000"];
   var badgeNumHeal = ["< 500", "500 - 999", "1000 - 4999", "5000 - 9999", "10000 - 14999", "15000 - 19999", "≥ 20000"];
 
-  document.getElementById('charAlc').innerHTML = badgeNumNorm[alcoholBadges.length];
-  document.getElementById('charAngel').innerHTML = badgeNumNorm[angelBadges.length];
-  document.getElementById('charBooks').innerHTML = badgeNumNorm[booksBadges.length];
-  document.getElementById('charDamDeal').innerHTML = badgeNumDam[damDealBadges.length];
-  document.getElementById('charDamTake').innerHTML = badgeNumDam[damTakeBadges.length];
-  document.getElementById('charDeaths').innerHTML = badgeNumNorm[deathsBadges.length];
-  document.getElementById('charDemons').innerHTML = badgeNumNorm[demonsBadges.length];
-  document.getElementById('charDoorsDest').innerHTML = badgeNumNorm[doorsDestBadges.length];
-  document.getElementById('charDoorsRep').innerHTML = badgeNumNorm[doorsRepBadges.length];
-  document.getElementById('charFood').innerHTML = badgeNumNorm[foodBadges.length];
-  document.getElementById('charHp').innerHTML = badgeNumHeal[healBadges.length];
-  document.getElementById('charItCraft').innerHTML = badgeNumNorm[itemsCraBadges.length];
-  document.getElementById('charItRep').innerHTML = badgeNumNorm[itemsRepBadges.length];
-  document.getElementById('charKills').innerHTML = badgeNumNorm[killsBadges.length];
-  document.getElementById('charLocks').innerHTML = badgeNumNorm[locksBadges.length];
-  document.getElementById('charPets').innerHTML = badgeNumNorm[petsBadges.length];
-  document.getElementById('charPills').innerHTML = badgeNumNorm[pillsBadges.length];
-  document.getElementById('charPowerRem').innerHTML = badgeNumNorm[powRemBadges.length];
-  document.getElementById('charPowerRest').innerHTML = badgeNumNorm[powResBadges.length];
-  document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsBadges.length];
+  document.getElementById('charAlc').innerHTML = badgeNumNorm[alcoholMax];
+  document.getElementById('charAngel').innerHTML = badgeNumNorm[angelMax];
+  document.getElementById('charBooks').innerHTML = badgeNumNorm[booksMax];
+  document.getElementById('charDamDeal').innerHTML = badgeNumDam[damDealMax];
+  document.getElementById('charDamTake').innerHTML = badgeNumDam[damTakeMax];
+  document.getElementById('charDeaths').innerHTML = badgeNumNorm[deathsMax];
+  document.getElementById('charDemons').innerHTML = badgeNumNorm[demonsMax];
+  document.getElementById('charDoorsDest').innerHTML = badgeNumNorm[doorsDestMax];
+  document.getElementById('charDoorsRep').innerHTML = badgeNumNorm[doorsRepMax];
+  document.getElementById('charFood').innerHTML = badgeNumNorm[foodMax];
+  document.getElementById('charHp').innerHTML = badgeNumHeal[healMax];
+  document.getElementById('charItCraft').innerHTML = badgeNumNorm[itemsCraMax];
+  document.getElementById('charItRep').innerHTML = badgeNumNorm[itemsRepMax];
+  document.getElementById('charKills').innerHTML = badgeNumNorm[killsMax];
+  document.getElementById('charLocks').innerHTML = badgeNumNorm[locksMax];
+  document.getElementById('charPets').innerHTML = badgeNumNorm[petsMax];
+  document.getElementById('charPills').innerHTML = badgeNumNorm[pillsMax];
+  document.getElementById('charPowerRem').innerHTML = badgeNumNorm[powRemMax];
+  document.getElementById('charPowerRest').innerHTML = badgeNumNorm[powResMax];
+  document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsMax];
 
   if (exploreBadges.length == 0) {
     document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find";
   } else {
     badgesLeft = 40 - exploreBadges.length;
     document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find";
+  }
+}
+
+function badgeMax(all, category, n) {
+  if (n == 1) {
+    var j = 7;
+  } else {
+    var j = 6;
+  }
+
+  for (i = 1; i < j; i++) {
+    if (all.includes(category[i]) == false) {
+      delete category[i];
+    }
+  }
+  var categoryReal = Object.keys(category).map(Number);
+  var categoryMax = Math.max.apply(null, categoryReal);
+  if (isFinite(categoryMax) == false) {
+    return 0;
+  } else {
+    return categoryMax;
   }
 }
 
