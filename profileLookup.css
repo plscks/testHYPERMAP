@@ -1,0 +1,270 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #0D0221;
+}
+
+.staticBar {
+  order: 1;
+  margin-bottom: 5px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#bar1 {
+  order: 1;
+  text-align: left;
+  font-size: 18pt;
+  color: #F6019D;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#bar2 {
+  order: 2;
+}
+
+.inputs {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+#inLabel {
+  order: 1;
+  color: #2DE2E6;
+  margin:5px;
+}
+
+#inPut {
+  order: 2;
+  cursor: text;
+  color: #000000;
+  margin:5px;
+}
+
+#inButton {
+  order: 3;
+  cursor: pointer;
+  color: #2DE2E6;
+  margin: 5px;
+  height: 20;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: middle;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+.charInfo {
+  order: 2;
+  background-color: #2E2157;
+  border-color: #F706CF;
+  border-style: inset;
+  border-width: 5px;
+  display: inline-flex;
+  flex-direction: row;
+  width: 75%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.charDescription {
+  order: 3;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: #FFFFFF;
+}
+
+.charBadges {
+  order: 4;
+  background-color: #241734;
+  display: flex;
+  flex-direction: row;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2De2E6;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.text {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.nameFields {
+  order: 1;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nameLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #FF4365;
+}
+
+#charName {
+  color: #2DE2E6;
+  padding-top: 9px;
+}
+
+.levelFields {
+  order: 2;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#levelLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #FF4365;
+}
+
+#charLevel {
+  color: #2DE2E6;
+  padding-top: 9px;
+}
+
+.classFields {
+  order: 3;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#classLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #FF4365;
+}
+
+#charClass {
+  color: #2DE2E6;
+  padding-top: 9px;
+}
+
+#aliveStatus {
+  order: 4;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14pt;
+}
+
+.factionFields {
+  order: 5;
+  color: #F9C80E;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#charInfo1 {
+  order: 1;
+  padding: 15px;
+}
+
+#charInfo2{
+  order: 2;
+  padding-left: 200px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.left {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.right {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#physLabel {
+  color: #F9C80E;
+  background-color: #540D6E;
+  border-style: solid;
+  border-color: #D40078;
+  border-width: 5px;
+  padding: 5px;
+}
+
+#physDescription {
+  color: #2DE2E6;
+  padding: 20px;
+}
+
+#personalLabel {
+  color: #FF6C11;
+  background-color: #541388;
+  border-style: solid;
+  border-color: #F6019D;
+  border-width: 5px;
+  padding: 5px;
+}
+
+#personalDescription {
+  color: #023788;
+  padding: 20px;
+}
+
+#charPosition {
+  padding-right: 2px;
+}
+
+#charFaction {
+  padding-left: 2px;
+}
+
+.charStats {
+  order: 1;
+  width: 20%;
+  background-color: #0D0221;
+  display: inline-table;
+  border: 2px solid;
+  color: #FF3864;
+  border-color: #650D89;
+  padding: 10px;
+  margin: 15px;
+}
+
+.charExpBadges {
+  order: 2;
+  width: 80%;
+  padding: 20px;
+  color: #FFC611;
+}
+
+#statTitle {
+  color: #F9C80E;
+}
+
+.badgeLeft {
+  padding: 3px;
+}
+
+.badgeRight {
+  padding: 3px;
+  color: #F6019D;
+}
+
+th {
+  font-size: 20;
+  text-decoration: underline;
+}
