@@ -5,25 +5,25 @@
 <!-- Original map: https://docs.google.com/spreadsheets/d/1bugKcessSKUjay7HHe2ozWBpA_n8esOrsY1gAeoO8a4/edit?usp=sharing -->
 <html><head><title>Nexus Clash Breath 4 Hypermap</title>
 
-<link rel="STYLESHEET" type="text/css" href="style.css" /> 
+<link rel="STYLESHEET" type="text/css" href="style.css" />
 <style></style>
 <!-- Plane: 0: Valhalla, 1: Elysium, 2: Stygia, 3: Sewers, 4: Warrens, 5: Terra Nullius -->
 </head>
 <body>
 <div class="topbar">
-<div class="maplink" style="border-color:#FFFF00; background-color:#333300" onclick="showPlane(0)"> Laurentia </div> 
-<div class="maplink" style="border-color:#CCCCCC; background-color:#333333" onclick="showPlane(3)"> Sewers </div> 
-<div class="maplink" style="border-color:#00FFFF; background-color:#003333" onclick="showPlane(1)"> Elysium </div> 
+<div class="maplink" style="border-color:#FFFF00; background-color:#333300" onclick="showPlane(0)"> Laurentia </div>
+<div class="maplink" style="border-color:#CCCCCC; background-color:#333333" onclick="showPlane(3)"> Sewers </div>
+<div class="maplink" style="border-color:#00FFFF; background-color:#003333" onclick="showPlane(1)"> Elysium </div>
 <div class="maplink" style="border-color:#FF0000; background-color:#330000" onclick="showPlane(2)"> Stygia </div>
 <div class="maplink" style="border-color:#00FF00; background-color:#003300" onclick="showPlane(4)"> Wyrm's Lair </div>
 <div class="maplink" style="border-color:#d96207; background-color:#213d30" onclick="showPlane(5)"> Terra Nullius </div>
-<div class="maplink" id="districtsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDistricts()"> Districts: OFF </div> 
+<div class="maplink" id="districtsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDistricts()"> Districts: OFF </div>
 <!-- <div class="maplink" id="descriptionsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDescriptions()"> Descriptions: ON </div> -->
-<div class="maplink" id="badgeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleBadges()"> Badges: OFF </div> 
-<div class="maplink" id="guildsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleGuilds()"> Guilds: OFF </div> 
-<div class="maplink" id="markerModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleMarkerMode()"> Set/Remove Markers: OFF</div> 
-<div class="maplink" id="mobileModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleTouchscreenMode()"> Touchscreen Mode: OFF</div> 
-<div class="maplink" id="backButton" style="border-color:#FFFFFF; background-color:#000000"><a href="http://www.nexusclash.com/modules.php?name=Game">Back to game</a></div> 
+<div class="maplink" id="badgeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleBadges()"> Badges: OFF </div>
+<div class="maplink" id="guildsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleGuilds()"> Guilds: OFF </div>
+<div class="maplink" id="markerModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleMarkerMode()"> Set/Remove Markers: OFF</div>
+<div class="maplink" id="mobileModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleTouchscreenMode()"> Touchscreen Mode: OFF</div>
+<div class="maplink" id="backButton" style="border-color:#FFFFFF; background-color:#000000"><a href="http://www.nexusclash.com/modules.php?name=Game">Back to game</a></div>
 
 <div class="toptitle"></div></div><!-- Please report bugs<br><b><font color="FFFF00"><u>B</u></font> toggles badges. <font color="FFFF00"><u>M</u></font> on location toggles marker. <font color="FFFF00"><u>Shift+click</u></font> cycles portal destinations. <font color="FFFF00"><u>Click</u></font> enters portals.</b></div></div> -->
 
@@ -62,7 +62,7 @@
 <div id="tooltip"></div>
 
 
-</div><div id="sidebar"><br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
+</div><div id="sidebar"><br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>I made this neat <a href=https://plscks.github.io/testHYPERMAP/profileLookup.html>profile lookup tool</a> enjoy!.<br>I also have a copy of the <a href=https://plscks.github.io/testHYPERMAP/chargen_b3.5.html_v2_1.html>planner</a> with slightly moved buttons and that is able to be easily updated.<br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
 <div id="sidebarMarkerlist">&nbsp;</div><br>
 <div id="sidebarDestinationTypelist">
 <form>

@@ -58,7 +58,7 @@ async function lookup() {
   resetFields();
   name  = nameGrab();
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-  var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
+  var corsUrl = 'https://cors.plscks.workers.dev/?' + requestUrl
 
   var jsonData = await getData2(corsUrl);
 
