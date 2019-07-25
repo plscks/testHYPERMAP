@@ -1,7 +1,7 @@
 // Oh bother, let's try this a little differently.
 // Nexus Clash profile Lookup v0.3
 // This utilizes the NC profile API to search characters by name
-// I am new at this, so, uhm, sorry probably.
+// I am new at Javascript, so, uhm, sorry probably.
 //written by plscks
 var input = document.getElementById("inPut");
 
@@ -58,7 +58,7 @@ async function lookup() {
   resetFields();
   name  = nameGrab();
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-  var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
+  var corsUrl = 'https://cors.plscks.workers.dev/?' + requestUrl
 
   var jsonData = await getData2(corsUrl);
 

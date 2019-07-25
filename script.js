@@ -8,7 +8,7 @@ document.onkeypress = getKeyPress;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
-var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false;
+var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false;
 
 var waterCostModifier = 2.0;
 var portalMPCostModifier = 0.01;
@@ -91,10 +91,18 @@ var params = {}; var startParam; var destParam;
 
 //checkParameters();
 
+var origSidebar = document.getElementById("infoText").innerHTML
 
-
-
-
+function loadToolsPane() {
+	showTools = !showTools;
+	if (showTools) {
+		document.getElementById("toolsButton").innerHTML = "Tools: ON";
+		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for.<br>First is a tool I wrote for looking up profiles by name, it utilizes the existing<br>profile lookup API, the second is a slightly updated character planner, some<br>typos are fixed and the buttons have been moved so as to not change position<br>with the table. I did not write the planner, only modified the existing one.<br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b3.5.html_v2_1.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
+	} else {
+		document.getElementById("toolsButton").innerHTML = "Tools: OFF";
+		document.getElementById("infoText").innerHTML = origSidebar;
+	}
+}
 
 function toggleMarker(x,y,z) {
 	var index = encodeLocation(x,y,z);
@@ -452,8 +460,6 @@ for(var i = 0; i < 20000; i++) {
 }
 
 function showPlane(planeIndex) {
-
-
 
 	Z = planeIndex;
 

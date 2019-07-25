@@ -1,3 +1,9 @@
+<!--
+Nexus Clash profile Lookup tool v0.3 written by plscks
+This tool takes advantage of the existing Nexus Clash Profile API *thanks Rincewind*
+It utilizes html css and Javascript, it was a fun adventure It is still very messy
+and I really should refactor the Javascript, in time perhaps! Anyways, enjoy!
+-->
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -10,7 +16,8 @@
     <div class="inputs" id="bar2">
       <label id="inLabel">Character Name: </label>
       <input id="inPut" type="text" name="charName" maxlength="128" value="">
-      <div id="inButton" style="border-color:#FFFFFF; background-color:#000000" onclick="lookup()"> Submit </div>
+      <div id="inButton" onclick="lookup()"> Submit </div>
+      <div id="backButton" onclick=window.location.href="hypermap.html"> Back to Hypermap </div>
     </div>
   </div>
   <div class="charInfo">
