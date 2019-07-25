@@ -246,6 +246,12 @@ h5
 {
 	text-align: left;
 }
+#generate {
+	margin: 2px;
+}
+#back {
+	margin: 2px;
+}
 </style>
 <script>
 var levels = Array(); levelcp = Array(); levelskill = Array(); level = Array();
@@ -5234,7 +5240,7 @@ function addLine(CP, text)
 		<th>Skill</th>
 	</tr>
 </tbody></table>
-<input value="Generate" id="generate" onclick="generate()" type="button">
+<input value="Generate" id="generate" onclick="generate()" type="button"><input value="Back to Hypermap" id="back" onclick=window.location.href="hypermap.html" type="button">
 </div>
 <div id="stats"><h4>Combat Stats</h4>
 <table class="tablestats" id="combat_stats_table">

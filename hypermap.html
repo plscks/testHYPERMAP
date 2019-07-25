@@ -23,6 +23,7 @@
 <div class="maplink" id="guildsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleGuilds()"> Guilds: OFF </div>
 <div class="maplink" id="markerModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleMarkerMode()"> Set/Remove Markers: OFF</div>
 <div class="maplink" id="mobileModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleTouchscreenMode()"> Touchscreen Mode: OFF</div>
+<div class="maplink" id="toolsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="loadToolsPane()"> Tools: OFF</div>
 <div class="maplink" id="backButton" style="border-color:#FFFFFF; background-color:#000000"><a href="http://www.nexusclash.com/modules.php?name=Game">Back to game</a></div>
 
 <div class="toptitle"></div></div><!-- Please report bugs<br><b><font color="FFFF00"><u>B</u></font> toggles badges. <font color="FFFF00"><u>M</u></font> on location toggles marker. <font color="FFFF00"><u>Shift+click</u></font> cycles portal destinations. <font color="FFFF00"><u>Click</u></font> enters portals.</b></div></div> -->
@@ -62,28 +63,33 @@
 <div id="tooltip"></div>
 
 
-</div><div id="sidebar"><br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>I made this neat <a href=https://plscks.github.io/testHYPERMAP/profileLookup.html>profile lookup tool</a> enjoy!.<br>I also have a copy of the <a href=https://plscks.github.io/testHYPERMAP/chargen_b3.5.html_v2_1.html>planner</a> with slightly moved buttons and that is able to be easily updated.<br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
-<div id="sidebarMarkerlist">&nbsp;</div><br>
-<div id="sidebarDestinationTypelist">
-<form>
-  <select onChange="setDestinationType(this.options[this.selectedIndex].value)">
-	<option value="not_set">> Laurentia Resources</option>
-    <option value="Library">Library</option>
-	<option value="Factory">Factory</option>
-	<option value="Gun Store">Gun Store</option>
-	<option value="Sporting Goods Store">Sporting Goods Store</option>
-	<option value="Hospital">Hospital</option>
-	<option value="Pharmacy">Pharmacy</option>
-	<option value="Restaurant">Restaurant</option>
-	<option value="Bar">Bar</option>
-	<option value="Police Station">Police Station</option>
-	<option value="Junkyard">Junkyard</option>
-	<option value="Gas Station">Gas Station</option>
-	<option value="Museum">Museum</option>
-	<option value="Augmentation Clinic">Augmentation Clinic</option>
-	<option value="Power Plant">Power Plant</option>
-  </select>
-</form>
+</div>
+<div id="sidebar">
+  <span id="infoText">
+  <br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps.<br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.
+  <div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
+  </span>
+  <div id="sidebarMarkerlist">&nbsp;</div><br>
+  <div id="sidebarDestinationTypelist">
+    <form>
+      <select onChange="setDestinationType(this.options[this.selectedIndex].value)">
+	       <option value="not_set">> Laurentia Resources</option>
+         <option value="Library">Library</option>
+	       <option value="Factory">Factory</option>
+	       <option value="Gun Store">Gun Store</option>
+	       <option value="Sporting Goods Store">Sporting Goods Store</option>
+	       <option value="Hospital">Hospital</option>
+	       <option value="Pharmacy">Pharmacy</option>
+	       <option value="Restaurant">Restaurant</option>
+	       <option value="Bar">Bar</option>
+	       <option value="Police Station">Police Station</option>
+	       <option value="Junkyard">Junkyard</option>
+	       <option value="Gas Station">Gas Station</option>
+	       <option value="Museum">Museum</option>
+	       <option value="Augmentation Clinic">Augmentation Clinic</option>
+	       <option value="Power Plant">Power Plant</option>
+      </select>
+    </form>
 
 <form>
   <select onChange="setDestinationType(this.options[this.selectedIndex].value)">
