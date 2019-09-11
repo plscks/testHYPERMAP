@@ -1,5 +1,5 @@
 // Oh bother, let's try this a little differently.
-// Nexus Clash profile Lookup v0.3
+// Nexus Clash profile Lookup v0.4
 // This utilizes the NC profile API to search characters by name
 // I am new at Javascript, so, uhm, sorry probably.
 //written by plscks

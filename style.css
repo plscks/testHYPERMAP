@@ -1,623 +1,422 @@
-body
-{
-	cursor: crosshair;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	margin: 0px;
-	color: #FFFFFF;
-	background: #000000;
-}
-div.content
-{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	display: inline-block;
-	min-height: 500px;
-}
-div.topbar
-{
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	z-index: 15;
-	position:fixed;
-	width: 100%;
-	min-width: 1500px;
-	height: 35;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 18pt;
-	background-color: rgba(0,0,0,0.7);
-}
-div.topspace
-{
-	width: 100%;
-	height: 35;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 18pt;
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
 }
 
-div.maplink
-{
-	cursor: pointer;
-	height: 20;
-	display: inline-block;
-	text-align: center;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	padding-left: 5px;
-	padding-right: 5px;
-	vertical-align: middle;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
+html {
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }
 
-div.maplinkHighlight
-{
-	cursor: pointer;
-	height: 20;
-	display: inline-block;
-	text-align: center;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	padding-left: 5px;
-	padding-right: 5px;
-	vertical-align: middle;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #ffff00;
-}
-div.resourceTypeDestinationButton
-{
-	cursor: pointer;
-	display: inline-block;
-	text-align: center;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 3px;
-	padding-left: 5px;
-	padding-right: 5px;
-	vertical-align: middle;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-}
-div.toptitle
-{
-	display: inline-block;
-	text-align: left;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 7pt;
-	
-}
-div.topupdatedate
-{
-	display: inline-block;
-	text-align: left;
-	padding-left: 10px;
-	height: 20;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  color: #FFFFFF;
+  background: #000000;
+  height: 100%;
+  margin: 0px;
 }
 
-a:visited
-{
-	color: #FFFFFF;
-}
-a:link
-{
-	color: #CCCCCC;
-}
-a:active
-{
-	color: #FFFFFF;
-}
-a:hover
-{
-	color: #FFFFFF;
+.page {
+  height: 100%;
+  width: 1600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-box-orient: vertical;
+  flex-direction: column;
 }
 
-#valhalla{
-	cursor: crosshair;
-	unselectable: on;
-}
-#elysium{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#stygia{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#sewers{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#warrens{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#terraNullius{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#badges0{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#badges1{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#badges2{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#badges3{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#badges4{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#guilds0{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#guilds1{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#guilds2{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#guilds3{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-guilds4{
-	cursor: crosshair;
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:8;
-}
-#districts0{
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:4;
-}
-#districts1{
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:4;
-}
-#districts2{
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:4;
-}
-#districts3{
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:4;
-}
-districts4{
-	display: none;
-	position:absolute;
-	left: 0;
-	top: 35;
-	z-index:4;
-}
-#tooltiptext{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	vertical-align:top;
-	display: inline-block;
-}
-#tooltipControls{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	vertical-align:top;
-	display: inline-block;
-}
-#tooltipControlsButtonCycle{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-cursor: pointer;
-	margin: 5px;
-	padding: 2px;
-	border: 1px solid #00ffff;
-	background-color: #003333;
-	border-radius: 3px;
-	float: left;
-}
-#tooltipControlsButtonEnter{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-cursor: pointer;
-	margin: 5px;
-	padding: 2px;
-	border: 1px solid #00ff00;
-	background-color: #003300;
-	border-radius: 3px;
-	float: left;
-}
-#tooltipControlsButtonCancel{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-cursor: pointer;
-	margin: 5px;
-	padding: 2px;
-	border: 1px solid #ff0000;
-	background-color: #330000;
-	border-radius: 3px;
-	float: left;
-}
-#previewmap{
-margin: 5px;
-margin-left: 20px;
-background: url(mini-valhalla.png);
-background-position: -0px -0px;
-display: inline-block;
-background-repeat: no-repeat;
-	width: 108;
-	height: 108;
+.topbar {
+  order: 1;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-box-orient: horizontal;
+  flex-direction: row;
+  cursor: default;
+  -ms-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 
-#overlay
-{
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	position: absolute;
-	left: 0px;
-	top: 35px;
-	width: 1008px;
-	height: 1008px;
-	z-index: 7;
-	background-color: #000000;
-	opacity: 0.5;
-	display: none;
-}
-#overlay2
-{
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	position: absolute;
-	left: 0px;
-	top: 35px;
-	width: 1008px;
-	height: 1008px;
-	z-index: 7;
-	background-color: #000000;
-	opacity: 0.5;
-	display: none;
-}
-#overlay3
-{
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	position: absolute;
-	left: 0px;
-	top: 35px;
-	width: 1008px;
-	height: 1008px;
-	z-index: 7;
-	background-color: #000000;
-	opacity: 0.5;
-	display: none;
-}
-#overlay4
-{
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	position: absolute;
-	left: 0px;
-	top: 35px;
-	width: 1008px;
-	height: 1008px;
-	z-index: 7;
-	background-color: #000000;
-	opacity: 0.5;
-	display: none;
-}
-#tooltip
-{
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	position: absolute;
-	left: 0px;
-	top: -200px;
-	max-width:500px;
-	z-index: 20;
-	border: 1px solid #ffffff;
-	border-radius: 5px;
-	padding: 3px;
-	color: #ffffff;
-	background-color: rgba(0,0,0,0.8)
-}
-#you
-{
-	position: absolute;
-	left: -80px;
-	top: -80px;
-	z-index: 9;
-}
-#pointer
-{
-	position: absolute;
-	left: -80px;
-	top: -80px;
-	z-index: 6;
-}
-#signal
-{
-	position: absolute;
-	left: -200px;
-	top: -200px;
-	z-index: 8;
-}
-div.marker
-{
-	width: 23;
-	height: 23px;
-	background: url(icons/marker.gif);
-	position: absolute;
-	z-index: 7;
-}
-div.badgeMarker
-{
-display: block;
-	width: 72px;
-	height: 72px;
-	position: absolute;
-	z-index: 7;
-}
-div.guildMarker
-{
-display: block;
-	width: 72px;
-	height: 72px;
-	position: absolute;
-	z-index: 7;
-}
-div.markerinfo
-{
-
-	border: 0px solid #ffffff;
-	border-radius: 5px;
-	margin: 10px;
-	background-color: #000000;
-	vertical-align: top;
-}
-div.destinationTypeButtons
-{
-	display: inline-block;
-	border: 0px solid #ffffff;
-	border-radius: 5px;
-	margin: 10px;
-	background-color: #000000;
-	vertical-align: top;
-}
-div.markerLocationText
-{
-	display:inline-block;
-}
-div.markerUIbuttonRed
-{
-	float: right;
-	display: inline-block;
-	padding: 2px;
-	margin-left: 10px;
-	border: 1px solid #ff0000;
-	background-color: #330000;
-	border-radius: 3px;
-	cursor: pointer;
-}
-div.markerUIbuttonBlue
-{
-	float: right;
-	display: inline-block;
-	padding: 2px;
-	margin-left: 10px;
-	border: 1px solid #00FFFF;
-	background-color: #003333;
-	border-radius: 3px;
-	cursor: pointer;
-}
-div.markerUIbuttonGreen
-{
-	float: right;
-	display: inline-block;
-	padding: 2px;
-	margin-left: 10px;
-	border: 1px solid #00ff00;
-	background-color: #003300;
-	border-radius: 3px;
-	cursor: pointer;
-	display: none;
-}
-div.content 
-{
-float:left;
+.maplink {
+  min-width: 4%;
+  cursor: pointer;
+  height: 20;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: middle;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  margin: 3px;
 }
 
-#sidebar {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	position:fixed;
-	display: inline-block;
-	height: 200px;
-	min-width: 200px;
-	z-index: 7;
-	float: left;
-	background-color: #000000;
-	padding-left: 20px;
+.maplinkHighlight {
+  cursor: pointer;
+  height: 20;
+  display: inline-block;
+  align-self: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px;
+  vertical-align: middle;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #ffff00;
 }
+
+.bottomBar {
+  order: 2;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.content {
+  order: 1;
+  align-self: flex-start;
+  display: inline-flex;
+  position: relative;
+  cursor: crosshair;
+}
+
+.sidebar {
+  order: 2;
+  max-width: 500px;
+  align-self: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  cursor: default;
+}
+
 #sidebarMarkerlist {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	display: inline-block;
-	z-index: 7;
-	float: left;
-	background-color: #000000;
-	padding-top: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 500px;
+  z-index: 7;
+  background-color: #000000;
+  padding-top: 20px;
 }
+
 #sidebarDestinationTypelist {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	display: none;
-	z-index: 7;
-	background-color: #000000;
-	padding-top: 20px;
+  display: none;
+  order: 2;
+  z-index: 7;
+  background-color: #000000;
+  padding-top: 20px;
 }
+
 #pathfindingSettings {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
-	user-select: none;
-	-o-user-select: none;
-	unselectable: on;
-	display: inline-block;
-	z-index: 7;
-	background-color: #000000;
-	padding-top: 20px;
-	padding-top: 20px;
+  order: 3;
+  display: inline-block;
+  z-index: 7;
+  background-color: #000000;
+  padding-top: 20px;
+  padding-top: 20px;
 }
+
 select {
-background-repeat:no-repeat;
-background-position:bottom left;
-   border: 1px solid #00FF00;
-   background-color: #003300;
- 	border-radius: 3px;
-   color: white; 
-}
-select.mpcost {
-background-repeat:no-repeat;
-background-position:bottom left;
-   border: 1px solid #00FFFF;
-   background-color: #003333;
- 	border-radius: 3px;
-   color: white; 
+  background-repeat:no-repeat;
+  background-position:bottom left;
+  border: 1px solid #00FF00;
+  background-color: #003300;
+  border-radius: 3px;
+  color: white;
 }
 
-
-
-input {
-background-repeat:no-repeat;
-background-position:bottom left;
-   border: 1px solid #00FF00;
-   background-color: #003333;
- 	border-radius: 3px;
-   color: white; 
+a:visited {
+  color: #FFFFFF;
 }
-#customText {
-	background-color: #333333;
+
+a:link {
+  color: #CCCCCC;
+}
+
+a:active {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #FFFFFF;
+}
+
+.defaultPlane {
+  cursor: crosshair;
+}
+
+.planes {
+  cursor: crosshair;
+  display: none;
+}
+
+.badges {
+  cursor: crosshair;
+  display: none;
+  position: absolute;
+  left: 0px;
+  z-index:8;
+}
+
+.guilds {
+  cursor: crosshair;
+  display: none;
+  position: absolute;
+  left: 0px;
+  z-index:8;
+}
+
+.districts {
+  display: none;
+  position: absolute;
+  left: 0px;
+  z-index:4;
+}
+
+#tooltiptext {
+  vertical-align:top;
+  display: inline-block;
+}
+
+#tooltipControls {
+  vertical-align:top;
+  display: inline-block;
+}
+
+#tooltipControlsButtonCycle {
+  cursor: pointer;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #00ffff;
+  background-color: #003333;
+  border-radius: 3px;
+  float: left;
+}
+
+#tooltipControlsButtonEnter {
+  cursor: pointer;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #00ff00;
+  background-color: #003300;
+  border-radius: 3px;
+  float: left;
+}
+
+#tooltipControlsButtonCancel {
+  cursor: pointer;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #ff0000;
+  background-color: #330000;
+  border-radius: 3px;
+  float: left;
+}
+
+#previewmap {
+  margin: 5px;
+  margin-left: 20px;
+  background: url(mini-valhalla.png);
+  background-position: -0px -0px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 108;
+  height: 108;
+}
+
+#overlay {
+  position: absolute;
+  left: 0px;
+  width: 1008px;
+  height: 1008px;
+  z-index: 7;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+#overlay2 {
+  position: absolute;
+  left: 0px;
+  height: 1008px;
+  z-index: 7;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+#overlay3 {
+  position: absolute;
+  left: 0px;
+  height: 1008px;
+  z-index: 7;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+#overlay4 {
+  position: absolute;
+  left: 0px;
+  width: 1008px;
+  height: 1008px;
+  z-index: 7;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
+
+#tooltip {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  position: absolute;
+  left: 0px;
+  top: -200px;
+  max-width:500px;
+  z-index: 20;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 3px;
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.8)
+}
+
+#you {
+  position: absolute;
+  left: -80px;
+  top: -80px;
+  z-index: 9;
+}
+
+#pointer {
+  position: absolute;
+  left: -80px;
+  top: -80px;
+  z-index: 6;
+}
+
+#signal {
+  position: absolute;
+  left: -200px;
+  top: -200px;
+  z-index: 8;
+}
+
+.marker {
+  width: 23;
+  height: 23px;
+  background: url(icons/marker.gif);
+  position: absolute;
+  z-index: 7;
+}
+
+.badgeMarker {
+  display: block;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  z-index: 7;
+}
+
+.guildMarker {
+  display: block;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  z-index: 7;
+}
+
+.markerinfo {
+  order: 1;
+  border: 0px solid #ffffff;
+  display: flex;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: #000000;
+  vertical-align: top;
+}
+
+.destinationTypeButtons {
+  display: inline-block;
+  border: 0px solid #ffffff;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #000000;
+  vertical-align: top;
+}
+
+.markerLocationText {
+  order: 1;
+  display:inline-block;
+  align-self: flex-start;
+  flex-grow: 1;
+}
+
+.markerUIbuttonRed {
+  order: 3;
+  align-self: flex-end;
+  display: inline-block;
+  padding: 2px;
+  margin-left: 10px;
+  border: 1px solid #ff0000;
+  background-color: #330000;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.markerUIbuttonBlue {
+  order: 2;
+  align-self: flex-end;
+  display: inline-block;
+  padding: 2px;
+  margin-left: 10px;
+  border: 1px solid #00FFFF;
+  background-color: #003333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.markerUIbuttonGreen {
+  display: none;
+  order: 2;
+  align-self: flex-end;
+  padding: 2px;
+  margin-left: 10px;
+  border: 1px solid #00ff00;
+  background-color: #003300;
+  border-radius: 3px;
+  cursor: pointer;
 }
