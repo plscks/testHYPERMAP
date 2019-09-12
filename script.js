@@ -226,6 +226,19 @@ function clearMarkers() {
 	}
 }
 
+function resetMarkers() {
+	document.getElementById("sidebarDestinationTypelist").style.display = "none";
+	for(var i = 0; i < 20000; i++) {
+		if (markers[i]) {
+			var arr = decodeLocation(i);
+			toggleMarker(arr[0],arr[1],arr[2]);
+		}
+	}
+	for (var i = 0; i < markers.length; ++i) {
+		markers[i] = false;
+	}
+}
+
 function pathCostModifier(index) {
 	var modifier = 1.0;
 	if (TileTypes[index] == "sea" || TileTypes[index] == "a sea") modifier = waterCostModifier;
