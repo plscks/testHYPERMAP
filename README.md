@@ -1,5 +1,11 @@
-# [Breath 4 Hypermap version 2.0](https://plscks.github.io/testHYPERMAP/hypermap.html)
+# [Breath 4 Hypermap version 2.1](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 09/18/2019 version 2.1
+  * Profile Lookup tool updated to v0.5
+  * Profile Tool can set missing exploration badges on Hypermap using localStorage
+  * Fixes Profile Lookup Tool avatar stretching bug
+  * Hypermap stays in Badge mode when changing planes
+
 ### 09/11/2019 version 2.0
   * Rewrote HTML to be mobile friendly
   * Rewrote CSS to be mobile friendly
