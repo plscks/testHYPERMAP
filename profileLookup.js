@@ -4,6 +4,8 @@
 // I am new at Javascript, so, uhm, sorry probably.
 //written by plscks
 var input = document.getElementById("inPut");
+var expBadges = [];
+var testVar = [];
 
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -94,7 +96,7 @@ async function lookup() {
     document.getElementById('charFaction').innerHTML = jsonData.result.character.faction.name;
   }
 
-  document.getElementById('charInfo2').innerHTML = "<img src='" + jsonData.result.character.avatar.url + "'>";
+  document.getElementById('charInfo2').innerHTML = "<img src='" + jsonData.result.character.avatar.url + "' height='250' width='250'>";
   document.getElementById('physDescription').innerHTML = jsonData.result.character.description.physical;
   document.getElementById('personalDescription').innerHTML = jsonData.result.character.description.personal;
   await badgeParse(jsonData.result.character.badges, nameName);
@@ -287,6 +289,7 @@ async function badgeParse(badges, name) {
   var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost"];
 
   exploreBadges = exploreBadges.filter(val => badges.includes(val));
+  expBadges = exploreBadges;
 
   var badgeNumNorm = ["< 10", "10 - 49", "50 - 99", "100 - 499", "500 - 999", "≥ 1000"];
   var badgeNumDam = ["< 500", "500 - 999", "1000 - 4999", "5000 - 9999", "10000 - 49999", "50000 - 99999", "≥ 100000"];
@@ -314,11 +317,17 @@ async function badgeParse(badges, name) {
   document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsMax];
 
   if (exploreBadges.length == 0) {
-    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find";
+    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
+  } else if (exploreBadges.length == 40) {
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p> All exploration badges obtained.";
   } else {
     badgesLeft = 40 - exploreBadges.length;
-    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find";
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
   }
+}
+
+function badgeLink() {
+  localStorage.setItem("expBadges", JSON.stringify(expBadges));
 }
 
 function badgeMax(all, category, n) {

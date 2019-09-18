@@ -13,7 +13,7 @@ var hasTouch;
 var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
-var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false;
+var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false; var switchPlane = false;
 
 var waterCostModifier = 2.0;
 var portalMPCostModifier = 0.01;
@@ -86,6 +86,18 @@ initializeTileNames();
 initializeTileTypes();
 var params = {}; var startParam; var destParam;
 var origSidebar = document.getElementById("infoText").innerHTML
+
+if (localStorage.getItem("expBadges")) {
+	var lookupBadges = [];
+	var expBadgeArray = [];
+	var finishedBadgeList;
+	var lookupBadges = localStorage.getItem("expBadges");
+	lookupBadges = lookupBadges.toLowerCase();
+	if (!showBadges) toggleBadges();
+	checkBadges(lookupBadges);
+	showhideMarkersPlanechange();
+	localStorage.clear();
+}
 
 function loadToolsPane() {
 	showTools = !showTools;
@@ -237,6 +249,7 @@ function resetMarkers() {
 	for (var i = 0; i < markers.length; ++i) {
 		markers[i] = false;
 	}
+	if (showBadges) toggleBadges();
 }
 
 function pathCostModifier(index) {
@@ -445,7 +458,10 @@ for(var i = 0; i < 20000; i++) {
 function showPlane(planeIndex) {
 	Z = planeIndex;
 	showhideMarkersPlanechange();
-	if (showBadges) toggleBadges();
+	if (showBadges) {
+		switchPlane = true;
+		toggleBadges(switchPlane);
+	}
 	if (showGuilds) toggleGuilds();
 	if (showDistricts) toggleDistricts();
 	document.getElementById("valhalla").style.display = "none";
@@ -488,32 +504,48 @@ function toggleDescriptions() {
 	else document.getElementById("descriptionsButton").innerHTML = "Descriptions: OFF";
 }
 
-function toggleBadges() {
+function toggleBadges(switchPlane) {
 	if (!badgesInitialized) {
 		initializeBadges();
 		badgesInitialized = true;
 	}
-	showBadges = !showBadges;
+	if (!switchPlane) showBadges = !showBadges;
 	if (showBadges && showGuilds) toggleGuilds();
 	if(showBadges) {
 		document.getElementById("overlay2").style.display = "block";
 		if (Z == 0) {
 			document.getElementById("badges0").style.display = "block";
+			document.getElementById("badges1").style.display = "none";
+			document.getElementById("badges2").style.display = "none";
+			document.getElementById("badges3").style.display = "none";
 			document.getElementById("overlay2").style.width = "1008";
 		}
 		else if (Z == 1) {
+			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "block";
+			document.getElementById("badges2").style.display = "none";
+			document.getElementById("badges3").style.display = "none";
 			document.getElementById("overlay2").style.width = "768";
 		}
 		else if (Z == 2) {
+			document.getElementById("badges0").style.display = "none";
+			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "block";
+			document.getElementById("badges3").style.display = "none";
 			document.getElementById("overlay2").style.width = "768";
 		}
 	  else if (Z == 3) {
+			document.getElementById("badges0").style.display = "none";
+			document.getElementById("badges1").style.display = "none";
+			document.getElementById("badges2").style.display = "none";
 			document.getElementById("badges3").style.display = "block";
 			document.getElementById("overlay2").style.width = "1008";
 		}
 		else if (Z == 4 || Z == 5) {
+			document.getElementById("badges0").style.display = "none";
+			document.getElementById("badges1").style.display = "none";
+			document.getElementById("badges2").style.display = "none";
+			document.getElementById("badges3").style.display = "none";
 			document.getElementById("overlay2").style.display = "none";
 		}
 	} else {
