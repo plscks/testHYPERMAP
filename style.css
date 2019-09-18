@@ -59,7 +59,6 @@ body {
 }
 
 .maplink {
-  min-width: 4%;
   cursor: pointer;
   height: 20;
   display: -webkit-inline-box;
