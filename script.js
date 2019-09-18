@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.0
+// Nexus Clash Breath 4 hypermap version 2.1
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
