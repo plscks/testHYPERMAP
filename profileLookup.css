@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #0D0221;
+  width: 800px;
 }
 
 .staticBar {
@@ -84,9 +85,8 @@ body {
   border-color: #F706CF;
   border-style: inset;
   border-width: 5px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  width: 75%;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -95,7 +95,6 @@ body {
   order: 3;
   display: inline-flex;
   flex-direction: column;
-  padding: 5px;
   margin-bottom: 5px;
   margin-top: 5px;
   color: #FFFFFF;
@@ -191,14 +190,13 @@ body {
 #charInfo1 {
   order: 1;
   padding: 15px;
+  width: 60%;
 }
 
 #charInfo2{
   order: 2;
-  padding-left: 200px;
-  padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
+  width: 32%;
 }
 
 .left {
@@ -267,7 +265,27 @@ body {
   order: 2;
   width: 80%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
   color: #FFC611;
+}
+
+p {
+  display: inline-block;
+}
+
+#badgeButton {
+  cursor: pointer;
+  border-style: solid;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 100px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  text-align: center;
+  background-color: #000000;
+  color: #ffff00;
 }
 
 #statTitle {
