@@ -2551,7 +2551,7 @@ function initializeTileNames() {
 	registerTileNames(26,17,0,"Halleck Shipping Solutions");
 	registerTileNames(26,18,0,"Zentricity Inc.");
 	registerTileNames(26,19,0,"A to Z Executive Search");
-	registerTileNames(26,20,0,"Office Building");
+	registerTileNames(26,20,0,"Haunted Haberdashery");
 	registerTileNames(26,21,0,"Apartment Building");
 	registerTileNames(26,22,0,"Office Building");
 	registerTileNames(26,23,0,"Apartment Building");
@@ -7945,7 +7945,7 @@ function initializeTileTypes() {
 	registerTileTypes(26,17,0,"Office Building");
 	registerTileTypes(26,18,0,"Office Building");
 	registerTileTypes(26,19,0,"Office Building");
-	registerTileTypes(26,20,0,"Office Building");
+	registerTileTypes(26,20,0,"Holloween Costume Shop");
 	registerTileTypes(26,21,0,"Apartment Building");
 	registerTileTypes(26,22,0,"Office Building");
 	registerTileTypes(26,23,0,"Apartment Building");
