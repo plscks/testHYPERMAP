@@ -5017,7 +5017,7 @@ function initializeTileNames() {
 	registerTileNames(11,8,1,"Twisted Space");
 	registerTileNames(12,8,1,"Maple Forest");
 	registerTileNames(13,8,1,"Maple Forest");
-	registerTileNames(14,8,1,"Cottage");
+	registerTileNames(14,8,1,"Witchwear Emporium");
 	registerTileNames(15,8,1,"Maple Forest");
 	registerTileNames(11,9,1,"Maple Forest");
 	registerTileNames(12,9,1,"Maple Forest");
@@ -6590,7 +6590,7 @@ function initializeTileNames() {
 	registerTileNames(8,19,2,"Twisted Space");
 	registerTileNames(9,19,2,"Egg Field");
 	registerTileNames(10,19,2,"Egg Field");
-	registerTileNames(11,19,2,"Stone Hut");
+	registerTileNames(11,19,2,"Devilishly Good Costumes");
 	registerTileNames(29,36,2,"Twisted Space");
 	registerTileNames(30,36,2,"Twisted Space");
 	registerTileNames(31,36,2,"Twisted Void");
@@ -10411,7 +10411,7 @@ function initializeTileTypes() {
 	registerTileTypes(11,8,1,"a Twisted Space");
 	registerTileTypes(12,8,1,"an Idyllic Forest");
 	registerTileTypes(13,8,1,"an Idyllic Forest");
-	registerTileTypes(14,8,1,"a Cottage");
+	registerTileTypes(14,8,1,"a Halloween Costume Shop");
 	registerTileTypes(15,8,1,"an Idyllic Forest");
 	registerTileTypes(11,9,1,"an Idyllic Forest");
 	registerTileTypes(12,9,1,"an Idyllic Forest");
@@ -11984,7 +11984,7 @@ function initializeTileTypes() {
 	registerTileTypes(8,19,2,"a Twisted Space");
 	registerTileTypes(9,19,2,"an Egg Field");
 	registerTileTypes(10,19,2,"an Egg Field");
-	registerTileTypes(11,19,2,"a Stone Hut");
+	registerTileTypes(11,19,2,"a Halloween Costume Shop");
 	registerTileTypes(29,36,2,"a Twisted Space");
 	registerTileTypes(30,36,2,"a Twisted Space");
 	registerTileTypes(31,36,2,"Twisted Void");
