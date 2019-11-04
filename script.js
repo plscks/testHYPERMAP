@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.1
+// Nexus Clash Breath 4 hypermap version 2.2
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
@@ -103,7 +103,7 @@ function loadToolsPane() {
 	showTools = !showTools;
 	if (showTools) {
 		document.getElementById("toolsButton").innerHTML = "Tools: ON";
-		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for. First is a tool I wrote for looking up profiles by name, it utilizes the existing profile lookup API, the second is a slightly updated character planner, some typos are fixed and the buttons have been moved so as to not change position with the table. I did not write the planner, only modified the existing one.<br><br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b4_v2_3.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
+		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for. First is a tool I wrote for looking up profiles by name, it utilizes the existing profile lookup API, the second is a slightly updated character planner, some typos are fixed and the buttons have been moved so as to not change position with the table. I did not write the planner, only modified the existing one.<br><br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b4_v2_4.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
 	} else {
 		document.getElementById("toolsButton").innerHTML = "Tools: OFF";
 		document.getElementById("infoText").innerHTML = origSidebar;
@@ -7945,7 +7945,7 @@ function initializeTileTypes() {
 	registerTileTypes(26,17,0,"Office Building");
 	registerTileTypes(26,18,0,"Office Building");
 	registerTileTypes(26,19,0,"Office Building");
-	registerTileTypes(26,20,0,"Holloween Costume Shop");
+	registerTileTypes(26,20,0,"Halloween Costume Shop");
 	registerTileTypes(26,21,0,"Apartment Building");
 	registerTileTypes(26,22,0,"Office Building");
 	registerTileTypes(26,23,0,"Apartment Building");

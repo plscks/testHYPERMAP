@@ -1,5 +1,10 @@
-# [Breath 4 Hypermap version 2.1](https://plscks.github.io/testHYPERMAP/hypermap.html)
+# [Breath 4 Hypermap version 2.2](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 11/03/2019 version 2.2
+  * Adds Halloween costume shops
+  * Updates planner to show Advocate Word of Holy Light no longer being a child skill
+  * Fixes typo on Laurentia Costume Shop tile
+
 ### 09/18/2019 version 2.1
   * Profile Lookup tool updated to v0.5
   * Profile Tool can set missing exploration badges on Hypermap using localStorage
