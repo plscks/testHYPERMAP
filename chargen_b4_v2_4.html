@@ -256,10 +256,9 @@ h5
 <script>
 document.onkeydown = getKeyPress;
 function getKeyPress(e) {
-	console.log('Key Pressed: ' + e.key);
 	if (e.key == 'alt') e.preventDefault();
 	if (e.key == 'Control') e.preventDefault();
-	if (e.key == 's') e.preventDefault();
+	if (e.key == 'Shift') e.preventDefault();
 	if (e.key == '+') {
 		e.preventDefault();
 		levelup();
@@ -873,7 +872,6 @@ function changeTier2(t2)
 		document.getElementById("sorcerer").style.display = "none";
 		document.getElementById("pariah").style.display = "none";
 		document.getElementById("defiler").style.display = "none";
-		console.log('Tier2 Choice: ' + t2);
 		document.getElementById("tier3choice").innerHTML = "<input type='radio' name='tier3type' value='divine_herald' onchange='changeTier3(\"divine_herald\", \"" + t2 + "\");'>Divine Herald<br>";
 		document.getElementById("tier3choice").innerHTML += "<input type='radio' name='tier3type' value='seraph' onchange='changeTier3(\"seraph\", \"" + t2 + "\");'>Seraph<br>";
 		document.getElementById("tier3choice").innerHTML += "<input type='radio' name='tier3type' value='holy_champion' onchange='changeTier3(\"holy_champion\", \"" + t2 + "\");'>Holy Champion<br>";
@@ -4027,9 +4025,7 @@ function delevel()
 		document.getElementById("breath_ach_bad2").disabled = true;
 		document.getElementById("lifetime_ach_bad1").disabled = true;
 		document.getElementById("lifetime_ach_bad2").disabled = true;
-		document.getElementById("maeval_slaying_bad").disabled = true;
 	}
-
 	if (level[level.length - 1] >= levelskill.length)
 	{
 		level.pop();
