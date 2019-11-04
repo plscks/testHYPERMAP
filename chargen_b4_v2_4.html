@@ -256,10 +256,8 @@ h5
 <script>
 document.onkeydown = getKeyPress;
 function getKeyPress(e) {
-	console.log('Key Pressed: ' + e.key);
 	if (e.key == 'alt') e.preventDefault();
 	if (e.key == 'Control') e.preventDefault();
-	if (e.key == 's') e.preventDefault();
 	if (e.key == '+') {
 		e.preventDefault();
 		levelup();
@@ -4027,7 +4025,6 @@ function delevel()
 		document.getElementById("breath_ach_bad2").disabled = true;
 		document.getElementById("lifetime_ach_bad1").disabled = true;
 		document.getElementById("lifetime_ach_bad2").disabled = true;
-		document.getElementById("maeval_slaying_bad").disabled = true;
 	}
 
 	if (level[level.length - 1] >= levelskill.length)
