@@ -4026,12 +4026,17 @@ function delevel()
 		document.getElementById("lifetime_ach_bad1").disabled = true;
 		document.getElementById("lifetime_ach_bad2").disabled = true;
 	}
-	if (level[level.length - 1] >= levelskill.length)
+	if (level[level.length - 1] == 1 && levelskill.length == 0) {
+		temp = 10;
+	} else if (level[level.length - 1] >= levelskill.length)
 	{
 		level.pop();
 	}
 	for (i=0; i<levelskill.length; i++)
 	{
+		if (levelskill.length == 1) {
+			temp = 10;
+		}
 		 temp -= levelcp[i];
 		 for (j=0; j<level.length; j++)
 		 {
