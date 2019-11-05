@@ -259,7 +259,7 @@ function getKeyPress(e) {
 	if (e.key == 'alt') e.preventDefault();
 	if (e.key == 'Control') e.preventDefault();
 	if (e.key == 'Shift') e.preventDefault();
-	if (e.key == '+') {
+	if (e.key == '+' || e.key == '=') {
 		e.preventDefault();
 		levelup();
 	}
