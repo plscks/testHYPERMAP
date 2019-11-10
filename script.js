@@ -1017,8 +1017,8 @@ function initializePortals() {
 	createPortal( [encodeLocation(5,33,3),1,encodeLocation(5,33,0)] , ["Sewer Exit"],[0]);
 	createPortal( [encodeLocation(23,33,0),1,encodeLocation(23,33,3)] , ["Sewer Entrance"],[0]);
 	createPortal( [encodeLocation(23,33,3),1,encodeLocation(23,33,0)] , ["Sewer Exit"],[0]);
-	createPortal( [encodeLocation(9,25,0),1,encodeLocation(9,25,3)] , ["Sewer Entrance"],[0]);
-	createPortal( [encodeLocation(9,25,3),1,encodeLocation(9,25,0)] , ["Sewer Exit"],[0]);
+	createPortal( [encodeLocation(8,23,0),1,encodeLocation(8,23,3)] , ["Sewer Entrance"],[0]);
+	createPortal( [encodeLocation(8,23,3),1,encodeLocation(8,23,0)] , ["Sewer Exit"],[0]);
 	createPortal( [encodeLocation(39,33,0),1,encodeLocation(39,33,3)] , ["Sewer Entrance"],[0]);
 	createPortal( [encodeLocation(39,33,3),1,encodeLocation(39,33,0)] , ["Sewer Exit"],[0]);
 	createPortal( [encodeLocation(29,39,0),1,encodeLocation(29,39,3)] , ["Sewer Entrance"],[0]);
