@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- Nexus Clash Breath 4 Hypermap version 2.1-->
+<!-- Nexus Clash Breath 4 Hypermap version 2.3-->
 <!-- html rewite by plscks to be mobile friendly, iOS and Android -->
 <!-- Let's see if we can get this thing to make any sort of sense -->
 <html>
@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="page">
-    <div class="topbar">
+    <div class="topbar" role="navigation">
       <div class="maplink" style="border-color:#FFFF00; background-color:#333300" onclick="showPlane(0)"> Laurentia </div>
       <div class="maplink" style="border-color:#CCCCCC; background-color:#333333" onclick="showPlane(3)"> Sewers </div>
       <div class="maplink" style="border-color:#00FFFF; background-color:#003333" onclick="showPlane(1)"> Elysium </div>
@@ -27,13 +27,13 @@
       <div class="maplink" id="backButton" style="border-color:#FFFFFF; background-color:#000000"><a href="http://www.nexusclash.com/modules.php?name=Game">Back to game</a></div>
     </div>
     <span class="bottomBar">
-      <div class="content" id="content" onclick="">
-        <div class="defaultPlane" id="valhalla"><img src="valhalla.png" height="1008" width="1008" /></div>
-        <div class="planes" id="elysium"><img src="elysium.png" height="1008" width="768" /></div>
-        <div class="planes" id="stygia"><img src="stygia.png" height="1008" width="768" /></div>
-        <div class="planes" id="sewers"><img src="sewers.png" height="1008" width="1008" /></div>
-        <div class="planes" id="warrens"><img src="warrens.png" height="335" width="335" /></div>
-        <div class="planes" id="terraNullius"><img src="terraNullius.png" height="359" width="335" /></div>
+      <div class="content" id="content" onclick="" role="main" aria-live="assertive">
+        <div class="defaultPlane" id="valhalla" aria-live="assertive"title="Laurentia"><img src="valhalla.png" height="1008" width="1008" /></div>
+        <div class="planes" id="elysium" aria-live="assertive"title="Elysium"><img src="elysium.png" height="1008" width="768" /></div>
+        <div class="planes" id="stygia" aria-live="assertive"title="Stygia"><img src="stygia.png" height="1008" width="768" /></div>
+        <div class="planes" id="sewers" aria-live="assertive"title="Sewers"><img src="sewers.png" height="1008" width="1008" /></div>
+        <div class="planes" id="warrens" aria-live="assertive"title="Wyrm's Lair Maze"><img src="warrens.png" height="335" width="335" /></div>
+        <div class="planes" id="terraNullius" aria-live="assertive"title="Terra Nullius"><img src="terraNullius.png" height="359" width="335" /></div>
 
         <div class="badges" id="badges0" height="1008" width="1008"> </div>
         <div class="badges" id="badges1" height="1008" width="1008"> </div>
@@ -59,7 +59,9 @@
         <div id="tooltip"></div>
       </div>
       <div class="sidebar">
-        <span id="infoText">
+        <span id="infoText" aria-live="assertive" role="contentinfo">
+        <br>Press K to toggle keyboard control mode.
+        <br>
         <br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. This is very much so a work in progress, many thanks to Azure, catvom, and the community for the updated google sheets maps.<br><br>Set at least two markers to calculate a shortest route between them, OR set at least one marker to find the closest building of a type.
         <div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
         </span>
