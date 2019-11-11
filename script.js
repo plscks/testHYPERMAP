@@ -1,19 +1,16 @@
-// Nexus Clash Breath 4 hypermap version 2.2
+// Nexus Clash Breath 4 hypermap version 2.3
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
-document.captureEvents(Event.MOUSEMOVE);
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
-document.captureEvents(Event.KEYPRESS);
 document.onclick = getMouseClick;
-document.captureEvents(Event.KEYPRESS);
-document.onkeypress = getKeyPress;
+document.onkeydown = getKeyPress;
 
 var hasTouch;
 var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
-var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false; var switchPlane = false;
+var showTools = false; var keyMode = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false; var switchPlane = false;
 
 var waterCostModifier = 2.0;
 var portalMPCostModifier = 0.01;
@@ -98,6 +95,7 @@ if (localStorage.getItem("expBadges")) {
 	showhideMarkersPlanechange();
 	localStorage.clear();
 }
+addAlert("For keyboard mode press K. With NVDA you will have to hold the Alt button and press all described key binds.");
 
 function loadToolsPane() {
 	showTools = !showTools;
@@ -457,6 +455,14 @@ for(var i = 0; i < 20000; i++) {
 
 function showPlane(planeIndex) {
 	Z = planeIndex;
+	if (keyMode) {
+		if (planeIndex == 0) keyModeMoveSelector(11, 3, 276, 84);
+		else if (planeIndex == 1) keyModeMoveSelector(3, 2, 84, 60);
+		else if (planeIndex == 2) keyModeMoveSelector(2, 2, 60, 60);
+		else if (planeIndex == 3) keyModeMoveSelector(10, 5, 252, 132);
+		else if (planeIndex == 4) keyModeMoveSelector(1, 1, 36, 36);
+		else if (planeIndex == 5) keyModeMoveSelector(3, 3, 84, 84);
+	}
 	showhideMarkersPlanechange();
 	if (showBadges) {
 		switchPlane = true;
@@ -619,20 +625,207 @@ function toggleGuilds() {
 
 function getKeyPress(e) {
 	if (document.activeElement.id == "customText") return;
-	if (e.which == 98) {
+	if (e.key == 'Alt') {
+		e.preventDefault();
+	}
+	if (e.key == 'b') {
 		toggleBadges();
 	}
-	if (e.which == 103) {
+	if (e.key == 'p') {
 		toggleGuilds();
 	}
-	if (e.which == 109) {
+	if (e.key == 'm') {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
-	if (e.which == 49) showPlane(0);
-	if (e.which == 50) showPlane(3);
-	if (e.which == 51) showPlane(1);
-	if (e.which == 52) showPlane(2);
+	if (e.key == '1') showPlane(0);
+	if (e.key == '2') showPlane(3);
+	if (e.key == '3') showPlane(1);
+	if (e.key == '4') showPlane(2);
+	if (e.key == '5') showPlane(4);
+	if (e.key == '6') showPlane(5);
+	if (e.key == 'k') toggleKeyboardMode();
+	if (keyMode) {
+		if (e.key =='g') {
+			gotoCoord();
+		}
+		if (e.key == 'ArrowDown') {
+			e.preventDefault();
+			if (Z == 0 && Y == 40) return;
+			else if (Z == 1 && Y == 40) return;
+			else if (Z == 2 && Y == 40) return;
+			else if (Z == 3 && Y == 40) return;
+			else if (Z == 4 && Y == 12) return;
+			else if (Z == 5 && Y == 13) return;
+			Y += 1;
+			KeyY += 24;
+			keyModeMoveSelector(X, Y, KeyX, KeyY);
+		}
+		if (e.key == 'ArrowUp') {
+			e.preventDefault();
+			if (Y == 1 || KeyY <= 24) return;
+			Y -= 1;
+			KeyY -= 24;
+			keyModeMoveSelector(X, Y, KeyX, KeyY);
+		}
+		if (e.key == 'ArrowRight') {
+			e.preventDefault();
+			if (Z == 0 && X == 40) return;
+			else if (Z == 1 && X == 30) return;
+			else if (Z == 2 && X == 30) return;
+			else if (Z == 3 && X == 40) return;
+			else if (Z == 4 && X == 12) return;
+			else if (Z == 5 && X == 12) return;
+			X += 1;
+			KeyX += 24;
+			keyModeMoveSelector(X, Y, KeyX, KeyY);
+		}
+		if (e.key == 'ArrowLeft') {
+			e.preventDefault();
+			if (X == 1 || KeyX <= 24) return;
+			X -= 1;
+			KeyX -= 24;
+			keyModeMoveSelector(X, Y, KeyX, KeyY);
+		}
+		if (e.key == 'Enter') {
+			e.preventDefault();
+			if (xyzValid()) toggleMarker(X,Y,Z);
+		}
+	}
 }
+
+function toggleKeyboardMode() {
+	keyMode = !keyMode;
+	if (keyMode) {
+		document.getElementById("portalInstructions").setAttribute("aria-live", "assertive");
+		document.getElementById("portalInstructions").innerHTML = "<font color='#ffff00'>Keyboard Mode: Use the arrow keys to move the selector.<br>Press the G key to move the selector to a specific tile.<br>Change planes by hitting the number keys.<br>1 is Laurentia, 2 is the Sewers, 3 is Elysium, 4 is Stygia, 5 is the Wyrm's Lair, and 6 is Terra Nullius.</font>";
+		document.getElementById("content").setAttribute("aria-live", "polite");
+		if (Z == 0) keyModeMoveSelector(11, 3, 276, 84);
+		else if (Z == 1) keyModeMoveSelector(3, 2, 84, 60);
+		else if (Z == 2) keyModeMoveSelector(2, 2, 60, 60);
+		else if (Z == 3) keyModeMoveSelector(10, 5, 252, 132);
+		else if (Z == 4) keyModeMoveSelector(12, 6, 300, 156);
+		else if (Z == 5) keyModeMoveSelector(3, 3, 84, 84);
+	} else {
+		document.getElementById("portalInstructions").innerHTML = "Click to enter portals, Shift-click to cycle through destinations.";
+	}
+}
+
+function keyModeMoveSelector(x, y, keyX, keyY) {
+	if (touchmodeFixLocation) return;
+	var canvas = document.getElementById('content');
+  var rect = canvas.getBoundingClientRect();
+	document.getElementById("signal").style.left = -50;
+	document.getElementById("signal").style.top = -50;
+	var tooltipContent = "";
+	X = x;
+	Y = y;
+	KeyX = keyX;
+	KeyY = keyY;
+	document.getElementById("tooltip").style.left = KeyX + 24;
+	document.getElementById("tooltip").style.top = KeyY - 24;
+	if (Y > 0) {
+		document.getElementById("pointer").style.left = X*24 - 24;
+		document.getElementById("pointer").style.top = Y*24 - 24;
+	}
+	if (Y < 1 || X < 1) { updateTooltipKeyMode("out"); }
+	else if ((Z == 0 && X > 40) || ( Z == 0 && Y > 40)) {	updateTooltipKeyMode("out"); }
+	else if ((Z == 1 && X > 30) || (Z == 1 && Y > 40)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 2 && X > 30) || (Z == 2 && Y > 40)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 4 && X > 12) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltipKeyMode("out"); }
+	else { updateTooltipKeyMode("in"); }
+	console.log("X: " + X + " Y: " + Y + " KeyX: " + KeyX + " KeyY: " + KeyY);
+}
+
+function updateTooltipKeyMode(state) {
+	var tooltipContent = "<div id='tooltiptext' aria-live='assertive'>";
+	if (state == 'id') {
+		tooltipContent += getLocationString(X,Y,Z,'id') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+	} else if (!xyzValid()) {
+		tooltipContent += getLocationString(X,Y,Z,'notvalid') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+	} else {
+		//tooltipContent += getLocationString(X,Y,Z,'normal') + portalsString() + "</div>";
+		tooltipContent += getLocationString(X,Y,Z,'in') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+	}
+	if (state == "out") {
+		document.getElementById("tooltip").style.display = "none";
+		document.getElementById("pointer").style.display = "none";
+		return;
+	}
+	document.getElementById("tooltip").style.display = "";
+	document.getElementById("pointer").style.display = "";
+	if (portalTargetZ > -1) {
+		tooltipContent += "<div id='previewmap'><img src='preview_overlay.png' style='z-index:5'/></div>";
+	}
+	document.getElementById("tooltip").innerHTML = tooltipContent;
+	if (portalTargetZ > -1) {
+		if (portalTargetZ == 0) document.getElementById("previewmap").style.background = "url(mini-valhalla.png)";
+		else if (portalTargetZ == 1) document.getElementById("previewmap").style.background = "url(mini-elysium.png)";
+		else if (portalTargetZ == 2) document.getElementById("previewmap").style.background = "url(mini-stygia.png)";
+	  else if (portalTargetZ == 3) document.getElementById("previewmap").style.background = "url(mini-sewers.png)";
+	  else if (portalTargetZ == 4) document.getElementById("previewmap").style.background = "url(mini-warrens.png)";
+	  else if (portalTargetZ == 5) document.getElementById("previewmap").style.background = "url(mini-terraNullius.png)";
+		document.getElementById("previewmap").style.backgroundPosition = "" + -((portalTargetX-5)*12+50) + "px " + -((portalTargetY-5)*12+50) + "px";
+	}
+}
+
+function gotoCoord() {
+	if (Z == 0) var plane = ['Laurentia', 40, 40];
+	else if (Z == 1) var plane = ['Elysium', 30, 40];
+	else if (Z == 2) var plane = ['Stygia', 30, 40];
+	else if (Z == 3) var plane = ['Sewers', 40, 40];
+	else if (Z == 4) var plane = ['Wyrm\'s Lair', 12, 12];
+	else if (Z == 5) var plane = ['Terra Nullius', 12, 13];
+	var inputString = prompt("Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.", "Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.");
+	if (inputString == null) return;
+	var splitInput = inputString.split(", ");
+	if (splitInput[1] === undefined) {
+		addAlert('Invalid coordinates, please try again.');
+		return;
+	}
+	var inX = parseInt(splitInput[0], 10);
+	var inY = parseInt(splitInput[1], 10);
+	if (inX > plane[1] || inY > plane[2]) {
+		addAlert('Invalid coordinates, please try again.');
+		return;
+	} else if (inX === undefined || inY === undefined) {
+		addAlert('Invalid coordinates, please try again.');
+		return;
+	}
+	var keyX = inX*24 + 12;
+	var keyY = inY*24 + 12;
+	keyModeMoveSelector(inX, inY, keyX, keyY);
+}
+
+function removeOldAlert() {
+   var oldAlert = document.getElementById("alert");
+   if (oldAlert) {
+     document.body.removeChild(oldAlert);
+   }
+ }
+
+ function addAlert(aMsg) {
+   removeOldAlert();
+   var newAlert = document.createElement("div");
+   newAlert.setAttribute("role", "alert");
+   newAlert.setAttribute("id", "alert");
+   var msg = document.createTextNode(aMsg);
+   newAlert.appendChild(msg);
+   document.body.appendChild(newAlert);
+ }
+
+ function checkValidity(aID, aSearchTerm, aMsg) {
+   var elem = document.getElementById(aID);
+   var invalid = (elem.value.indexOf(aSearchTerm) < 0);
+   if (invalid) {
+     elem.setAttribute("aria-invalid", "true");
+     addAlert(aMsg);
+   } else {
+     elem.setAttribute("aria-invalid", "false");
+     removeOldAlert();
+   }
+ }
 
 function xyzValid() {
 	return validLocation(X,Y,Z);
@@ -692,6 +885,7 @@ function getMouseClick(e) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	} else if (!touchMode) {
 		if (e.shiftKey) {
+			e.preventDefault();
 			cyclePortals();
 		} else {
 			enterPortal();
@@ -707,6 +901,7 @@ function getMouseClick(e) {
 }
 
 function getMousePosition(e) {
+	if (keyMode) return;
 	if (touchmodeFixLocation) return;
 	var canvas = document.getElementById('content');
   var rect = canvas.getBoundingClientRect();
@@ -737,7 +932,7 @@ function getMousePosition(e) {
 	else if ((Z == 2 && X > 30) || (Z == 2 && Y > 40)) { updateTooltip("out"); }
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltip("out"); }
 	else if ((Z == 4 && X > 12) || (Z == 4 && Y > 12)) { updateTooltip("out"); }
-	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 12)) { updateTooltip("out"); }
+	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltip("out"); }
 	else { updateTooltip("in"); }
 }
 
@@ -752,7 +947,7 @@ function getTouchmodeTooltipControls() {
 
 function updateTooltip(state) {
 	var tooltipContent = "<div id='tooltiptext'>";
-	tooltipContent += getLocationString(X,Y,Z) + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+	tooltipContent += getLocationString(X,Y,Z,'normal') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 
 	if (state == "out") {
 		document.getElementById("tooltip").style.display = "none";
@@ -833,6 +1028,9 @@ function portalsString() {
 				document.getElementById("signal").style.top = decodedTarget[1]*24 - 12;
 				document.getElementById("overlay").style.display = "block";
 				document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.6)";
+				if (Z == 0 || Z == 3) document.getElementById("overlay").style.width = "1008";
+				else if (Z == 1 || Z == 2) document.getElementById("overlay").style.width = "768";
+			  else if (Z >= 4) document.getElementById("warrens").style.display = "335";
 			}
 			portalTargetX = decodedTarget[0];
 			portalTargetY = decodedTarget[1];
@@ -860,79 +1058,63 @@ function decodeLocation(val) {
 	return result;
 }
 
-function getLocationString(x,y,z) {
-    if (z == 4 && x == 7 && y == 1) {
-        return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 5 && y == 5) {
-        return "[24,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 6 && y == 5) {
-        return "[25,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 6 && y == 4) {
-        return "[25,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 6 && y == 3) {
-        return "[25,38] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 7 && y == 4) {
-        return "[26,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 8 && y == 4) {
-        return "[27,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 9 && y == 11) {
-        return "[13,10] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 8 && y == 9) {
-        return "[30,27] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 8 && y == 8) {
-        return "[30,26] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 8 && y == 7) {
-        return "[30,25] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 8 && y == 6) {
-        return "[30,24] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 11 && y == 12) {
-        return "[8,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 12 && y == 12) {
-        return "[9,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 1 && y == 5) {
-        return "[28,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 1 && y == 4) {
-        return "[28,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 1 && y == 3) {
-        return "[28,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 2 && y == 3) {
-        return "[29,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 3 && y == 5) {
-        return "[30,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 3 && y == 4) {
-        return "[30,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 3 && y == 3) {
-        return "[30,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 3 && y == 2) {
-        return "[30,16] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else if (z == 4 && x == 3 && y == 1) {
-        return "[30,15] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
-    else {
-        return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-    }
+function getLocationString(x,y,z,display) {
+  if (z == 4 && x == 7 && y == 1) {
+    return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 5 && y == 5) {
+    return "[24,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 6 && y == 5) {
+    return "[25,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 6 && y == 4) {
+    return "[25,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 6 && y == 3) {
+    return "[25,38] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 7 && y == 4) {
+    return "[26,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 8 && y == 4) {
+    return "[27,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 9 && y == 11) {
+    return "[13,10] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 8 && y == 9) {
+    return "[30,27] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 8 && y == 8) {
+    return "[30,26] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 8 && y == 7) {
+    return "[30,25] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 8 && y == 6) {
+    return "[30,24] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 11 && y == 12) {
+    return "[8,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 12 && y == 12) {
+    return "[9,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 1 && y == 5) {
+    return "[28,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 1 && y == 4) {
+    return "[28,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 1 && y == 3) {
+    return "[28,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 2 && y == 3) {
+    return "[29,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 3 && y == 5) {
+    return "[30,19] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 3 && y == 4) {
+    return "[30,18] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 3 && y == 3) {
+    return "[30,17] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 3 && y == 2) {
+    return "[30,16] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 3 && y == 1) {
+    return "[30,15] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (keyMode && display == 'normal') {
+		//return "[" + x + "," + y + "] " + planeName[z];
+		return "[" + x + "," + y + "]"
+	} else if (keyMode && display == 'id') {
+		return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+	} else if (keyMode && display == 'notvalid') {
+		return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>Void</font>" + " <font size='1' color='#dddddd'>(a Void)</font>";
+	} else {
+  	return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  }
 }
 
 function createPortal(locationArray,methodsArray,costArray) { // Expects two array with the following arguments: first array is [portalLocation,numberOfTargets,target1,target2,...], second array is ["Portal, "Portal", "Ferry"] etc
@@ -12160,8 +12342,8 @@ function initializeTileTypes() {
 	registerTileTypes(12,11,4,"x");
 	registerTileTypes(12,12,4,"Inside a Colonial Ship Deck");
   // Terra Nullius
-  registerTileTypes(1,1,5,"x");
-  registerTileTypes(1,2,5,"x");
+  registerTileTypes(1,1,5,"a Void");
+  registerTileTypes(1,2,5,"a Void");
   registerTileTypes(1,3,5,"a Void");
   registerTileTypes(1,4,5,"a Void");
   registerTileTypes(1,5,5,"a Void");
@@ -12171,9 +12353,9 @@ function initializeTileTypes() {
   registerTileTypes(1,9,5,"a Void");
   registerTileTypes(1,10,5,"a Void");
   registerTileTypes(1,11,5,"a Void");
-  registerTileTypes(1,12,5,"x");
-  registerTileTypes(1,13,5,"x,");
-  registerTileTypes(2,1,5,"x");
+  registerTileTypes(1,12,5,"a Void");
+  registerTileTypes(1,13,5,"a Void");
+  registerTileTypes(2,1,5,"a Void");
   registerTileTypes(2,2,5,"a Void");
   registerTileTypes(2,3,5,"a Void");
   registerTileTypes(2,4,5,"a Desert");
@@ -12185,7 +12367,7 @@ function initializeTileTypes() {
   registerTileTypes(2,10,5,"a Desert");
   registerTileTypes(2,11,5,"a Void");
   registerTileTypes(2,12,5,"a Void");
-  registerTileTypes(2,13,5,"x");
+  registerTileTypes(2,13,5,"a Void");
   registerTileTypes(3,1,5,"a Void");
   registerTileTypes(3,2,5,"a Void");
   registerTileTypes(3,3,5,"a Desert");
@@ -12277,7 +12459,7 @@ function initializeTileTypes() {
   registerTileTypes(9,11,5,"a River");
   registerTileTypes(9,12,5,"a Dark Forest");
   registerTileTypes(9,13,5,"a Void");
-  registerTileTypes(10,1,5,"x");
+  registerTileTypes(10,1,5,"a Void");
   registerTileTypes(10,2,5,"a Void");
   registerTileTypes(10,3,5,"a Desert");
   registerTileTypes(10,4,5,"a Mountain");
@@ -12290,7 +12472,7 @@ function initializeTileTypes() {
   registerTileTypes(10,11,5,"a Forgotten Prison");
   registerTileTypes(10,12,5,"a Dark Forest");
   registerTileTypes(10,13,5,"a Void");
-  registerTileTypes(11,1,5,"x");
+  registerTileTypes(11,1,5,"a Void");
   registerTileTypes(11,2,5,"a Void");
   registerTileTypes(11,3,5,"a Void");
   registerTileTypes(11,4,5,"a Void");
@@ -12303,9 +12485,9 @@ function initializeTileTypes() {
   registerTileTypes(11,11,5,"a Forgotten Cemetery");
   registerTileTypes(11,12,5,"a Void");
   registerTileTypes(11,13,5,"a Void");
-  registerTileTypes(12,1,5,"x");
-  registerTileTypes(12,2,5,"x");
-  registerTileTypes(12,3,5,"x");
+  registerTileTypes(12,1,5,"a Void");
+  registerTileTypes(12,2,5,"a Void");
+  registerTileTypes(12,3,5,"a Void");
   registerTileTypes(12,4,5,"a Void");
   registerTileTypes(12,5,5,"a Void");
   registerTileTypes(12,6,5,"a Void");
@@ -12315,7 +12497,7 @@ function initializeTileTypes() {
   registerTileTypes(12,10,5,"a Void");
   registerTileTypes(12,11,5,"a Void");
   registerTileTypes(12,12,5,"a Void");
-  registerTileTypes(12,13,5,"x");
+  registerTileTypes(12,13,5,"a Void");
 }
 
 function checkParameters() {
