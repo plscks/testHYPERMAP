@@ -277,7 +277,7 @@ var cplevel = Array(10,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,
 level.push(1);
 desc = Array();
 var banked = 0, CPSpent = 0, T2_70CP = 0, T3_250CP = 0, Spellcraft = 0, T2SkillsBought = 0, AirBought = 0, EarthBought = 0, FireBought = 0, WaterBought = 0, AngelicCaster = 0, DemonicCaster = 0, MagicalReservesBought = 0;
-var HthAcc = 10, MelAcc = 10, SwordAcc = 10, ArchAcc = 10, FireAcc = 10, ThrowAcc = 10, SpellAcc = 10, HeavyAcc = -20;
+var HthAcc = 25, MelAcc = 25, SwordAcc = 25, ArchAcc = 25, FireAcc = 25, ThrowAcc = 25, SpellAcc = 25, HeavyAcc = -20;
 var HthDam = 0, MelDam = 0, SwordDam = 0, ArchDam = 0, FireDam = 0, ThrowDam = 0, DeathDam = 0, SpellGenDam = 0, SpellGemDam = 0, SpellAcDam = 0, SpellCoDam = 0, SpellDeDam = 0, SpellElDam = 0, SpellFiDam = 0, SpellImDam = 0;
 var SpellAcKnown = 0, SpellCoKnown = 0, SpellDeKnown = 0, SpellElKnown = 0, SpellFiKnown = 0, SpellImKnown = 0;
 var RangeDef = 0, CCDodge = 0;
@@ -290,26 +290,26 @@ desc["mortal_eng"] = "<h3>Engineering</h3>\n<i>You are good with tools.</i>\n<p>
 desc["mortal_struct"] = "<h3>Structural Engineering</h3>\n<i>You are better at building stronghold fortifications to protect yourself and your faction mates.</i><p>This skill allows the character to erect 'Fortifications' at double the usual rate after all other bonuses are applied.  The character can also see the strength of fortifications in the tile they are in. Stronghold fortifications provide 1 to 10 bonus soak against all damage types to all characters of the faction in their stronghold based upon the fortifications health; fortifications can be attacked and damaged during raids.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_aid"] = "<h3>First Aid</h3>\n<i>You are able to better recognize the wounded and are more adept at treating wounds.</i>\n<p>This skill allows a character to see the Hit Point values of nearby mortal characters. Further, an additional 5 HP are healed when the character uses a First Aid Kit.</p><b>CP Cost</b>: 10";
 desc["mortal_surg"] = "<h3>Surgery</h3>\n<i>You are able to perform surgeries to heal a great amount of damage. You can heal extra damage without a first aid kit.</i><p>This skill allows the character to heal 15 HP to another character for 5AP without consuming a first aid kit if they have a surgeon's kit. When using a first aid kit, an additional 10 points of damage are healed (to a maximum of 15).</p>\n<p>In addition to healing Hit Point damage, this ability also cures various status ailments, including the Defiler's Poison. One may craft a FAK in a hospital for 5 AP. One may craft a Surgeon's Kit in a hospital for 10 AP.</p><p>Note: You must have a Surgeon's Kit in your inventory to perform the Surgery action. You cannot perform surgery on yourself.</p>\n<b>CP Cost</b>: 20";
-desc["mortal_hth"] = "<h3>Hand to Hand Combat</h3>\n<i>Increases your hand-to-hand combat ability.</i>\n<p>This increases your hand-to-hand attack skill by 25%.</p>\n<b>CP Cost</b>: 10";
+desc["mortal_hth"] = "<h3>Hand to Hand Combat</h3>\n<i>Increases your hand-to-hand combat ability.</i>\n<p>This increases your hand-to-hand attack skill by 20%.</p>\n<b>CP Cost</b>: 10";
 desc["mortal_box"] = "<h3>Boxing</h3>\n<i>You know better how to land punches so that they do more damage.</i>\n<p>This skill increases a character's punching attack by 2 points, raising the Fist attack from a base damage of 2 to a base damage of 4. This skill also grants the character a new, innate fist attack called Haymaker which does an additional point of damage at a 5% accuracy penalty.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_dodge"] = "<h3>Dodge</h3>\n<i>You are better able to avoid damage in hand-to-hand and melee combat.</i>\n<p>This skill increases the character's defensive bonus versus melee and hand-to-hand attacks by 5%.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_evas"] = "<h3>Evasion</h3>\n<i>You are better able to evade damage in combat.</i>\n<p> This skill increases the character's defensive bonus all attacks by 5%. This stacks with all other bonuses.</p>\n<b>CP Cost</b>: 30";
-desc["mortal_mart"] = "<h3>Martial Arts</h3>\n<i>You have become a better at hand-to-hand combat. </i>\n<p>This skill increases hand-to-hand combat by a further 15%. </p>\n<b>CP Cost</b>: 20";
-desc["mortal_adv_mart"] = "<h3>Advanced Martial Arts</h3>\n<i>You have become a master of hand-to-hand combat. </i>\n<p>This skill increases hand-to-hand combat by a further 15%.</p>\n<b>CP Cost</b>: 30";
+desc["mortal_mart"] = "<h3>Martial Arts</h3>\n<i>You have become a better at hand-to-hand combat. </i>\n<p>This skill increases hand-to-hand combat by a further 10%. </p>\n<b>CP Cost</b>: 20";
+desc["mortal_adv_mart"] = "<h3>Advanced Martial Arts</h3>\n<i>You have become a master of hand-to-hand combat. </i>\n<p>This skill increases hand-to-hand combat by a further 10%.</p>\n<b>CP Cost</b>: 30";
 desc["mortal_hide"] = "<h3>Hide</h3>\n<i>You are more adept at hiding.</i>\n<p>This skill increases the character's ability to hide by 20%.</p><p>This skill helps the character to hide in certain locations. The character will easily be found by a successful search or through a spell or mystical ability. Performing any action will cause the character to become visible. Hidden characters naturally gain a +10% accuracy bonus on their next attack, with this skill granting a +4 damage bonus.</p>\n<b>CP Cost</b>: 10";
 desc["mortal_adv_hide"] = "<h3>Advanced Hide</h3>\n<i>Your skills at hiding have improved and you are better at doing so.</i>\n<p>This skill improves a character's chance to hide by an additional 10%. The modifiers to an attack from Hidden are changed to totals of +8 damage and +15% to hit.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_lock"] = "<h3>Lockpicking</h3>\n<i>You are good at picking locked doors.</i>\n<p>This skill allows the character to attempt to pick locked doors. The character may do so even if you do not possess a set of lockpicks, though the chances of success are much better with picks than without. Success is not guaranteed. For 5 AP, the character may create a set of lockpicks.</p>\n<b>CP Cost</b>: 10";
 desc["mortal_mel"] = "<h3>Melee Combat</h3>\n<i>Increases your combat ability with hand-held weapons.</i>\n<p>This skill increases melee attacks by 20%. This applies to all hand-held weapons.</p>\n<b>CP Cost</b>: 10";
-desc["mortal_adv_mel"] = "<h3>Advanced Melee Combat</h3>\n<i>Your skill with melee weapons has improved.</i>\n<p>This skill increases the attack chance with melee weapons by an additional 15%.</p>\n<b>CP Cost</b>: 20";
+desc["mortal_adv_mel"] = "<h3>Advanced Melee Combat</h3>\n<i>Your skill with melee weapons has improved.</i>\n<p>This skill increases the attack chance with melee weapons by an additional 10%.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_exp_bc"] = "<h3>Hold Bladed Edge</h3>\n<i>You are a more capable user of your swords.</i>\n<p>This skill removes the chance for your sword to degrade on an attack.</p>\n<b>CP Cost</b>: 30";
 desc["mortal_exp_mel"] = "<h3>Expert Melee Combat</h3>\n<i>You are a master of combat with melee weapons.</i>\n<p>This skill increases melee attacks with all melee weapons weapons by a further 10%.</p>\n<b>CP Cost</b>: 30";
 desc["mortal_parry"] = "<h3>Parry</h3>\n<i>You understand how to block an attack with your weapon.</i>\n<p>This skill increases the chance of a melee or thrown weapon used to attack you degrading by 6%. Only works if the weapon can be degraded.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_ranged"] = "<h3>Ranged Combat</h3>\n<i>You know how to use most ranged weaponry, such as firearms, better than the average person.</i>\n<p>This skill increases attacks made with all ranged weapons by 25%.</p>\n<b>CP Cost</b>: 10";
-desc["mortal_arch"] = "<h3>Archery</h3>\n<i>You are adept with bows and arrows.</i>\n<p>This skill increases the attack chance with bows by an additional 20%.</p>\n<b>CP Cost</b>: 20";
+desc["mortal_arch"] = "<h3>Archery</h3>\n<i>You are adept with bows and arrows.</i>\n<p>This skill increases the attack chance with bows by an additional 10%.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_adv_arch"] = "<h3>Advanced Archery</h3>\n<i>You are an expert with bows and arrows.</i>\n<p>This skill increases the attack chance with bows by an additional 10%.</p>\n<b>CP Cost</b>: 30";
-desc["mortal_fire"] = "<h3>Firearms</h3>\n<i>You are adept with guns and tasers.</i>\n<p>This skill increases the attack chance with all guns and tasers by an additional 20%.</p>\n<b>CP Cost</b>: 20";
+desc["mortal_fire"] = "<h3>Firearms</h3>\n<i>You are adept with guns and tasers.</i>\n<p>This skill increases the attack chance with all guns and tasers by an additional 10%.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_adv_fire"] = "<h3>Advanced Firearms</h3>\n<i>You are an expert with guns and tasers.</i>\n<p>This skill increases the attack chance with guns and tasers by an additional 10%.</p>\n<b>CP Cost</b>: 30";
-desc["mortal_throw"] = "<h3>Thrown Weapons</h3>\n<i>You are better able to hit targets with thrown weapons.</i>\n<p>This skill increases the attack chance with thrown weapons by an additional 20%.</p>\n<b>CP Cost</b>: 20";
+desc["mortal_throw"] = "<h3>Thrown Weapons</h3>\n<i>You are better able to hit targets with thrown weapons.</i>\n<p>This skill increases the attack chance with thrown weapons by an additional 10%.</p>\n<b>CP Cost</b>: 20";
 desc["mortal_adv_throw"] = "<h3>Advanced Thrown Weapons</h3>\n<i>You are an expert with thrown weapons.</i>\n<p>This skill increases the attack chance with thrown weapons by an additional 10%.</p>\n<b>CP Cost</b>: 30";
 desc["mortal_repair"] = "<h3>Repair Item</h3>\n<i>You are capable of repairing many items that have been damaged.</i>\n<p>This skill allows the character to repair any non-magical item or weapon. The character is not able to bring the item's quality above 'average' with this skill. Repairing some items will require the possession of certain items or access to special facilities (such as a Factory forge).</p>\n<b>CP Cost</b>: 10";
 desc["mortal_bow"] = "<h3>Bowyer</h3>\n<i>You are able to create bows and arrows.</i>\n<p>The character may craft from scratch various types of bows. The quality of the weapons made cannot rise above 'average', however, as the character's skills are not sufficient to create items of higher quality. The Action Point cost associated with repairing bows has decreased. The character must have the proper components. Repairing or crafting bows or arrows requires a Portable Toolkit but can be done anywhere.</p>\n<b>CP Cost</b>: 20";
@@ -348,9 +348,9 @@ desc["shepherd_energ"] = "<h3>Energize</h3>\n<i>You have the ability to bend the
 desc["shepherd_hoz"] = "<h3>Hand of Zealotry</h3>\n<i>Your law is the law of higher powers, and the unbelievers shall fall before you.</i>\n<p>This ability allows the angel to deal justice to both evil and neutral aligned characters with equal impunity, free from morality shift. The character's morality will still shift towards good for attacking and killing evil characters but will no longer shift in any direction for attacking or killing neutral characters. It also allows Song of the Word, and pets that normally only attack evil character to hurt neutral characters.</p>\n<b>CP Cost</b>: 20";
 desc["shepherd_holier"] = "<h3>Holier Than Thou</h3>\n<i>Your law is inviolable, and all others are judged against it.</i>\n<p>This ability allows the angel to deal justice to all characters of lower morality, free from their own morality shift. The character's morality will no longer shift in any direction for attacking characters of lower morality, and loses only 2 morality for killing another good character.</p>\n<b>CP Cost</b>: 20";
 desc["shepherd_heal"] = "<h3>Heal Others</h3>\n<i>You are able to use your association with the Holy forces to heal injuries to other beings.</i>\n<p>This ability allows you to heal other characters. The number of HP healed is dependent upon the number of MP you spend up to 30 damage healed for 30MP. In addition to healing Hit Point damage, this ability also cures various status ailments, including the Defiler's Poison.</p>\n<b>CP Cost</b>: 20";
-desc["shepherd_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 20";
+desc["shepherd_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 20";
 desc["shepherd_battle_mag"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
-desc["shepherd_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spell gems and cast spells from memory or from spellgem charges. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you an additional 35% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
+desc["shepherd_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spell gems and cast spells from memory or from spellgem charges. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you 45% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
 desc["shepherd_sanct"] = "<h3>Sanctify Spell</h3>\n<i>Your association with the forces of good have taught you how to infuse spells with holy power.</i>\n<p>The use of Sanctify Spell allows the character to temper the essential nature of another spell, tuning it more towards good ends. It can only be used with spells the character has learned. At the cost of 2AP and 75% the spells MP cost, the spell has its damage type changed to Holy, and will deal an additional damage to targets with negative MO. The bonus damage equals target MO*-1/10. If the target is a Demon the bonus is increased by +3, otherwise it is reduced by 1 (so +7 damage versus a -40MO demon, +3 damage against a -40MO neutral).</p>\n<b>CP Cost</b>: 40";
 
 desc["myrmidon_crit"] = "<h3>Critical Hit</h3>\n<i>You are adept at achieving critical strikes.</i>\n<p>This ability grants the Myrmidon a 5% chances of landing a critical hit on a successful attack. </p>\n<b>FREE SKILL</b>";
@@ -363,7 +363,7 @@ desc["myrmidon_wep_break"] = "<h3>Weapon Breaker</h3>\n<i>You know how to attack
 desc["myrmidon_sup_ref"] = "<h3>Super Reflexes</h3>\n<i>You combat training lets you react faster to danger than a normal human.</i>\n<p>The skill grants a +5% defensive bonus towards all attacks made against the character. </p>\n<b>CP Cost</b>: 20";
 desc["myrmidon_com_mast"] = "<h3>Combat Mastery</h3>\n<i>Your fighting skill has increased and you are now more accurate.</i>\n<p>This ability grants the character a 5% additional chance to hit with any and all attacks. This is an innate ability and is always on.</p>\n<b>CP Cost</b>: 20";
 
-desc["sorcerer_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spellgems and cast spells from memory or spell gems. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you an additional 35% to hit with any ranged spell.</p>\n<b>FREE SKILL</b>";
+desc["sorcerer_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spellgems and cast spells from memory or spell gems. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you 45% to hit with any ranged spell.</p>\n<b>FREE SKILL</b>";
 desc["sorcerer_deep_spell"] = "<h3>Deep Spellcraft</h3>\n<i>Your spell casting ability has greatly increased afforded you new casting powers.</i>\n<p>This skill grants the character several new options with known spells.</p><p>Eldritch Blast:For the cost of +2MP the spell deals Arcane damage instead of it's normal type.</p><p>Mystic Seeker: For the cost of +3MP the spell automatically hits</p><p>Area of Effect: For the cost of 5AP and 2xMP the spell becomes an AoE attack with per target equal to the normal spell damage and maximum damage 10x normal spell damage.</p>\n<b>CP Cost</b>: 40";
 desc["sorcerer_patt"] = "<h3>Pattern Weaver</h3>\n<i>Your understanding of the magics of spell gems has grown.</i>\n<p>This skill allows the sorcerer to overwrite a spellgem, replacing the existing spell with one that you know. The spellgem charges are reduced to 0. This action costs 10MP, 3AP. A sorcerer with Pattern Weaver no longer has Spellgems self destruct when they are reduced to 0 charges.</p>\n<b>CP Cost</b>: 40";
 desc["sorcerer_alch"] = "<h3>Alchemy</h3>\n<i>You are able to research potion recipes and craft potions.</i>\n<p>Alchemy allows the character to perform experiments on components to learn their own personal potion recipes, but only while in certain locations. Experiments cost 3AP and 5MP to perform, and can cause a variety of positive and negative status effects if they fail. Brewing a potion costs 5AP and 5MP and results in 6 potions being produced.</p>\n<b>CP Cost</b>: 20";
@@ -371,7 +371,7 @@ desc["sorcerer_alch_trans"] = "<h3>Alchemical Transmutation</h3>\n<i>You are abl
 desc["sorcerer_heal_self"] = "<h3>Heal Self</h3>\n<i>You are able to use your magic to repair minor injuries to yourself.</i>\n<p>This ability represents your understanding of how magical energy flows through the corporeal shell. You may manipulate this magic to heal yourself for a small amount of HP, up to your maximum. This ability also cures various status ailments, including the Defiler's Poison.</p><p>6 MP and 1 AP for a 5 HP heal.</p>\n<b>CP Cost</b>: 20";
 desc["sorcerer_mystic"] = "<h3>Mystic Vigor</h3>\n<i>You are able to use your magic to grant yourself extra energy.</i>\n<p>This represent your understanding of how the magic energy flowing through your corporeal shell can be directed to meet your needs. With an activation cost of 1 Action Point and 6 MP, the character can use Mystic Vigor to gain 1 additional Action Point up to their maximum AP.</p>\n<b>CP Cost</b>: 40";
 desc["sorcerer_might"] = "<h3>Sorcerer's Might</h3>\n<i>Through the use of your arcane knowledge, you are able to augment your own internal power - though this is done at the expense of your own health.</i>\n<p>This skill allows the Sorcerer to trade 6 HP and 1 AP for 5 MP. It does not allow the character to kill themselves doing so, nor does it allow the character to go above the maximum Magic Point allotment. Use of the skill inflicts the \"Sorcerer's Might\" status for 5 minutes per usage, which stacks. While afflicted by \"Sorcerer's Might\" all healing is blocked, and instead the duration of the status is reduced by 1 minute for each point of healing that would have occurred.</p>\n<b>CP Cost</b>: 20";
-desc["sorcerer_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 20";
+desc["sorcerer_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 20";
 desc["sorcerer_battle_mag"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
 
 desc["pariah_ener"] = "<h3>Enervate</h3>\n<i>You have the ability to cause your opponent's body to weaken, leaving them more vulnerable.</i>\n<p>This ability allows the Pariah to perform a charged attack which costs 1AP and 5MP to use and if successful, will cause your enemy's body to weaken. On a successful hit the target gains the 'Enervated' status for five minutes. An enervated character suffers a penalty to all defence that increases as the enervated characters HP decreases. These status cannot be stacked, instead a second application will restore the count to five minutes.</p>\n<b>FREE SKILL</b>";
@@ -391,9 +391,9 @@ desc["defiler_dark"] = "<h3>Dark Heart</h3>\n<i>You are capable of sucking the m
 desc["defiler_life_vamp"] = "<h3>Life Vampire</h3>\n<i>You are able to draw out the life-force of your enemies and store it away for later consumption.</i>\n<p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Blood Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover lost HP. Attacks that deal less damage (as little as 5 damage) have a partial chance to produce gems.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_soul"] = "<h3>Soul Vampire</h3>\n<i>You are able to draw out the magical energies of your enemies and store it away for later consumption.</i>\n<p><p>This is a charged Attack that allows the Defiler to suck the life from his foe at a cost of 5MP. Upon a successful hit, the magic of the power will create a Soul Ice power gem for every 10 damage dealt, which can later be used by the Defiler to recover spent MP. Attacks that deal less damage (as little as 5 damage) have a partial chance to produce gems.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_pois"] = "<h3>Poison</h3>\n<i>You are capable of inflicting a powerful poison on your foes.</i>\n<p>This is a charged Attack that for the cost of 2AP and 5MP will deal half damage and cause your target to be poisoned if a successful hit is made. Your victim will take damage whenever they act. The poison persists - even after death for non mortals - until the victim receives medical attention (performing an action, being attacked, or the AP tick occurring) or has died three times.  Characters of levels 1 through 9 will suffer 1 Hit Point damage per action, characters of level 10 through 19 will suffer 3 HP damage per action, while characters of levels 20 and higher will suffer 6 HP damage per action.</p>\n<b>CP Cost</b>: 20";
-desc["defiler_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 20";
+desc["defiler_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_battle"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
-desc["defiler_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spellgems and cast spells from memory or spell gems. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you an additional 35% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
+desc["defiler_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spellgems and cast spells from memory or spell gems. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you 45% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_taint"] = "<h3>Taint Spell</h3>\n<i>Your association with the forces of evil have taught you how to infuse spells with dark energies.</i>\n<p>The use of Taint Spell allows the character to temper the essential nature of another spell, tuning it more towards evil ends. It can only be used with spells the character has learned. At the cost of 2AP and 75% the spells MP cost the spell has its damage type changed to Unholy, and will deal an additional +2 points of damage to angels, and additional damage to targets with greater than 0MO equal to the targets MO/10.</p>\n<b>CP Cost</b>: 40";
 
 desc["divine_herald_demon_track"] = "<h3>Eye of Demon Tracker</h3>\n<i>You can sense evil at a great distance.</i>\n<p>For a cost of 1AP and 6MP the Divine Herald can sense the number of demons with the map field of view (a 2 square radius around you). In addition any invisible demons on the same tile as the Divine Herald will lose their invisibility status. The skill will also tell you which demons you have detected, and whether any of them are hiding in a Stronghold. </p>\n<b>FREE SKILL</b>";
@@ -414,8 +414,8 @@ desc["divine_herald_judgement"] = "<h3>Harbinger of Judgement</h3>\n<i>You are t
 desc["holy_champion_div_res"] = "<h3>Cloak of Divine Resolve</h3>\n<i>You are capable of transforming into an embodiment of goods determination to triumph over evil.</i>\n<p>This cloak is activated for 3AP and 4MP for 15 status ticks, and can be activated along side other cloaks. While under the status effect all good aligned characters on the tile gain +5% to hit, and any MP cost to attack with another cloak is removed.</p>\n<b>FREE SKILL</b>";
 desc["holy_champion_holy"] = "<h3>Cloak of Holy Radiance</h3>\n<i>You are capable to transforming into a radiantly holy figure.</i>\n<p>This ability transforms the character into a pure holy form for at a cost of 1AP and 4MP, this costs 3MP ever 15 minutes to maintain and 1MP per attack, and can be ended at any time, but ends if the Holy Champion cannot pay an upkeep cost. The character is immune to unholy damage when in this form, gains +3 damage to all attacks and all non-charge attacks by the Holy Champion have their damaged type changed to Holy.</p><p>Anyone attempting to attack the character using melee or hand-to-hand attacks while they are in this form will suffer holy damage equal to the Holy Champion's level/5.</p><p>The Holy Champion can use bows without ammunition at a cost of an additional 1MP per attack dealing holy damage equal to the normal amount for using the weapon, and close combat attacks deal supplementary holy damage.</p>\n<b>CP Cost</b>: 60";
 desc["holy_champion_bulwark"] = "<h3>Holy Bulwark</h3>\n<i>You have been blessed with protection against attacks that sap your essence.</i>\n<p>This skill grants the Holy Champion immunity to all MP draining and sapping abilities. This is a passive ability and it is always on. </p>\n<b>CP Cost</b>: 60";
-desc["holy_champion_aether"] = "<h3>Aether Manipulation</h3>\n<i>You have gained knowledge of the arcane arts.</i>\n<p>This skill increased the Holy Champions MP total by 10MP, and allows them to learn and cast spells as per Spellcraft. In addition it grants +20% to hit with ranged spells.</p>\n<b>CP Cost</b>: 30";
-desc["holy_champion_arcane"] = "<h3>Arcane Warrior</h3>\n<i>You have become more accurate in your spell casting.</i>\n<p>This skill grants +25% to hit with ranged spells.</p>\n<b>CP Cost</b>: 60";
+desc["holy_champion_aether"] = "<h3>Aether Manipulation</h3>\n<i>You have gained knowledge of the arcane arts.</i>\n<p>This skill increased the Holy Champions MP total by 10MP, and allows them to learn and cast spells as per Spellcraft. In addition it grants 55% to hit with ranged spells.</p>\n<b>CP Cost</b>: 30";
+desc["holy_champion_arcane"] = "<h3>Arcane Warrior</h3>\n<i>You have become more accurate in your spell casting.</i>\n<p>This skill grants +20% to hit with ranged spells.</p>\n<b>CP Cost</b>: 60";
 desc["holy_champion_martial_spell"] = "<h3>Martial Spellcraft</h3>\n<i>You are able to imbue weapons with spells you know.</i>\n<p>This grants the character the ability to imbue a weapon with an offensive spell for a cost of 5AP and 3xthe Spells MP cost using up a weapons enchantment slots. The weapon is imbued with the spell for 10 attacks it makes, each time a wielder with Martial Spellcraft makes an attack it costs them 1MP and if the attack hits the spell is unleashed dealing half it's normal damage.</p>\n<b>CP Cost</b>: 60";
 desc["holy_champion_air"] = "<h3>Cloak of Air</h3>\n<i>You are capable of transforming into a glowing mist of pure justice. This allows you to enter closed places easily. You are hard to hurt with weapons while in this form.</i>\n<p>This is activated at a cost of 1AP and 4MP, but can be ended at any time. Every attack action taken while under this status costs an additional 1MP, and every 15 minutes the cloak costs 3MP to maintain and if the Holy Champion runs out of MP the status ends. While under Cloak of Air, attacks made against you by characters have a 20% chance of failing. The Holy Champion can seep through closed and locked doors and float over water or void tiles. The Holy Champion gains +3 damage and +5% to hit with archery attacks and bows are automatically reloaded if he possesses the appropriate ammo in his inventory, however you cannot use inventory items while under the effects of the cloak.</p>\n<b>CP Cost</b>: 30";
 desc["holy_champion_tornado"] = "<h3>Cloak of the Tornado</h3>\n<i>Your air form is now a powerful whirlwind of air.</i>\n<p>This skill improves the Cloak of Air as follows: the damage bonus is increased to +5, and the attack bonus to +10%, and the miss chance for attacks against the Holy Champion is increased to 30%. The Holy Champion can choose to move between tiles for either 1AP or 0MP, and can now access his inventory while in the Cloak of Air.</p>\n<b>CP Cost</b>: 60";
@@ -527,8 +527,8 @@ desc["eternal_soldier_urgency"] = "<h3>Way of Urgency</h3>\n<i>When circumstance
 
 desc["nexus_champion_luck"] = "<h3>Tattoo of Altered Luck</h3>\n<i>Your body is covered with spidery tattoos that grant you unnatural luck.</i>\n<p>This grants the Nexus Champion a permanent +5% to hit and +1 damage with all attack types.</p>\n<b>FREE SKILL</b>";
 desc["nexus_champion_gambler"] = "<h3>Tattoo of the Cosmic Gambler</h3>\n<i>You gift your luck to your comrades.</i>\n<p>This ability grants the Nexus Champion the ability to activate \"Cosmic Gambler\" for 30 status ticks at a cost of 1AP and 7MP. Nexus Champions suffer -2 soak and -10% defence, and all their factionmates gain +1 damage and +5% to hit with all attacks.</p>\n<b>CP Cost</b>: 60";
-desc["nexus_champion_sorcery"] = "<h3>Tattoo of Sorcery</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells. Learning spells costs additional Character Points. Casting spells costs MP. In addition it grants +5MP and +20% to hit with ranged spells.\n</p><b>CP Cost</b>: 30";
-desc["nexus_champion_arc_war"] = "<h3>Arcane Warrior</h3>\n<i>You are an expert at aiming your combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 25%.</p>\n<b>CP Cost</b>: 60";
+desc["nexus_champion_sorcery"] = "<h3>Tattoo of Sorcery</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells. Learning spells costs additional Character Points. Casting spells costs MP. In addition it grants +5MP and a 55% chance to hit with ranged spells.\n</p><b>CP Cost</b>: 30";
+desc["nexus_champion_arc_war"] = "<h3>Arcane Warrior</h3>\n<i>You are an expert at aiming your combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_spell_proj"] = "<h3>Tattoo of Spell Projection</h3>\n<i>You are able to strike with weapons empowered with spells you know.</i>\n<p>This grants the character the ability to perform a charge attack that changes the base damage amount of a thrown or archery weapon to that of a spell he knows. The normal damage boosts that apply to the weapon still apply. The charge attack costs 1/3 the MP cost of the spell being used rounded up, and when used with thrown weapons the weapon (or ammo in case of slings) is consumed. </p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_soul"] = "<h3>Tattoo of the Soul</h3>\n<i>Your body has been marked with a magical tattoo that binds your soul's light to that of the greater arcane powers. As the Nexus drifts towards balance, so, in turn, does your magical aura.</i>\n<p>This ability grants the Nexus Champion a permanent Magic Point regenerative ability: instead of regaining 1 Magic Point every 15 minutes, the Nexus Champion regenerates 3. In addition he gains +5MP.</p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_balance"] = "<h3>Tattoo of Balance</h3>\n<i>Your body has been marked with the runes of arcane Balance. The closer your soul lies to the center, the greater your power.</i>\n<p>This ability grants the Nexus Champion an innate damage bonus to all attacks including spells. However, the bonus is only granted if the character's alignment is Neutral. The damage bonus is stronger the closer to true neutrality the character is, and is extremely powerful if the character's morality is exactly 0. (+4 at 0 MO, +3 at 1-3 MO, +2 at 4-9 MO, +1 at 10-19MO). In addition the character is always treated as having 0MO for determining morality shifts when making attacks.</p>\n<b>CP Cost</b>: 30";
@@ -539,7 +539,7 @@ desc["nexus_champion_resistance"] = "<h3>Tattoo of Resistance</h3>\n<i>Your body
 desc["nexus_champion_adaptation"] = "<h3>Tattoo of Adaptation</h3>\n<i>Your body has been marked with the runes of arcane Adaptation that grants you temporary immunity to the last attack to injure you.</i>\n<p>This grants a passive ability that allows the Nexus Champion to regenerate 1HP every tick. In addition whenever the Nexus Champion is successfully hit with a soakable attack that deals damage, the character gains the \"Adapted to (damage type)\" status effect for 10 status ticks. The Adapted to (damage type) status effects makes the Nexus Champion immune to all damage of (damage type). Each time the Nexus Champion is hit with a new damage type, the damage adaptation change replacing the previous damage adaptation.</p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_opposition"] = "<h3>Tattoo of Opposition</h3>\n<i>Your body has been marked with the runes of arcane Opposition. The further an enemies morality is from your own the better you can strike at them.</i>\n<p>This ability grants the Nexus Champion an innate damage bonus to all physical and spell attacks equal to 1/25th (rounded down) the difference of morality between the Nexus Champion and their target character.</p>\n<b>CP Cost</b>: 30";
 desc["nexus_champion_strength"] = "<h3>Tattoo of Strength</h3>\n<i>Your body has been marked with spidery runes of strength. This tattoo dramatically increases your carrying capacity as well as increasing damage dealt by bows and thrown weapons. </i>\n<p>This ability increases the character's overall carrying capacity by a further 20 points. In addition, damage dealt with bows and thrown weapons is increased by +1 and +2 and your accuracy when attacking with heavy weapons is increased by 5% (This stacks with the bonus to damage and heavy weapon accuracy of the strength skill). It also increases your fortification building rate by +5HP.</p>\n<b>CP Cost</b>: 30";
-desc["nexus_champion_eagle"] = "<h3>Tattoo of Eagle Sight</h3>\n<i>Your eyes are surrounded with tattoos that grant you keener vision.</i>\n<p>This skill grants a permanent +10% to hit with archery and thrown attacks.</p>\n<b>CP Cost</b>: 60";
+desc["nexus_champion_eagle"] = "<h3>Tattoo of Eagle Sight</h3>\n<i>Your eyes are surrounded with tattoos that grant you keener vision.</i>\n<p>This skill grants a permanent +10% to hit with archery, firearms and thrown attacks as well as ranged spells.</p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_inner_strength"] = "<h3>Tattoo of Inner Strength</h3>\n<i>Your body has been marked with spidery runes of inner strength, granting you greater magical reserves and the ability to invoke great strength</i>\n<p>This skill grants the Nexus Champion an extra 10 maximum HP and 5 maximum MP. Additionally all magic draining and magic sapping attacks are only half as effective against the Nexus Champion. The Nexus Champion also gains the skill \"Heavy Lifting\" activated for 1AP and 8MP, with 1MP per 15 minute activation cost. \"Heavy Lifting\" grants +25 inventory space, and can be activated while encumbered. While it is active, you may pick up and use Heavy Items such as cars.</p>\n<b>CP Cost</b>: 60";
 desc["nexus_champion_wandering"] = "<h3>Tattoo of the Wandering Way</h3>\n<i>Your body has been tattooed with a mystical map of arcane forces. This tattoo allows you to shift your physical body in space, disappearing from one location and appearing in another.</i>\n<p>This ability grants the Nexus Champion a form of teleportation allowing them to travel up to a distance of 10 squares horizontally and vertically. The character will always appear at his destination outside of any buildings and cannot teleport past wards that would normally prevent him from accessing the location. Teleportation costs only 1 Action Point but a variable number of MP based on the distance travelled. The character may not teleport between planes. The number of MP spent is equal to the square root of the sum of the squares of the horizontal and vertical distance travelled (rounded up). The character will always appear outside at his destination.</p>\n<b>CP Cost</b>: 30";
 desc["nexus_champion_leaguestep"] = "<h3>Tattoo of Leaguestep</h3>\n<i>Your body has been marked with deeper runes that tie you to the Nexus, allowing you travel to greater distances.</i>\n<p>This ability doubles the maximum distance the Nexus Champion may teleport using Tattoo of the Wandering Way. It also halves the cost of teleportation.</p>\n<b>CP Cost</b>: 60";
@@ -572,7 +572,7 @@ desc["conduit_chan_trail"] = "<h3>Channelling Trail(</h3>\n<i>You can use the ar
 desc["conduit_foc_trail"] = "<h3>Focused Trail</h3>\n<i>By manipulating the arcane energies you can give greater aid to your allies</i>\n<p>Arcane Trail status granted by the Conduit now grants +1 soak and +2 to damage; Channelled Trail grants -1 soak and -2 damage. </p>\n<b>CP Cost</b>: 90";
 desc["conduit_well"] = "<h3>Arcane Well</h3>\n<i>You can draw forth the arcane energies into a location.</i>\n<p>The Conduit gains the ability to open an Arcane Well in his current location for 10 AP and 20 MP. The Arcane Well lasts for 2 hours. All characters in a tile affected by the Arcane Well status gain an additional +1 MP every AP tick. An Arcane Well opened on a tile already affected by an Arcane Well \"overwrites\" the previous effect. </p>\n<b>CP Cost</b>: 30";
 desc["conduit_channel"] = "<h3>Arcane Channel</h3>\n<i>You can transfer the arcane energies to another.</i>\n<p>For 7 AP and 5 MP, the Conduit may grant 5 AP to another character in the same location.</p>\n<b>CP Cost</b>: 60";
-desc["conduit_recycle"] = "<h3>Arcane Recycling</h3>\n<i>You can better draw forth the arcane energies.</i>\n<p>Arcane Wells opened by the conduit now cost 8 AP and 15 MP and last for 4 hours.</p>\n<b>CP Cost</b>: 60";
+desc["conduit_recycle"] = "<h3>Arcane Recycling</h3>\n<i>You can better draw forth the arcane energies.</i>\n<p>Arcane Wells and Arcane Sinks opened by the conduit now cost 8 AP and 15 MP and last for 4 hours.</p>\n<b>CP Cost</b>: 60";
 desc["conduit_sink"] = "<h3>Arcane Sink</h3>\n<i>You can also drain the arcane energies away in a location.</i>\n<p>The Conduit gains the ability to open an Arcane Sink in his current location for 10 AP and 20 MP. The Arcane Sink lasts for 2 hours. All characters in a tile affected by an Arcane Sink - except factionmates of the Conduit who created the Arcane Sink - lose 1 MP per action taken (in addition to any other MP costs of their abilities). </p>\n<b>CP Cost</b>: 60";
 desc["conduit_brightbow"] = "<h3>Brightbow</h3>\n<i>You have crafted yourself a special bow straight from the raw firmament of the nexus.</i>\n<p>This grants the Conduit an innate archery attack the \"Brightbow\" that deals 9 arcane damage and costs 1MP to fire.</p>\n<b>CP Cost</b>: 30";
 desc["conduit_cos_aff"] = "<h3>Cosmic Affinity</h3>\n<i>Your understanding of magic has brought you more in tune with the cosmos.</i>\n<p>This skill increases the character's maximum Magic Point total by 15 points.</p>\n<b>CP Cost</b>: 30";
@@ -641,8 +641,8 @@ desc["wizard_wand"] = "<h3>Spell Wand</h3>\n<i>You have learnt how to cast your 
 desc["doomhowler_scream"] = "<h3>Scream of the Banshee</h3>\n<i>Calling on your demonic nature you unleash a scream of all the horrors of the damned.</i>\n<p>This skill grants the Doom Howler the ability to Scream for 1AP and 7MP, when used all non-factionmates gain \"Frightened\" status for 5 status ticks, this gives -5% and -5% defence.</p>\n<b>FREE SKILL</b>";
 desc["doomhowler_wail"] = "<h3>Wail of the Dead</h3>\n<i>The Doom Howler cries out a horrifying call that brings other closer to death.</i>\n<p>This skill grants the Doom Howler an innate AoE attack that does not affect the Doom Howler's faction mates. For a cost of 6AP and 15MP the attacks deals death damage with a per target equal to the Doom Howler's level and total damage equal to 10x the Doom Howler's level. It has a base 90% chance to hit.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_keen"] = "<h3>Keening of the Damned</h3>\n<i>The Doom Howler screams out a terrible sound full of evil intent.</i>\n<p>This skill grants the Doom Howler an innate AoE attack that does not affect the Doom Howler's faction mates. For a cost of 6AP and 15MP the attacks deals unholy damage with a per target equal to 1.5x the Doom Howler's level and total damage equal to 1/2 the Doom Howler's level squared. It has a base 90% chance to hit.</p>\n<b>CP Cost</b>: 90";
-desc["doomhowler_aether"] = "<h3>Aether Manipulation</h3>\n<i>You have gained knowledge of the arcane arts.</i>\n<p>This skill increased the Doom Howler's MP total by 10MP, and allows them to learn and cast spells as per Spellcraft. In addition it grants +20% to hit with ranged spells.</p>\n<b>CP Cost</b>: 30";
-desc["doomhowler_acr_war"] = "<h3>Arcane Warrior</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 25%.</p>\n<b>CP Cost</b>: 60";
+desc["doomhowler_aether"] = "<h3>Aether Manipulation</h3>\n<i>You have gained knowledge of the arcane arts.</i>\n<p>This skill increased the Doom Howler's MP total by 10MP, and allows them to learn and cast spells as per Spellcraft. In addition it grants 55% case chance to hit with ranged spells.</p>\n<b>CP Cost</b>: 30";
+desc["doomhowler_acr_war"] = "<h3>Arcane Warrior</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_mart_spell"] = "<h3>Martial Spellcraft</h3>\n<i>You are able to imbue weapons with spells you know.</i>\n<p>This grants the character the ability to imbue a weapon with an offensive spell for a cost of 5AP and 3xthe Spells MP cost using up a weapons enchantment slots. The weapon is imbued with the spell for 10 attacks it makes, each time a wielder with Martial Spellcraft makes an attack it costs them 1MP and if the attack hits the spell is unleashed though no bonuses are applied to the spell damage.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_elite"] = "<h3>Elite Attack</h3>\n<i>Your knowledge of combat has further increased. Your attacks are even more damaging.</i>\n<p>This ability adds a permanent, innate damage bonus of +2 to all attacks. This ability stacks with Strong Attack.</p>\n<b>CP Cost</b>: 30";
 desc["doomhowler_tendrils"] = "<h3>Ghost Tendrils</h3>\n<i>The Doom Howler can attack with ghostly tendrils of damned souls.</i>\n<p>This skill grants the Doom Howler an innate hand-to-hand attack that deals 8 cold damage. In addition they gain a +1 damage bonus to all hand-to-hand attacks.</p>\n<b>CP Cost</b>: 30";
@@ -1208,7 +1208,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("mortal_box").disabled = false;
 					document.getElementById("mortal_dodge").disabled = false;
 					document.getElementById("mortal_mart").disabled = false;
-					HthAcc = HthAcc + 25;
+					HthAcc = HthAcc + 20;
 					break;
 				case "mortal_dodge":
 					document.getElementById("mortal_evas").disabled = false;
@@ -1220,10 +1220,10 @@ function checkSkill(id, which, CP)
 					break;
 				case "mortal_mart":
 					document.getElementById("mortal_adv_mart").disabled = false;
-					HthAcc = HthAcc + 15;
+					HthAcc = HthAcc + 10;
 					break;
 				case "mortal_adv_mart":
-					HthAcc = HthAcc + 15;
+					HthAcc = HthAcc + 10;
 					break;
 				case "mortal_hide":
 					document.getElementById("mortal_adv_hide").disabled = false;
@@ -1241,8 +1241,8 @@ function checkSkill(id, which, CP)
 				case "mortal_adv_mel":
 					document.getElementById("mortal_exp_bc").disabled = false;
 					document.getElementById("mortal_exp_mel").disabled = false;
-					MelAcc = MelAcc + 15;
-					SwordAcc = SwordAcc + 15;
+					MelAcc = MelAcc + 10;
+					SwordAcc = SwordAcc + 10;
 					break;
 				case "mortal_exp_mel":
 					MelAcc = MelAcc + 10;
@@ -1258,21 +1258,21 @@ function checkSkill(id, which, CP)
 					break;
 				case "mortal_arch":
 					document.getElementById("mortal_adv_arch").disabled = false;
-					ArchAcc = ArchAcc + 20;
+					ArchAcc = ArchAcc + 10;
 					break;
 				case "mortal_adv_arch":
 					ArchAcc = ArchAcc + 10;
 					break;
 				case "mortal_fire":
 					document.getElementById("mortal_adv_fire").disabled = false;
-					FireAcc = FireAcc + 20;
+					FireAcc = FireAcc + 10;
 					break;
 				case "mortal_adv_fire":
 					FireAcc = FireAcc + 10;
 					break;
 				case "mortal_throw":
 					document.getElementById("mortal_adv_throw").disabled = false;
-					ThrowAcc = ThrowAcc + 20;
+					ThrowAcc = ThrowAcc + 10;
 					break;
 				case "mortal_adv_throw":
 					ThrowAcc = ThrowAcc + 10;
@@ -1376,7 +1376,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "shepherd_spell_com":
 					document.getElementById("shepherd_battle_mag").disabled = false;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "shepherd_battle_mag":
 					SpellAcc = SpellAcc + 15;
@@ -1385,7 +1385,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("shepherd_sanct").disabled = false;
 					Spellcraft = 1;
 					AngelicCaster = 1;
-					SpellAcc = SpellAcc + 35;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "myrmidon_crit":
 					document.getElementById("myrmidon_adv_crit").disabled = false;
@@ -1421,7 +1421,7 @@ function checkSkill(id, which, CP)
 					Spellcraft = 1;
 					document.getElementById("sorcerer_deep_spell").disabled = false;
 					document.getElementById("sorcerer_patt").disabled = false;
-					SpellAcc = SpellAcc + 35;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "sorcerer_alch":
 					document.getElementById("sorcerer_alch_trans").disabled = false;
@@ -1431,7 +1431,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "sorcerer_spell_com":
 					document.getElementById("sorcerer_battle_mag").disabled = false;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "sorcerer_battle_mag":
 					SpellAcc = SpellAcc + 15;
@@ -1474,7 +1474,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "defiler_spell_com":
 					document.getElementById("defiler_battle").disabled = false;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "defiler_battle":
 					SpellAcc = SpellAcc + 15;
@@ -1483,7 +1483,7 @@ function checkSkill(id, which, CP)
 					document.getElementById("defiler_taint").disabled = false;
 					Spellcraft = 1;
 					DemonicCaster = 1;
-					SpellAcc = SpellAcc + 35;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "divine_herald_crimson":
 					document.getElementById("divine_herald_war").disabled = false;
@@ -1524,10 +1524,10 @@ function checkSkill(id, which, CP)
 					Spellcraft = 1;
 					AngelicCaster = 1;
 					MP = MP + 10;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 30;
 					break;
 				case "holy_champion_arcane":
-					SpellAcc = SpellAcc + 25;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "holy_champion_air":
 					document.getElementById("holy_champion_tornado").disabled = false;
@@ -1858,11 +1858,11 @@ function checkSkill(id, which, CP)
 					document.getElementById("nexus_champion_spell_proj").disabled = false;
 					document.getElementById("nexus_champion_soul").disabled = false;
 					Spellcraft = 1;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 30;
 					MP = MP + 5;
 					break;
 				case "nexus_champion_arc_war":
-					SpellAcc = SpellAcc + 25;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "nexus_champion_soul":
 					MP = MP + 5;
@@ -1898,6 +1898,8 @@ function checkSkill(id, which, CP)
 				case "nexus_champion_eagle":
 					ArchAcc = ArchAcc + 10;
 					ThrowAcc = ThrowAcc + 10;
+					FireAcc = FireAcc + 10;
+					SpellAcc = SpellAcc + 10;
 					break;
 				case "nexus_champion_inner_strength":
 					MP = MP + 5;
@@ -2072,10 +2074,10 @@ function checkSkill(id, which, CP)
 					Spellcraft = 1;
 					DemonicCaster = 1;
 					MP = MP + 10;
-					SpellAcc = SpellAcc + 20;
+					SpellAcc = SpellAcc + 30;
 					break;
 				case "doomhowler_acr_war":
-					SpellAcc = SpellAcc + 25;
+					SpellAcc = SpellAcc + 20;
 					break;
 				case "doomhowler_elite":
 					HthDam = HthDam + 2;
@@ -2743,7 +2745,7 @@ function delevel()
 			document.getElementById("mortal_box").disabled = true;
 			document.getElementById("mortal_dodge").disabled = true;
 			document.getElementById("mortal_mart").disabled = true;
-			HthAcc = HthAcc - 25;
+			HthAcc = HthAcc - 20;
 			break;
 		case "mortal_dodge":
 			document.getElementById("mortal_evas").disabled = true;
@@ -2755,10 +2757,10 @@ function delevel()
 			break;
 		case "mortal_mart":
 			document.getElementById("mortal_adv_mart").disabled = true;
-			HthAcc = HthAcc - 15;
+			HthAcc = HthAcc - 10;
 			break;
 		case "mortal_adv_mart":
-			HthAcc = HthAcc - 15;
+			HthAcc = HthAcc - 10;
 			break;
 		case "mortal_hide":
 			document.getElementById("mortal_adv_hide").disabled = true;
@@ -2776,8 +2778,8 @@ function delevel()
 		case "mortal_adv_mel":
 			document.getElementById("mortal_exp_bc").disabled = true;
 			document.getElementById("mortal_exp_mel").disabled = true;
-			MelAcc = MelAcc - 15;
-			SwordAcc = SwordAcc - 15;
+			MelAcc = MelAcc - 10;
+			SwordAcc = SwordAcc - 10;
 			break;
 		case "mortal_exp_mel":
 			MelAcc = MelAcc - 10;
@@ -2793,21 +2795,21 @@ function delevel()
 			break;
 		case "mortal_arch":
 			document.getElementById("mortal_adv_arch").disabled = true;
-			ArchAcc = ArchAcc - 20;
+			ArchAcc = ArchAcc - 10;
 			break;
 		case "mortal_adv_arch":
 			ArchAcc = ArchAcc - 10;
 			break;
 		case "mortal_fire":
 			document.getElementById("mortal_adv_fire").disabled = true;
-			FireAcc = FireAcc - 20;
+			FireAcc = FireAcc - 10;
 			break;
 		case "mortal_adv_fire":
 			FireAcc = FireAcc - 10;
 			break;
 		case "mortal_throw":
 			document.getElementById("mortal_adv_throw").disabled = true;
-			ThrowAcc = ThrowAcc - 20;
+			ThrowAcc = ThrowAcc - 10;
 			break;
 		case "mortal_adv_throw":
 			ThrowAcc = ThrowAcc - 10;
@@ -2909,7 +2911,7 @@ function delevel()
 			break;
 		case "shepherd_spell_com":
 			document.getElementById("shepherd_battle_mag").disabled = true;
-			SpellAcc = SpellAcc - 20;
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "shepherd_battle_mag":
 			SpellAcc = SpellAcc - 15;
@@ -2918,7 +2920,7 @@ function delevel()
 			document.getElementById("shepherd_sanct").disabled = true;
 			Spellcraft = 0;
 			AngelicCaster = 0;
-			SpellAcc = SpellAcc - 35;
+			SpellAcc = SpellAcc - 20;
 			break;
 		case "myrmidon_crit":
 			document.getElementById("myrmidon_adv_crit").disabled = true;
@@ -2952,7 +2954,7 @@ function delevel()
 			break;
 		case "sorcerer_spell":
 			Spellcraft = 0;
-			SpellAcc = SpellAcc - 35;
+			SpellAcc = SpellAcc - 20;
 			document.getElementById("sorcerer_deep_spell").disabled = true;
 			document.getElementById("sorcerer_patt").disabled = true;
 			break;
@@ -2964,7 +2966,7 @@ function delevel()
 			break;
 		case "sorcerer_spell_com":
 			document.getElementById("sorcerer_battle_mag").disabled = true;
-			SpellAcc = SpellAcc - 20;
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "sorcerer_battle_mag":
 			SpellAcc = SpellAcc - 15;
@@ -3007,7 +3009,7 @@ function delevel()
 			break;
 		case "defiler_spell_com":
 			document.getElementById("defiler_battle").disabled = true;
-			SpellAcc = SpellAcc - 20;
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "defiler_battle":
 			SpellAcc = SpellAcc - 15;
@@ -3016,7 +3018,7 @@ function delevel()
 			document.getElementById("defiler_taint").disabled = true;
 			Spellcraft = 0;
 			DemonicCaster = 0;
-			SpellAcc = SpellAcc - 35;
+			SpellAcc = SpellAcc - 20;
 			break;
 		case "divine_herald_crimson":
 			document.getElementById("divine_herald_war").disabled = true;
@@ -3060,7 +3062,7 @@ function delevel()
 			Spellcraft = 0;
 			AngelicCaster = 0;
 			MP = MP - 10;
-			SpellAcc = SpellAcc - 20;
+			SpellAcc = SpellAcc - 30;
 			break;
 		case "holy_champion_air":
 			document.getElementById("holy_champion_tornado").disabled = true;
@@ -3391,11 +3393,11 @@ function delevel()
 			document.getElementById("nexus_champion_spell_proj").disabled = true;
 			document.getElementById("nexus_champion_soul").disabled = true;
 			Spellcraft = 0;
-			SpellAcc = SpellAcc + 20;
+			SpellAcc = SpellAcc - 30;
 			MP = MP - 5;
 			break;
 		case "nexus_champion_arc_war":
-			SpellAcc = SpellAcc - 25;
+			SpellAcc = SpellAcc - 20;
 			break;
 		case "nexus_champion_soul":
 			MP = MP - 5;
@@ -3431,6 +3433,8 @@ function delevel()
 		case "nexus_champion_eagle":
 			ArchAcc = ArchAcc - 10;
 			ThrowAcc = ThrowAcc - 10;
+			FireAcc = FireAcc - 10;
+			SpellAcc = SpellAcc - 10;
 			break;
 		case "nexus_champion_inner_strength":
 			MP = MP - 5;
@@ -3604,10 +3608,10 @@ function delevel()
 			Spellcraft = 0;
 			DemonicCaster = 0;
 			MP = MP - 10;
-			SpellAcc = SpellAcc - 20;
+			SpellAcc = SpellAcc - 30;
 			break;
 		case "doomhowler_acr_war":
-			SpellAcc = SpellAcc - 25;
+			SpellAcc = SpellAcc - 20;
 			break;
 		case "doomhowler_elite":
 			HthDam = HthDam - 2;
