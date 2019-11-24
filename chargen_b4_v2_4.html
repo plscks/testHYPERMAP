@@ -1,6 +1,6 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!-- Version 2.4 -->
+<!-- Version 2.4.1 -->
 <!-- Originally created for Nexus War by Siddhant "wcil" M.; modified for Nexus Clash by Sihoiba; updated 10-01-19, modified again slightly by plscks -->
 <title>Nexus Clash Breath 4 Character Planner</title>
 <style>
@@ -578,10 +578,9 @@ desc["conduit_brightbow"] = "<h3>Brightbow</h3>\n<i>You have crafted yourself a 
 desc["conduit_cos_aff"] = "<h3>Cosmic Affinity</h3>\n<i>Your understanding of magic has brought you more in tune with the cosmos.</i>\n<p>This skill increases the character's maximum Magic Point total by 15 points.</p>\n<b>CP Cost</b>: 30";
 desc["conduit_enchant"] = "<h3>Enchant Item</h3>\n<i>You are capable of binding magics into items, weapons and armour making them more powerful and useful.</i>\n<p>This skill allows the character to imbue many items with magical properties. The amount any one item can be enchanted depends on the item itself. This skill requires a great deal of MP and becomes more difficult the more an item has been enchanted. Each type of enchantment requires the Conduit to possess a potion of the correct type and have learned a certain skill or type of spell.</p>\n<b>CP Cost</b>: 30";
 desc["conduit_seal"] = "<h3>Seal Magic</h3>\n<i>You are better at binding magics into items, weapons and armour.</i>\n<p>This skill reduces the MP cost of enchantment by 20% and increases the enchantment duration by 50%. In addition enchanted items carried by the character are not subject to death decay.</p>\n<b>CP Cost</b>: 60";
-desc["conduit_en_flare"] = "<h3>Energy Flare</h3>\n<i>You can channel arcane energies to stun your foes.</i>\n<p>The Conduit gains an innate throwing attack \"Energy Flare\" that deals 9 Arcane damage with an innate +10% to hit and costs 2MP per attack. Characters hit by the Flare are \"Stunned\" for 5 minutes which gives a -10% attack penalty.</p>\n<b>CP Cost</b>: 30";
+desc["conduit_en_flare"] = "<h3>Energy Flare</h3>\n<i>You can channel arcane energies to stun your foes.</i>\n<p>The Conduit gains an innate throwing attack \"Energy Flare\" that deals 9 Arcane damage with an innate +10% to hit and costs 2MP per attack. Characters hit by the Flare are \"Stunned\" for 5 minutes which imposes a -10% and -2 damage attack penalty on the target.</p>\n<b>CP Cost</b>: 30";
 desc["conduit_bu_flare"] = "<h3>Bursting Flare</h3>\n<i>You can unleash a flare of arcane energy in a massive burst.</i>\n<p>This grants the conduit an innate area of effect attack using the throwing tree at a cost of 5AP and 10MP. It deals 8 damage per target, 150 max damage and inflicts the \"Stunned\" status on any character it hits. It does not affect factionmates.</p>\n<b>CP Cost</b>: 60";
-desc["conduit_debilitation"] = "<h3>Nexal Debilitation</h3>\n<i>Your flare is now brighter and more disabling.</i>\n<p>The Stunned status also inflicts a -2 damage penalty.</p>\n<b>CP Cost</b>: 60";
-desc["conduit_sapping"] = "<h3>Nexal Sapping</h3>\n<i>Your flare of energy now channels energy back to you.</i>\n<p>On a hit the Energy Flare drains 3MP from the target and grants it to the conduit.</p>\n<b>CP Cost</b>: 60";
+desc["conduit_sapping"] = "<h3>Nexal Sapping</h3>\n<i>Your flare of energy now channels energy back to you.</i>\n<p>On a hit the Energy Flare drains 4MP from the target and grants half of it to the conduit.</p>\n<b>CP Cost</b>: 60";
 desc["conduit_target"] = "<h3>Target Seeker</h3>\n<i>You can paint a target with arcane energies to single him out for your allies.</i>\n<p>The Conduit gains a charge attack \"Targeting Shot\" that can only be used with thrown or archery weapons and costs 1AP and 6MP to use. On a successful hit, the target is afflicted with \"Targeted\" status for 25 status ticks. This gives the target a -10% defense penalty.  </p>\n<b>CP Cost</b>: 30";
 desc["conduit_weakness"] = "<h3>Reveal Weakness</h3>\n<i>Your arcane energies mark out the weak points of the painted target</i>\n<p>The Targeted status inflicted by the Conduit raises the target's damage floor to 4. </p>\n<b>CP Cost</b>: 60";
 desc["conduit_return"] = "<h3>Nexal Return</h3>\n<i>You can manipulate the Nexus to return things to you.</i>\n<p>Non-single use thrown weapons used by the conduit automatically return to his inventory.</p>\n<b>CP Cost</b>: 30";
@@ -656,9 +655,9 @@ desc["doomhowler_chain_grem"] = "<h3>Summon Chain Gremlin</h3>\n<i>The Doom Howl
 desc["doomhowler_trick"] = "<h3>Ancient Trickery</h3>\n<i>The Doom Howler summons the vilest of Chain Gremlins.</i>\n<p>Chain Gremlins summoned by the Doom Howler gain +5% defence, increased damage and attack chance, +20AP, +10MP, +30HP and are no longer subject to damage auras.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_wytch"] = "<h3>Wytchfire</h3>\n<i>You can ignite others with a life draining fire.</i>\n<p>This skill grants the Doom Howler a hand-to-hand attack costing 1AP and 5MP. If the target hits it is affected by \"Wytchfire\" for 12 status ticks. Every AP tick the target suffers 4 fire damage and the Doom Howler gains the appropriate XP. If the target is hit he suffers 4 supplementary damage and the Doom Howler gains the associated XP. Any action the target takes causes them to take 4 death or fire damage (type determined randomly) and again the Doom Howler gains the appropriate XP.</p>\n<b>CP Cost</b>: 30";
 
-desc["infernal_behemoth_brute"] = "<h3>Hulking Brute</h3>\n<i>Your form is larger and more terrible than most.</i>\n<p>The Infernal Behemoth gains a permanent +25HP, +5% to hit with Heavy Weapons, and -10% chance to hide. Every fifteen minute AP tick, the Behemoth will heal two points of HP if it is not at maximum HP.</p>\n<b>FREE SKILL</b>";
+desc["infernal_behemoth_brute"] = "<h3>Hulking Brute</h3>\n<i>Your form is larger and more terrible than most.</i>\n<p>The Infernal Behemoth gains a permanent +25HP and +5% to hit with Heavy Weapons. Every fifteen minute AP tick, the Behemoth will heal two points of HP if it is not at maximum HP.</p>\n<b>FREE SKILL</b>";
 desc["infernal_behemoth_chit"] = "<h3>Chitinous Armor</h3>\n<i>In order to do battle with your foes, the Hellish Masters have grafted hard scales across your entire body.</i>\n<p>This is a permanent armor that affords 5 Slashing, 7 Piercing, 4 Impact, 6 Fire, 4 Cold, 6 Electric, 9 Acid, 5 Death, 6 Unholy, 4 Holy, 6 Arcane soak. In addition it grants the Infernal Behemoth +25HP</p>\n<b>CP Cost</b>: 60";
-desc["infernal_behemoth_bulk"] = "<h3>Fiendish Bulk</h3>\n<i>Your body has mutated so that it is much larger than normal, giving you increased ability to withstand punishment.</i>\n<p>This skill increases the Infernal Behemoth's maximum Hit Point total by 35 points. In addition they gain an additional +15% to hit with Heavy Weapons and can build fortification at an additional +5HP, but suffer a -10% chance to hide. This skill allows you to pick up and use Heavy Items such as cars.</p>\n<b>CP Cost</b>: 60";
+desc["infernal_behemoth_bulk"] = "<h3>Fiendish Bulk</h3>\n<i>Your body has mutated so that it is much larger than normal, giving you increased ability to withstand punishment.</i>\n<p>This skill increases the Infernal Behemoth's maximum Hit Point total by 35 points. In addition they gain an additional +15% to hit with Heavy Weapons and can build fortification at an additional +5HP. This skill allows you to pick up and use Heavy Items such as cars.</p>\n<b>CP Cost</b>: 60";
 desc["infernal_behemoth_bloodlust"] = "<h3>Bloodlust</h3>\n<i>Whenever you land a killing blow upon a target, you will enter a Bloodlust state. For a short time, you will have an increased chance to hit and deal greater damage with all attacks. If you land another killing blow while under the effect of Bloodlust, the Bloodlust is refreshed.</i>\n<p>Bloodlust is a specialized status effect that can be applied to Infernal Behemoths. Whenever an Infernal Behemoth with the power kills any character, they will enter the Bloodlust state, increasing their damage and attack. The first application of Bloodlust lasts 30 status ticks. If the Behemoth kills another character during this time, the count is reset to 30 status ticks. Bloodlust imparts a 1 point damage bonus to all hand-to-hand and melee attacks and +1 soak to all attacks. The Infernal Behemoth can choose to cancel bloodlust while it is in effect.</p>\n<b>CP Cost</b>: 30";
 desc["infernal_behemoth_adren"] = "<h3>Adrenal Healing</h3>\n<i>When under the effects of Bloodlust your body rapidly regenerates.</i>\n<p>This ability causes the Behemoth to gain +1 soak against all and also regenerate 3HP with every hit while under the effects of Bloodlust.</p>\n<b>CP Cost</b>: 60";
 desc["infernal_behemoth_berserk"] = "<h3>Berserk Frenzy</h3>\n<i>When under the effects of Bloodlust you become a berserker killing mindlessly.</i>\n<p>This ability improves the Infernal Behemoth's Bloodlust increasing the damage bonus to 3 and hand-to-hand and melee attacks gain +10% to hit. Any non combat action costs 1MP.</p>\n<b>CP Cost</b>: 60";
@@ -1974,7 +1973,6 @@ function checkSkill(id, which, CP)
 					break;
 				case "conduit_en_flare":
 					document.getElementById("conduit_bu_flare").disabled = false;
-					document.getElementById("conduit_debilitation").disabled = false;
 					document.getElementById("conduit_sapping").disabled = false;
 					break;
 				case "conduit_target":
@@ -2123,7 +2121,6 @@ function checkSkill(id, which, CP)
 					document.getElementById("infernal_behemoth_chit").disabled = false;
 					document.getElementById("infernal_behemoth_bulk").disabled = false;
 					HP = HP + 25;
-					Hide = Hide - 10;
 					HeavyAcc = HeavyAcc + 5;
 					break;
 				case "infernal_behemoth_chit":
@@ -2142,7 +2139,6 @@ function checkSkill(id, which, CP)
 					break;
 				case "infernal_behemoth_bulk":
 					HP = HP + 35;
-					Hide = Hide - 10;
 					HeavyAcc = HeavyAcc + 15;
 					break;
 				case "infernal_behemoth_bloodlust":
@@ -3508,7 +3504,6 @@ function delevel()
 			break;
 		case "conduit_en_flare":
 			document.getElementById("conduit_bu_flare").disabled = true;
-			document.getElementById("conduit_debilitation").disabled = true;
 			document.getElementById("conduit_sapping").disabled = true;
 			break;
 		case "conduit_target":
@@ -3657,7 +3652,6 @@ function delevel()
 			document.getElementById("infernal_behemoth_chit").disabled = true;
 			document.getElementById("infernal_behemoth_bulk").disabled = true;
 			HP = HP - 25;
-			Hide = Hide + 10;
 			HeavyAcc = HeavyAcc - 5;
 			break;
 		case "infernal_behemoth_chit":
@@ -3676,7 +3670,6 @@ function delevel()
 			break;
 		case "infernal_behemoth_bulk":
 			HP = HP - 35;
-			Hide = Hide + 10;
 			HeavyAcc = HeavyAcc - 5;
 			break;
 		case "infernal_behemoth_bloodlust":
@@ -4889,7 +4882,6 @@ function addLine(CP, text)
 	<li onmouseover="describe('conduit_en_flare');"><input onfocus="describe('conduit_en_flare');" onchange="checkSkill('conduit_en_flare','Energy Flare',30);" id="conduit_en_flare" type="checkbox"> Energy Flare</li>
 	<ul>
 		<li onmouseover="describe('conduit_bu_flare');"><input onfocus="describe('conduit_bu_flare');" onchange="checkSkill('conduit_bu_flare','Bursting Flare',60);" id="conduit_bu_flare" disabled="disabled" type="checkbox"> Bursting Flare</li>
-		<li onmouseover="describe('conduit_debilitation');"><input onfocus="describe('conduit_debilitation');" onchange="checkSkill('conduit_debilitation','Nexal Debilitation',60);" id="conduit_debilitation" disabled="disabled" type="checkbox"> Nexal Debilitation</li>
 		<li onmouseover="describe('conduit_sapping');"><input onfocus="describe('conduit_sapping');" onchange="checkSkill('conduit_sapping','Nexal Sapping',60);" id="conduit_sapping" disabled="disabled" type="checkbox"> Nexal Sapping</li>
 	</ul>
 	<li onmouseover="describe('conduit_target');"><input onfocus="describe('conduit_target');" onchange="checkSkill('conduit_target','Target Seeker',30);" id="conduit_target" type="checkbox"> Target Seeker</li>

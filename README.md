@@ -1,21 +1,24 @@
 # [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
-### 11/11/2019 version 2.3
+### 11/24/2019 Planner 2.4.1
+  * Updates skill changes from [11/24/2019 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9318)
+  
+### 11/11/2019 Map version 2.3
   * Adds Keyboard support
   * Adds ARIA compatibility
 
-### 11/03/2019 version 2.2
+### 11/03/2019 Map version 2.2
   * Adds Halloween costume shops
   * Updates planner to show Advocate Word of Holy Light no longer being a child skill
   * Fixes typo on Laurentia Costume Shop tile
 
-### 09/18/2019 version 2.1
+### 09/18/2019 Map version 2.1
   * Profile Lookup tool updated to v0.5
   * Profile Tool can set missing exploration badges on Hypermap using localStorage
   * Fixes Profile Lookup Tool avatar stretching bug
   * Hypermap stays in Badge mode when changing planes
 
-### 09/11/2019 version 2.0
+### 09/11/2019 Map version 2.0
   * Rewrote HTML to be mobile friendly
   * Rewrote CSS to be mobile friendly
   * Edited hypermap script to accommodate new HTML and CSS
