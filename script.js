@@ -71,6 +71,7 @@ for (var i = 0; i < markers.length; ++i) {
 
 if (window.matchMedia("(any-pointer: coarse)").matches) {
     hasTouch = true;
+		removeOldAlert();
 }
 if (matchMedia('(pointer:fine)').matches) {
     hasMouse = true;
