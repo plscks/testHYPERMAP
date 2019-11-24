@@ -71,7 +71,6 @@ for (var i = 0; i < markers.length; ++i) {
 
 if (window.matchMedia("(any-pointer: coarse)").matches) {
     hasTouch = true;
-		removeOldAlert();
 }
 if (matchMedia('(pointer:fine)').matches) {
     hasMouse = true;
@@ -96,7 +95,11 @@ if (localStorage.getItem("expBadges")) {
 	showhideMarkersPlanechange();
 	localStorage.clear();
 }
+
 addAlert("For keyboard mode press K. With NVDA you will have to hold the Alt button and press all described key binds.");
+if (hasTouch) {
+	removeOldAlert();
+}
 
 function loadToolsPane() {
 	showTools = !showTools;
