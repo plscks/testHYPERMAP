@@ -1168,7 +1168,7 @@ function initializePortals() {
   createPortal( [encodeLocation(5,1,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
   createPortal( [encodeLocation(5,5,4),1,encodeLocation(7,11,4)] , ["Tunnel"], [5]);
   createPortal( [encodeLocation(6,3,4),1,encodeLocation(25,38,2)] , ["Tunnel"], [5]);
-  createPortal( [encodeLocation(7,1,4),2,encodeLocation(12,13,3),encodeLocation(36,39,0)] , ["First Tunnel", "Second Tunnel"], [0,0]);
+  createPortal( [encodeLocation(7,1,4),2,encodeLocation(8,36,3),encodeLocation(36,39,0)] , ["First Tunnel", "Second Tunnel"], [0,0]);
   createPortal( [encodeLocation(7,11,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
   createPortal( [encodeLocation(8,2,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
   createPortal( [encodeLocation(8,6,4),3,encodeLocation(5,12,4),encodeLocation(12,8,4),encodeLocation(9,11,4)] , ["First Tunnel", "Third Tunnel", "Fourth Tunnel"], [10,10,10]);
