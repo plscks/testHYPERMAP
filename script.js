@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.3
+// Nexus Clash Breath 4 hypermap version 2.3.1
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
@@ -3754,10 +3754,10 @@ function initializeTileNames() {
 	registerTileNames(11,29,3,"Sewer Tunnel");
 	registerTileNames(11,30,3,"Sewer Tunnel");
 	registerTileNames(11,31,3,"Sewer Tunnel");
-	registerTileNames(11,32,3,"Sewer Tunnel");
-	registerTileNames(11,33,3,"Flooded Area");
-	registerTileNames(11,34,3,"Flooded Area");
-	registerTileNames(11,35,3,"Flooded Area");
+	registerTileNames(11,32,3,"Solid Earth");
+	registerTileNames(11,33,3,"Solid Earth");
+	registerTileNames(11,34,3,"Solid Earth");
+	registerTileNames(11,35,3,"Solid Earth");
 	registerTileNames(11,36,3,"Solid Earth");
 	registerTileNames(11,37,3,"Solid Earth");
 	registerTileNames(11,38,3,"Solid Earth");
@@ -4188,7 +4188,7 @@ function initializeTileNames() {
 	registerTileNames(22,23,3,"Solid Earth");
 	registerTileNames(22,24,3,"Solid Earth");
 	registerTileNames(22,25,3,"Sewer Tunnel");
-	registerTileNames(22,26,3,"Solid Earth");
+	registerTileNames(22,26,3,"Sewer Maintenance Room");
 	registerTileNames(22,27,3,"Solid Earth");
 	registerTileNames(22,28,3,"Solid Earth");
 	registerTileNames(22,29,3,"Solid Earth");
@@ -9151,7 +9151,7 @@ function initializeTileTypes() {
 	registerTileTypes(11,29,3,"Sewer Tunnel");
 	registerTileTypes(11,30,3,"Sewer Tunnel");
 	registerTileTypes(11,31,3,"Sewer Tunnel");
-	registerTileTypes(11,32,3,"Sewer Tunnel");
+	registerTileTypes(11,32,3,"Solid Earth");
 	registerTileTypes(11,33,3,"Solid Earth");
 	registerTileTypes(11,34,3,"Solid Earth");
 	registerTileTypes(11,35,3,"Solid Earth");
@@ -9585,7 +9585,7 @@ function initializeTileTypes() {
 	registerTileTypes(22,23,3,"Solid Earth");
 	registerTileTypes(22,24,3,"Solid Earth");
 	registerTileTypes(22,25,3,"Sewer Tunnel");
-	registerTileTypes(22,26,3,"Solid Earth");
+	registerTileTypes(22,26,3,"Sewer Maintenance Room");
 	registerTileTypes(22,27,3,"Solid Earth");
 	registerTileTypes(22,28,3,"Solid Earth");
 	registerTileTypes(22,29,3,"Solid Earth");

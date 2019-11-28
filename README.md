@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 11/28/2019 Map version 2.3.1
+  * Updates Sewers coordinates to reflect new smaller sewers
+  
 ### 11/24/2019 Planner 2.4.1
   * Updates skill changes from [11/24/2019 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9318)
   
