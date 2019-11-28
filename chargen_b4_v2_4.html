@@ -1,6 +1,6 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!-- Version 2.4.1 -->
+<!-- Version 2.4.2 -->
 <!-- Originally created for Nexus War by Siddhant "wcil" M.; modified for Nexus Clash by Sihoiba; updated 10-01-19, modified again slightly by plscks -->
 <title>Nexus Clash Breath 4 Character Planner</title>
 <style>
@@ -643,6 +643,7 @@ desc["doomhowler_keen"] = "<h3>Keening of the Damned</h3>\n<i>The Doom Howler sc
 desc["doomhowler_aether"] = "<h3>Aether Manipulation</h3>\n<i>You have gained knowledge of the arcane arts.</i>\n<p>This skill increased the Doom Howler's MP total by 10MP, and allows them to learn and cast spells as per Spellcraft. In addition it grants 55% base chance to hit with ranged spells.</p>\n<b>CP Cost</b>: 30";
 desc["doomhowler_acr_war"] = "<h3>Arcane Warrior</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 20%.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_mart_spell"] = "<h3>Martial Spellcraft</h3>\n<i>You are able to imbue weapons with spells you know.</i>\n<p>This grants the character the ability to imbue a weapon with an offensive spell for a cost of 5AP and 3xthe Spells MP cost using up a weapons enchantment slots. The weapon is imbued with the spell for 10 attacks it makes, each time a wielder with Martial Spellcraft makes an attack it costs them 1MP and if the attack hits the spell is unleashed though no bonuses are applied to the spell damage.</p>\n<b>CP Cost</b>: 60";
+desc["doomhowler_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 60";
 desc["doomhowler_elite"] = "<h3>Elite Attack</h3>\n<i>Your knowledge of combat has further increased. Your attacks are even more damaging.</i>\n<p>This ability adds a permanent, innate damage bonus of +2 to all attacks. This ability stacks with Strong Attack.</p>\n<b>CP Cost</b>: 30";
 desc["doomhowler_tendrils"] = "<h3>Ghost Tendrils</h3>\n<i>The Doom Howler can attack with ghostly tendrils of damned souls.</i>\n<p>This skill grants the Doom Howler an innate hand-to-hand attack that deals 8 cold damage. In addition they gain a +1 damage bonus to all hand-to-hand attacks.</p>\n<b>CP Cost</b>: 30";
 desc["doomhowler_soul"] = "<h3>Soul Draining</h3>\n<i>The Doom Howler attacks can drain the very soul of it's victims.</i>\n<p>When the Doomhowler hits with a hand-to-hand attack he saps 2MP. In addition they gain a +2 damage bonus to all hand-to-hand attacks.</p>\n<b>CP Cost</b>: 60";
@@ -2069,6 +2070,7 @@ function checkSkill(id, which, CP)
 				case "doomhowler_aether":
 					document.getElementById("doomhowler_acr_war").disabled = false;
 					document.getElementById("doomhowler_mart_spell").disabled = false;
+					document.getElementById("doomhowler_spell_com").disabled = false;
 					Spellcraft = 1;
 					DemonicCaster = 1;
 					MP = MP + 10;
@@ -2076,6 +2078,9 @@ function checkSkill(id, which, CP)
 					break;
 				case "doomhowler_acr_war":
 					SpellAcc = SpellAcc + 20;
+					break;
+				case "doomhowler_spell_com":
+					SpellAcc = SpellAcc + 15;
 					break;
 				case "doomhowler_elite":
 					HthDam = HthDam + 2;
@@ -3600,6 +3605,7 @@ function delevel()
 		case "doomhowler_aether":
 			document.getElementById("doomhowler_acr_war").disabled = true;
 			document.getElementById("doomhowler_mart_spell").disabled = true;
+			document.getElementById("doomhowler_spell_com").disabled = true;
 			Spellcraft = 0;
 			DemonicCaster = 0;
 			MP = MP - 10;
@@ -3607,6 +3613,9 @@ function delevel()
 			break;
 		case "doomhowler_acr_war":
 			SpellAcc = SpellAcc - 20;
+			break;
+		case "doomhowler_spell_com":
+			SpellAcc = SpellAcc - 15;
 			break;
 		case "doomhowler_elite":
 			HthDam = HthDam - 2;
@@ -4978,6 +4987,7 @@ function addLine(CP, text)
 	<ul>
 		<li onmouseover="describe('doomhowler_acr_war');"><input onfocus="describe('doomhowler_acr_war');" onchange="checkSkill('doomhowler_acr_war','Arcane Warrior',60);" id="doomhowler_acr_war" disabled="disabled" type="checkbox"> Arcane Warrior</li>
 		<li onmouseover="describe('doomhowler_mart_spell');"><input onfocus="describe('doomhowler_mart_spell');" onchange="checkSkill('doomhowler_mart_spell','Martial Spellcraft',60);" id="doomhowler_mart_spell" disabled="disabled" type="checkbox"> Martial Spellcraft</li>
+		<li onmouseover="describe('doomhowler_spell_com');"><input onfocus="describe('doomhowler_spell_com');" onchange="checkSkill('doomhowler_spell_com','Spell Combat',60);" id="doomhowler_spell_com" disabled="disabled" type="checkbox"> Spell Combat</li>
 	</ul>
 	<li onmouseover="describe('doomhowler_elite');"><input onfocus="describe('doomhowler_elite');" onchange="checkSkill('doomhowler_elite','Elite Attack',30);" id="doomhowler_elite" type="checkbox"> Elite Attack</li>
 	<li onmouseover="describe('doomhowler_tendrils');"><input onfocus="describe('doomhowler_tendrils');" onchange="checkSkill('doomhowler_tendrils','Ghost Tendrils',30);" id="doomhowler_tendrils" type="checkbox"> Ghost Tendrils</li>
