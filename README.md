@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 11/28/2019 Planner 2.4.3
+  * Reverts changes for Doom Howler Spell Combat skill as it ended up getting removed from the game instead
+  
 ### 11/28/2019 Map version 2.3.1 / Planner 2.4.2
   * Updates Sewers coordinates to reflect new smaller sewers
   * Adds previously overlooked Spell Combat to the Doom Howler Aether Manipulation tree
