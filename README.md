@@ -1,6 +1,6 @@
 # [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
-### 12/05/2019
+### 12/05/2019 Planner 2.4.4
   * Fixes Seraph free skill, Arc Lightning was swapped with Clockwork Cloud still from years ago
   
 ### 11/28/2019 Planner 2.4.3
