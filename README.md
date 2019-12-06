@@ -1,5 +1,15 @@
 # [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 12/05/2019 Planner 2.4.5
+  * Fixes map level 30 HP/MP/AP
+  * Fixes extra 5% to hit given for Ranged
+  * Replaces gender specific grammar with gender neutral grammar
+  * Corrects TLL description to be accurate per current mechanics
+  * Corrects typo in Doom Howler's Scream of the Banshee
+  * Changes Hellfire and Range Strike to have similar usage cost descriptions diferentiating them from eachother
+  * Dark Heart and Sorcerer's Might descriptions changed to note that they can now go over maximum MP
+  * Clarifies Holy Champion's Cloak of Tornado description to show AP/MP cost choices
+  
 ### 12/05/2019 Planner 2.4.4
   * Fixes Seraph free skill, Arc Lightning was swapped with Clockwork Cloud still from years ago
   
