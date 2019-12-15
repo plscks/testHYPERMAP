@@ -1,6 +1,6 @@
 @viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+  width: device-width;
+  zoom: 1.0;
 }
 
 html {
@@ -60,7 +60,7 @@ body {
 
 .maplink {
   cursor: pointer;
-  height: 20;
+  height: 20px;
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
@@ -82,7 +82,7 @@ body {
 
 .maplinkHighlight {
   cursor: pointer;
-  height: 20;
+  height: 20px;
   display: inline-block;
   align-self: flex-start;
   border-style: solid;
@@ -252,8 +252,8 @@ a:hover {
   background-position: -0px -0px;
   display: inline-block;
   background-repeat: no-repeat;
-  width: 108;
-  height: 108;
+  width: 108px;
+  height: 108px;
 }
 
 #overlay {
@@ -340,7 +340,7 @@ a:hover {
 }
 
 .marker {
-  width: 23;
+  width: 23px;
   height: 23px;
   background: url(icons/marker.gif);
   position: absolute;
