@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.3.1
+// Nexus Clash Breath 4 hypermap version 2.4
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
@@ -677,7 +677,7 @@ function getKeyPress(e) {
 			else if (Z == 1 && X == 30) return;
 			else if (Z == 2 && X == 30) return;
 			else if (Z == 3 && X == 40) return;
-			else if (Z == 4 && X == 12) return;
+			else if (Z == 4 && X == 16) return;
 			else if (Z == 5 && X == 12) return;
 			X += 1;
 			KeyX += 24;
@@ -736,10 +736,9 @@ function keyModeMoveSelector(x, y, keyX, keyY) {
 	else if ((Z == 1 && X > 30) || (Z == 1 && Y > 40)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 2 && X > 30) || (Z == 2 && Y > 40)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltipKeyMode("out"); }
-	else if ((Z == 4 && X > 12) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltipKeyMode("out"); }
 	else { updateTooltipKeyMode("in"); }
-	console.log("X: " + X + " Y: " + Y + " KeyX: " + KeyX + " KeyY: " + KeyY);
 }
 
 function updateTooltipKeyMode(state) {
@@ -779,7 +778,7 @@ function gotoCoord() {
 	else if (Z == 1) var plane = ['Elysium', 30, 40];
 	else if (Z == 2) var plane = ['Stygia', 30, 40];
 	else if (Z == 3) var plane = ['Sewers', 40, 40];
-	else if (Z == 4) var plane = ['Wyrm\'s Lair', 12, 12];
+	else if (Z == 4) var plane = ['Wyrm\'s Lair', 16, 12];
 	else if (Z == 5) var plane = ['Terra Nullius', 12, 13];
 	var inputString = prompt("Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.", "Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.");
 	if (inputString == null) return;
@@ -839,14 +838,15 @@ function validLocation(x,y,z) {
 	var valid = true;
 	if ((y <= 0) || (y > 40) || (x < 1)) valid = false;
 	else if ((x > 40) && ((z == 0) || (z == 3))) valid = false;
-  else if ((x > 30) && (z >= 1) && (z <= 2)) valid = false;
-  else if ((x > 12) && (z >= 4)) valid = false;
-  else if ((y > 12) && (z == 4)) valid = false;
-  else if ((y > 13) && (z == 5)) valid = false;
+	else if ((x > 30) && (z >= 1) && (z <= 2)) valid = false;
+	else if ((x > 16) && (z == 4)) valid = false;
+	else if ((x > 12) && (z == 5)) valid = false;
+	else if ((y > 12) && (z == 4)) valid = false;
+	else if ((y > 13) && (z == 5)) valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "Solid Earth") valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "") valid = false;
-  else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
-  else if (TileNames[encodeLocation(x,y,z)] == "Twisted Space") valid = false;
+	else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
+	else if (TileNames[encodeLocation(x,y,z)] == "Twisted Space") valid = false;
 	return valid;
 }
 
@@ -935,7 +935,7 @@ function getMousePosition(e) {
 	else if ((Z == 1 && X > 30) || (Z == 1 && Y > 40)) { updateTooltip("out"); }
 	else if ((Z == 2 && X > 30) || (Z == 2 && Y > 40)) { updateTooltip("out"); }
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltip("out"); }
-	else if ((Z == 4 && X > 12) || (Z == 4 && Y > 12)) { updateTooltip("out"); }
+	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltip("out"); }
 	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltip("out"); }
 	else { updateTooltip("in"); }
 }
@@ -1049,7 +1049,7 @@ function portalsString() {
 function encodeLocation(x,y,z) {
 	var val = x + y*50 + z*2500;
 	if ((x < 1) || (y < 1) || (y > 40)) val = 20000-1;
-	else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 12)) || ((z == 5) && (x > 12))) val = 20000-1;
+	else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 16)) || ((z == 5) && (x > 12))) val = 20000-1;
 	//else if (TileNames[val] == "Solid Earth") val = 20000-1;
 	return val;
 }
@@ -1063,9 +1063,7 @@ function decodeLocation(val) {
 }
 
 function getLocationString(x,y,z,display) {
-  if (z == 4 && x == 7 && y == 1) {
-    return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 5 && y == 5) {
+  if (z == 4 && x == 5 && y == 5) {
     return "[24,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 6 && y == 5) {
     return "[25,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
@@ -1079,13 +1077,13 @@ function getLocationString(x,y,z,display) {
     return "[27,39] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 9 && y == 11) {
     return "[13,10] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 8 && y == 9) {
+  } else if (z == 4 && x == 15 && y == 2) {
     return "[30,27] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 8 && y == 8) {
+  } else if (z == 4 && x == 15 && y == 3) {
     return "[30,26] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 8 && y == 7) {
+  } else if (z == 4 && x == 15 && y == 4) {
     return "[30,25] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 8 && y == 6) {
+  } else if (z == 4 && x == 15 && y == 5) {
     return "[30,24] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 11 && y == 12) {
     return "[8,10] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
@@ -1109,6 +1107,18 @@ function getLocationString(x,y,z,display) {
     return "[30,16] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 3 && y == 1) {
     return "[30,15] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 14 && y == 12) {
+	  return "[4,8] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 15 && y == 12) {
+	  return "[5,8] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 16 && y == 9) {
+	  return "[6,5] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 16 && y == 10) {
+	  return "[6,6] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 16 && y == 11) {
+	  return "[6,7] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+  } else if (z == 4 && x == 14 && y == 7) {
+	  return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (keyMode && display == 'normal') {
 		//return "[" + x + "," + y + "] " + planeName[z];
 		return "[" + x + "," + y + "]"
@@ -1164,24 +1174,27 @@ function registerGuild(x,y,z,name, power, inout) {
 
 function initializePortals() {
   // Warrens
-  createPortal( [encodeLocation(1,1,4),1,encodeLocation(4,4,2)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(1,5,4),1,encodeLocation(8,9,4)] , ["Tunnel"], [0]);
-  createPortal( [encodeLocation(2,11,4),1,encodeLocation(5,1,4)] , ["Tunnel"], [5]);
-  createPortal( [encodeLocation(3,5,4),1,encodeLocation(7,11,4)] , ["Tunnel"], [0]);
-  createPortal( [encodeLocation(5,1,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(5,5,4),1,encodeLocation(7,11,4)] , ["Tunnel"], [5]);
-  createPortal( [encodeLocation(6,3,4),1,encodeLocation(25,38,2)] , ["Tunnel"], [5]);
-  createPortal( [encodeLocation(7,1,4),2,encodeLocation(8,36,3),encodeLocation(36,39,0)] , ["First Tunnel", "Second Tunnel"], [0,0]);
-  createPortal( [encodeLocation(7,11,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(8,2,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(8,6,4),3,encodeLocation(5,12,4),encodeLocation(12,8,4),encodeLocation(9,11,4)] , ["First Tunnel", "Third Tunnel", "Fourth Tunnel"], [10,10,10]);
-  createPortal( [encodeLocation(9,11,4),1,encodeLocation(13,10,1)] , ["Tunnel"], [0]);
-  createPortal( [encodeLocation(12,6,4),1,encodeLocation(21,23,2)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(12,8,4),1,encodeLocation(12,12,4)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(12,10,4),1,encodeLocation(7,1,4)] , ["Tunnel"], [10]);
-  createPortal( [encodeLocation(12,12,4),3,encodeLocation(7,1,4),encodeLocation(8,4,4),encodeLocation(3,3,4)] , ["First Door", "Second Door", "Third Door"], [6,3,0]);
-  createPortal( [encodeLocation(11,12,4),1,encodeLocation(8,10,5)] , ["Swim"], [10]);
-  createPortal( [encodeLocation(3,4,5),1,encodeLocation(37,26,0)] , ["Enter a crate"], [0]);
+	createPortal( [encodeLocation(1,1,4),1,encodeLocation(4,4,2)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(1,5,4),1,encodeLocation(15,5,4)] , ["Tunnel"], [0]);
+	createPortal( [encodeLocation(2,11,4),1,encodeLocation(5,1,4)] , ["Tunnel"], [5]);
+	createPortal( [encodeLocation(3,5,4),1,encodeLocation(7,11,4)] , ["Tunnel"], [0]);
+	createPortal( [encodeLocation(5,1,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(5,5,4),1,encodeLocation(7,11,4)] , ["Tunnel"], [5]);
+	createPortal( [encodeLocation(6,3,4),1,encodeLocation(25,38,2)] , ["Tunnel"], [5]);
+	createPortal( [encodeLocation(14,7,4),2,encodeLocation(8,36,3),encodeLocation(36,39,0)] , ["First Tunnel", "Second Tunnel"], [0,0]);
+	createPortal( [encodeLocation(7,11,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(8,2,4),1,encodeLocation(1,1,4)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(15,2,4),4,encodeLocation(5,12,4),encodeLocation(14,12,4),encodeLocation(12,8,4),encodeLocation(9,11,4)], ["First Tunnel", "Second Tunnel", "Third Tunnel", "Fourth Tunnel"], [10,10,10,10]);
+	createPortal( [encodeLocation(9,11,4),1,encodeLocation(13,10,1)] , ["Tunnel"], [0]);
+	createPortal( [encodeLocation(12,6,4),1,encodeLocation(21,23,2)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(12,8,4),1,encodeLocation(12,12,4)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(12,10,4),1,encodeLocation(14,7,4)] , ["Tunnel"], [10]);
+	createPortal( [encodeLocation(12,12,4),3,encodeLocation(14,7,4),encodeLocation(8,4,4),encodeLocation(3,3,4)], ["First Door", "Second Door", "Third Door"], [6,3,0]);
+	createPortal( [encodeLocation(11,12,4),1,encodeLocation(8,10,5)] , ["Swim"], [10]);
+	createPortal( [encodeLocation(3,4,5),1,encodeLocation(37,26,0)] , ["Enter a crate"], [0]);
+	createPortal( [encodeLocation(16,9,4),1,encodeLocation(6,35,2)] , ["Tunnel"], [0]);
+	createPortal( [encodeLocation(1,7,4),1,encodeLocation(12,12,4)] , ["Tunnel"], [0]);
+
   // LAURENTIA AND SEWER PORTALS
 	createPortal( [encodeLocation(8,34,0),1,encodeLocation(13,20,2)] , ["Portal"], [10]);
 	createPortal( [encodeLocation(15,10,0),1,encodeLocation(3,4,2)] , ["Portal"], [10]);
@@ -6886,7 +6899,7 @@ function initializeTileNames() {
 	registerTileNames(6,10,4,"x");
 	registerTileNames(6,11,4,"x");
 	registerTileNames(6,12,4,"x");
-	registerTileNames(7,1,4,"River");
+	registerTileNames(7,1,4,"x");
 	registerTileNames(7,2,4,"x");
 	registerTileNames(7,3,4,"x");
 	registerTileNames(7,4,4,"Egg Field");
@@ -6903,10 +6916,10 @@ function initializeTileNames() {
 	registerTileNames(8,3,4,"x");
 	registerTileNames(8,4,4,"Egg Field");
 	registerTileNames(8,5,4,"x");
-	registerTileNames(8,6,4,"Birch Forest");
-	registerTileNames(8,7,4,"Birch Forest");
-	registerTileNames(8,8,4,"Birch Forest");
-	registerTileNames(8,9,4,"Birch Forest");
+	registerTileNames(8,6,4,"x");
+	registerTileNames(8,7,4,"x");
+	registerTileNames(8,8,4,"x");
+	registerTileNames(8,9,4,"x");
 	registerTileNames(8,10,4,"x");
 	registerTileNames(8,11,4,"x");
 	registerTileNames(8,12,4,"x");
@@ -6958,6 +6971,55 @@ function initializeTileNames() {
 	registerTileNames(12,10,4,"Soul Mines");
 	registerTileNames(12,11,4,"x");
 	registerTileNames(12,12,4,"Andrea Vendetta");
+	registerTileNames(13,1,4,"x");
+	registerTileNames(13,2,4,"x");
+	registerTileNames(13,3,4,"x");
+	registerTileNames(13,4,4,"x");
+	registerTileNames(13,5,4,"x");
+	registerTileNames(13,6,4,"x");
+	registerTileNames(13,7,4,"x");
+	registerTileNames(13,8,4,"x");
+	registerTileNames(13,9,4,"x");
+	registerTileNames(13,10,4,"x");
+	registerTileNames(13,11,4,"x");
+	registerTileNames(13,12,4,"x");
+	registerTileNames(14,1,4,"x");
+	registerTileNames(14,2,4,"x");
+	registerTileNames(14,3,4,"x");
+	registerTileNames(14,4,4,"x");
+	registerTileNames(14,5,4,"x");
+	registerTileNames(14,6,4,"x");
+	registerTileNames(14,7,4,"River");
+	registerTileNames(14,8,4,"x");
+	registerTileNames(14,9,4,"x");
+	registerTileNames(14,10,4,"x");
+	registerTileNames(14,11,4,"x");
+	registerTileNames(14,12,4,"Bleak Ridge Mountains");
+	registerTileNames(15,1,4,"x");
+	registerTileNames(15,2,4,"Birch Forest");
+	registerTileNames(15,3,4,"Birch Forest");
+	registerTileNames(15,4,4,"Birch Forest");
+	registerTileNames(15,5,4,"Birch Forest");
+	registerTileNames(15,6,4,"x");
+	registerTileNames(15,7,4,"x");
+	registerTileNames(15,8,4,"x");
+	registerTileNames(15,9,4,"x");
+	registerTileNames(15,10,4,"x");
+	registerTileNames(15,11,4,"x");
+	registerTileNames(15,12,4,"Bleak Ridge Mountains");
+	registerTileNames(16,1,4,"x");
+	registerTileNames(16,2,4,"x");
+	registerTileNames(16,3,4,"x");
+	registerTileNames(16,4,4,"x");
+	registerTileNames(16,5,4,"x");
+	registerTileNames(16,6,4,"x");
+	registerTileNames(16,7,4,"x");
+	registerTileNames(16,8,4,"x");
+	registerTileNames(16,9,4,"Bleak Ridge Mountains");
+	registerTileNames(16,10,4,"Bleak Ridge Mountains");
+	registerTileNames(16,11,4,"Bleak Ridge Mountains");
+	registerTileNames(16,12,4,"x");
+
   // Terra Nullius
   registerTileNames(1,1,5,"Void");
   registerTileNames(1,2,5,"Void");
@@ -12281,7 +12343,7 @@ function initializeTileTypes() {
 	registerTileTypes(6,10,4,"x");
 	registerTileTypes(6,11,4,"x");
 	registerTileTypes(6,12,4,"x");
-	registerTileTypes(7,1,4,"Inside a River");
+	registerTileTypes(7,1,4,"x");
 	registerTileTypes(7,2,4,"x");
 	registerTileTypes(7,3,4,"x");
 	registerTileTypes(7,4,4,"Inside an Egg Field");
@@ -12298,10 +12360,10 @@ function initializeTileTypes() {
 	registerTileTypes(8,3,4,"x");
 	registerTileTypes(8,4,4,"Inside an Egg Field");
 	registerTileTypes(8,5,4,"x");
-	registerTileTypes(8,6,4,"Inside a Birch Forest");
-	registerTileTypes(8,7,4,"Inside a Birch Forest");
-	registerTileTypes(8,8,4,"Inside a Birch Forest");
-	registerTileTypes(8,9,4,"Inside a Birch Forest");
+	registerTileTypes(8,6,4,"x");
+	registerTileTypes(8,7,4,"x");
+	registerTileTypes(8,8,4,"x");
+	registerTileTypes(8,9,4,"x");
 	registerTileTypes(8,10,4,"x");
 	registerTileTypes(8,11,4,"x");
 	registerTileTypes(8,12,4,"x");
@@ -12353,6 +12415,55 @@ function initializeTileTypes() {
 	registerTileTypes(12,10,4,"a Soul Mines");
 	registerTileTypes(12,11,4,"x");
 	registerTileTypes(12,12,4,"Inside a Colonial Ship Deck");
+	registerTileTypes(13,1,4,"x");
+	registerTileTypes(13,2,4,"x");
+	registerTileTypes(13,3,4,"x");
+	registerTileTypes(13,4,4,"x");
+	registerTileTypes(13,5,4,"x");
+	registerTileTypes(13,6,4,"x");
+	registerTileTypes(13,7,4,"x");
+	registerTileTypes(13,8,4,"x");
+	registerTileTypes(13,9,4,"x");
+	registerTileTypes(13,10,4,"x");
+	registerTileTypes(13,11,4,"x");
+	registerTileTypes(13,12,4,"x");
+	registerTileTypes(14,1,4,"x");
+	registerTileTypes(14,2,4,"x");
+	registerTileTypes(14,3,4,"x");
+	registerTileTypes(14,4,4,"x");
+	registerTileTypes(14,5,4,"x");
+	registerTileTypes(14,6,4,"x");
+	registerTileTypes(14,7,4,"Inside a River");
+	registerTileTypes(14,8,4,"x");
+	registerTileTypes(14,9,4,"x");
+	registerTileTypes(14,10,4,"x");
+	registerTileTypes(14,11,4,"Inside a Mountain");
+	registerTileTypes(14,12,4,"Inside a Mountain");
+	registerTileTypes(15,1,4,"x");
+	registerTileTypes(15,2,4,"Inside a Birch Forest");
+	registerTileTypes(15,3,4,"Inside a Birch Forest");
+	registerTileTypes(15,4,4,"Inside a Birch Forest");
+	registerTileTypes(15,5,4,"Inside a Birch Forest");
+	registerTileTypes(15,6,4,"x");
+	registerTileTypes(15,7,4,"x");
+	registerTileTypes(15,8,4,"x");
+	registerTileTypes(15,9,4,"x");
+	registerTileTypes(15,10,4,"x");
+	registerTileTypes(15,11,4,"x");
+	registerTileTypes(15,12,4,"Inside a Mountain");
+	registerTileTypes(16,1,4,"x");
+	registerTileTypes(16,2,4,"x");
+	registerTileTypes(16,3,4,"x");
+	registerTileTypes(16,4,4,"x");
+	registerTileTypes(16,5,4,"x");
+	registerTileTypes(16,6,4,"x");
+	registerTileTypes(16,7,4,"x");
+	registerTileTypes(16,8,4,"x");
+	registerTileTypes(16,9,4,"Inside a Mountain");
+	registerTileTypes(16,10,4,"Inside a Mountain");
+	registerTileTypes(16,11,4,"Inside a Mountain");
+	registerTileTypes(16,12,4,"x");
+
   // Terra Nullius
   registerTileTypes(1,1,5,"a Void");
   registerTileTypes(1,2,5,"a Void");

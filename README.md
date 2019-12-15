@@ -1,5 +1,14 @@
-# [Breath 4 Hypermap version 2.3](https://plscks.github.io/testHYPERMAP/hypermap.html)
+# [Breath 4 Hypermap version 2.4](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 12/14/2019 Map version 2.4 Planner version 2.4.6
+  * Adds in the missing Bleak Ridge Mountain tunnels to the Wyrm's Lair 
+  * Adds missing 2nd tunnel to birch forest exit
+  * Fixes incorrect tile display in Uffern in Stygia
+  * Reworks and expands Wyrm's Lair map
+  * Changes the generate visual output of the Planner
+  * Adds damage floor changes to Fallen's Plagued by Doubt
+  * Moves visible screenreader alert off screen for TN and WL maps
+  
 ### 12/05/2019 Planner 2.4.5
   * Fixes map level 30 HP/MP/AP
   * Fixes extra 5% to hit given for Ranged
