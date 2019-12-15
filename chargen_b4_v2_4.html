@@ -1,6 +1,7 @@
+<!--suppress ALL -->
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!-- Version 2.4.5 -->
+<!-- Version 2.4.6 -->
 <!-- Originally created for Nexus War by Siddhant "wcil" M.; modified for Nexus Clash by Sihoiba; updated 10-01-19, modified again slightly by plscks -->
 <title>Nexus Clash Breath 4 Character Planner</title>
 <style>
@@ -740,7 +741,7 @@ desc["fallen_hellfire"] = "<h3>Hellfire</h3>\n<i>You are capable of summoning sm
 desc["fallen_jets"] = "<h3>Infernal Jets</h3>\n<i>Your body has been fitted with engines that unleash jets of infernal flame.</i>\n<p>The further the fallen travels in a straight line the less the AP cost to continue moving in that direction.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_oath"] = "<h3>Oath of Steel</h3>\n<i>The powers of evil have rewarded you with skill in weapons for turning away from the light.</i>\n<p>This skill grants the Fallen an innate +1 damage and +5% to hit with all melee and firearm attacks.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_bond"] = "<h3>Bond of the Mechanical</h3>\n<i>The powers of evil have shown you the effects of their influence on the weapons of war and taught you how to use it.</i>\n<p>This skill grants the Fallen an innate +2 damage and +10% to hit with firearm and melee attacks. Additionally the Fallen may reload any firearm or melee weapon at a cost of 1AP and XHP, where X is the number of shots the item holds.</p>\n<b>CP Cost</b>: 30";
-desc["fallen_plague"] = "<h3>Plague of Doubt</h3>\n<i>Having fallen from grace you can instil doubt in others about the righteousness of their path.</i>\n<p>This skill grants the Fallen an innate charged attack that costs 2AP and 6MP. On a successful hit it will inflict the \"Plagued with Doubt\" status effect if their morality is more than 10. While \"Plagued with Doubt\", the the victim cannot increase their morality score when making attacks, and all attacks made shift their morality downward by 1 point greater than normal (minimum of a 1-point downward shift).</p>\n<b>CP Cost</b>: 30";
+desc["fallen_plague"] = "<h3>Plague of Doubt</h3>\n<i>Having fallen from grace you can instil doubt in others about the righteousness of their path.</i>\n<p>This skill grants the Fallen an innate charged attack that costs 2AP and 6MP. On a successful hit it will inflict the \"Plagued with Doubt\" status effect if their morality is more than 10. While \"Plagued with Doubt\", the the victim cannot increase their morality score when making attacks, all attacks made shift their morality downward by 1 point greater than normal (minimum of a 1-point downward shift), and the damage floor against the effected character is increased to MO/10 rounded up.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_sulk"] = "<h3>Shadowskulk</h3>\n<i>Fallen from the light you take strength from the shadows you lurk in.</i>\n<p>This skill grants the fallen an innate +10% chance to hide and deals +2 damage when attacking from hiding.</p>\n<b>CP Cost</b>: 30";
 desc["fallen_dirk"] = "<h3>Shadow Dirk</h3>\n<i>You can wield the very shadows a weapon.</i>\n<p>This skill grants the fallen an innate attack the Shadow Dirk. It deals 7 unholy damage, has an innate +10% attack bonus and uses the fencing tree. Attacks on characters and pets made from hiding with the Shadow Dirk deal +8 damage even if the target is aware of the attacker.</p>\n<b>CP Cost</b>: 60";
 desc["fallen_meld"] = "<h3>Shadow Meld</h3>\n<i>Fallen so far from the light, the darkness now hides you completely.</i>\n<p>With this skill the Fallen cannot be detected with Enhanced Senses while hidden.</p>\n<b>CP Cost</b>: 60";
@@ -2466,7 +2467,7 @@ function checkSkill(id, which, CP)
 					break;
 			}
 			levelskill.push(id);
-			levels.push(which);
+			levels.push("-" + CP + "\t" + which);
 			levelcp.push(CP);
 			document.getElementById(id).disabled = true;
 			addLine(CP, which);
@@ -4078,7 +4079,11 @@ function delevel()
 
 function generateNew() {
 	genW = window.open('#','generate','width=640,height=480,scrollbars=1');
-	genW.document.write("Planned Skill Purchases:<br><ul>");
+	genW.document.write("<style type=\"text/css\"> " +
+			"li {" +
+			"white-space: pre;" +
+			"}" +
+			"</style>Planned Skill Purchases:<br><ul>");
 	for (i=0;i<levelskill.length; i++) {
 		if (levels[i] != '-- Saved --') {
 			genW.document.write("<li>" + levels[i] + "</li>");
@@ -4090,7 +4095,7 @@ function generateNew() {
 function generate()
 {
 	genW = window.open('#','generate','width=640,height=480,scrollbars=1');
-	genW.document.write("<table width='100%' style='font-family: Tahoma, Verdana; font-size: 10pt; text-align:center; border: 1 px solid #000000;'>");
+	genW.document.write("<!--suppress CssInvalidPropertyValue --><table width='100%' style='font-family: Tahoma, Verdana; font-size: 10pt; text-align:center; border: 1 px solid #000000;'>");
 	genW.document.write("<tr><th style='background-color: #CCCCCC; border: 1 px solid #000000;'>Level</th><th style='background-color: #CCCCCC; border: 1 px solid #000000;'>CP</th><th style='background-color: #CCCCCC; border: 1 px solid #000000;'>Skill</th></tr>");
 	for (i=0;i<levelskill.length; i++)
 	{
@@ -4104,7 +4109,7 @@ function exploreBadge()
 	if (1 * document.getElementById("exp02").value <= 1 * document.getElementById("exp00").value)
 	{
 		levelskill.push("exp00");
-		levels.push(document.getElementById("exp02").value + " Exploration Badges");
+		levels.push(document.getElementById("exp02").value + "\tExploration Badges");
 		levelcp.push(-1 * document.getElementById("exp02").value);
 		addLine(-1 * document.getElementById("exp02").value, document.getElementById("exp02").value + " Exploration Badges");
 		document.getElementById("exp00").value = document.getElementById("exp00").value - document.getElementById("exp02").value;
@@ -4154,18 +4159,30 @@ function achieveBadge(CP, lifetime)
 		{
 			if (document.getElementById("breath_ach_bad1").value != "")
 			{
+				console.log("badge selected: " + document.getElementById("breath_ach_bad1").value);
 				levelskill.push("breath_ach_bad1");
-				levels.push(document.getElementById("breath_ach_bad1").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
 				document.getElementById("bankedcp").innerHTML = banked;
-				addLine(-CP, document.getElementById("breath_ach_bad1").value + " Accomplished");
+				var badgeSel = document.getElementById("breath_ach_bad1").value
+				if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
+					if (badgeSel == "HP Healed") {
+						levels.push(CP + "\t" + badgeSel);
+						addLine(-CP, badgeSel + " Accomplished");
+					} else {
+						levels.push(CP + "\t" + badgeSel);
+						addLine(-CP, badgeSel + " Accomplished");
+					}
+				} else {
+					levels.push(CP + "\t" +  badgeSel);
+					addLine(-CP, badgeSel + " Accomplished");
+				}
 
 				badge = document.getElementById("breath_ach_bad1").value;
 				var newOption = document.createElement("option");
 				newOption.appendChild(document.createTextNode(badge));
 				document.getElementById("breath_ach_bad2").appendChild(newOption);
-				removeOptionFromList(document.getElementById("lifetime_ach_bad1"), badge);
+				//removeOptionFromList(document.getElementById("lifetime_ach_bad1"), badge);
 				removeOptionFromList(document.getElementById("breath_ach_bad1"), badge);
 			}
 		}
@@ -4190,11 +4207,22 @@ function achieveBadge(CP, lifetime)
 			if (document.getElementById("breath_ach_bad2").value != "")
 			{
 				levelskill.push("breath_ach_bad2");
-				levels.push(document.getElementById("breath_ach_bad2").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
 				document.getElementById("bankedcp").innerHTML = banked;
-				addLine(-CP, document.getElementById("breath_ach_bad2").value + " Accomplished");
+				var badgeSel = document.getElementById("breath_ach_bad2").value
+				if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
+					if (badgeSel == "HP Healed") {
+						levels.push(CP + "\t" +  badgeSel);
+						addLine(-CP, badgeSel + " Accomplished");
+					} else {
+						levels.push(CP + "\t" + badgeSel);
+						addLine(-CP, badgeSel + " Accomplished");
+					}
+				} else {
+					levels.push(CP + "\t" + badgeSel);
+					addLine(-CP, badgeSel + " Accomplished");
+				}
 				document.getElementById("breath_ach_bad2").removeChild(document.getElementById("breath_ach_bad2").options[document.getElementById("breath_ach_bad2").selectedIndex]);
 			}
 		}
@@ -5211,7 +5239,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('exp01');"><input size="1" value="40" id="exp00" readonly="readonly" type="text"> Exploration Badges Left</li>
 	<li onmouseover="describe('exp01');"><input onfocus="describe('exp01');" value="Explore" id="exp01" onclick="exploreBadge();" type="button"> <input size="1" value="40" id="exp02" type="text"> Badges</li>
 	<li><hr></li>
-	<li><b>Achievement Badges (Breath count)</b></li>
+	<li><b>Achievement Badges</b></li>
 	<li onmouseover="describe('ach_bad1');"><select id="breath_ach_bad1"><option selected="selected">Alcohol Drank</option><option>Angels Killed</option><option>Books
  Read</option><option>Damage Dealt</option><option>Damage Taken</option><option>Deaths</option><option>Demons
  Killed</option><option>Doors Destroyed</option><option>Doors Repaired</option><option>Food
@@ -5222,6 +5250,7 @@ function addLine(CP, text)
  <input value="Ok" id="breath_ach_bad3" onclick="achieveBadge(10, false);" disabled="disabled" type="button"></li>
 	<li onmouseover="describe('ach_bad2');"><select id="breath_ach_bad2"></select>
  <input value="Ok" id="breath_ach_bad4" onclick="achieveBadge(15, false);" disabled="disabled" type="button"></li>
+	<!--
  	<li><b>Achievement Badges (Lifetime count)</b></li>
 	<li onmouseover="describe('ach_bad1');"><select id="lifetime_ach_bad1"><option selected="selected">Alcohol Drank</option><option>Angels Killed</option><option>Books
  Read</option><option>Damage Dealt</option><option>Damage Taken</option><option>Deaths</option><option>Demons
@@ -5233,6 +5262,7 @@ function addLine(CP, text)
  <input value="Ok" id="lifetime_ach_bad3" onclick="achieveBadge(10, true);" disabled="disabled" type="button"></li>
 	<li onmouseover="describe('ach_bad2');"><select id="lifetime_ach_bad2"></select>
  <input value="Ok" id="lifetime_ach_bad4" onclick="achieveBadge(15, true);" disabled="disabled" type="button"></li>
+ -->
 <!-- 	<li><b>Maeval Slaying Badges</b></li>
  	<li onmouseover="describe('maeval_slaying_bad');"><select id="maeval_slaying_bad"><option selected="selected">Stalker of Death</option><option>Hunter of Death</option><option>Foe of Death</option></select>
   <input value="Ok" id="maeval_slaying_bad2" onclick="maevalSlayingBadge();" disabled="disabled" type="button"></li> -->
@@ -5409,7 +5439,7 @@ function addLine(CP, text)
 </div>
 <div id="misc"><h3>Engineering</h3>
 <i>You are good with tools.</i>
-<p>This skill allows the character to build and repair doors. The character is able to cut and restore power to locations and repair or sabotage neighborhood power plants. <i>Instead of searching for Toolkits, one may craft them for 15 AP, where they are found.</p>
+	<p>This skill allows the character to build and repair doors. The character is able to cut and restore power to locations and repair or sabotage neighborhood power plants. <i>Instead of searching for Toolkits, one may craft them for 15 AP, where they are found.</i>i></p>
 <b>CP Cost</b>: 10</div>
 </body></html>
 <html><head></head><body></body></html>

@@ -334,6 +334,11 @@ a:hover {
   z-index: 8;
 }
 
+#alert {
+  position: absolute;
+  left: -900px;
+}
+
 .marker {
   width: 23;
   height: 23px;
