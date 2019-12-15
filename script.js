@@ -739,7 +739,6 @@ function keyModeMoveSelector(x, y, keyX, keyY) {
 	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltipKeyMode("out"); }
 	else { updateTooltipKeyMode("in"); }
-	console.log("X: " + X + " Y: " + Y + " KeyX: " + KeyX + " KeyY: " + KeyY);
 }
 
 function updateTooltipKeyMode(state) {
