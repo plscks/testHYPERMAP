@@ -1063,9 +1063,7 @@ function decodeLocation(val) {
 }
 
 function getLocationString(x,y,z,display) {
-  if (z == 4 && x == 7 && y == 1) {
-    return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
-  } else if (z == 4 && x == 5 && y == 5) {
+  if (z == 4 && x == 5 && y == 5) {
     return "[24,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 6 && y == 5) {
     return "[25,40] <font color='#FF0000'>Stygia</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
