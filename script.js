@@ -1120,7 +1120,7 @@ function getLocationString(x,y,z,display) {
   } else if (z == 4 && x == 16 && y == 11) {
 	  return "[6,7] <font color='#d96207'>Terra Nullius</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (z == 4 && x == 14 && y == 7) {
-	  return "[30,15] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+	  return "[10,36] <font color='#00FFFF'>Elysium</font>" + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   } else if (keyMode && display == 'normal') {
 		//return "[" + x + "," + y + "] " + planeName[z];
 		return "[" + x + "," + y + "]"
