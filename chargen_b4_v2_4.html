@@ -1,6 +1,6 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!-- Version 2.4.6 -->
+<!-- Version 2.4.7 -->
 <!-- Originally created for Nexus War by Siddhant "wcil" M.; modified for Nexus Clash by Sihoiba; updated 10-01-19, modified again slightly by plscks -->
 <title>Nexus Clash Breath 4 Character Planner</title>
 <style>
@@ -432,6 +432,7 @@ desc["holy_champion_sea"] = "<h3>Cloak of the Relentless Sea</h3>\n<i>Your water
 desc["holy_champion_holy_fort"] = "<h3>Holy Fortitude</h3>\n<i>You are able to withstand more damage.</i>\n<p>This ability applies a permanent 15 point increase to the character's Hit Point total.</p>\n<b>CP Cost</b>: 30";
 desc["holy_champion_aveng_light"] = "<h3>Summon Avenging Light</h3>\n<i>The Holy Champion can summon an Avenging Light, an angelic spirit who strikes down the impure.</i>\n<p>This ability allows the Holy Champion to summon a single Avenging Light. The Avenging Light is a single pet and has its own HP, MP, and AP. When any of these three statistics reach zero, the Avenging Light will leave. You may only have one Avenging Light active from this power at a time.</p>\n<b>CP Cost</b>: 30";
 desc["holy_champion_clean_light"] = "<h3>Cleansing Light</h3>\n<i>The Holy Champion summons the purest of the Avenging Lights.</i>\n<p>Avenging Lights summoned by the Holy Champion gain +5% defence, increased damage and attack chance, +20AP, +10MP, +30HP and are no longer subject to damage auras.</p>\n<b>CP Cost</b>: 60";
+desc["holy_champion_wings"] = "<h3>Wings</h3>\n<i>The Lords of Justice have sought fit to grant you great feathered wings. You are capable of flight with them.</i>\n<p>This power grants the \"Flying\" status effect for a cost of 1AP and 3MP. Flying lasts 30 minutes ticks and reduces movement cost to 1 AP for every two squares of movement and allows you to travel over barricades and water, and travelling over damaging terrain will also not cause you any harm. However every action point tick \"Flying\" changes to \"Gliding\" until an action is taken, if an AP ticks passes while under the effects of \"Gliding\" you return to the ground.</p>\n<b>CP Cost</b>: 30";
 desc["holy_champion_mist"] = "<h3>Cloak of Mist</h3>\n<i>You are capable of transforming into an icy mist.</i>\n<p><b>THIS SKILL REQUIRES YOU TO HAVE LEARNT BOTH CLOAK OF AIR AND CLOAK OF WATER</b></p>\n<p>This ability transforms the character into a humanoid form of mist for at a cost of 1AP and 7MP, but can be ended at any time. Every attack action taken while under this status costs an additional 1MP, and it costs 3MP every 15 minutes in upkeep and if the Holy Champion runs out of MP the status ends. While in this form the character has a 33% damage reduction against piercing, slashing, impact and cold attacks, heals 1HP for every action taken, gains the ability to float over void and water, and can seep through closed and locked doors.</p><p>This cloak grants the character an innate archery weapon the \"Water Jet\" that deals 9 cold damage and has a +10% to hit.</p><p>This cloak also grants the character a +3 damage bonus and +5% to hit with archery attacks. However the character can not use their inventory while in this form.</p>\n<b>CP Cost</b>: 60";
 desc["holy_champion_lightning"] = "<h3>Cloak of Lightning</h3>\n<i>You are capable of transforming into a cloud of electrical energy.</i>\n<p><b>THIS SKILL REQUIRES YOU TO HAVE LEARNT BOTH CLOAK OF AIR AND CLOAK OF FIRE</b></p>\n<p>This ability transforms the character into a humanoid cloud of electricity at a cost of 1AP and 7MP, but can be ended at any time. Every attack action taken while under this status costs an additional 1MP, and it costs 3MP every 15 minutes in upkeep and if the Holy Champion runs out of MP the status ends. While in this form the character is immune to electric damage; can seep through closed and locked doors and float over water or void tiles. However the Holy Champion loses access to their inventory.</p><p>This cloak grants the Holy Champion an innate archery attack the \"Lightning Strike\" that deals 9 electric damage and has a +10% to hit, and an area effect attack \"Static Burst\" that costs 1AP and 10MP to use deals (Level*3/2) per target damage and (Level * 5) total electric damage with a flat 70% hit chance. In addition the Champion gains +3 damage to all attacks.</p>\n<b>CP Cost</b>: 60";
 desc["holy_champion_magma"] = "<h3>Cloak of Magma</h3>\n<i>You are capable of transforming into an aspect of magma possessing intense heat.</i>\n<p><b>THIS SKILL REQUIRES YOU TO HAVE LEARNT BOTH CLOAK OF FIRE AND CLOAK OF EARTH</b></p>\n<p>This ability transforms the character into a humanoid form of magma at a cost of 1AP and 7MP, but can be ended at any time. Every attack action taken while under this status costs an additional 1MP, and it costs 3MP every 15 minutes in upkeep and if the Holy Champion runs out of MP the status ends. While in this form the character is immune to fire and gains +2 soak against all other attacks, however he or she cannot use items in their inventory.</p><p>This cloak grants the character an innate aura that triggers when they are hit with a slashing or piercing weapon, dealing 6 fire damage to the attacker.</p><p>This cloak also grants the character an innate hand to hand attack \"Magma Slam\", that deals 6 impact and 6 supplementary fire damage with +10% to hit, as well as an area of effect attack \"Volcanic Blast\" costing 1AP and 10MP to use and deals (Level) per target damage and (Level * 7) total fire damage with a flat 70% hit chance. </p>\n<b>CP Cost</b>: 60";
@@ -2690,12 +2691,6 @@ function levelup()
 		document.getElementById("level").disabled = true;
 		return;
 	}
-	if (level.length == 10) {
-		document.getElementById("lifetime_ach_bad3").disabled = false;
-	}
-	if (level.length == 20) {
-		document.getElementById("lifetime_ach_bad4").disabled = false;
-	}
 }
 
 function delevel()
@@ -4018,8 +4013,6 @@ function delevel()
 		document.getElementById("exp01").disabled = true;
 		document.getElementById("breath_ach_bad1").disabled = true;
 		document.getElementById("breath_ach_bad2").disabled = true;
-		document.getElementById("lifetime_ach_bad1").disabled = true;
-		document.getElementById("lifetime_ach_bad2").disabled = true;
 	}
 	if (level[level.length - 1] == 1 && levelskill.length == 0) {
 		temp = 10;
@@ -4060,12 +4053,7 @@ function delevel()
 			HP = HP - 1;
 			AP = AP - 1;
 		}
-		if (level.length < 20) {
-			document.getElementById("lifetime_ach_bad3").disabled = true;
-		}
-		else if (level.length < 10) {
-			document.getElementById("lifetime_ach_bad4").disabled = true;
-		}
+
 		MP = MP - 1;
 		if (MagicalReservesBought == 1) {
 			MP = MP - 1;
@@ -4082,13 +4070,13 @@ function generateNew() {
 			"li {" +
 			"white-space: pre;" +
 			"}" +
-			"</style>Planned Skill Purchases:<br><ul>");
+			"</style><h2>Planned Skill Purchases:</h2><br><ul>");
 	for (i=0;i<levelskill.length; i++) {
 		if (levels[i] != '-- Saved --') {
 			genW.document.write("<li>" + levels[i] + "</li>");
 		}
 	}
-	genW.document.write("</ul><br><hr><br>CP left over:    " + document.getElementById("bankedcp").innerHTML);
+	genW.document.write("</ul><br><hr><br>CP left over:    " + document.getElementById("bankedcp").innerHTML + "<br><br><br>");
 }
 
 function generate()
@@ -4136,93 +4124,55 @@ function achieveBadge(CP, lifetime)
 {
 	if (CP == 10)
 	{
-		if (lifetime)
+		if (document.getElementById("breath_ach_bad1").value != "")
 		{
-			if (document.getElementById("lifetime_ach_bad1").value != "")
-			{
-				levelskill.push("lifetime_ach_bad1");
-				levels.push(document.getElementById("lifetime_ach_bad1").value);
-				levelcp.push(-CP);
-				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcp").innerHTML = banked;
-				addLine(-CP, document.getElementById("lifetime_ach_bad1").value + " Accomplished");
-				badge = document.getElementById("lifetime_ach_bad1").value;
-				var newOption = document.createElement("option");
-				newOption.appendChild(document.createTextNode(badge));
-				document.getElementById("lifetime_ach_bad2").appendChild(newOption);
-				removeOptionFromList(document.getElementById("lifetime_ach_bad1"), badge);
-				removeOptionFromList(document.getElementById("breath_ach_bad1"), badge);
-			}
-		}
-		else
-		{
-			if (document.getElementById("breath_ach_bad1").value != "")
-			{
-				levelskill.push("breath_ach_bad1");
-				levelcp.push(-CP);
-				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcp").innerHTML = banked;
-				var badgeSel = document.getElementById("breath_ach_bad1").value
-				if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
-					if (badgeSel == "HP Healed") {
-						levels.push(CP + "\t" + badgeSel);
-						addLine(-CP, badgeSel + " Accomplished");
-					} else {
-						levels.push(CP + "\t" + badgeSel);
-						addLine(-CP, badgeSel + " Accomplished");
-					}
-				} else {
-					levels.push(CP + "\t" +  badgeSel);
+			levelskill.push("breath_ach_bad1");
+			levelcp.push(-CP);
+			banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
+			document.getElementById("bankedcp").innerHTML = banked;
+			var badgeSel = document.getElementById("breath_ach_bad1").value
+			if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
+				if (badgeSel == "HP Healed") {
+					levels.push(CP + "\t" + badgeSel);
 					addLine(-CP, badgeSel + " Accomplished");
-				}
-
-				badge = document.getElementById("breath_ach_bad1").value;
-				var newOption = document.createElement("option");
-				newOption.appendChild(document.createTextNode(badge));
-				document.getElementById("breath_ach_bad2").appendChild(newOption);
-				//removeOptionFromList(document.getElementById("lifetime_ach_bad1"), badge);
-				removeOptionFromList(document.getElementById("breath_ach_bad1"), badge);
-			}
-		}
-	}
-	if (CP == 15)
-	{
-		if (lifetime)
-		{
-			if (document.getElementById("lifetime_ach_bad2").value != "")
-			{
-				levelskill.push("lifetime_ach_bad2");
-				levels.push(document.getElementById("lifetime_ach_bad2").value);
-				levelcp.push(-CP);
-				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcp").innerHTML = banked;
-				addLine(-CP, document.getElementById("lifetime_ach_bad2").value + " Accomplished");
-				document.getElementById("lifetime_ach_bad2").removeChild(document.getElementById("lifetime_ach_bad2").options[document.getElementById("lifetime_ach_bad2").selectedIndex]);
-			}
-		}
-		else
-		{
-			if (document.getElementById("breath_ach_bad2").value != "")
-			{
-				levelskill.push("breath_ach_bad2");
-				levelcp.push(-CP);
-				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcp").innerHTML = banked;
-				var badgeSel = document.getElementById("breath_ach_bad2").value
-				if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
-					if (badgeSel == "HP Healed") {
-						levels.push(CP + "\t" +  badgeSel);
-						addLine(-CP, badgeSel + " Accomplished");
-					} else {
-						levels.push(CP + "\t" + badgeSel);
-						addLine(-CP, badgeSel + " Accomplished");
-					}
 				} else {
 					levels.push(CP + "\t" + badgeSel);
 					addLine(-CP, badgeSel + " Accomplished");
 				}
-				document.getElementById("breath_ach_bad2").removeChild(document.getElementById("breath_ach_bad2").options[document.getElementById("breath_ach_bad2").selectedIndex]);
+			} else {
+				levels.push(CP + "\t" +  badgeSel);
+				addLine(-CP, badgeSel + " Accomplished");
 			}
+
+			badge = document.getElementById("breath_ach_bad1").value;
+			var newOption = document.createElement("option");
+			newOption.appendChild(document.createTextNode(badge));
+			document.getElementById("breath_ach_bad2").appendChild(newOption);
+			removeOptionFromList(document.getElementById("breath_ach_bad1"), badge);
+		}
+	}
+	if (CP == 15)
+	{
+		if (document.getElementById("breath_ach_bad2").value != "")
+		{
+			levelskill.push("breath_ach_bad2");
+			levelcp.push(-CP);
+			banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
+			document.getElementById("bankedcp").innerHTML = banked;
+			var badgeSel = document.getElementById("breath_ach_bad2").value
+			if (badgeSel == "Damage Dealt" || badgeSel == "Damage Taken" || badgeSel == "HP Healed") {
+				if (badgeSel == "HP Healed") {
+					levels.push(CP + "\t" +  badgeSel);
+					addLine(-CP, badgeSel + " Accomplished");
+				} else {
+					levels.push(CP + "\t" + badgeSel);
+					addLine(-CP, badgeSel + " Accomplished");
+				}
+			} else {
+				levels.push(CP + "\t" + badgeSel);
+				addLine(-CP, badgeSel + " Accomplished");
+			}
+			document.getElementById("breath_ach_bad2").removeChild(document.getElementById("breath_ach_bad2").options[document.getElementById("breath_ach_bad2").selectedIndex]);
 		}
 	}
 }
@@ -4602,6 +4552,7 @@ function addLine(CP, text)
 	<ul>
 		<li onmouseover="describe('holy_champion_clean_light');"><input onfocus="describe('holy_champion_clean_light');" onchange="checkSkill('holy_champion_clean_light','Cleansing Light',60);" id="holy_champion_clean_light" disabled="disabled" type="checkbox"> Cleansing Light</li>
 	</ul>
+	<li onmouseover="describe('holy_champion_wings');"><input onfocus="describe('holy_champion_wings');" onchange="checkSkill('holy_champion_wings','Wings',30);" id="holy_champion_wings" type="checkbox"> Wings</li>
 	<br>
 	<ul>
 		<li onmouseover="describe('holy_champion_mist');"><input onfocus="describe('holy_champion_mist');" onchange="checkSkill('holy_champion_mist','Cloak of Mist',60);" id="holy_champion_mist" disabled="disabled" type="checkbox"> Cloak of Mist</li>
