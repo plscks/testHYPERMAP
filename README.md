@@ -1,5 +1,9 @@
 # [Breath 4 Hypermap version 2.4](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 12/23/2019 Planner 2.4.7
+  * Adds Holy Champion skill, Wings
+  * Adds header to skill list generation and formats it for multiple in windows uses
+  
 ### 12/14/2019 Map version 2.4 Planner version 2.4.6
   * Adds in the missing Bleak Ridge Mountain tunnels to the Wyrm's Lair 
   * Adds missing 2nd tunnel to birch forest exit
