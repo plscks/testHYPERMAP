@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.4](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 01/03/2020 Planner 2.4.8
+  * Updates changes to skills from [01/03/2020 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9366)
+  
 ### 12/23/2019 Planner 2.4.7
   * Adds Holy Champion skill, Wings
   * Adds header to skill list generation and formats it for multiple in windows uses
