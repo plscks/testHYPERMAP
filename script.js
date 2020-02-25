@@ -6491,6 +6491,7 @@ function initializeTileNames() {
 	registerTileNames(17,40,2,"Frozen Wastes");
 	registerTileNames(18,40,2,"Firepits");
 	registerTileNames(19,40,2,"Firepits");
+	registerTileNames(13,5,2,"Frozen Wastes");
 	registerTileNames(13,6,2,"Firepits");
 	registerTileNames(13,7,2,"Lava");
 	registerTileNames(13,8,2,"Lava");
@@ -11936,6 +11937,7 @@ function initializeTileTypes() {
 	registerTileTypes(17,40,2,"a Frozen Wastes");
 	registerTileTypes(18,40,2,"a Firepits");
 	registerTileTypes(19,40,2,"a Firepits");
+	registerTileTypes(13,5,2,"a Frozen Wastes");
 	registerTileTypes(13,6,2,"a Firepits");
 	registerTileTypes(13,7,2,"a Lava");
 	registerTileTypes(13,8,2,"a Lava");
