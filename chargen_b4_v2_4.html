@@ -1,6 +1,6 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!-- Version 2.4.8 -->
+<!-- Version 2.4.9 -->
 <!-- Originally created for Nexus War by Siddhant "wcil" M.; modified for Nexus Clash by Sihoiba; updated 10-01-19, modified again slightly by plscks -->
 <title>Nexus Clash Breath 4 Character Planner</title>
 <style>
@@ -352,6 +352,7 @@ desc["shepherd_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable a
 desc["shepherd_battle_mag"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
 desc["shepherd_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spell gems and cast spells from memory or from spellgem charges. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you 45% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
 desc["shepherd_sanct"] = "<h3>Sanctify Spell</h3>\n<i>Your association with the forces of good have taught you how to infuse spells with holy power.</i>\n<p>The use of Sanctify Spell allows the character to temper the essential nature of another spell, tuning it more towards good ends. It can only be used with spells the character has learned. At the cost of 2AP and 75% the spells MP cost, the spell has its damage type changed to Holy, and will deal an additional damage to targets with negative MO. The bonus damage equals target MO*-1/10. If the target is a Demon the bonus is increased by +3, otherwise it is reduced by 1 (so +7 damage versus a -40MO demon, +3 damage against a -40MO neutral).</p>\n<b>CP Cost</b>: 40";
+desc["shepherd_patt"] = "<h3>Pattern Weaver</h3>\n<i>Your understanding of the magics of spell gems has grown.</i>\n<p>This skill allows the sorcerer to overwrite a spellgem, replacing the existing spell with one that you know. The spellgem charges are reduced to 0. This action costs 10MP, 3AP. A sorcerer with Pattern Weaver no longer has Spellgems self destruct when they are reduced to 0 charges.</p>\n<b>CP Cost</b>: 40";
 
 desc["myrmidon_crit"] = "<h3>Critical Hit</h3>\n<i>You are adept at achieving critical strikes.</i>\n<p>This ability grants the Myrmidon a 5% chances of landing a critical hit on a successful attack. </p>\n<b>FREE SKILL</b>";
 desc["myrmidon_adv_crit"] = "<h3>Advanced Critical Hit</h3>\n<i>You are more skilled at achieving critical strikes.</i>\n<p>The chance of the Myrmidon landing a critical hit on a successful attack is 10%. </p>\n<b>CP Cost</b>: 40";
@@ -395,6 +396,7 @@ desc["defiler_spell_com"] = "<h3>Spell Combat</h3>\n<i>You are better capable at
 desc["defiler_battle"] = "<h3>Battle Magic</h3>\n<i>You are an expert at aiming your ranged combat spells.</i>\n<p>This ability increases the character's chance to hit with ranged spells by 15%.</p>\n<b>CP Cost</b>: 40";
 desc["defiler_spell"] = "<h3>Spellcraft</h3>\n<i>You are capable of learning and casting Spells.</i>\n<p>This skill allows you to learn spells from spellgems and cast spells from memory or spell gems. Learning spells costs additional Character Points. Casting spells costs MP. Additionally this skill grants you 45% to hit with any ranged spell.</p>\n<b>CP Cost</b>: 20";
 desc["defiler_taint"] = "<h3>Taint Spell</h3>\n<i>Your association with the forces of evil have taught you how to infuse spells with dark energies.</i>\n<p>The use of Taint Spell allows the character to temper the essential nature of another spell, tuning it more towards evil ends. It can only be used with spells the character has learned. At the cost of 2AP and 75% the spells MP cost the spell has its damage type changed to Unholy, and will deal an additional +2 points of damage to angels, and additional damage to targets with greater than 0MO equal to the targets MO/10.</p>\n<b>CP Cost</b>: 40";
+desc["defiler_patt"] = "<h3>Pattern Weaver</h3>\n<i>Your understanding of the magics of spell gems has grown.</i>\n<p>This skill allows the sorcerer to overwrite a spellgem, replacing the existing spell with one that you know. The spellgem charges are reduced to 0. This action costs 10MP, 3AP. A sorcerer with Pattern Weaver no longer has Spellgems self destruct when they are reduced to 0 charges.</p>\n<b>CP Cost</b>: 40";
 
 desc["divine_herald_demon_track"] = "<h3>Eye of Demon Tracker</h3>\n<i>You can sense evil at a great distance.</i>\n<p>For a cost of 1AP and 6MP the Divine Herald can sense the number of demons with the map field of view (a 2 square radius around you). In addition any invisible demons on the same tile as the Divine Herald will lose their invisibility status. The skill will also tell you which demons you have detected, and whether any of them are hiding in a Stronghold. </p>\n<b>FREE SKILL</b>";
 desc["divine_herald_crimson"] = "<h3>Crimson Gladius</h3>\n<i>Your have been armed by the forces of justice with a weapon of flame.</i>\n<p>The Divine Herald gains a innate sword attack the Crimson Gladius. This deals 7 fire damage and has an innate +10% to hit.</p>\n<b>CP Cost</b>: 30";
@@ -823,7 +825,7 @@ desc["res_spell_de_gaze"] = "<h3>Thanatoid Gaze</h3>\n<i>Thanatoid Gaze is a res
 desc["res_spell_ec_bolt"] = "<h3>Thunderbolt</h3>\n<i>Thunderbolt is a restricted Basic Autohit Spell.</i>\n<p>Thunderbolt costs 8 MP to cast, deals 7 points of Electric damage.</p>\n<b>CP Cost</b>: 16";
 desc["res_spell_ec_strike"] = "<h3>Thunderstrike</h3>\n<i>Thunderstrike is a restricted Basic Ranged Spell.</i>\n<p>Thunderstrike costs 7 MP to cast, deals 12 points of Electric damage.</p>\n<b>CP Cost</b>: 17";
 desc["res_spell_fi_bolt"] = "<h3>Flame Bolt</h3>\n<i>Flame Bolt is a restricted Basic Autohit Spell.</i>\n<p>Flame Bolt costs 8 MP to cast, deals 7 points of Fire damage.</p>\n<b>CP Cost</b>: 13";
-desc["res_spell_fi_flare"] = "<h3>Sunflare</h3>\n<i>Sunflare is a restricted Basic Ranged Spell.</i>\n<p>Sunflare costs 7 MP to cast, deals 11 points of Fire damage.</p>\n<b>CP Cost</b>: 14";
+desc["res_spell_fi_flare"] = "<h3>Sunflare</h3>\n<i>Sunflare is a restricted Basic Ranged Spell.</i>\n<p>Sunflare costs 7 MP to cast, deals 12 points of Fire damage.</p>\n<b>CP Cost</b>: 14";
 desc["res_spell_im_bolt"] = "<h3>Force Bolt</h3>\n<i>Force Bolt is a restricted Basic Autohit Spell.</i>\n<p>Force Bolt costs 8 MP to cast, deals 8 points of Impact damage.</p>\n<b>CP Cost</b>: 12";
 desc["res_spell_im_focus"] = "<h3>Force Focus</h3>\n<i>Force Focus is a restricted Basic Ranged Spell.</i>\n<p>Force Focus costs 7 MP to cast, deals 13 points of Impact damage.</p>\n<b>CP Cost</b>: 13";
 
@@ -1383,6 +1385,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "shepherd_spell":
 					document.getElementById("shepherd_sanct").disabled = false;
+					document.getElementById("shepherd_patt").disabled = false;
 					Spellcraft = 1;
 					AngelicCaster = 1;
 					SpellAcc = SpellAcc + 20;
@@ -1481,6 +1484,7 @@ function checkSkill(id, which, CP)
 					break;
 				case "defiler_spell":
 					document.getElementById("defiler_taint").disabled = false;
+					document.getElementById("defiler_patt").disabled = false;
 					Spellcraft = 1;
 					DemonicCaster = 1;
 					SpellAcc = SpellAcc + 20;
@@ -2907,6 +2911,7 @@ function delevel()
 			break;
 		case "shepherd_spell":
 			document.getElementById("shepherd_sanct").disabled = true;
+			document.getElementById("shepherd_patt").disabled = true;
 			Spellcraft = 0;
 			AngelicCaster = 0;
 			SpellAcc = SpellAcc - 20;
@@ -3005,6 +3010,7 @@ function delevel()
 			break;
 		case "defiler_spell":
 			document.getElementById("defiler_taint").disabled = true;
+			document.getElementById("defiler_patt").disabled = true;
 			Spellcraft = 0;
 			DemonicCaster = 0;
 			SpellAcc = SpellAcc - 20;
@@ -4379,6 +4385,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('shepherd_spell');"><input onfocus="describe('shepherd_spell');" onchange="checkSkill('shepherd_spell','Spellcraft',20);" id="shepherd_spell" type="checkbox"> Spellcraft</li>
 	<ul>
 		<li onmouseover="describe('shepherd_sanct');"><input onfocus="describe('shepherd_sanct');" onchange="checkSkill('shepherd_sanct','Sanctify Spell',40);" id="shepherd_sanct" disabled="disabled" type="checkbox"> Sanctify Spell</li>
+		<li onmouseover="describe('shepherd_patt');"><input onfocus="describe('shepherd_patt');" onchange="checkSkill('shepherd_patt','Pattern Weaver',40);" id="shepherd_patt" disabled="disabled" type="checkbox"> Pattern Weaver</li>
 	</ul>
 </ul>
 </div>
@@ -4459,6 +4466,7 @@ function addLine(CP, text)
 	<li onmouseover="describe('defiler_spell');"><input onfocus="describe('defiler_spell');" onchange="checkSkill('defiler_spell','Spellcraft',20);" id="defiler_spell" type="checkbox"> Spellcraft</li>
 	<ul>
 		<li onmouseover="describe('defiler_taint');"><input onfocus="describe('defiler_taint');" onchange="checkSkill('defiler_taint','Taint Spell',40);" id="defiler_taint" disabled="disabled" type="checkbox"> Taint Spell</li>
+		<li onmouseover="describe('defiler_patt');"><input onfocus="describe('defiler_patt');" onchange="checkSkill('defiler_patt','Pattern Weaver',40);" id="defiler_patt" disabled="disabled" type="checkbox"> Pattern Weaver</li>
 	</ul>
 </ul>
 </div>
