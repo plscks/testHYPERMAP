@@ -1,21 +1,24 @@
 # [Breath 4 Hypermap version 2.4](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 03/28/2020 Planner 2.4.10
+  * Updates changes to skills from [03/28/2020 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9457)
+
 ### 01/03/2020 Planner 2.4.8
   * Updates changes to skills from [01/03/2020 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9366)
-  
+
 ### 12/23/2019 Planner 2.4.7
   * Adds Holy Champion skill, Wings
   * Adds header to skill list generation and formats it for multiple in windows uses
-  
+
 ### 12/14/2019 Map version 2.4 Planner version 2.4.6
-  * Adds in the missing Bleak Ridge Mountain tunnels to the Wyrm's Lair 
+  * Adds in the missing Bleak Ridge Mountain tunnels to the Wyrm's Lair
   * Adds missing 2nd tunnel to birch forest exit
   * Fixes incorrect tile display in Uffern in Stygia
   * Reworks and expands Wyrm's Lair map
   * Changes the generate visual output of the Planner
   * Adds damage floor changes to Fallen's Plagued by Doubt
   * Moves visible screenreader alert off screen for TN and WL maps
-  
+
 ### 12/05/2019 Planner 2.4.5
   * Fixes map level 30 HP/MP/AP
   * Fixes extra 5% to hit given for Ranged
@@ -25,20 +28,20 @@
   * Changes Hellfire and Range Strike to have similar usage cost descriptions diferentiating them from eachother
   * Dark Heart and Sorcerer's Might descriptions changed to note that they can now go over maximum MP
   * Clarifies Holy Champion's Cloak of Tornado description to show AP/MP cost choices
-  
+
 ### 12/05/2019 Planner 2.4.4
   * Fixes Seraph free skill, Arc Lightning was swapped with Clockwork Cloud still from years ago
-  
+
 ### 11/28/2019 Planner 2.4.3
   * Reverts changes for Doom Howler Spell Combat skill as it ended up getting removed from the game instead
-  
+
 ### 11/28/2019 Map version 2.3.1 / Planner 2.4.2
   * Updates Sewers coordinates to reflect new smaller sewers
   * Adds previously overlooked Spell Combat to the Doom Howler Aether Manipulation tree
-  
+
 ### 11/24/2019 Planner 2.4.1
   * Updates skill changes from [11/24/2019 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9318)
-  
+
 ### 11/11/2019 Map version 2.3
   * Adds Keyboard support
   * Adds ARIA compatibility
