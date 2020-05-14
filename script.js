@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.4
+// Nexus Clash Breath 4 hypermap version 2.5
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
@@ -187,7 +187,7 @@ function setDestinationType(type) {
 
 function cycleTravelMethod() {
 	travelMethodToggle += 1;
-	if (travelMethodToggle > 1) travelMethodToggle = 0;
+	if (travelMethodToggle > 2) travelMethodToggle = 0;
 	if (travelMethodToggle == 0) {
 		waterCostModifier = 2.0;
 		flightEnabled = false;
@@ -196,12 +196,11 @@ function cycleTravelMethod() {
 		waterCostModifier = 1.0;
 		flightEnabled = false;
 		document.getElementById("buttonTravelMethod").innerHTML = "Water Cost: SAME";
-	}
-/*	else if (travelMethodToggle == 2) {
+	} else if (travelMethodToggle == 2) {
 		waterCostModifier = 1.0;
 		flightEnabled = true;
-		document.getElementById("buttonTravelMethod").innerHTML = "Movement Costs: 0.5AP land, 0.5AP water";
-	}*/
+		document.getElementById("buttonTravelMethod").innerHTML = "Movement Costs: 0.5AP";
+	}
 }
 
 function cycleMPValue() {
@@ -264,6 +263,9 @@ function pathCostModifier(index) {
   else if (TileTypes[index] == "a lava") modifier = waterCostModifier;
 	else if (TileTypes[index] == "mountain") modifier = 2.0;
 	if (flightEnabled) modifier = 0.5;
+	if (!flightEnabled && (TileTypes[index] == "an empty sky" || TileTypes[index] == "a void")) {
+		modifier = 100.0;
+	}
 	return modifier;
 }
 
@@ -360,11 +362,13 @@ function calculatePath() {
 	var currentX = pathStartX;
 	var currentY = pathStartY;
 	var currentPlane = pathStartZ;
+	pathDestinationX = decodeLocation(path[path.length-1])[0];
+	pathDestinationY = decodeLocation(path[path.length-1])[1];
+	pathDestinationZ = decodeLocation(path[path.length-1])[2];
 	for(var i = 0; i < path.length; i++) {
 		var arr = decodeLocation(path[i]);
 		toggleMarker(arr[0],arr[1],arr[2]);
 		var prevArr = decodeLocation(path[i-1]);
-
 		if (arr[2] != currentPlane) {
 			if (walkCount > 0) pathString += getWalkString(currentX,currentY,prevArr[0],prevArr[1]) + getPastableLocationString(prevArr[0],prevArr[1],prevArr[2]) + ". \n";
 			walkCount = 0;
@@ -378,7 +382,8 @@ function calculatePath() {
 			currentX = arr[0];
 			currentY = arr[1];
 			var prevArr = decodeLocation(path[i-1]);
-			pathString += "Take Ferry to " + getPastableLocationString(arr[0],arr[1],arr[2]) + ". \n";
+			var portalType = portalTravelMethods[path[i-1]][0];
+			pathString += `Take ${portalType} to ` + getPastableLocationString(arr[0],arr[1],arr[2]) + ". \n";
 		} else {
 			walkCount++;
 		}
