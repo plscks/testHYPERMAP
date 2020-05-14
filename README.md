@@ -1,5 +1,12 @@
-# [Breath 4 Hypermap version 2.4](https://plscks.github.io/testHYPERMAP/hypermap.html)
+# [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 05/14/2020 Map version 2.5
+  * Updates Uffern District map to include the tile that was missing
+  * Updates Western Uffern Frozen Waste tiles to correct colors
+  * Adds movement modifier for 0.5ap per tile for pathing (Selectable as third option of movement cost button)
+  * Fixes pathing copy/pasteable text when selecting a resource tile (directions always lead to 0,0)
+  * Updates map pathing to exclude Empty Sky in Zion and Void in Sanguinis Diabolus for double water movement cost (which implies no flying ability)
+
 ### 03/28/2020 Planner 2.4.10
   * Updates changes to skills from [03/28/2020 patch](https://www.nexusclash.com/modules.php?name=Forums&file=viewtopic&t=9457)
 
