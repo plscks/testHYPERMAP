@@ -1,6 +1,10 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
-### 06/29/2020 Updates Character Planner to 2.5 and Nexus Clash profile Lookup to v0.6
+### 06/30/2020 Updates Planner to 2.5.1
+  * Adds Glyph Mastery to 2.5 version
+  * Rolls links in hypermap temporarily back to 2.4 version
+  
+### 06/29/2020 Updates Planner to 2.5 and Nexus Clash profile Lookup to v0.6
   * Adds ability to lookup up a character in the profile look up and build it in the planner
   
 ### 06/25/2020 Planner version 2.4.11
