@@ -73,7 +73,7 @@ async function lookup() {
     return;
   }
 
-  var ncProfLink = "https://nexus-champion.nexusclash.com/modules.php?name=Game&op=character&id=";
+  var ncProfLink = "https://www.nexusclash.com/modules.php?name=Game&op=character&id=";
   var namePrefix = jsonData.result.character.name.prefix;
   var nameName = jsonData.result.character.name.name;
   var nameSuffix = jsonData.result.character.name.suffix;
