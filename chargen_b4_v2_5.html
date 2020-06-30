@@ -912,8 +912,8 @@ function buildCharacter(skills, badges, info, spells) {
 		//CHOOSE EXISTING TIER 1 SKILLS
 		tier1Skills.forEach((skill) => {
 			let skillListing = `${classArray[0].split(" ")[0].toLowerCase()}|${skill}`;
-			console.log(`skill: ${skill}   skillListing: ${skillListing}`);
-			console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
+			//console.log(`skill: ${skill}   skillListing: ${skillListing}`);
+			//console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
 			document.getElementById(skillFunc[skillListing][0]).checked = true;
 			checkSkill(skillFunc[skillListing][0], skill, skillFunc[skillListing][1]);
 		});
@@ -921,15 +921,15 @@ function buildCharacter(skills, badges, info, spells) {
 		if (tier2Skills === undefined) { return }
 		tier2Skills.forEach((skill) => {
 			let skillListing = `${classArray[1].split(" ")[0].toLowerCase()}|${skill}`;
-			console.log(`skill: ${skill}   skillListing: ${skillListing}`);
-			console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
+			//console.log(`skill: ${skill}   skillListing: ${skillListing}`);
+			//console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
 			document.getElementById(skillFunc[skillListing][0]).checked = true;
 			checkSkill(skillFunc[skillListing][0], skill, skillFunc[skillListing][1]);
 			if (skill === 'Spellcraft' && unresSpells.length > 0) {
 				unresSpells.forEach((spell) => {
 					let spellListing = `spell|${spell}`;
-					console.log(`spell: ${spell}   spellListing: ${spellListing}`);
-					console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
+					//console.log(`spell: ${spell}   spellListing: ${spellListing}`);
+					//console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
 					document.getElementById(skillFunc[spellListing][0]).checked = true;
 					checkSkill(skillFunc[spellListing][0], spell, skillFunc[spellListing][1]);
 				});
@@ -939,16 +939,16 @@ function buildCharacter(skills, badges, info, spells) {
 		if (tier3Skills === undefined) { return }
 		tier3Skills.forEach((skill) => {
 			let skillListing = `${classArray[2].split(" ")[0].toLowerCase()}|${skill}`;
-			console.log(`skill: ${skill}   skillListing: ${skillListing}`);
-			console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
+			//console.log(`skill: ${skill}   skillListing: ${skillListing}`);
+			//console.log(`skillFunc[skillListing]: ${skillFunc[skillListing]}`);
 			document.getElementById(skillFunc[skillListing][0]).checked = true;
 			checkSkill(skillFunc[skillListing][0], skill, skillFunc[skillListing][1]);
 			if (skill === 'Tattoo of Sorcery' || skill === 'Aether Manipulation') {
 				if (unresSpells.length > 0) {
 					unresSpells.forEach((spell) => {
 						let spellListing = `spell|${spell}`;
-						console.log(`spell: ${spell}   spellListing: ${spellListing}`);
-						console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
+						//console.log(`spell: ${spell}   spellListing: ${spellListing}`);
+						//console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
 						document.getElementById(skillFunc[spellListing][0]).checked = true;
 						checkSkill(skillFunc[spellListing][0], spell, skillFunc[spellListing][1]);
 					});
@@ -967,8 +967,8 @@ function buildCharacter(skills, badges, info, spells) {
 		if (spellcasters.includes(classArray[1]) && resSpells.length > 0) {
 			resSpells.forEach((spell) => {
 				let spellListing = `res|${spell}`;
-				console.log(`spell: ${spell}   spellListing: ${spellListing}`);
-				console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
+				//console.log(`spell: ${spell}   spellListing: ${spellListing}`);
+				//console.log(`spellFunc[spellListing]: ${skillFunc[spellListing]}`);
 				document.getElementById(skillFunc[spellListing][0]).checked = true;
 				checkSkill(skillFunc[spellListing][0], spell, skillFunc[spellListing][1]);
 			});
