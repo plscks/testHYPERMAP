@@ -61,7 +61,7 @@ function resetFields() {
 async function lookup() {
   // looks up name in the NC profile API, then stores json data
   resetFields();
-  name  = nameGrab();
+  var name  = nameGrab();
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
   var corsUrl = 'https://cors.plscks.workers.dev/?' + requestUrl
 
