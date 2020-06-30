@@ -1,11 +1,14 @@
 // Oh bother, let's try this a little differently.
-// Nexus Clash profile Lookup v0.5
+// Nexus Clash profile Lookup v0.6
 // This utilizes the NC profile API to search characters by name
 // I am new at Javascript, so, uhm, sorry probably.
 //written by plscks
 var input = document.getElementById("inPut");
 var expBadges = [];
-var testVar = [];
+var masterSkillsList = [];
+var masterBadges = [];
+var masterInfo = [];
+var masterSpells = [];
 
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -59,7 +62,7 @@ async function lookup() {
   // looks up name in the NC profile API, then stores json data
   resetFields();
   name  = nameGrab();
-  var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
+  var requestUrl = "https://nexus-champion.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
   var corsUrl = 'https://cors.plscks.workers.dev/?' + requestUrl
 
   var jsonData = await getData2(corsUrl);
@@ -70,12 +73,16 @@ async function lookup() {
     return;
   }
 
-  var ncProfLink = "https://www.nexusclash.com/modules.php?name=Game&op=character&id=";
+  var ncProfLink = "https://nexus-champion.nexusclash.com/modules.php?name=Game&op=character&id=";
   var namePrefix = jsonData.result.character.name.prefix;
   var nameName = jsonData.result.character.name.name;
   var nameSuffix = jsonData.result.character.name.suffix;
   var nameDomain = jsonData.result.character.name.domain;
   var fullName = namePrefix + nameName + nameSuffix + nameDomain;
+  masterSkillsList = jsonData.result.character.skills;
+  masterInfo = [jsonData.result.character.level, jsonData.result.character.classes];
+  masterSpells = jsonData.result.character.spells;
+
   document.getElementById('charName').innerHTML = " <a href='" + ncProfLink + jsonData.result.character.id + "'>[profile]</a>" + " " + fullName;
   document.getElementById('charLevel').innerHTML = jsonData.result.character.level;
   var currentClass = jsonData.result.character.classes[jsonData.result.character.classes.length - 1];
@@ -103,6 +110,7 @@ async function lookup() {
 }
 
 async function badgeParse(badges, name) {
+  masterBadges = badges;
   var alcoholBadges = {
     1: "Low Tolerance",
     2: "Frat Boy",
@@ -317,17 +325,24 @@ async function badgeParse(badges, name) {
   document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsMax];
 
   if (exploreBadges.length == 0) {
-    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
+    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a><a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
   } else if (exploreBadges.length == 40) {
-    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p> All exploration badges obtained.";
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p> All exploration badges obtained. <a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
   } else {
     badgesLeft = 40 - exploreBadges.length;
-    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a><a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
   }
 }
 
 function badgeLink() {
   localStorage.setItem("expBadges", JSON.stringify(expBadges));
+}
+
+function planLink() {
+  localStorage.setItem("masterSkills", JSON.stringify(masterSkillsList));
+  localStorage.setItem("masterBadges", JSON.stringify(masterBadges));
+  localStorage.setItem("masterInfo", JSON.stringify(masterInfo));
+  localStorage.setItem("masterSpells", JSON.stringify(masterSpells));
 }
 
 function badgeMax(all, category, n) {
