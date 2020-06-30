@@ -1,5 +1,7 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### XX/XX/2020 Pushes newest Planner version 2.5.1 live
+  * Pushes Planner update 2.5.1 live
 ### 06/30/2020 Updates Planner to 2.5.1
   * Adds Glyph Mastery to 2.5 version
   * Rolls links in hypermap temporarily back to 2.4 version
