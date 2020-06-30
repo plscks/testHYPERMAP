@@ -287,12 +287,26 @@ p {
   width: fit-content;
   border-width: 1px;
   border-radius: 3px;
-  margin-top: 100px;
+  margin-top: 20px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 10pt;
   text-align: center;
   background-color: #000000;
   color: #ffff00;
+}
+
+#planButton {
+  cursor: pointer;
+  border-style: solid;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  text-align: center;
+  background-color: #000000;
+  color: #3bff00;
 }
 
 #statTitle {
