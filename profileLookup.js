@@ -331,6 +331,7 @@ async function badgeParse(badges, name) {
   } else {
     badgesLeft = 40 - exploreBadges.length;
     document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a><a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
+    //console.log(masterBadges);
   }
 }
 
