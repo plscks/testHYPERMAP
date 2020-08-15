@@ -1,8 +1,13 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 08/15/2020 Planner 2.5.3
+  * Bug fix for some skills failing to add
+  * Accounts for Great Wyrm hunt badges but not correctly if for reset characters
+  
 ### 08/10/2020 Pushes newest Planner version 2.5.2 & Lookup v0.6.1 live
   * Pushes Planner update 2.5.1 live
   * Adds links from planner to lookup and lookup to planner
+  
 ### 06/30/2020 Updates Planner to 2.5.1
   * Adds Glyph Mastery to 2.5 version
   * Rolls links in hypermap temporarily back to 2.4 version
