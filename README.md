@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 08/19/2020 Nexus Clash profile lookup version 0.6.2
+  * Profile lookup now works with special characters
+  
 ### 08/15/2020 Planner 2.5.3
   * Bug fix for some skills failing to add
   * Accounts for Great Wyrm hunt badges but not correctly if for reset characters

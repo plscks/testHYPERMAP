@@ -1,5 +1,5 @@
 // Oh bother, let's try this a little differently.
-// Nexus Clash profile Lookup v0.6
+// Nexus Clash profile Lookup v0.6.2
 // This utilizes the NC profile API to search characters by name
 // I am new at Javascript, so, uhm, sorry probably.
 //written by plscks
@@ -20,7 +20,7 @@ input.addEventListener("keyup", function(event) {
 function nameGrab() {
   // Gets the text the user has typed into the input field
   var charName = document.getElementById("inPut").value;
-  charName = charName.replace(/\s+/g, '%20');
+  charName = encodeURIComponent(charName);
   return charName
 }
 
