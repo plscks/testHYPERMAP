@@ -1,22 +1,25 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 08/22/2020 Planner version 2.5.5
+  * Fixes the remaining skills that wouldn't build from profile
+  
 ### 08/19/2020 Nexus Clash profile lookup version 0.6.2 and Planner 2.5.4
   * Profile lookup now works with special characters
   * Fixes the wording of the Void Walker Stepping tree
   
-### 08/15/2020 Planner 2.5.3
+### 08/15/2020 Planner version 2.5.3
   * Bug fix for some skills failing to add
   * Accounts for Great Wyrm hunt badges but not correctly if for reset characters
   
-### 08/10/2020 Pushes newest Planner version 2.5.2 & Lookup v0.6.1 live
+### 08/10/2020 Pushes the newest Planner version 2.5.2 & Lookup v0.6.1 live
   * Pushes Planner update 2.5.1 live
   * Adds links from planner to lookup and lookup to planner
   
-### 06/30/2020 Updates Planner to 2.5.1
+### 06/30/2020 Updates Planner to version 2.5.1
   * Adds Glyph Mastery to 2.5 version
   * Rolls links in hypermap temporarily back to 2.4 version
   
-### 06/29/2020 Updates Planner to 2.5 and Nexus Clash profile Lookup to v0.6
+### 06/29/2020 Updates Planner to version 2.5 and Nexus Clash profile Lookup to v0.6
   * Adds ability to lookup up a character in the profile look up and build it in the planner
   
 ### 06/25/2020 Planner version 2.4.11
