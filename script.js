@@ -7,7 +7,6 @@ document.onclick = getMouseClick;
 document.onkeydown = getKeyPress;
 
 var hasTouch;
-var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 var showTools = false; var keyMode = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false; var switchPlane = false;
@@ -69,12 +68,25 @@ for (var i = 0; i < markers.length; ++i) {
 	markers[i] = false;
 }
 
-if (window.matchMedia("(any-pointer: coarse)").matches) {
-    hasTouch = true;
+// borrowed from https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+// second comment
+function is_touch_device4() {
+	var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+	var mq = function (query) {
+		return window.matchMedia(query).matches;
+	}
+
+	if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+		return true;
+	}
+
+	// include the 'heartz' as a way to have a non matching MQ to help terminate the join
+	// https://git.io/vznFH
+	var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+	return mq(query);
 }
-if (matchMedia('(pointer:fine)').matches) {
-    hasMouse = true;
-}
+
+hasTouch = is_touch_device4();
 
 if (hasTouch) toggleTouchscreenMode();
 
