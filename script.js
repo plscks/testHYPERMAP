@@ -7,7 +7,6 @@ document.onclick = getMouseClick;
 document.onkeydown = getKeyPress;
 
 var hasTouch;
-var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 var showTools = false; var keyMode = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false; var switchPlane = false;
