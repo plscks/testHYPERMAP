@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 09/02/2020 Hypermap 2.5.1
+  * Fixes a bug where Euphoria Asylum could not be located
+
 ### 08/22/2020 Planner version 2.5.5
   * Fixes the remaining skills that wouldn't build from profile
   
