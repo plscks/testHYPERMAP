@@ -1,4 +1,4 @@
-// Nexus Clash Breath 4 hypermap version 2.5
+// Nexus Clash Breath 4 hypermap version 2.5.1
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
@@ -10669,12 +10669,12 @@ function initializeTileTypes() {
 	registerTileTypes(29,27,1,"a Birch Forest");
 	registerTileTypes(25,28,1,"a Mountain");
 	registerTileTypes(26,28,1,"a Mountain");
-	registerTileTypes(27,28,1,"an Euphoria Asylum ");
+	registerTileTypes(27,28,1,"an Euphoria Asylum");
 	registerTileTypes(28,28,1,"a Mountain");
 	registerTileTypes(29,28,1,"a Birch Forest");
 	registerTileTypes(25,29,1,"a Mountain");
 	registerTileTypes(26,29,1,"a Birch Meadow");
-	registerTileTypes(27,29,1,"an Euphoria Asylum ");
+	registerTileTypes(27,29,1,"an Euphoria Asylum");
 	registerTileTypes(28,29,1,"a Birch Forest");
 	registerTileTypes(29,29,1,"a Birch Forest");
 	registerTileTypes(25,30,1,"a Birch Forest");
