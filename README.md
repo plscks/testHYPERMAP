@@ -1,5 +1,10 @@
 # [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 10/28/2020 Hypermap 2.5.2
+  * Adds Halloween Costume Shops to the map
+  * Adds Halloween Costume Shops as selectable resource  building to path to
+  * Adds button for zero ap water movement
+
 ### 09/02/2020 Hypermap 2.5.1
   * Fixes a bug where Euphoria Asylum could not be located
 
