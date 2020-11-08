@@ -1,7 +1,8 @@
-// Nexus Clash Breath 4 hypermap version 2.5.2
+// Nexus Clash Breath 4 hypermap version 2.6.0
 // Intended to be mobile device friendly and have cross browser compatibility
 // Edited and updated by plscks
 // I am not sure who the original author of this is.
+// PLANE IDS: Laurentia = 0, Elysium = 1, Stygia = 2, Sewers = 3, Wyrm's Lair = 4, Terra Nullius = 5, Amaravati = 6
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
 document.onclick = getMouseClick;
 document.onkeydown = getKeyPress;
@@ -26,8 +27,8 @@ var portalTargetX = 0; portalTargetY = 0; portalTargetZ = 0; portalTargetW = 0;
 var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
 var pathDestinationX = 0; pathDestinationY = 0; pathDestinationZ = 0;
 var pathDestinationType = "House"; //for finding the closest building. x means use above XYZ destination coords instead
-var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>","<font color='#00FF00'>Wyrm's Lair</font>","<font color='#d96207'>Terra Nullius</font>"];
-var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers", "Wyrm's Lair", "Terra Nullius"];
+var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>","<font color='#00FF00'>Wyrm's Lair</font>","<font color='#d96207'>Terra Nullius</font>", "<font color='#0055ff'>Amaravati</font>"];
+var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers", "Wyrm's Lair", "Terra Nullius", "Amaravati"];
 
 var portals = new Array(20000);
 for (var i = 0; i < portals.length; ++i) {
@@ -487,6 +488,8 @@ function showPlane(planeIndex) {
 		else if (planeIndex == 3) keyModeMoveSelector(10, 5, 252, 132);
 		else if (planeIndex == 4) keyModeMoveSelector(1, 1, 36, 36);
 		else if (planeIndex == 5) keyModeMoveSelector(3, 3, 84, 84);
+		// TODO Figure out keyX and keyY for Amaravati
+		else if (planeIndex == 6) keyModeMoveSelector(22, 1, 84, 36);
 	}
 	showhideMarkersPlanechange();
 	if (showBadges) {
@@ -501,6 +504,7 @@ function showPlane(planeIndex) {
   document.getElementById("sewers").style.display = "none";
   document.getElementById("warrens").style.display = "none";
   document.getElementById("terraNullius").style.display = "none";
+	document.getElementById("amaravati").style.display = "none";
 	document.getElementById("you").style.left = -200;
 	document.getElementById("you").style.top = -200;
 	if (Z == 0) document.getElementById("valhalla").style.display = "block";
@@ -509,6 +513,7 @@ function showPlane(planeIndex) {
   else if (Z == 3) document.getElementById("sewers").style.display = "block";
   else if (Z == 4) document.getElementById("warrens").style.display = "block";
   else if (Z == 5) document.getElementById("terraNullius").style.display = "block";
+	else if (Z == 6) document.getElementById("amaravati").style.display = "block";
 }
 
 function toggleTouchscreenMode() {
