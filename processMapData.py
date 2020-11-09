@@ -1,20 +1,22 @@
 # Process mapdata.csv and place into hypermap script.js
 import csv
 
-output = set()
+outputTileNames = set()
+outputTileTypes = set()
 
 with open('mapdata_amaravati.csv', mode='r') as mapdata:
     csv_data = csv.DictReader(mapdata)
     line_count = 0
     for row in csv_data:
-        if line_count == 0:
-            output.add('// Amaravati data set')
-            line_count += 1
-        output.add(f'registerTileNames({row["x"]},{row["y"]},6,{row["tile_name"]});')
-        output.add(f'registerTileTypes({row["x"]},{row["y"]},6,{row["tile_type"]});')
+        outputTileNames.add(f'registerTileNames({row["x"]},{row["y"]},6,{row["tile_name"]});')
+        outputTileTypes.add(f'registerTileTypes({row["x"]},{row["y"]},6,{row["tile_type"]});')
         line_count += 1
     print(f'Processed {line_count} number of lines')
 
 with open('test.js', 'w') as outfile:
-    for line in output:
+    outfile.write('// Amaravati Names data set\n')
+    for line in outputTileNames:
+        outfile.write(f'{line}\n')
+    outfile.write('\n// Amaravati Types data set\n')
+    for line in outputTileTypes:
         outfile.write(f'{line}\n')
