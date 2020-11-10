@@ -764,6 +764,7 @@ function keyModeMoveSelector(x, y, keyX, keyY) {
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 6 && X > 30) || (Z ==5 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else { updateTooltipKeyMode("in"); }
 }
 
@@ -807,7 +808,7 @@ function gotoCoord() {
 	else if (Z == 3) var plane = ['Sewers', 40, 40];
 	else if (Z == 4) var plane = ['Wyrm\'s Lair', 16, 12];
 	else if (Z == 5) var plane = ['Terra Nullius', 12, 13];
-	else if (Z == 6) var plane = ['Terra Nullius', 11, 12];
+	else if (Z == 6) var plane = ['Amaravati', 11, 12];
 	var inputString = prompt("Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.", "Please input the coordinates you would like to go to in X comma space Y format \n \n NOTE: Valid coordinates for " + plane[0] + " are X direction one through " + plane[1] + " and Y direction one through " + plane[2] + "! Use only one comma and one space.");
 	if (inputString == null) return;
 	var splitInput = inputString.split(", ");
