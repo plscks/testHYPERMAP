@@ -8,12 +8,12 @@ with open('mapdata_amaravati.csv', mode='r') as mapdata:
     csv_data = csv.DictReader(mapdata)
     line_count = 0
     for row in csv_data:
-        outputTileNames.add(f'registerTileNames({row["x"]},{row["y"]},6,{row["tile_name"]});')
-        outputTileTypes.add(f'registerTileTypes({row["x"]},{row["y"]},6,{row["tile_type"]});')
+        outputTileNames.add(f'registerTileNames({int(row["x"])-19},{row["y"]},6,\"{row["tile_name"]}\");')
+        outputTileTypes.add(f'registerTileTypes({int(row["x"])-19},{row["y"]},6,\"{row["tile_type"]}\");')
         line_count += 1
     print(f'Processed {line_count} number of lines')
 
-with open('test.js', 'w') as outfile:
+with open('adjustedCoords.js', 'w') as outfile:
     outfile.write('// Amaravati Names data set\n')
     for line in outputTileNames:
         outfile.write(f'{line}\n')
