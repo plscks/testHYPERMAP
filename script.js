@@ -2701,7 +2701,7 @@ function initializeTileNames() {
 	registerTileNames(23,39,0,"Sea");
 	registerTileNames(23,40,0,"Sea");
 	registerTileNames(24,1,0,"Mountain");
-	registerTileNames(24,2,0,"Cabin in the Woods Costumes");
+	registerTileNames(24,2,0,"Mountain Cabin");
 	registerTileNames(24,3,0,"Forest");
 	registerTileNames(24,4,0,"Forest");
 	registerTileNames(24,5,0,"Sea");
@@ -2770,7 +2770,7 @@ function initializeTileNames() {
 	registerTileNames(25,28,0,"Bean Memorial Park");
 	registerTileNames(25,29,0,"Bean Memorial Park");
 	registerTileNames(25,30,0,"House");
-	registerTileNames(25,31,0,"Halloween Emporium");
+	registerTileNames(25,31,0,"House");
 	registerTileNames(25,32,0,"Apartment Building");
 	registerTileNames(25,33,0,"House");
 	registerTileNames(25,34,0,"Jacques Moreau Elementary School");
@@ -5311,7 +5311,7 @@ function initializeTileNames() {
 	registerTileNames(14,17,1,"Idyllic Grassland");
 	registerTileNames(11,18,1,"River Gihon");
 	registerTileNames(12,18,1,"House of Succor");
-	registerTileNames(13,18,1,"Cottage of Mysteries");
+	registerTileNames(13,18,1,"Cottage");
 	registerTileNames(14,18,1,"Idyllic Grassland");
 	registerTileNames(11,19,1,"River Gihon");
 	registerTileNames(12,19,1,"River Gihon");
@@ -6232,7 +6232,7 @@ function initializeTileNames() {
 	registerTileNames(19,30,2,"Stone Hut");
 	registerTileNames(20,30,2,"Boneland");
 	registerTileNames(21,30,2,"Boneland");
-	registerTileNames(22,30,2,"A Hell of a Time");
+	registerTileNames(22,30,2,"Dark Harem");
 	registerTileNames(23,30,2,"Twisted Space");
 	registerTileNames(19,31,2,"Twisted Space");
 	registerTileNames(20,31,2,"Twisted Space");
@@ -8327,7 +8327,7 @@ function initializeTileTypes() {
 	registerTileTypes(23,39,0,"Sea");
 	registerTileTypes(23,40,0,"Sea");
 	registerTileTypes(24,1,0,"Mountain");
-	registerTileTypes(24,2,0,"Halloween Costume Shop");
+	registerTileTypes(24,2,0,"House");
 	registerTileTypes(24,3,0,"Forest");
 	registerTileTypes(24,4,0,"Forest");
 	registerTileTypes(24,5,0,"Sea");
@@ -8396,7 +8396,7 @@ function initializeTileTypes() {
 	registerTileTypes(25,28,0,"Park");
 	registerTileTypes(25,29,0,"Park");
 	registerTileTypes(25,30,0,"House");
-	registerTileTypes(25,31,0,"Halloween Costume Shop");
+	registerTileTypes(25,31,0,"House");
 	registerTileTypes(25,32,0,"Apartment Building");
 	registerTileTypes(25,33,0,"House");
 	registerTileTypes(25,34,0,"School");
@@ -10936,7 +10936,7 @@ function initializeTileTypes() {
 	registerTileTypes(14,17,1,"an Idyllic Grassland");
 	registerTileTypes(11,18,1,"a River");
 	registerTileTypes(12,18,1,"a Ward of Respite");
-	registerTileTypes(13,18,1," Halloween Costume Shop");
+	registerTileTypes(13,18,1,"a Cottage");
 	registerTileTypes(14,18,1,"an Idyllic Grassland");
 	registerTileTypes(11,19,1,"a River");
 	registerTileTypes(12,19,1,"a River");
@@ -11857,7 +11857,7 @@ function initializeTileTypes() {
 	registerTileTypes(19,30,2,"a Stone Hut");
 	registerTileTypes(20,30,2,"a Boneland");
 	registerTileTypes(21,30,2,"a Boneland");
-	registerTileTypes(22,30,2,"a Halloween Costume Shop");
+	registerTileTypes(22,30,2,"a Dark Harem");
 	registerTileTypes(23,30,2,"a Twisted Space");
 	registerTileTypes(19,31,2,"a Twisted Space");
 	registerTileTypes(20,31,2,"a Twisted Space");
