@@ -489,7 +489,7 @@ function showPlane(planeIndex) {
 		else if (planeIndex == 4) keyModeMoveSelector(1, 1, 36, 36);
 		else if (planeIndex == 5) keyModeMoveSelector(3, 3, 84, 84);
 		// TODO Figure out keyX and keyY for Amaravati
-		else if (planeIndex == 6) keyModeMoveSelector(22, 1, 84, 36);
+		else if (planeIndex == 6) keyModeMoveSelector(2, 2, 60, 60);
 	}
 	showhideMarkersPlanechange();
 	if (showBadges) {
