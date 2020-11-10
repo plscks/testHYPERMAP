@@ -12931,7 +12931,7 @@ function initializeTileTypes() {
 	registerTileTypes(11,3,6,"a Vivarium");
 	registerTileTypes(13,1,6,"a Twisted Space");
 	registerTileTypes(11,1,6,"a Twisted Space");
-	registerTileTypes(5,3,6,"a Greater Spire");
+	registerTileTypes(5,3,6,"a Crystal Spire");
 	registerTileTypes(5,0,6,"a Twisted Void");
 	registerTileTypes(8,1,6,"an Argent Hatchery");
 	registerTileTypes(8,2,6,"an Ordered Forest");
