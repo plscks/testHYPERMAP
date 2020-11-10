@@ -764,7 +764,7 @@ function keyModeMoveSelector(x, y, keyX, keyY) {
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else if ((Z == 5 && X > 12) || (Z == 5 && Y > 13)) { updateTooltipKeyMode("out"); }
-	else if ((Z == 6 && (X > 30 || X < 20)) || (Z == 6 && Y > 12)) { updateTooltipKeyMode("out"); }
+	else if ((Z == 6 && X > 11) || (Z == 6 && Y > 12)) { updateTooltipKeyMode("out"); }
 	else { updateTooltipKeyMode("in"); }
 }
 
@@ -958,7 +958,6 @@ function getMousePosition(e) {
 		document.getElementById("pointer").style.left = X*24 - 24;
 		document.getElementById("pointer").style.top = Y*24 - 24;
 	}
-	console.log(`X: ${X}    Y: ${Y}   zyxValid: ${xyzValid()}   e.clientY: ${e.clientY}`);
 	if (!xyzValid() || (e.clientY < 35)) document.getElementById("tooltip").style.top = -500;
 	if (Y < 1 || X < 1) { updateTooltip("out"); }
 	else if ((Z == 0 && X > 40) || ( Z == 0 && Y > 40)) {	updateTooltip("out"); }
@@ -983,7 +982,6 @@ function getTouchmodeTooltipControls() {
 function updateTooltip(state) {
 	var tooltipContent = "<div id='tooltiptext'>";
 	tooltipContent += getLocationString(X,Y,Z,'normal') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
-	console.log(tooltipContent);
 
 	if (state == "out") {
 		document.getElementById("tooltip").style.display = "none";
