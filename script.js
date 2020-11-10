@@ -30,41 +30,41 @@ var pathDestinationType = "House"; //for finding the closest building. x means u
 var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>","<font color='#00FF00'>Wyrm's Lair</font>","<font color='#d96207'>Terra Nullius</font>", "<font color='#0055ff'>Amaravati</font>"];
 var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers", "Wyrm's Lair", "Terra Nullius", "Amaravati"];
 
-var portals = new Array(20000);
+var portals = new Array(22000);
 for (var i = 0; i < portals.length; ++i) {
 	portals[i] = new Array(6); // entry 0 is amount of outgoing portals, entries 1-5 can be locations
 }
-var portalTravelMethods = new Array(20000);
+var portalTravelMethods = new Array(22000);
 for (var i = 0; i < portalTravelMethods.length; ++i) {
 	portalTravelMethods[i] = new Array(5); // like portals array, except strings (for portal, ferry etc), and the first entry is missing
 }
-var portalMPCosts = new Array(20000);
+var portalMPCosts = new Array(22000);
 for (var i = 0; i < portalMPCosts.length; ++i) {
 	portalMPCosts[i] = new Array(5); // costs in MP
 }
-var TileNames = new Array(20000);
+var TileNames = new Array(22000);
 for (var i = 0; i < TileNames.length; ++i) {
 	TileNames[i] = "x";
 }
-var TileTypes = new Array(20000);
+var TileTypes = new Array(22000);
 for (var i = 0; i < TileTypes.length; ++i) {
 	TileTypes[i] = "x";
 }
-var TileDescriptions = new Array(20000);
+var TileDescriptions = new Array(22000);
 for (var i = 0; i < TileDescriptions.length; ++i) {
 	TileDescriptions[i] = new Array(2);
 }
-var badges = new Array(20000);
+var badges = new Array(22000);
 for (var i = 0; i < badges.length; ++i) {
 	badges[i] = new Array(3);
 	badges[i][0] = "x";
 }
-var guilds = new Array(20000);
+var guilds = new Array(22000);
 for (var i = 0; i < guilds.length; ++i) {
 	guilds[i] = new Array(2);
 	guilds[i][0] = "x";
 }
-var markers = new Array(20000);
+var markers = new Array(22000);
 for (var i = 0; i < markers.length; ++i) {
 	markers[i] = false;
 }
@@ -151,7 +151,7 @@ function setStart(x,y,z) {
 	pathStartY = y;
 	pathStartZ = z;
   var index = encodeLocation(x,y,z);
-	for(var i = 0; i < 20000; i++) {
+	for(var i = 0; i < 22000; i++) {
 		if (markers[i]) {
 			document.getElementById("markerButtonDelete" + i).style.display = "none";
 			if (i != index) {
@@ -167,7 +167,7 @@ function setStart(x,y,z) {
 
 function clearAllMarkers() {
 	document.getElementById("sidebarDestinationTypelist").style.display = "none";
-	for(var i = 0; i < 20000; i++) {
+	for(var i = 0; i < 22000; i++) {
 		if (markers[i]) {
 			document.getElementById("markerButtonDelete" + i).style.display = "inline-block";
 			document.getElementById("markerButtonDestination" + i).style.display = "none";
@@ -248,7 +248,7 @@ function customDestination() {
 }
 
 function clearMarkers() {
-	for(var i = 0; i < 20000; i++) {
+	for(var i = 0; i < 22000; i++) {
 		if (markers[i]) {
 			var arr = decodeLocation(i);
 			toggleMarker(arr[0],arr[1],arr[2]);
@@ -258,7 +258,7 @@ function clearMarkers() {
 
 function resetMarkers() {
 	document.getElementById("sidebarDestinationTypelist").style.display = "none";
-	for(var i = 0; i < 20000; i++) {
+	for(var i = 0; i < 22000; i++) {
 		if (markers[i]) {
 			var arr = decodeLocation(i);
 			toggleMarker(arr[0],arr[1],arr[2]);
@@ -343,7 +343,7 @@ function getSuccessorArray(index) {
 
 	resultCleaned = new Array(0);
 	for(var i = 0; i < baseNeighbourNumber+numberOfPortals; i++) {
-		if (result[i][0] < 20000-1) {
+		if (result[i][0] < 22000-1) {
 			resultCleaned.push(result[i]);
 		}
 	}
@@ -355,8 +355,8 @@ function calculatePath() {
 
 	var d = new Dijkstras();
 
-	var map = new Array(20000);
-	for(var i = 0; i < 20000; i++) {
+	var map = new Array(22000);
+	for(var i = 0; i < 22000; i++) {
 		map[i] = new Array(2);
 		map[i][0] = "" + i;
 		map[i][1] = getSuccessorArray(i);
@@ -466,7 +466,7 @@ function getPastableLocationString(x,y,z) {
 }
 
 function showhideMarkersPlanechange() {
-for(var i = 0; i < 20000; i++) {
+for(var i = 0; i < 22000; i++) {
 		if (markers[i]) {
 			var arr = decodeLocation(i);
 			if (arr[2] != Z) {
@@ -872,6 +872,8 @@ function validLocation(x,y,z) {
 	else if ((x > 12) && (z == 5)) valid = false;
 	else if ((y > 12) && (z == 4)) valid = false;
 	else if ((y > 13) && (z == 5)) valid = false;
+	else if ((y > 12) && (z == 6)) valid = false;
+	else if ((x > 11) && (z == 6)) valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "Solid Earth") valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "") valid = false;
 	else if (TileNames[encodeLocation(x,y,z)] == "x") valid = false;
@@ -1085,9 +1087,9 @@ function portalsString() {
 
 function encodeLocation(x,y,z) {
 	var val = x + y*50 + z*2500;
-	if ((x < 1) || (y < 1) || (y > 40)) val = 20000-1;
-	else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 16)) || ((z == 5) && (x > 12))) val = 20000-1;
-	//else if (TileNames[val] == "Solid Earth") val = 20000-1;
+	if ((x < 1) || (y < 1) || (y > 40)) val = 22000-1;
+	else if (((z == 0) && (x > 40)) || ((z == 1) && (x > 30)) || ((z == 2) && (x > 30)) || ((z == 3) && (x > 40)) || ((z == 4) && (x > 16)) || ((z == 5) && (x > 12)) || ((z == 6) && (x > 11))) val = 22000-1;
+	//else if (TileNames[val] == "Solid Earth") val = 22000-1;
 	return val;
 }
 
