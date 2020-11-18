@@ -1,5 +1,8 @@
-# [Breath 4 Hypermap version 2.5](https://plscks.github.io/testHYPERMAP/hypermap.html)
+# [Breath 4 Hypermap version 2.6](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### ??/??/2020 Hypermap 2.6.0
+  * Adds the demiplane of Amaravati
+  
 ### 10/28/2020 Hypermap 2.5.2
   * Adds Halloween Costume Shops to the map
   * Adds Halloween Costume Shops as selectable resource  building to path to
