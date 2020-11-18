@@ -520,18 +520,18 @@ function toggleTouchscreenMode() {
 	touchmodeFixLocation = false;
 	touchMode = !touchMode;
 	if (touchMode) {
-		document.getElementById("mobileModeButton").innerHTML = "Touchscreen Mode: ON";
+		document.getElementById("mobileModeButton").innerHTML = "Touchscreen: ON";
 		document.getElementById("portalInstructions").innerHTML = "<font color='#ffff00'>Touchscreen Mode: Tap to bring up tooltip. Use buttons on tooltip <br>to enter portals or cycle through the destination options.</font>";
 	} else {
-		document.getElementById("mobileModeButton").innerHTML = "Touchscreen Mode:  OFF";
+		document.getElementById("mobileModeButton").innerHTML = "Touchscreen:  OFF";
 		document.getElementById("portalInstructions").innerHTML = "Click to enter portals, Shift-click to cycle through destinations.";
 	}
 }
 
 function toggleMarkerMode() {
 	setMarkers = !setMarkers;
-	if (setMarkers) document.getElementById("markerModeButton").innerHTML = "Set/Remove Markers: ON";
-	else document.getElementById("markerModeButton").innerHTML = "Set/Remove Markers: OFF";
+	if (setMarkers) document.getElementById("markerModeButton").innerHTML = "Markers: ON";
+	else document.getElementById("markerModeButton").innerHTML = "Markers: OFF";
 }
 
 function toggleDescriptions() {
@@ -577,7 +577,7 @@ function toggleBadges(switchPlane) {
 			document.getElementById("badges3").style.display = "block";
 			document.getElementById("overlay2").style.width = "1008";
 		}
-		else if (Z == 4 || Z == 5) {
+		else if (Z == 4 || Z == 5 || Z == 6) {
 			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "none";
@@ -638,7 +638,7 @@ function toggleGuilds() {
 				document.getElementById("guilds3").style.display = "block";
 				document.getElementById("overlay3").style.width = "1008";
 			}
-			else if (Z == 4 || Z == 5) {
+			else if (Z == 4 || Z == 5 || Z == 6) {
 				document.getElementById("overlay3").style.display = "none";
 			}
 		} else {
