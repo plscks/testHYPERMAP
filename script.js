@@ -968,7 +968,7 @@ function getMousePosition(e) {
 	else if ((Z == 3 && X > 40) || (Z == 3 && Y > 40)) { updateTooltip("out"); }
 	else if ((Z == 4 && X > 16) || (Z == 4 && Y > 12)) { updateTooltip("out"); }
 	else if ((Z == 5 && X > 12) || (Z ==5 && Y > 13)) { updateTooltip("out"); }
-	else if ((Z == 6 && X > 30) || (Z ==5 && Y > 12)) { updateTooltip("out"); }
+	else if ((Z == 6 && X > 11) || (Z ==6 && Y > 12)) { updateTooltip("out"); }
 	else { updateTooltip("in"); }
 }
 
