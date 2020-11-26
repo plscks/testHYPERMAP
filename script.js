@@ -23,9 +23,16 @@ var touchmodeFixLocation = false;
 var guildsInitialized = false;
 var badgesInitialized = false;
 var X = 0; var Y = 0; var Z = 0; var portalToggle = 0;
-var portalTargetX = 0; portalTargetY = 0; portalTargetZ = 0; portalTargetW = 0;
-var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
-var pathDestinationX = 0; pathDestinationY = 0; pathDestinationZ = 0;
+var portalTargetX = 0;
+var portalTargetY = 0;
+var portalTargetZ = 0;
+var portalTargetW = 0;
+var pathStartX = 0;
+var pathStartY = 0;
+var pathStartZ = 0;
+var pathDestinationX = 0;
+var pathDestinationY = 0;
+var pathDestinationZ = 0;
 var pathDestinationType = "House"; //for finding the closest building. x means use above XYZ destination coords instead
 var planeName  = ["<font color='#FFFF00'>Laurentia</font>","<font color='#00FFFF'>Elysium</font>","<font color='#FF0000'>Stygia</font>","<font color='#CCCCCC'>Sewers</font>","<font color='#00FF00'>Wyrm's Lair</font>","<font color='#d96207'>Terra Nullius</font>", "<font color='#0055ff'>Amaravati</font>"];
 var planeNameClean = ["Laurentia", "Elysium", "Stygia", "Sewers", "Wyrm's Lair", "Terra Nullius", "Amaravati"];
@@ -1169,7 +1176,7 @@ function getLocationString(x,y,z,display) {
 	  }
 	  return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
 	} else if (z === 6) {
-  	let adjustedX = x + 19;
+  	var adjustedX = x + 19;
 		return "[" + adjustedX + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
 	} else {
 	  return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
