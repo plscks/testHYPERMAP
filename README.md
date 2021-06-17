@@ -1,5 +1,8 @@
 # [Breath 4 Hypermap version 2.6](https://plscks.github.io/testHYPERMAP/hypermap.html)
 ## Changelog
+### 06/17/2021 Planner 2.5.6
+  * Wording fix for Holier Than Thou to provide clarity
+
 ### ??/??/2020 Hypermap 2.6.0
   * Adds the demiplane of Amaravati
   
