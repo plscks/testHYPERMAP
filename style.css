@@ -34,6 +34,9 @@ body {
 }
 
 .topbar {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   order: 1;
   height: 35px;
   display: -webkit-box;
@@ -105,6 +108,9 @@ body {
 }
 
 .content {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   order: 1;
   align-self: flex-start;
   display: inline-flex;

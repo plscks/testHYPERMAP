@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- Nexus Clash Breath 4 Hypermap version 2.6.0-->
+<!-- Nexus Clash Breath 4 Hypermap version 2.7.0-->
 <!-- html rewite by plscks to be mobile friendly, iOS and Android -->
 <!-- Let's see if we can get this thing to make any sort of sense -->
 <html>
@@ -17,8 +17,9 @@
       <div class="maplink" style="border-color:#00FFFF; background-color:#003333" onclick="showPlane(1)"> Elysium </div>
       <div class="maplink" style="border-color:#FF0000; background-color:#330000" onclick="showPlane(2)"> Stygia </div>
       <div class="maplink" style="border-color:#00FF00; background-color:#003300" onclick="showPlane(4)"> Wyrm's Lair </div>
-      <div class="maplink" style="border-color:#d96207; background-color:#213d30" onclick="showPlane(5)"> Terra Nullius </div>
+<!--      <div class="maplink" style="border-color:#d96207; background-color:#213d30" onclick="showPlane(5)"> Terra Nullius </div>-->
       <div class="maplink" style="border-color:#0055ff; background-color:#0d1641" onclick="showPlane(6)"> Amaravati </div>
+      <div class="maplink" style="border-color:#9933ff; background-color:#660033" onclick="showPlane(7)"> Purgatorio </div>
       <div class="maplink" id="districtsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleDistricts()"> Districts: OFF </div>
       <div class="maplink" id="badgeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleBadges()"> Badges: OFF </div>
       <div class="maplink" id="guildsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleGuilds()"> Guilds: OFF </div>
@@ -29,31 +30,33 @@
     </div>
     <span class="bottomBar">
       <div class="content" id="content" onclick="" role="main" aria-live="assertive">
-        <div class="defaultPlane" id="valhalla" aria-live="assertive" title="Laurentia"><img src="valhalla.png" height="1008" width="1008" /></div>
-        <div class="planes" id="elysium" aria-live="assertive" title="Elysium"><img src="elysium.png" height="1008" width="768" /></div>
-        <div class="planes" id="stygia" aria-live="assertive" title="Stygia"><img src="stygia.png" height="1008" width="768" /></div>
-        <div class="planes" id="sewers" aria-live="assertive" title="Sewers"><img src="sewers.png" height="1008" width="1008" /></div>
-        <div class="planes" id="warrens" aria-live="assertive" title="Wyrm's Lair Maze"><img src="warrens.png" height="336" width="432" /></div>
-        <div class="planes" id="terraNullius" aria-live="assertive" title="Terra Nullius"><img src="terraNullius.png" height="359" width="335" /></div>
-        <div class="planes" id="amaravati" aria-live="assertive" title="Amaravati"><img src="amaravati.png" height="335" width="312" /></div>
+        <div class="defaultPlane" id="valhalla" aria-live="assertive" title="Laurentia"><img src="valhalla.png" height="1008" width="1008" ></div>
+        <div class="planes" id="elysium" aria-live="assertive" title="Elysium"><img src="elysium.png" height="1008" width="768" ></div>
+        <div class="planes" id="stygia" aria-live="assertive" title="Stygia"><img src="stygia.png" height="1008" width="768" ></div>
+        <div class="planes" id="sewers" aria-live="assertive" title="Sewers"><img src="sewers.png" height="1008" width="1008" ></div>
+        <div class="planes" id="warrens" aria-live="assertive" title="Wyrm's Lair Maze"><img src="warrens.png" height="336" width="432" ></div>
+        <div class="planes" id="amaravati" aria-live="assertive" title="Amaravati"><img src="amaravati.png" height="335" width="312" ></div>
+        <div class="planes" id="purgatorio" aria-live="assertive" title="Purgatorio"><img src="purgatorio.png" height="1247" width="1247" ></div>
 
         <div class="badges" id="badges0" height="1008" width="1008"> </div>
         <div class="badges" id="badges1" height="1008" width="1008"> </div>
         <div class="badges" id="badges2" height="1008" width="1008"> </div>
         <div class="badges" id="badges3" height="1008" width="1008"> </div>
+        <div class="badges" id="badges7" height="1247" width="1247"> </div>
         <div class="guilds" id="guilds0" height="1008" width="1008"> </div>
         <div class="guilds" id="guilds1" height="1008" width="1008"> </div>
         <div class="guilds" id="guilds2" height="1008" width="1008"> </div>
         <div class="guilds" id="guilds3" height="1008" width="1008"> </div>
-        <div class="districts" id="districts0"><img src="valhalla_districts.png" height="1008" width="1008" /></div>
-        <div class="districts" id="districts1"><img src="elysium_districts.png" height="1008" width="768" /></div>
-        <div class="districts" id="districts2"><img src="stygia_districts.png" height="1008" width="768" /></div>
-        <div class="districts" id="districts3"><img src="sewers_districts.png" height="1008" width="1008" /></div>
+        <div class="guilds" id="guilds7" height="1247" width="1247"> </div>
+        <div class="districts" id="districts0"><img src="valhalla_districts.png" height="1008" width="1008" ></div>
+        <div class="districts" id="districts1"><img src="elysium_districts.png" height="1008" width="768" ></div>
+        <div class="districts" id="districts2"><img src="stygia_districts.png" height="1008" width="768" ></div>
+        <div class="districts" id="districts3"><img src="sewers_districts.png" height="1008" width="1008" ></div>
 
-        <div id="you"><img src="icons/you.png" height="72" width="72" /></div>
-        <div id="pointer"><img src="icons/pointer.png" height="72" width="72" /></div>
-        <div id="portalPathMarker"><img src="icons/portalPathMarker.png" height="24" width="24" /></div>
-        <div id="signal"><img src="icons/signal.gif" height="48" width="48" /></div>
+        <div id="you"><img src="icons/you.png" height="72" width="72" ></div>
+        <div id="pointer"><img src="icons/pointer.png" height="72" width="72" ></div>
+        <div id="portalPathMarker"><img src="icons/portalPathMarker.png" height="24" width="24" ></div>
+        <div id="signal"><img src="icons/signal.gif" height="48" width="48" ></div>
 
         <div id="overlay">&nbsp;</div>
         <div id="overlay2">&nbsp;</div>
@@ -64,7 +67,7 @@
         <span id="infoText" aria-live="assertive" role="contentinfo">
         <br>Press K to toggle keyboard control mode.
         <br>
-        <br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. This is very much so a work in progress, many thanks to Azure, catvom, and the community for the updated google sheets maps.<br><br>Set at least two markers to calculate a shortest route between them, OR set at least one marker to find the closest building of a type.
+        <br>Updated and maintained by plscks (2021).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. This is very much so a work in progress, many thanks to The Mage's Council and the rest of the mapping community for the updated google sheets maps of Purgatorio. And also many thanks to a cat for organizing the hunt for the new Purg badges!<br><br>Please note that until the next game update the profile lookup might not link back to the Character Planner correctly! A fix is currently pending, links to both are in the Tools menu.<br><br>Set at least two markers to calculate a shortest route between them, OR set at least one marker to find the closest building of a type.
         <div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
         </span>
         <div id="sidebarMarkerlist">&nbsp;</div>
@@ -116,7 +119,7 @@
         </div>
         <br>
         <div id="pathfindingSettings">
-          <div class="maplink" id="buttonTravelMethod" onClick="cycleTravelMethod()">Water Cost: DOUBLE</div>
+          <div class="maplink" id="buttonTravelMethod" onClick="cycleTravelMethod()">Mortal Movement</div>
           <div class="maplink" id="buttonMPValue" onClick="cycleMPValue()">MP Cost: IGNORE MP COSTS</div>
           <div class="maplinkHighlight" id="buttonSetAllMarkers" onClick="markAllBadges()">Set Markers to MISSING Badges</div>
           <div class="maplink" id="clearMarkers" onClick="resetMarkers()">Clear Markers</div>

@@ -345,7 +345,7 @@ desc["paladin_shield"] = "<h3>Shield of Faith</h3>\n<i>You can channel your fait
 desc["paladin_def"] = "<h3>Defensive Stance</h3>\n<i>The forces of Light have taught you how to better avoid harm.</i>\n<p>This ability temporarily grants you a chance to dodge an attack against that would have normally succeeded. For the cost of 1AP and 10MP any attack that would have hit for the next 15 minutes has a 33% chance to miss instead. This is not the same as a straight 33% defence bonus. If you perform an attack action you lose 1MP, if you perform any action while at no MP the status ends</p>\n<b>CP Cost</b>: 40";
 desc["paladin_div"] = "<h3>Divine Armor</h3>\n<i>Your association with the forces of Light has strengthened your resolve and you are better able to resist damage.</i>\n<p>This ability acts as a type of armor that is always equipped. It grants 4 soak versus impact, piercing and slashing, 3 against fire, cold, electric, death and arcane, 5 against holy, 2 against acid and 1 against unholy. This is an innate ability.</p>\n<b>CP Cost</b>: 40";
 desc["paladin_hoz"] = "<h3>Hand of Zealotry</h3>\n<i>Your law is the law of higher powers, and the unbelievers shall fall before you.</i>\n<p>This ability allows the angel to deal justice to both evil and neutral aligned characters with equal impunity, free from morality shift. The character's morality will still shift towards good for attacking and killing evil characters but will no longer shift in any direction for attacking or killing neutral characters. It also allows Song of the Word, and pets that normally only attack evil characters, to hurt neutral characters.</p>\n<b>CP Cost</b>: 20";
-desc["paladin_holier"] = "<h3>Holier Than Thou</h3>\n<i>Your law is inviolable, and all others are judged against it.</i>\n<p>This ability allows the angel to deal justice to all characters of lower morality, free from their own negative morality shift. The character's morality will no longer shift in a negative direction for <i>attacking</i> characters of lower morality, and they will lose only 2 morality for killing another good character.</p>\n<b>CP Cost</b>: 20";
+desc["paladin_holier"] = "<h3>Holier Than Thou</h3>\n<i>Your law is inviolable, and all others are judged against it.</i>\n<p>This ability allows the angel to deal justice to all characters of lower morality, free from their own morality shift. The character's morality will no longer shift in any direction for attacking characters of lower morality, and loses only 2 morality for killing another good character.</p>\n<b>CP Cost</b>: 20";
 desc["paladin_strong"] = "<h3>Strong Attack</h3>\n<i>Your knowledge of combat has increased so that your ability to deal damage has gone up.</i>\n<p>This ability adds a permanent, innate damage bonus of +1 to all attacks.</p>\n<b>CP Cost</b>: 20";
 desc["paladin_elite"] = "<h3>Elite Attack</h3>\n<i>Your knowledge of combat has further increased. Your attacks are even more damaging.</i>\n<p>This ability adds a permanent, innate damage bonus of +2 to all attacks. This ability stacks with Strong Attack.</p>\n<b>CP Cost</b>: 40";
 desc["paladin_com_mast"] = "<h3>Combat Mastery</h3>\n<i>Your fighting skill has increased and you are now more accurate.</i>\n<p>This ability grants the character a 5% additional chance to hit with any and all attacks. This is an innate ability and is always on.</p>\n<b>CP Cost</b>: 20";
@@ -885,7 +885,7 @@ function buildCharacter(skills, badges, info, spells) {
 	const tier2Skills = skills['tier2'];
 	const tier3Skills = skills['tier3'];
 	const badgeObject = badgeParse(badges);
-	const badgesFound = 40 - badgeObject[0];
+	const badgesFound = 50 - badgeObject[0];
 	const spellArray = spellParse(spells);
 	const unresSpells = spellArray[0];
 	const resSpells = spellArray[1];
@@ -1015,7 +1015,7 @@ function badgeParse(badges) {
 		return false
 	}
 	const outputObject = {};
-	const exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost"];
+	const exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost", "Cabinet of Curiosities", "Cut Loose", "Duty and Honor", "Fallen Land", "Fighting the Last War", "Last Bastion", "Moving Day", "Read the Fine Print", "Return to Sender", "The Mind of Madness"];
 	const exploreBadgesFound = exploreBadges.filter(val => badges.includes(val));
 	const alcoholBadges = {
 		'Alcohol Drank': false,
@@ -1123,7 +1123,13 @@ function badgeParse(badges) {
 		'Wyrm Slayer': 10,
 		'Wyrmsbane': 15
 	};
-	const masterBadgeArray = [alcoholBadges, angelBadges, bookBadges, damageDealtBadges, damageTakenBadges, deathsBadges, demonsBadges, doorsDestroyedBadges, doorsRepairedBadges, foodBadges, hpBadges, itemsCraftedBadges, itemsRepairedBadges, killsBadges, lockpicksBadges, petsBadges, pillsBadges, powerRemovedBadges, powerRestoredBadges, targetsBadges, wyrmBadges];
+	const guardBadges = {
+		'Guardian Hunt': false,
+		'Shardbreaker': 5,
+		'Crystal Smasher': 10,
+		'Entropy Incarnate': 15
+	};
+	const masterBadgeArray = [alcoholBadges, angelBadges, bookBadges, damageDealtBadges, damageTakenBadges, deathsBadges, demonsBadges, doorsDestroyedBadges, doorsRepairedBadges, foodBadges, hpBadges, itemsCraftedBadges, itemsRepairedBadges, killsBadges, lockpicksBadges, petsBadges, pillsBadges, powerRemovedBadges, powerRestoredBadges, targetsBadges, wyrmBadges, guardBadges];
 
 	// outputObject = { 1: ["Alcohol Drank", [10, 15]], 2: ["Angels Killed", [10]] }
 	masterBadgeArray.forEach((typeArray, i)=>{

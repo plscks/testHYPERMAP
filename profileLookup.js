@@ -1,5 +1,5 @@
 // Oh bother, let's try this a little differently.
-// Nexus Clash profile Lookup v0.6.2
+// Nexus Clash profile Lookup v0.6.3
 // This utilizes the NC profile API to search characters by name
 // I am new at Javascript, so, uhm, sorry probably.
 //written by plscks
@@ -294,7 +294,7 @@ async function badgeParse(badges, name) {
   }
   var targetsMax = badgeMax(badges, targetsBadges, 0);
 
-  var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost"];
+  var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing Pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle Hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot ", "Untouched Wilderness ", "Well of Truth", "What Once Was Lost", "Cabinet of Curiosities", "Cut Loose", "Duty and Honor", "Fallen Land", "Fighting the Last War", "Last Bastion", "Moving Day", "Read the Fine Print", "Return to Sender", "The Mind of Madness"];
 
   exploreBadges = exploreBadges.filter(val => badges.includes(val));
   expBadges = exploreBadges;
@@ -326,10 +326,10 @@ async function badgeParse(badges, name) {
 
   if (exploreBadges.length == 0) {
     document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a><a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
-  } else if (exploreBadges.length == 40) {
+  } else if (exploreBadges.length == 50) {
     document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p> All exploration badges obtained. <a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
   } else {
-    badgesLeft = 40 - exploreBadges.length;
+    badgesLeft = 50 - exploreBadges.length;
     document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a><a class='charExpBadges' id='planButton' onClick='planLink()' href=chargen_b4_v2_5.html> Set Planner to current character </a>";
     //console.log(masterBadges);
   }
