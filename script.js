@@ -1561,7 +1561,7 @@ function initializePortals() {
 	createPortal([encodeLocation(36,21,7),1,encodeLocation(25,26,7)],["Enter Standing Stones"],[6]);
 	createPortal([encodeLocation(22,22,7),1,encodeLocation(30,9,7)],["Enter Standing Stones"],[6]);
 	createPortal([encodeLocation(30,9,7),1,encodeLocation(22,22,7)],["Enter Standing Stones"],[6]);
-	createPortal([encodeLocation(18,27,7),0,encodeLocation(37,21,0)],["Enter Swirling Gate"],[7]);
+	createPortal([encodeLocation(18,27,7),1,encodeLocation(37,21,0)],["Enter Swirling Gate"],[7]);
 	createPortal([encodeLocation(37,21,0),1,encodeLocation(18,27,7)],["Enter Swirling Gate"],[7]);
 }
 
