@@ -1605,7 +1605,6 @@ function initializeGuilds() {
 	registerBadge("Outside", 38,18,0, "Broken Promises", "You have seen the last homes built as part of the  ill-fated Sunrise Revitalization Project.");
 	registerBadge("Outside", 25,34,0, "Enthroned", "You have seen how one of the founding figures of  Laurentia wished to be remembered.");
 
-
 	registerBadge("Outside", 22,11,1, "Well of Truth", "You have found the remains of the artifact Azazel created before the fall, rumored to destroy lies and piece falsehoods.");
 	registerBadge("Outside", 15,21,1, "Fall of the Watcher", "You have discovered the imperfect seals that protect this sacred place from the intrusion of the Pit of Azazel.");
 	registerBadge("Inside", 3,36,1, "Halls of the Scholar", "You have stood in the halls where Azazel the Wise dedicated his life to the pursuit of knowledge and truth.");
