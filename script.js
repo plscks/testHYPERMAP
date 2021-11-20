@@ -2849,7 +2849,7 @@ function initializeTileNames() {
 	registerTileNames(21,38,0,"Sea");
 	registerTileNames(21,39,0,"Sea");
 	registerTileNames(21,40,0,"Sea");
-	registerTileNames(22,1,0,"Mount Archimedes");
+	registerTileNames(22,1,0,"Mount Tamaranch");
 	registerTileNames(22,2,0,"Mountain");
 	registerTileNames(22,3,0,"Mountain Cabin");
 	registerTileNames(22,4,0,"Grassland");
